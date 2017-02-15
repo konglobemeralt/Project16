@@ -11,7 +11,7 @@
 <?import javafx.scene.control.Label?>
 
 
-<GridPane alignment="center" hgap="10" prefHeight="223.0" prefWidth="200.0" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="223.0" prefWidth="200.0" stylesheets="@../CSS/controlStyle.css" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -24,13 +24,13 @@
       <Canvas height="600.0" width="800.0" />
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <top>
-            <Pane prefHeight="64.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <Pane id="toolbar" prefHeight="64.0" prefWidth="800.0" stylesheets="@../CSS/controlStyle.css" BorderPane.alignment="CENTER">
                <children>
                   <TextField layoutX="105.0" layoutY="20.0" prefHeight="27.0" prefWidth="260.0" promptText="Sök efter mat" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                  <Button layoutX="720.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Kundkorg" />
-                  <Button layoutX="641.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Profil" />
-                  <Button layoutX="562.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="?" />
+                  <Button id="KundkorgButton" layoutX="720.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Kundkorg" />
+                  <Button id="ProfileButton" layoutX="641.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Profil" />
+                  <Button id="helpButton" layoutX="562.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="?" />
                </children>
             </Pane>
          </top>
@@ -39,7 +39,29 @@
               <panes>
                 <TitledPane animated="false" text="Kött">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane id="baseAccordion" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="controlStyle.css">
+                           <children>
+                              <Accordion>
+                                <panes>
+                                  <TitledPane animated="false" text="untitled 1">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 2">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 3">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
                   </content>
                 </TitledPane>
                 <TitledPane animated="false" text="Fisk">
