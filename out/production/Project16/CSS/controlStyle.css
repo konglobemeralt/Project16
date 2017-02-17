@@ -2,18 +2,28 @@
     -fx-font-size: 10pt;
     -fx-font-family: "Futura";
     -fx-base: #f9f6e5;
-    -fx-background: #f9f6e5;
-     -fx-background-radius: 10;
+    -fx-background: #ffffff;
+    -fx-background-radius: 10;
+}
+
+.toolbar{
+    -fx-base: #e2edff;
+
+}
+
+.menu{
+    -fx-base: #d0d3d8;
+
 }
 
 .test{
     -fx-font-size: 12pt;
-    -fx-base: #fcff7f;
+    -fx-base: #F6AE2D;
 }
 
 .testSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#fcff7f,50%);
+    -fx-base: derive(#F6AE2D,50%);
 }
 
 .meat{
