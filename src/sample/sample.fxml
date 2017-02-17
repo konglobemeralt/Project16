@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.canvas.*?>
@@ -11,7 +13,7 @@
 <?import javafx.scene.control.Label?>
 
 
-<GridPane alignment="center" hgap="10" prefHeight="223.0" prefWidth="200.0" stylesheets="@../CSS/controlStyle.css" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="223.0" prefWidth="200.0" styleClass="root" stylesheets="@../CSS/controlStyle.css" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -19,110 +21,28 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
    </rowConstraints>
    <children>
-      <Canvas height="600.0" width="800.0" />
-      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+      <Canvas height="600.0" width="800.0" GridPane.rowIndex="1" />
+      <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
          <top>
-            <Pane prefHeight="64.0" prefWidth="800.0" stylesheets="@../CSS/controlStyle.css" BorderPane.alignment="CENTER">
+            <Pane prefHeight="84.0" prefWidth="800.0" stylesheets="@../CSS/controlStyle.css" BorderPane.alignment="CENTER">
                <children>
-                  <TextField layoutX="105.0" layoutY="20.0" prefHeight="27.0" prefWidth="260.0" promptText="Sök efter mat" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-                  <Button id="KundkorgButton" layoutX="720.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Kundkorg" />
-                  <Button id="ProfileButton" layoutX="641.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Profil" />
-                  <Button id="helpButton" layoutX="562.0" layoutY="2.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="?" />
+                  <TextField layoutX="178.0" layoutY="27.0" prefHeight="27.0" prefWidth="260.0" promptText="Sök efter mat" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Circle fill="WHITE" layoutX="85.0" layoutY="39.0" radius="47.0" stroke="WHITE" strokeType="INSIDE" />
+                     </children>
+                  </AnchorPane>
+                  <Button id="KundkorgButton" layoutX="703.0" layoutY="13.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Kundkorg" />
+                  <Button id="ProfileButton" layoutX="624.0" layoutY="13.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Profil" />
+                  <Button id="helpButton" layoutX="545.0" layoutY="13.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="?" />
                </children>
             </Pane>
          </top>
-         <left>
-            <Accordion BorderPane.alignment="CENTER">
-              <panes>
-                <TitledPane animated="false" styleClass="meat" text="Kött">
-                  <content>
-                    <AnchorPane id="baseAccordion" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="controlStyle.css">
-                           <children>
-                              <Accordion styleClass="meatSub">
-                                <panes>
-                                  <TitledPane animated="false" prefHeight="208.0" prefWidth="74.0" styleClass="meatSub" text="untitled 1">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 2">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 3">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                </panes>
-                              </Accordion>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" styleClass="fish" text="Fisk">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Accordion styleClass="fishSub">
-                                <panes>
-                                  <TitledPane animated="false" styleClass="fishSub" text="untitled 1">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 2">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 3">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                </panes>
-                              </Accordion>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </TitledPane>
-                <TitledPane animated="false" styleClass="test" text="Annat">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <Accordion styleClass="testSub">
-                                <panes>
-                                  <TitledPane animated="false" text="untitled 1">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 2">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                  <TitledPane animated="false" text="untitled 3">
-                                    <content>
-                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                    </content>
-                                  </TitledPane>
-                                </panes>
-                              </Accordion>
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </TitledPane>
-              </panes>
-            </Accordion>
-         </left>
          <center>
-            <GridPane BorderPane.alignment="CENTER">
+            <GridPane prefHeight="379.0" prefWidth="590.0" styleClass="greens" BorderPane.alignment="CENTER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -137,6 +57,104 @@
          <bottom>
             <AnchorPane prefHeight="28.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
          </bottom>
+         <left>
+            <Pane prefHeight="484.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Accordion layoutY="44.0" prefHeight="325.0" prefWidth="202.0">
+                     <panes>
+                        <TitledPane animated="false" collapsible="false" expanded="false" styleClass="test" text="Favoriter">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="5.0" prefWidth="200.0" />
+                           </content>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TitledPane>
+                        <TitledPane prefHeight="136.0" prefWidth="202.0" styleClass="greens" text="Frukt &amp; Grönt">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="2002.0">
+                                 <children>
+                                    <Accordion styleClass="greensSub">
+                                       <panes>
+                                          <TitledPane animated="false" styleClass="greensSub" text="untitled 1">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                 </children>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane prefHeight="140.0" prefWidth="202.0" styleClass="meat" text="Kött">
+                           <content>
+                              <AnchorPane id="baseAccordion" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="controlStyle.css">
+                                 <children>
+                                    <Accordion styleClass="meatSub">
+                                       <panes>
+                                          <TitledPane animated="false" prefHeight="208.0" prefWidth="74.0" styleClass="meatSub" text="untitled 1">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" text="untitled 2">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" text="untitled 3">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TitledPane>
+                        <TitledPane styleClass="fish" text="Fisk">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Accordion styleClass="fishSub">
+                                       <panes>
+                                          <TitledPane animated="false" styleClass="fishSub" text="untitled 1">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" text="untitled 2">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                          <TitledPane animated="false" text="untitled 3">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </TitledPane>
+                                       </panes>
+                                    </Accordion>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </Pane>
+         </left>
       </BorderPane>
    </children>
 </GridPane>

@@ -1,8 +1,9 @@
 .root{
     -fx-font-size: 10pt;
     -fx-font-family: "Futura";
-    -fx-base: #68aa9c;
+    -fx-base: #f9f6e5;
     -fx-background: #f9f6e5;
+     -fx-background-radius: 10;
 }
 
 .test{
@@ -17,20 +18,30 @@
 
 .meat{
     -fx-font-size: 12pt;
-    -fx-base: #ed2f2f;
+    -fx-base: #f26419;
 }
 
 .meatSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#ed2f2f,50%);
+    -fx-base: derive(#f26419,50%);
 }
 
 .fish{
     -fx-font-size: 12pt;
-    -fx-base: #7fd6ff;
+    -fx-base: #86BBD8;
 }
 
 .fishSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#7fd6ff,50%);
+    -fx-base: derive(#86BBD8,50%);
+}
+
+.greens{
+    -fx-font-size: 12pt;
+    -fx-base: derive(#758E4F,50%);
+}
+
+.greensSub{
+    -fx-font-size: 12pt;
+    -fx-base: derive(#758E4F,50%);
 }
