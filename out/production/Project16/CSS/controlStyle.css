@@ -1,8 +1,36 @@
 .root{
-    -fx-font-size: 12pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Futura";
     -fx-base: #68aa9c;
     -fx-background: #f9f6e5;
 }
 
+.test{
+    -fx-font-size: 12pt;
+    -fx-base: #fcff7f;
+}
 
+.testSub{
+    -fx-font-size: 12pt;
+    -fx-base: derive(#fcff7f,30%);
+}
+
+.meat{
+    -fx-font-size: 12pt;
+    -fx-base: #ed2f2f;
+}
+
+.meatSub{
+    -fx-font-size: 12pt;
+    -fx-base: derive(#ed2f2f,30%);
+}
+
+.fish{
+    -fx-font-size: 12pt;
+    -fx-base: #7fd6ff;
+}
+
+.fishSub{
+    -fx-font-size: 12pt;
+    -fx-base: derive(#7fd6ff,30%);
+}

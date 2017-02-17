@@ -24,7 +24,7 @@
       <Canvas height="600.0" width="800.0" />
       <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
          <top>
-            <Pane id="toolbar" prefHeight="64.0" prefWidth="800.0" stylesheets="@../CSS/controlStyle.css" BorderPane.alignment="CENTER">
+            <Pane prefHeight="64.0" prefWidth="800.0" stylesheets="@../CSS/controlStyle.css" BorderPane.alignment="CENTER">
                <children>
                   <TextField layoutX="105.0" layoutY="20.0" prefHeight="27.0" prefWidth="260.0" promptText="Sök efter mat" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" />
@@ -37,13 +37,13 @@
          <left>
             <Accordion BorderPane.alignment="CENTER">
               <panes>
-                <TitledPane animated="false" text="Kött">
+                <TitledPane animated="false" styleClass="meat" text="Kött">
                   <content>
                     <AnchorPane id="baseAccordion" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="controlStyle.css">
                            <children>
-                              <Accordion>
+                              <Accordion styleClass="meatSub" AnchorPane.leftAnchor="0.0">
                                 <panes>
-                                  <TitledPane animated="false" text="untitled 1">
+                                  <TitledPane animated="false" prefHeight="208.0" prefWidth="74.0" styleClass="meatSub" text="untitled 1">
                                     <content>
                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                     </content>
@@ -64,14 +64,58 @@
                         </AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Fisk">
+                <TitledPane animated="false" styleClass="fish" text="Fisk">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion styleClass="fishSub" AnchorPane.leftAnchor="0.0">
+                                <panes>
+                                  <TitledPane animated="false" styleClass="fishSub" text="untitled 1">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 2">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 3">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Annat">
+                <TitledPane animated="false" styleClass="test" text="Annat">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Accordion styleClass="testSub" AnchorPane.leftAnchor="0.0">
+                                <panes>
+                                  <TitledPane animated="false" text="untitled 1">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 2">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane animated="false" text="untitled 3">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </TitledPane>
+                                </panes>
+                              </Accordion>
+                           </children>
+                        </AnchorPane>
                   </content>
                 </TitledPane>
               </panes>
