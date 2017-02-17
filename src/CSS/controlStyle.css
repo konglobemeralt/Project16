@@ -12,7 +12,7 @@
 
 .testSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#fcff7f,30%);
+    -fx-base: derive(#fcff7f,50%);
 }
 
 .meat{
@@ -22,7 +22,7 @@
 
 .meatSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#ed2f2f,30%);
+    -fx-base: derive(#ed2f2f,50%);
 }
 
 .fish{
@@ -32,5 +32,5 @@
 
 .fishSub{
     -fx-font-size: 12pt;
-    -fx-base: derive(#7fd6ff,30%);
+    -fx-base: derive(#7fd6ff,50%);
 }
