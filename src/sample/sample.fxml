@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
@@ -15,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="481.0" prefWidth="800.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
+      <BorderPane id=".toolbar" layoutX="10.0" layoutY="10.0" prefHeight="481.0" prefWidth="800.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
          <bottom>
             <AnchorPane prefHeight="28.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
          </bottom>
@@ -24,8 +26,8 @@
                <children>
                   <VBox layoutX="-11.0" layoutY="9.0" prefHeight="365.0" prefWidth="202.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Mina Listor" />
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Gamla Kvitton" />
+                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Mina Listor" textFill="#575757" />
+                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Gamla Kvitton" textFill="#575757" />
                         <Button cacheShape="false" centerShape="false" disable="true" focusTraversable="false" maxHeight="3.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="202.0" visible="false">
                            <font>
                               <Font size="2.0" />
@@ -47,7 +49,7 @@
                                        <children>
                                           <Accordion styleClass="greensSub">
                                              <panes>
-                                                <TitledPane animated="false" styleClass="greensSub" text="untitled 1">
+                                                <TitledPane animated="false" styleClass="greensSub" text="untitled 1" textFill="#575757">
                                                    <content>
                                                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                                                    </content>
@@ -129,14 +131,14 @@
             </Pane>
          </left>
          <right>
-            <ScrollPane prefHeight="304.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ScrollPane prefHeight="304.0" prefWidth="200.0">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
               </content>
             </ScrollPane>
          </right>
          <top>
-            <ToolBar prefHeight="79.0" prefWidth="800.0" styleClass="toolbar">
+            <ToolBar prefHeight="110.0" prefWidth="1008.0" styleClass="toolbar">
                <items>
                   <HBox prefHeight="100.0" prefWidth="121.0" styleClass="toolbar" />
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="216.0">
@@ -149,9 +151,9 @@
                      </children>
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="236.0" />
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button id="helpButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="?">
+                        <Button id="helpButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="helpButton">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -159,20 +161,20 @@
                               <Tooltip text="Hjälp" />
                            </tooltip>
                         </Button>
-                        <Button id="KundkorgButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Kundkorg">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <tooltip>
-                              <Tooltip text="Kundkorg" />
-                           </tooltip>
-                        </Button>
-                        <Button id="ProfileButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" text="Profil">
+                        <Button id="ProfileButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="profileButton">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                            <tooltip>
                               <Tooltip text="Profil" />
+                           </tooltip>
+                        </Button>
+                        <Button id="KundkorgButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="kundkorgButton">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <tooltip>
+                              <Tooltip text="Kundkorg" />
                            </tooltip>
                         </Button>
                      </children>
@@ -181,13 +183,16 @@
             </ToolBar>
          </top>
          <center>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="629.0" prefWidth="398.0" />
-              </content>
-            </ScrollPane>
+            <TilePane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="161.0">
+                     <children>
+                        <Label prefHeight="204.0" prefWidth="162.0" styleClass="tile" text="Label" />
+                     </children>
+                  </Pane>
+               </children>
+            </TilePane>
          </center>
       </BorderPane>
-      <Canvas height="431.0" layoutX="20.0" layoutY="37.0" width="790.0" />
    </children>
 </AnchorPane>

@@ -13,7 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("iMat");
         Scene scene = new Scene(root, 800, 600);
-       // scene.getStylesheets().add("CSS/controlStyle.css");
+        scene.getStylesheets().add("CSS/controlStyle.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
