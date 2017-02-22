@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="resources - projekt (fx)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/resources - projekt (fx)/producteditor.zip!/" />
+      <root url="jar://$PROJECT_DIR$/resources - projekt (fx)/imat.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

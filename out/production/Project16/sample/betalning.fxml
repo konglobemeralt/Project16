@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1147.0" prefWidth="1699.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutX="6.0" layoutY="50.0" prefHeight="1147.0" prefWidth="1699.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Översikt">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="14.0" layoutY="14.0" prefHeight="823.0" prefWidth="1665.0">
+                          <content>
+                            <AnchorPane />
+                          </content>
+                        </ScrollPane>
+                        <Button layoutX="52.0" layoutY="958.0" mnemonicParsing="false" text="Fortsätt handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" />
+                        <Button layoutX="1528.0" layoutY="958.0" mnemonicParsing="false" text="Nästa" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="45.0" />
+                        <Button disable="true" layoutX="1359.0" layoutY="958.0" mnemonicParsing="false" text="Tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="180.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Uppgifter">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="342.0" layoutY="150.0" />
+                        <TextField layoutX="342.0" layoutY="245.0" />
+                        <TextField layoutX="342.0" layoutY="337.0" />
+                        <TextField layoutX="342.0" layoutY="431.0" />
+                        <TextField layoutX="342.0" layoutY="521.0" />
+                        <TextField layoutX="342.0" layoutY="607.0" />
+                        <Label layoutX="44.0" layoutY="39.0" text="Obligatoriska uppgifter *" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="40.0" />
+                        <Label layoutX="79.0" layoutY="160.0" text="Förnamn *" AnchorPane.leftAnchor="79.0" />
+                        <Label layoutX="79.0" layoutY="255.0" text="Efternamn *" AnchorPane.leftAnchor="79.0" />
+                        <Label layoutX="79.0" layoutY="347.0" text="Telefonnr *" AnchorPane.leftAnchor="79.0" />
+                        <Label layoutX="79.0" layoutY="441.0" text="Adress *" AnchorPane.leftAnchor="79.0" />
+                        <Label layoutX="79.0" layoutY="531.0" text="Postnr *" AnchorPane.leftAnchor="79.0" />
+                        <Label layoutX="79.0" layoutY="617.0" text="Postort *" />
+                        <TextArea layoutX="895.0" layoutY="145.0" prefHeight="523.0" prefWidth="735.0" AnchorPane.rightAnchor="79.0" />
+                        <Label layoutX="895.0" layoutY="62.0" text="Övrig information" />
+                        <Button layoutX="44.0" layoutY="927.0" mnemonicParsing="false" text="Fortsätt handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" />
+                        <Button layoutX="1512.0" layoutY="927.0" mnemonicParsing="false" text="Nästa" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="45.0" />
+                        <Button layoutX="1343.0" layoutY="927.0" mnemonicParsing="false" text="Tilbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="180.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Leveransdatum">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="45.0" layoutY="968.0" mnemonicParsing="false" text="Fortsätt handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" />
+                        <Button layoutX="1534.0" layoutY="968.0" mnemonicParsing="false" text="Nästa" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="45.0" />
+                        <Button layoutX="1374.0" layoutY="968.0" mnemonicParsing="false" text="Tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="180.0" />
+                        <Label layoutX="45.0" layoutY="51.0" text="När vill du få dina varor levererade?" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="40.0" />
+                        <Label layoutX="130.0" layoutY="220.0" text="Vilken dag?" />
+                        <ComboBox editable="true" layoutX="504.0" layoutY="210.0" prefWidth="150.0" />
+                        <Label layoutX="130.0" layoutY="471.0" text="Mellan vilka tider?" />
+                        <ComboBox editable="true" layoutX="504.0" layoutY="461.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Betalning">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="70.0" layoutY="77.0" text="Hur vill du betala?" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="60.0" />
+                        <RadioButton layoutX="117.0" layoutY="192.0" mnemonicParsing="false" text="Vid leverans (kort eller kontant)" />
+                        <RadioButton layoutX="117.0" layoutY="299.0" mnemonicParsing="false" text="Faktura (25 kr avgift tillkommer)" />
+                        <RadioButton layoutX="117.0" layoutY="402.0" mnemonicParsing="false" text="Kort" />
+                        <Button layoutX="42.0" layoutY="972.0" mnemonicParsing="false" text="Fortsätt handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="45.0" />
+                        <Button layoutX="1485.0" layoutY="972.0" mnemonicParsing="false" text="Slutför köp" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="45.0" />
+                        <Button layoutX="1329.0" layoutY="972.0" mnemonicParsing="false" text="Tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="250.0" />
+                        <AnchorPane disable="true" layoutX="778.0" layoutY="115.0" prefHeight="752.0" prefWidth="898.0">
+                           <children>
+                              <RadioButton layoutX="81.0" layoutY="59.0" mnemonicParsing="false" text="Visa" />
+                              <RadioButton layoutX="280.0" layoutY="59.0" mnemonicParsing="false" text="MasterCard" />
+                              <Label layoutX="81.0" layoutY="153.0" text="Kortets ägare" />
+                              <TextField layoutX="81.0" layoutY="198.0" />
+                              <Label layoutX="81.0" layoutY="296.0" text="Kortnummer" />
+                              <TextField layoutX="81.0" layoutY="341.0" />
+                              <Label layoutX="81.0" layoutY="448.0" text="Giltigt tom" />
+                              <TextField layoutX="81.0" layoutY="493.0" prefHeight="65.0" prefWidth="81.0" />
+                              <Label layoutX="164.0" layoutY="503.0" text="/" />
+                              <TextField layoutX="180.0" layoutY="493.0" prefHeight="65.0" prefWidth="81.0" />
+                              <Label layoutX="81.0" layoutY="588.0" text="CVC" />
+                              <TextField layoutX="81.0" layoutY="633.0" prefHeight="65.0" prefWidth="121.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
