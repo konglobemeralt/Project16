@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("iMatMain.fxml"));
         primaryStage.setTitle("iMat");
         Scene scene = new Scene(root, 900, 600);
         scene.getStylesheets().add("CSS/controlStyle.css");
