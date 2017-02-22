@@ -15,7 +15,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="824.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.iMatController">
    <children>
       <BorderPane id=".toolbar" layoutX="10.0" layoutY="10.0" prefHeight="481.0" prefWidth="800.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="10.0">
          <bottom>
@@ -26,8 +26,8 @@
                <children>
                   <VBox layoutX="-11.0" layoutY="9.0" prefHeight="365.0" prefWidth="202.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Mina Listor" textFill="#575757" />
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="225.0" text="Gamla Kvitton" textFill="#575757" />
+                        <Button mnemonicParsing="false" onAction="#minaListorButtonClicked" prefHeight="28.0" prefWidth="225.0" text="Mina Listor" textFill="#575757" />
+                        <Button mnemonicParsing="false" onAction="#gamlaKvittonButtonClicked" prefHeight="28.0" prefWidth="225.0" text="Gamla Kvitton" textFill="#575757" />
                         <Button cacheShape="false" centerShape="false" disable="true" focusTraversable="false" maxHeight="3.0" mnemonicParsing="false" prefHeight="3.0" prefWidth="202.0" visible="false">
                            <font>
                               <Font size="2.0" />
@@ -153,7 +153,7 @@
                   <HBox prefHeight="100.0" prefWidth="236.0" />
                   <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button id="helpButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="helpButton">
+                        <Button id="helpButton" fx:id="helpButton" mnemonicParsing="false" onAction="#helpButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="helpButton">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -161,7 +161,7 @@
                               <Tooltip text="Hjälp" />
                            </tooltip>
                         </Button>
-                        <Button id="ProfileButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="profileButton">
+                        <Button id="ProfileButton" mnemonicParsing="false" onAction="#profileButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="profileButton">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -169,7 +169,7 @@
                               <Tooltip text="Profil" />
                            </tooltip>
                         </Button>
-                        <Button id="KundkorgButton" mnemonicParsing="false" prefHeight="59.0" prefWidth="77.0" styleClass="kundkorgButton">
+                        <Button id="KundkorgButton" mnemonicParsing="false" onAction="#kundkorgButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="kundkorgButton">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
