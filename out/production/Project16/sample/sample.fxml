@@ -24,45 +24,48 @@
                <children>
                   <ToolBar layoutX="-13.0" prefHeight="93.0" prefWidth="947.0" styleClass="toolbar" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
                      <items>
-                        <HBox prefHeight="100.0" prefWidth="85.0" styleClass="toolbar" />
-                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="214.0">
+                        <AnchorPane prefHeight="100.0" prefWidth="273.0">
                            <children>
-                              <TextField fx:id="foodSearchField" alignment="TOP_CENTER" onAction="#foodSearch" prefHeight="26.0" prefWidth="216.0" promptText="Sök efter mat">
+                              <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="214.0" />
+                              <TextField fx:id="foodSearchField" layoutX="131.0" layoutY="31.0" onAction="#foodSearch" prefHeight="39.0" prefWidth="224.0" promptText="Sök efter mat">
                                  <cursor>
                                     <Cursor fx:constant="TEXT" />
                                  </cursor>
                               </TextField>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="565.0">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="81.0" prefWidth="335.0">
                            <children>
-                              <Button id="helpButton" fx:id="helpButton" mnemonicParsing="false" onAction="#helpButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="helpButton">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <tooltip>
-                                    <Tooltip text="Hjälp" />
-                                 </tooltip>
-                              </Button>
-                              <Button id="ProfileButton" mnemonicParsing="false" onAction="#profileButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="profileButton">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <tooltip>
-                                    <Tooltip text="Profil" />
-                                 </tooltip>
-                              </Button>
-                              <Button id="KundkorgButton" mnemonicParsing="false" onAction="#kundkorgButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="kundkorgButton">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <tooltip>
-                                    <Tooltip text="Kundkorg" />
-                                 </tooltip>
-                              </Button>
+                              <HBox alignment="CENTER_RIGHT" nodeOrientation="LEFT_TO_RIGHT" prefHeight="81.0" prefWidth="461.0" AnchorPane.rightAnchor="289.0">
+                                 <children>
+                                    <Button id="helpButton" fx:id="helpButton" mnemonicParsing="false" onAction="#helpButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="helpButton">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <tooltip>
+                                          <Tooltip text="Hjälp" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button id="ProfileButton" mnemonicParsing="false" onAction="#profileButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="profileButton">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <tooltip>
+                                          <Tooltip text="Profil" />
+                                       </tooltip>
+                                    </Button>
+                                    <Button id="KundkorgButton" mnemonicParsing="false" onAction="#kundkorgButtonClicked" prefHeight="59.0" prefWidth="77.0" styleClass="kundkorgButton">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <tooltip>
+                                          <Tooltip text="Kundkorg" />
+                                       </tooltip>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
-                        </HBox>
-                        <HBox prefHeight="100.0" prefWidth="200.0" />
+                        </AnchorPane>
                      </items>
                   </ToolBar>
                </children>
@@ -190,7 +193,7 @@
                         </ScrollPane>
                      </right>
                      <center>
-                        <TilePane prefHeight="337.0" prefWidth="424.0" styleClass="meat" BorderPane.alignment="CENTER">
+                        <TilePane prefHeight="337.0" prefWidth="424.0" BorderPane.alignment="CENTER">
                            <children>
                               <Pane prefHeight="200.0" prefWidth="161.0" />
                            </children>
