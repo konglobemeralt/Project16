@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="22.0" layoutY="14.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Favoriter">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="22.0" layoutY="44.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="22.0" layoutY="74.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Accordion layoutX="21.0" layoutY="134.0">
+        <panes>
+          <TitledPane animated="false" text="Fisk &amp; Skaldjur">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Kött &amp; Fågel">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+            <TitledPane animated="false" text="Skafferi">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" text="Bageri">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" text="Sötsaker">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TitledPane>
+            <TitledPane animated="false" text="Drycker">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TitledPane>
+          <TitledPane animated="false" text="Frukt &amp; Grönt">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>

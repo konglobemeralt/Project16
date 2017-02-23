@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="42.0" layoutY="14.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Hem" />
+            <Button layoutX="1166.0" layoutY="14.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Kundvagn" />
+            <Button layoutX="966.0" layoutY="14.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="?" />
+            <Button layoutX="1066.0" layoutY="14.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" text="Konto" />
+            <Button layoutX="847.0" layoutY="43.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Sök" />
+            <TextField layoutX="220.0" layoutY="43.0" prefHeight="65.0" prefWidth="627.0" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+      </AnchorPane>
+   </top>
+</BorderPane>
