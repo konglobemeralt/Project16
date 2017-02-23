@@ -1,10 +1,8 @@
 package iMat.controller;
-
 import javafx.scene.control.TextField;
-import java.awt.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+
 
 /**
  * Created by konglobemeralt on 2017-02-23.
