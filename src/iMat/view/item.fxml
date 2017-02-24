@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<javafx.scene.layout.AnchorPane prefHeight="20.0" prefWidth="35.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane prefHeight="249.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ImageView fx:id="productImage" fitHeight="124.0" fitWidth="170.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="64.0" layoutY="92.0" prefHeight="17.0" prefWidth="90.0" text="eadsasdsad" />
+        <ImageView fx:id="productImage" fitHeight="186.0" fitWidth="283.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
+        <Label layoutX="4.0" layoutY="197.0" prefHeight="45.0" prefWidth="283.0" text="eadsasdsad" />
     </children>
 </javafx.scene.layout.AnchorPane>
