@@ -88,3 +88,9 @@
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
 }
+
+.searchButton {
+  -fx-background-image: url("img/ic_search_black_24dp_2x.png");
+  -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+}

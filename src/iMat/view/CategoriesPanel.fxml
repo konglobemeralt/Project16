@@ -13,19 +13,19 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="22.0" layoutY="44.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
+      <Button fx:id="minaListorButton" layoutX="22.0" layoutY="44.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="22.0" layoutY="74.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
+      <Button fx:id="gamlaKvittonButton" layoutX="22.0" layoutY="74.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
       <Accordion layoutX="21.0" layoutY="134.0">
         <panes>
-          <TitledPane animated="false" text="Fisk &amp; Skaldjur">
+          <TitledPane animated="false" styleClass="fish" text="Fisk &amp; Skaldjur">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
@@ -33,7 +33,7 @@
                   <Font size="18.0" />
                </font>
           </TitledPane>
-          <TitledPane animated="false" text="Kött &amp; Fågel">
+          <TitledPane animated="false" styleClass="meat" text="Kött &amp; Fågel">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>

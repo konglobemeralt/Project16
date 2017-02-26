@@ -14,5 +14,13 @@ public class categoriesController {
     public void favouritesButtonPressed(){
         System.out.println("Favourites button pressed.");
     }
+    public void minaListorButtonPressed(){
+        System.out.println("minaListor button pressed.");
+    }
+    public void gamlaKvittonButtonPressed(){
+        System.out.println("Favourites button pressed.");
+    }
+
+
 
 }

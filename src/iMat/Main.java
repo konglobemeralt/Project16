@@ -52,6 +52,7 @@ public class Main extends Application {
         loader.setLocation(Main.class.getResource("view/MainView.fxml"));
         mainLayout = loader.load();
         Scene scene = new Scene(mainLayout);
+        scene.getStylesheets().add("CSS/MainStyle.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -64,10 +65,10 @@ public class Main extends Application {
     }
 
     private void initItems()throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/centerView.fxml"));
-        AnchorPane centerView = loader.load();
-        mainLayout.setLeft(centerView);
+       //FXMLLoader loader = new FXMLLoader();
+       //loader.setLocation(Main.class.getResource("view/centerView.fxml"));
+       //AnchorPane centerView = loader.load();
+       //mainLayout.setLeft(centerView);
         }
 
 

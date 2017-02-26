@@ -15,8 +15,22 @@ public class mainController {
         System.out.println("Home Button pressed");
     }
 
+    public void helpButtonPressed(ActionEvent event){
+        System.out.println("Help Button pressed");
+    }
+    public void profileButtonPressed(ActionEvent event){
+        System.out.println("profile Button pressed");
+    }
+    public void kundkorgButtonPressed(ActionEvent event){
+        System.out.println("kundkorg Button pressed");
+    }
+    public void searchButtonPressed(ActionEvent event){
+        System.out.print("search Button pressed. ");
+        searchForItem(event);
+    }
+
     public void searchForItem(ActionEvent event){
-        System.out.println("Searched for item: " + searchBarMain.getText());
+        System.out.println("Searched for: " + searchBarMain.getText());
     }
 
 }
