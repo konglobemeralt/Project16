@@ -11,6 +11,7 @@ import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
+import javafx.scene.control.Button;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,8 +40,17 @@ public class itemViewController extends AnchorPane implements Initializable, Sho
         shoppingItems = iMatHandler.getShoppingCart().getItems();
         iMatHandler.getShoppingCart().addShoppingCartListener(this);
 
-        centerPaneMain.add(new itemController(new ShoppingItem(iMatHandler.getProduct(25), 2)), 2, 0);
-        centerPaneMain.add(new itemController(new ShoppingItem(iMatHandler.getProduct(34), 2)), 2, 1);
+
+        Button tempButton1 = new Button("Button_1");
+        Button tempButton2 = new Button("Button_2");
+
+
+        centerPaneMain.add(tempButton1, 0, 0);
+        centerPaneMain.add(tempButton2, 0, 1);
+
+
+        //centerPaneMain.add(new itemController(new ShoppingItem(iMatHandler.getProduct(25), 2)), 2, 1);
+        //centerPaneMain.add(new itemController(new ShoppingItem(iMatHandler.getProduct(34), 2)), 3, 2);
 
         iMatHandler.getShoppingCart().getTotal();
     }

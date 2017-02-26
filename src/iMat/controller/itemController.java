@@ -32,7 +32,8 @@ public class itemController extends AnchorPane implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("view/item.fxml"));
             loader.setController(this);
             AnchorPane anchorPane = loader.load();
-            mainLayout.setLeft(anchorPane);
+            System.out.println(anchorPane.getHeight());
+            this.getChildren().add(anchorPane);
 
         } catch (IOException exc) {
             System.out.println(exc.toString());

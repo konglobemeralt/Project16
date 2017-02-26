@@ -13,8 +13,8 @@
             <Button id="kundkorgButton" fx:id="kundkorgButton" layoutX="1166.0" layoutY="14.0" mnemonicParsing="false" onAction="#kundkorgButtonPressed" prefHeight="100.0" prefWidth="100.0" styleClass="kundkorgButton" AnchorPane.rightAnchor="14.0" />
             <Button id="helpButton" fx:id="helpButton" layoutX="966.0" layoutY="14.0" mnemonicParsing="false" onAction="#helpButtonPressed" prefHeight="100.0" prefWidth="100.0" styleClass="helpButton" AnchorPane.rightAnchor="214.0" />
             <Button id="profileButton" fx:id="profileButton" layoutX="1066.0" layoutY="14.0" mnemonicParsing="false" onAction="#profileButtonPressed" prefHeight="100.0" prefWidth="100.0" styleClass="profileButton" AnchorPane.rightAnchor="114.0" />
-            <Button id="searchButton" fx:id="searchButtonMain" layoutX="847.0" layoutY="43.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="63.0" prefWidth="64.0" styleClass="searchButton" AnchorPane.rightAnchor="369.0" />
-            <TextField fx:id="searchBarMain" layoutX="220.0" layoutY="43.0" onAction="#searchForItem" prefHeight="65.0" prefWidth="627.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="433.0" />
+            <Button id="searchButton" fx:id="searchButtonMain" layoutX="847.0" layoutY="33.0" mnemonicParsing="false" onAction="#searchButtonPressed" prefHeight="63.0" prefWidth="64.0" styleClass="searchButton" AnchorPane.rightAnchor="369.0" />
+            <TextField fx:id="searchBarMain" layoutX="220.0" layoutY="32.0" onAction="#searchForItem" prefHeight="65.0" prefWidth="627.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="433.0" />
          </children>
          <padding>
             <Insets bottom="20.0" top="20.0" />

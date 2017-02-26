@@ -35,7 +35,7 @@ import java.util.ResourceBundle;
 
 public class Main extends Application {
     private Stage primaryStage;
-    private BorderPane mainLayout;
+    public BorderPane mainLayout;
 
 
     @Override
@@ -65,10 +65,10 @@ public class Main extends Application {
     }
 
     private void initItems()throws IOException{
-       //FXMLLoader loader = new FXMLLoader();
-       //loader.setLocation(Main.class.getResource("view/centerView.fxml"));
-       //AnchorPane centerView = loader.load();
-       //mainLayout.setLeft(centerView);
+       FXMLLoader loader = new FXMLLoader();
+       loader.setLocation(Main.class.getResource("view/centerView.fxml"));
+       GridPane centerView = loader.load();
+       mainLayout.setCenter(centerView);
         }
 
 
