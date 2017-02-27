@@ -21,4 +21,7 @@
          </padding>
       </AnchorPane>
    </top>
+   <center>
+      <fx:include source="../view/centerView.fxml" />
+   </center>
 </BorderPane>

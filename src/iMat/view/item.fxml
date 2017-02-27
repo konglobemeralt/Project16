@@ -8,9 +8,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<javafx.scene.layout.AnchorPane prefHeight="249.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane prefHeight="249.0" prefWidth="290.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.itemController">
     <children>
         <ImageView fx:id="productImage" fitHeight="186.0" fitWidth="283.0" layoutX="4.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="4.0" layoutY="197.0" prefHeight="45.0" prefWidth="283.0" text="eadsasdsad" />
+        <Label fx:id="itemLabel" layoutX="4.0" layoutY="189.0" prefHeight="45.0" prefWidth="283.0" text="itemLabel" />
     </children>
 </javafx.scene.layout.AnchorPane>

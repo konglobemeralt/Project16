@@ -44,7 +44,6 @@ public class Main extends Application {
     this.primaryStage.setTitle("iMat");
     showMainView();
     showCategoriesView();
-        initItems();
     }
 
     private void showMainView()throws IOException{
@@ -63,13 +62,6 @@ public class Main extends Application {
         AnchorPane categoriesView = loader.load();
         mainLayout.setLeft(categoriesView);
     }
-
-    private void initItems()throws IOException{
-       FXMLLoader loader = new FXMLLoader();
-       loader.setLocation(Main.class.getResource("view/centerView.fxml"));
-       GridPane centerView = loader.load();
-       mainLayout.setCenter(centerView);
-        }
 
 
 
