@@ -35,7 +35,7 @@ import java.util.ResourceBundle;
 
 public class Main extends Application {
     private Stage primaryStage;
-    public BorderPane mainLayout;
+    public static BorderPane mainLayout;
 
 
     @Override

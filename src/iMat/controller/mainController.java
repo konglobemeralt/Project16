@@ -1,7 +1,12 @@
 package iMat.controller;
+import iMat.Main;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 
 /**
@@ -21,12 +26,31 @@ public class mainController {
     public void profileButtonPressed(ActionEvent event){
         System.out.println("profile Button pressed");
     }
-    public void kundkorgButtonPressed(ActionEvent event){
+    public void kundkorgButtonPressed(ActionEvent event) {
         System.out.println("kundkorg Button pressed");
+        if(Main.mainLayout.getRight() == null){
+            try{
+                loadKundKorgPanel();
+            }
+            catch (IOException e){
+                //Avsluta
+            }
+        }
+        else{
+            Main.mainLayout.setRight(null);
+        }
+
     }
     public void searchButtonPressed(ActionEvent event){
         System.out.print("search Button pressed. ");
         searchForItem(event);
+    }
+
+    private void loadKundKorgPanel() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/kundKorgPanel.fxml"));
+        AnchorPane kundKorgPanel = loader.load();
+        Main.mainLayout.setRight(kundKorgPanel);
     }
 
     public void searchForItem(ActionEvent event){

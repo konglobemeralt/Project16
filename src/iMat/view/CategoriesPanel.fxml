@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.categoriesController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.categoriesController">
    <children>
-      <Button fx:id="favouritesButtonCategories" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#favouritesButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Favoriter">
+      <Button fx:id="favouritesButtonCategories" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#favouritesButtonPressed" prefHeight="40.0" prefWidth="202.0" text="Favoriter">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="minaListorButton" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="minaListorButton" layoutX="22.0" layoutY="44.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
+      <Button fx:id="gamlaKvittonButton" layoutX="22.0" layoutY="390.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="gamlaKvittonButton" layoutX="22.0" layoutY="74.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <Accordion layoutX="21.0" layoutY="134.0">
+      <Accordion layoutX="22.0" layoutY="54.0">
         <panes>
           <TitledPane animated="false" styleClass="fish" text="Fisk &amp; Skaldjur">
             <content>
