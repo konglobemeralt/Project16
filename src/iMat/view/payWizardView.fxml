@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="682.0" prefWidth="1078.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab text="Översikt">
+      <content>
+        <AnchorPane fx:id="payViewPane" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1280.0">
+               <children>
+                  <Button disable="true" layoutX="14.0" layoutY="529.0" mnemonicParsing="false" text="Tillbaka">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="923.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Nästa">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <ListView layoutY="38.0" prefHeight="372.0" prefWidth="1078.0" />
+                  <Label layoutX="771.0" layoutY="473.0" text="Total pris: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="771.0" layoutY="446.0" text="Antal varor: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totItemsPayView" layoutX="899.0" layoutY="446.0" prefHeight="27.0" prefWidth="85.0" text="13 st">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totPricePayView" layoutX="898.0" layoutY="473.0" prefHeight="27.0" prefWidth="86.0" text="245,82 kr">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Uppgifter">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Obligatoriska uppgifter *">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="70.0" prefHeight="70.0" text="* Förnamn: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="11.0" layoutY="140.0" prefHeight="70.0" text="* Efternamn: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="280.0" prefHeight="70.0" text="* Adress: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="21.0" layoutY="350.0" prefHeight="70.0" text="* Postnr: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="420.0" prefHeight="70.0" text="* Postort: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="210.0" prefHeight="70.0" text="* Telefon: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="11.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Tillbaka">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="923.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Nästa">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="770.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <TextField layoutX="183.0" layoutY="73.0" />
+                  <TextField layoutX="183.0" layoutY="143.0" />
+                  <TextField layoutX="183.0" layoutY="213.0" />
+                  <TextField layoutX="183.0" layoutY="283.0" />
+                  <TextField layoutX="183.0" layoutY="353.0" />
+                  <TextField layoutX="183.0" layoutY="423.0" />
+                  <TextArea layoutX="600.0" layoutY="140.0" prefHeight="301.0" prefWidth="464.0" />
+                  <Label layoutX="600.0" layoutY="83.0" text="Övrig information:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Leverans">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="148.0" text="Välj önskat datum för leverans: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="480.0" layoutY="138.0" prefHeight="65.0" prefWidth="412.0" />
+                  <Label layoutX="14.0" layoutY="289.0" text="Välj önskad tid för leverans: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox layoutX="480.0" layoutY="279.0" prefHeight="65.0" prefWidth="412.0" />
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Tillbaka">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="923.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Nästa">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Betala">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="33.0" layoutY="55.0" text="Välj betalmetod: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton layoutX="72.0" layoutY="116.0" mnemonicParsing="false" selected="true" text="Vid leverans (kontant eller kort)">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="payMethodRadioButtons" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="72.0" layoutY="196.0" mnemonicParsing="false" text="Via internet med kort (Visa/MasterCard)" toggleGroup="$payMethodRadioButtons">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="72.0" layoutY="282.0" mnemonicParsing="false" text="Via faktura (25 kr avgift)" toggleGroup="$payMethodRadioButtons">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Tillbaka">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="864.0" layoutY="529.0" mnemonicParsing="false" prefWidth="200.0" text="Slutför köp">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="715.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane disable="true" layoutX="460.0" layoutY="50.0" prefHeight="465.0" prefWidth="527.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Kortets ägare (fullständigt namn):">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="41.0" prefHeight="65.0" prefWidth="383.0" />
+                        <Label layoutX="14.0" layoutY="126.0" text="Kortnummer:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="153.0" />
+                        <Label layoutX="14.0" layoutY="239.0" text="Giltigt t.o.m.">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="266.0" prefHeight="65.0" prefWidth="65.0" />
+                        <Label layoutX="84.0" layoutY="276.0" text="/" />
+                        <TextField layoutX="102.0" layoutY="266.0" prefHeight="65.0" prefWidth="65.0" />
+                        <Label layoutX="14.0" layoutY="352.0" text="CVC (se baksidan av kortet):">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="14.0" layoutY="379.0" prefHeight="65.0" prefWidth="82.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
