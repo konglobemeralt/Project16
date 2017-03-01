@@ -48,8 +48,8 @@ public class ItemController extends AnchorPane implements Initializable {
         loader.setController(this);
         try {
             itemView = loader.load();
-            productImage = new ImageView(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
             itemLabel.setText(shoppingItem.getProduct().getName());
+            this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         }
         catch (IOException e)
