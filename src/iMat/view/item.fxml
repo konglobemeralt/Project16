@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<javafx.scene.layout.AnchorPane prefHeight="162.0" prefWidth="245.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.itemController">
+<javafx.scene.layout.AnchorPane prefHeight="162.0" prefWidth="245.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ItemController">
     <children>
         <ImageView fx:id="productImage" fitHeight="155.0" fitWidth="287.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
         <Label fx:id="itemLabel" layoutX="2.0" layoutY="157.0" prefHeight="30.0" prefWidth="283.0" text="itemLabel" />

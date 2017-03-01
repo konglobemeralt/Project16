@@ -1,10 +1,8 @@
 package iMat.controller;
 import iMat.Main;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
@@ -12,9 +10,16 @@ import java.io.IOException;
 /**
  * Created by konglobemeralt on 2017-02-23.
  */
-public class mainController {
+public class MainViewController {
     @FXML
-    TextField searchBarMain;
+    private TextField searchBarMain;
+
+    //Reference the main application
+    private Main main;
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
 
     public void homeButtonPressed(ActionEvent event){
         System.out.println("Home Button pressed");
@@ -28,29 +33,22 @@ public class mainController {
     }
     public void kundkorgButtonPressed(ActionEvent event) {
         System.out.println("kundkorg Button pressed");
-        if(Main.mainLayout.getRight() == null){
+        if(main.getMainLayout().getRight() == null){
             try{
-                loadKundKorgPanel();
+                main.showShoppingBagView();
             }
             catch (IOException e){
                 //Avsluta
             }
         }
         else{
-            Main.mainLayout.setRight(null);
+            main.getMainLayout().setRight(null);
         }
 
     }
     public void searchButtonPressed(ActionEvent event){
         System.out.print("search Button pressed. ");
         searchForItem(event);
-    }
-
-    private void loadKundKorgPanel() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/kundKorgPanel.fxml"));
-        AnchorPane kundKorgPanel = loader.load();
-        Main.mainLayout.setRight(kundKorgPanel);
     }
 
     public void searchForItem(ActionEvent event){

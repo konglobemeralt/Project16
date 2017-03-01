@@ -21,19 +21,26 @@ package iMat.controller;
  import java.net.URL;
  import java.util.ResourceBundle;
 
-public class itemController extends AnchorPane implements Initializable {
-    private BorderPane mainLayout;
+public class ItemController extends AnchorPane implements Initializable {
 
+    @FXML
+    private Label itemLabel;
+
+    @FXML
+    private ImageView productImage;
+
+    //Reference the main application
+    private Main main;
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
+
+    private BorderPane mainLayout;
 
     ShoppingItem shoppingItem;
 
-    @FXML
-    Label itemLabel;
-
-    @FXML
-    ImageView productImage;
-
-    public itemController(ShoppingItem shoppingItem) {
+    public ItemController(ShoppingItem shoppingItem) {
         System.out.println("init item");
 
         ImageView image = new ImageView(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
