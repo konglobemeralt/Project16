@@ -10,7 +10,8 @@
 
 
 .item{
-    -fx-base: #FAC863;
+    -fx-base: #5FB3B3;
+    -fx-background: derive(#5FB3B3,50%);
 
 }
 

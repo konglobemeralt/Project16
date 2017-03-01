@@ -17,5 +17,14 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="projectbackend-fx" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../Gränsnitt/Projekt/projectbackend-fx.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

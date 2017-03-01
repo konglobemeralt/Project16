@@ -12,19 +12,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" styleClass="item" stylesheets="@../../CSS/mainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
       <Button id="increaseProductButton" layoutX="64.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
       <TextField alignment="CENTER" layoutX="97.0" layoutY="267.0" prefHeight="30.0" prefWidth="50.0" />
       <Button layoutX="150.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+" />
-      <SplitPane dividerPositions="0.5551330798479087" orientation="VERTICAL" prefHeight="265.0" prefWidth="243.0" style="-fx-border-color: #111111;">
+      <SplitPane dividerPositions="0.48659003831417624" orientation="VERTICAL" prefHeight="265.0" prefWidth="243.0" style="-fx-border-color: #111111;">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;" styleClass="item">
                <children>
                     <ImageView fx:id="productImage" fitHeight="141.0" fitWidth="187.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="243.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="239.0" styleClass="item">
                <children>
                     <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="11.0" prefHeight="14.0" prefWidth="230.0" text="itemLabel" textAlignment="CENTER" />
                   <Label alignment="CENTER" layoutX="6.0" layoutY="53.0" prefHeight="21.0" prefWidth="218.0" text="Handla som:" textAlignment="CENTER">
