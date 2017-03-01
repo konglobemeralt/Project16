@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="287.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ImageView fx:id="productImage" fitHeight="155.0" fitWidth="287.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
-        <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="69.0" layoutY="157.0" prefHeight="30.0" prefWidth="150.0" text="itemLabel" textAlignment="CENTER" />
-      <Button id="increaseProductButton" layoutX="89.0" layoutY="196.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
-      <TextField alignment="CENTER" layoutX="119.0" layoutY="196.0" prefHeight="30.0" prefWidth="50.0" />
-      <Button layoutX="169.0" layoutY="196.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+" />
+      <Button id="increaseProductButton" layoutX="64.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
+      <TextField alignment="CENTER" layoutX="97.0" layoutY="267.0" prefHeight="30.0" prefWidth="50.0" />
+      <Button layoutX="150.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+" />
+      <SplitPane dividerPositions="0.5551330798479087" orientation="VERTICAL" prefHeight="265.0" prefWidth="243.0" style="-fx-border-color: #111111;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;">
+               <children>
+                    <ImageView fx:id="productImage" fitHeight="141.0" fitWidth="187.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="243.0">
+               <children>
+                    <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="11.0" prefHeight="14.0" prefWidth="230.0" text="itemLabel" textAlignment="CENTER" />
+                  <Label alignment="CENTER" layoutX="6.0" layoutY="53.0" prefHeight="21.0" prefWidth="218.0" text="Handla som:" textAlignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <RadioButton layoutX="21.0" layoutY="78.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="61.0" text="Kg">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton layoutX="141.0" layoutY="78.0" mnemonicParsing="false" text="Antal">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </RadioButton>
+                  <Separator blendMode="EXCLUSION" layoutY="55.0" prefHeight="0.0" prefWidth="239.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
     </children>
 </javafx.scene.layout.AnchorPane>

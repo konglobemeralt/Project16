@@ -14,9 +14,9 @@
 
 <javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <Button id="increaseProductButton" layoutX="67.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
-      <TextField alignment="CENTER" layoutX="97.0" layoutY="265.0" prefHeight="30.0" prefWidth="50.0" />
-      <Button layoutX="147.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+" />
+      <Button id="increaseProductButton" layoutX="64.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="-" />
+      <TextField alignment="CENTER" layoutX="97.0" layoutY="267.0" prefHeight="30.0" prefWidth="50.0" />
+      <Button layoutX="150.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" text="+" />
       <SplitPane dividerPositions="0.5551330798479087" orientation="VERTICAL" prefHeight="265.0" prefWidth="243.0" style="-fx-border-color: #111111;">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;">

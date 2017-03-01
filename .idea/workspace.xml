@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/ItemController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/ItemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/ProductView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/ProductView.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/CategoriesPanel.fxml" afterPath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/CategoriesPanel.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/item.fxml" afterPath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/item.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/item.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/item.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -59,7 +58,7 @@
       <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
+            <state relative-caret-position="1408">
               <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding />
             </state>
@@ -656,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488376365769</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Images now showing. Can only be inside splitpane. Have added borders to make it look better&#10;&#10;">
+      <created>1488381847585</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1488381847585</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -745,7 +751,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed the centralView. Have a problem with images not showing.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the centralView. Have a problem with images not showing.&#10;" />
+    <MESSAGE value="Images now showing. Can only be inside splitpane. Have added borders to make it look better&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Images now showing. Can only be inside splitpane. Have added borders to make it look better&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1030,7 +1037,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="1408">
           <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding />
         </state>
