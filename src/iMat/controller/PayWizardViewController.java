@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -16,6 +17,7 @@ import javafx.scene.layout.Region;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class PayWizardViewController {
@@ -35,7 +37,6 @@ public class PayWizardViewController {
     @FXML
     private Tab payment;
 
-    private Tab currentTab;
 
     //Reference the main application
     private Main main;
@@ -44,14 +45,17 @@ public class PayWizardViewController {
         this.main = main;
     }
 
-    public void initialize() {
-        // TODO kanske dumt att dessa saker körs varje gång vi trycker på "Gå till kassan", det blir dubletter
-        // TODO om vi skriver FXML framför så kommer den köras en enda gång :) men då får vi ändra annat här
-        // TODO det går faktiskt väldigt segt när en trycker på knappen, får nog fixa detta
-        currentTab = overview;
-        tabPane.getSelectionModel().select(currentTab);
+    public void showOverviewTab(){
+        tabPane.getSelectionModel().select(overview);
 
+        updateTabEnabledStatus();
+        updateShoppingBagGrid();
+    }
+
+    @FXML
+    public void initialize() {
         Customer customer = main.iMat.getCustomer();
+
         firstNameArea.setText(customer.getFirstName());
         lastNameArea.setText(customer.getLastName());
         phoneArea.setText(customer.getPhoneNumber());
@@ -101,8 +105,47 @@ public class PayWizardViewController {
             }
         });
 
-        ObservableList<String> times  = FXCollections.observableArrayList("-Välj ett tidsintervall-", "test", "mjau", "cool");
-        ObservableList<String> dates  = FXCollections.observableArrayList("-Välj ett datum-", "testdag 2 mars", "fuldag 3 mars", "loldag 4 mars");
+        //TODO gör vettiga värden
+
+        LocalDate today = LocalDate.now();
+
+        int dayIndex = 0, monthIndex = 0, dayNumber = today.getDayOfMonth();
+
+        String[] weekdays = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
+        String[] translatedWeekdays = {"Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"};
+
+        for (int i = 0; i < weekdays.length; i++){
+            if (today.getDayOfWeek().toString().equals(weekdays[i])){
+                dayIndex = i;
+                break;
+            }
+        }
+
+        String[] months = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
+        String[] translatedMonths = {"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"};
+
+        for (int i = 0; i < months.length; i++){
+            if (today.getMonth().toString().equals(months[i])){
+                monthIndex = i;
+                break;
+            }
+        }
+
+        String[] displayDates = new String[7];
+
+        for (int i = 0; i < 5; i++){
+            dayIndex = (dayIndex + 1) % 7;
+            if (dayNumber + 1 >= today.lengthOfMonth()){
+                dayNumber = 0;
+                monthIndex = (monthIndex + 1) % 12;
+            }
+            dayNumber++;
+            displayDates[i] = translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex];
+            //System.out.println(translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex]);
+        }
+
+        ObservableList<String> times  = FXCollections.observableArrayList( "08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", "16:00 - 18:00", "18:00 - 20:00");
+        ObservableList<String> dates  = FXCollections.observableArrayList( displayDates[0], displayDates[1], displayDates[2], displayDates[3], displayDates[4], displayDates[5]);
 
         dateComboBox.setItems(dates);
         timeComboBox.setItems(times);
@@ -118,10 +161,6 @@ public class PayWizardViewController {
                 }
             });
         }
-
-        updateTabEnabledStatus();
-        updateShoppingBagGrid();
-
     }
 
     @FXML
@@ -165,6 +204,9 @@ public class PayWizardViewController {
     @FXML
     private void nextButtonPressed(ActionEvent a) {
 
+        Tab currentTab = tabPane.getSelectionModel().getSelectedItem();
+
+
         if (currentTab.equals(overview)) {
             currentTab = credentials;
         } else if (currentTab.equals(credentials)) {
@@ -180,6 +222,8 @@ public class PayWizardViewController {
 
     @FXML
     private void backButtonPressed(ActionEvent a) {
+
+        Tab currentTab = tabPane.getSelectionModel().getSelectedItem();
 
         if (currentTab.equals(payment)) {
             currentTab = delivery;
@@ -234,9 +278,11 @@ public class PayWizardViewController {
         shoppingBagGrid.addColumn(3);
         shoppingBagGrid.getColumnConstraints().set(3, new ColumnConstraints(30));
         shoppingBagGrid.addColumn(4);
-        ColumnConstraints a = new ColumnConstraints(120, 120, 120);
+        /*ColumnConstraints a = new ColumnConstraints(120, 120, 120);
         a.setMaxWidth(Region.USE_COMPUTED_SIZE);
-        shoppingBagGrid.getColumnConstraints().set(4, a);
+        a.setPrefWidth(Region.USE_COMPUTED_SIZE);
+        shoppingBagGrid.getColumnConstraints().set(4, a);*/
+        shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(500, 500, 500));
         shoppingBagGrid.addColumn(5);
         shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(30));
 
@@ -290,8 +336,9 @@ public class PayWizardViewController {
             amountTextArea.setText(s.getAmount() + " " + s.getProduct().getUnitSuffix());
             shoppingBagGrid.add(amountTextArea, 2, index);
             shoppingBagGrid.add(addButton, 3, index);
-            shoppingBagGrid.add(new Label("" + s.getTotal() + " kr"), 4, index);
-
+            Label priceLabel = new Label("  " + s.getTotal() + " kr");
+            priceLabel.paddingProperty().set(new Insets(0, 0, 0, 200));
+            shoppingBagGrid.add(priceLabel, 4, index);
             shoppingBagGrid.add(removeButton, 5, index);
         }
 
@@ -421,7 +468,7 @@ public class PayWizardViewController {
     private boolean isDeliveryFinished() {
         int d =  dateComboBox.getSelectionModel().getSelectedIndex();
         int t = timeComboBox.getSelectionModel().getSelectedIndex();
-        return  d > 0 && t > 0;
+        return  d != -1 && d != 5 && t != -1; // The 5 is there because of the error
     }
 
     //----------------Payment----------------\\

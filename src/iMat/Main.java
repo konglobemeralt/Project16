@@ -15,6 +15,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class Main extends Application {
 
@@ -44,6 +45,7 @@ public class Main extends Application {
 
         iMat.getCustomer().setFirstName("Kalle");
         iMat.getCustomer().setLastName("Moraeus");
+
     }
 
     private void showMainView() throws IOException {
@@ -94,7 +96,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         PayWizardViewController controller = loader.getController();
         controller.setMain(this);
-        controller.initialize();
+        controller.showOverviewTab();
 
     }
 
