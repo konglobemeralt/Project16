@@ -14,7 +14,7 @@
    <content>
       <AnchorPane fx:id="kundKorgPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="300.0">
          <children>
-            <Button fx:id="payButton" layoutY="600.0" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="50.0" prefWidth="300.0" text="Gå till kassan" AnchorPane.bottomAnchor="0.0">
+            <Button layoutY="600.0" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="50.0" prefWidth="300.0" text="Gå till kassan" AnchorPane.bottomAnchor="0.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -34,12 +34,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="542.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="80.0">
+            <Label fx:id="numberOfItemsLabel" layoutX="200.0" layoutY="542.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="80.0">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="200.0" layoutY="572.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="50.0">
+            <Label fx:id="totalPriceLabel" layoutX="200.0" layoutY="572.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="50.0">
                <font>
                   <Font size="14.0" />
                </font>

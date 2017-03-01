@@ -38,11 +38,11 @@ public class MainViewController {
                 main.showShoppingBagView();
             }
             catch (IOException e){
-                //Avsluta
+                e.printStackTrace();
             }
         }
         else{
-            main.getMainLayout().setRight(null);
+            main.hideShoppingBag();
         }
 
     }

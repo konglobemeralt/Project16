@@ -43,7 +43,7 @@ public class ItemController extends AnchorPane implements Initializable {
     public ItemController(ShoppingItem shoppingItem) {
         System.out.println("init item");
 
-        ImageView image = new ImageView(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
+        ImageView image = new ImageView(main.iMat.getFXImage(shoppingItem.getProduct()));
         image.setFitHeight(100);
         image.setFitWidth(100);
         Button tempButton = new Button(shoppingItem.getProduct().getName(), image);
@@ -59,7 +59,7 @@ public class ItemController extends AnchorPane implements Initializable {
         this.shoppingItem = shoppingItem;
         System.out.println("Name of product: "  + shoppingItem.getProduct().getName());
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
-        //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
+        //productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
     }
 
 

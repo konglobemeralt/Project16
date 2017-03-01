@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
@@ -19,14 +20,16 @@ import java.util.List;
 public class ShoppingBagController {
 
 
+
     @FXML
     private GridPane shoppingBagGrid;
 
     @FXML
-    private AnchorPane kundKorgPanel;
+    private Label numberOfItemsLabel;
 
     @FXML
-    private Button payButton;
+    private Label totalPriceLabel;
+
 
     //Reference the main application
     private Main main;
@@ -39,6 +42,7 @@ public class ShoppingBagController {
     private void payButtonPressed(ActionEvent event) {
         try {
             main.showPayWizardView();
+            main.hideShoppingBag();
         }
         catch (IOException e){
             e.printStackTrace();
@@ -46,6 +50,9 @@ public class ShoppingBagController {
     }
 
     public void updateShoppingBagGrid() {
+
+        numberOfItemsLabel.setText(""+main.iMat.getShoppingCart().getItems().size());
+        totalPriceLabel.setText(""+main.iMat.getShoppingCart().getTotal());
 
         //Clear grid
         shoppingBagGrid.getChildren().clear();
@@ -62,7 +69,7 @@ public class ShoppingBagController {
         shoppingBagGrid.addColumn(5);
         shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(32));
 
-        List<ShoppingItem> shoppingItems = IMatDataHandler.getInstance().getShoppingCart().getItems();
+        List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
 
         for (int index = 0; index < shoppingItems.size(); index++) {
 
@@ -121,30 +128,25 @@ public class ShoppingBagController {
     }
 
     private void removeButtonPressed(){
-
-        IMatDataHandler iMat = IMatDataHandler.getInstance();
-
         for (Node n: shoppingBagGrid.getChildren()) {
             if (n.isFocused()){
                 int removeIndex = Character.getNumericValue((n.getId()).charAt(0));
-                iMat.getShoppingCart().removeItem(removeIndex);
+                main.iMat.getShoppingCart().removeItem(removeIndex);
             }
         }
         updateShoppingBagGrid();
     }
 
     private void addOrSubtractButtonPressed(boolean add){
-        IMatDataHandler iMat = IMatDataHandler.getInstance();
-
         for (Node n: shoppingBagGrid.getChildren()) {
             if (n.isFocused()){
                 int index = Character.getNumericValue((n.getId()).charAt(0));
-                double newAmount = add ? iMat.getShoppingCart().getItems().get(index).getAmount() + 1:  iMat.getShoppingCart().getItems().get(index).getAmount() - 1;
+                double newAmount = add ? main.iMat.getShoppingCart().getItems().get(index).getAmount() + 1:  main.iMat.getShoppingCart().getItems().get(index).getAmount() - 1;
                 if (newAmount > 0){
-                    iMat.getShoppingCart().getItems().get(index).setAmount(newAmount);
+                    main.iMat.getShoppingCart().getItems().get(index).setAmount(newAmount);
                 }
                 else {
-                    iMat.getShoppingCart().removeItem(index);
+                    main.iMat.getShoppingCart().removeItem(index);
                 }
             }
         }
@@ -153,16 +155,17 @@ public class ShoppingBagController {
 
     private void amountTextAreaChanged(){
         //TODO
-        /*IMatDataHandler iMat = IMatDataHandler.getInstance();
 
-        for (Node n: shoppingBagGrid.getChildren()) {
+        /*for (Node n: shoppingBagGrid.getChildren()) {
             if (n.isFocused()){
                 int index = Character.getNumericValue((n.getId()).charAt(0));
-                //iMat.getShoppingCart().removeItem(removeIndex);
+                //main.iMat.getShoppingCart().removeItem(removeIndex);
             }
         }
         updateShoppingBagGrid();*/
     }
+
+
 
 
 }
