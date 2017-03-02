@@ -16,7 +16,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.List;
-
+import javafx.geometry.Insets;
 public class ShoppingBagController {
 
 
@@ -74,7 +74,8 @@ public class ShoppingBagController {
         for (int index = 0; index < shoppingItems.size(); index++) {
 
             //Initialize all components
-            Button subtractButton = new Button("-");
+            Button subtractButton = new Button("");
+
             subtractButton.setPrefWidth(32);
             subtractButton.setMaxWidth(32);
             subtractButton.setMinWidth(32);
@@ -82,9 +83,11 @@ public class ShoppingBagController {
             subtractButton.setMaxHeight(32);
             subtractButton.setMinHeight(32);
             subtractButton.setId(index+"subtractButton");
+            subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
 
-            Button addButton = new Button("+");
+
+            Button addButton = new Button("");
             addButton.setPrefWidth(32);
             addButton.setMaxWidth(32);
             addButton.setMinWidth(32);
@@ -92,9 +95,10 @@ public class ShoppingBagController {
             addButton.setMaxHeight(32);
             addButton.setMinHeight(32);
             addButton.setId(index+"addButton");
+            addButton.getStyleClass().add("addButton");
             addButton.setOnAction((e) -> addOrSubtractButtonPressed(true));
 
-            Button removeButton = new Button("X");
+            Button removeButton = new Button("");
             removeButton.setPrefHeight(32);
             removeButton.setMinHeight(32);
             removeButton.setMaxHeight(32);
@@ -102,6 +106,7 @@ public class ShoppingBagController {
             removeButton.setMinWidth(32);
             removeButton.setMaxWidth(32);
             removeButton.setId(index+"removeButton");
+            removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
 

@@ -17,6 +17,11 @@ public class MainViewController {
     //Reference the main application
     private Main main;
 
+    private ProductViewController  ProductViewController ;
+    public void setProductViewController(ProductViewController ProductViewController) {
+        this.ProductViewController = ProductViewController ;
+    }
+
     public void setMain(Main main) {
         this.main = main;
     }
@@ -48,11 +53,11 @@ public class MainViewController {
     }
     public void searchButtonPressed(ActionEvent event){
         System.out.print("search Button pressed. ");
-        searchForItem(event);
     }
 
-    public void searchForItem(ActionEvent event){
+    public void searchFieldEnterPressed(ActionEvent event){
         System.out.println("Searched for: " + searchBarMain.getText());
+
     }
 
 }
