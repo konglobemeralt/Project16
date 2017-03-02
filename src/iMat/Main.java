@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -104,8 +105,8 @@ public class Main extends Application {
 
     public void showShoppingBagView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/ShoppingBag.fxml"));
-        ScrollPane shoppingBagPanel = loader.load();
+        loader.setLocation(Main.class.getResource("view/ShoppingBag2.fxml"));
+        TitledPane shoppingBagPanel = loader.load();
         mainLayout.setRight(shoppingBagPanel);
 
         //Send a reference of main to the controller
