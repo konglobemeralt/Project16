@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ItemController extends AnchorPane implements Initializable {
+public class itemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
@@ -40,7 +40,7 @@ public class ItemController extends AnchorPane implements Initializable {
 
     private ShoppingItem shoppingItem;
 
-    public ItemController(ShoppingItem shoppingItem)  {
+    public itemController(ShoppingItem shoppingItem)  {
         System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
