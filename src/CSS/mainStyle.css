@@ -54,7 +54,14 @@
    -fx-background-position: center;
 }
 
-.favouriteButtonPressed{
+.favouriteButton:selected{
+ -fx-base: rgba(0,0,0,0.0);
+ -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+}
+
+.favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);
  -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
