@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.shape.*?>
 <?import java.lang.*?>
@@ -14,7 +15,6 @@
 
 <javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <Button id="increaseProductButton" layoutX="64.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="subtractButton" />
       <TextField alignment="CENTER" layoutX="97.0" layoutY="267.0" prefHeight="30.0" prefWidth="50.0" />
       <Button layoutX="150.0" layoutY="267.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="addButton" />
       <SplitPane dividerPositions="0.5551330798479087" orientation="VERTICAL" prefHeight="265.0" prefWidth="243.0" style="-fx-border-color: #111111;">
@@ -22,6 +22,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;">
                <children>
                     <ImageView fx:id="productImage" fitHeight="141.0" fitWidth="187.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button id="increaseProductButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="243.0">
