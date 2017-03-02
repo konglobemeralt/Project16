@@ -15,11 +15,14 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class Main extends Application {
 
     private Stage primaryStage;
     private BorderPane mainLayout;
+
+    public static IMatDataHandler iMat = IMatDataHandler.getInstance();
 
 
     @Override
@@ -32,7 +35,6 @@ public class Main extends Application {
         showProductView();
 
         //Test
-        IMatDataHandler iMat = IMatDataHandler.getInstance();
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(1), 1));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(2), 4));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(3), 3));
@@ -41,6 +43,10 @@ public class Main extends Application {
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(6), 2.5));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(7), 9));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(8), 1));
+
+        iMat.getCustomer().setFirstName("Kalle");
+        iMat.getCustomer().setLastName("Moraeus");
+
     }
 
     private void showMainView() throws IOException {
@@ -91,6 +97,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         PayWizardViewController controller = loader.getController();
         controller.setMain(this);
+        controller.showOverviewTab();
 
     }
 
@@ -104,6 +111,10 @@ public class Main extends Application {
         ShoppingBagController controller = loader.getController();
         controller.setMain(this);
         controller.updateShoppingBagGrid();
+    }
+
+    public void hideShoppingBag(){
+        mainLayout.setRight(null);
     }
 
 
