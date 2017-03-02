@@ -20,7 +20,8 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
- class ItemController extends AnchorPane implements Initializable {
+
+public class itemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
@@ -37,9 +38,9 @@ import java.util.ResourceBundle;
 
     private BorderPane mainLayout;
 
-    ShoppingItem shoppingItem;
+    private ShoppingItem shoppingItem;
 
-    public ItemController(ShoppingItem shoppingItem)  {
+    public itemController(ShoppingItem shoppingItem)  {
         System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
@@ -48,7 +49,7 @@ import java.util.ResourceBundle;
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
+            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         }
         catch (IOException e)
@@ -60,8 +61,6 @@ import java.util.ResourceBundle;
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
-
-
 
 
     @Override
