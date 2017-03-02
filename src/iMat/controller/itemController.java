@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class itemController extends AnchorPane implements Initializable {
+public class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
@@ -38,9 +38,9 @@ public class itemController extends AnchorPane implements Initializable {
 
     private BorderPane mainLayout;
 
-    private ShoppingItem shoppingItem;
+    ShoppingItem shoppingItem;
 
-    public itemController(ShoppingItem shoppingItem)  {
+    public ItemController(ShoppingItem shoppingItem)  {
         System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
@@ -49,7 +49,7 @@ public class itemController extends AnchorPane implements Initializable {
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
+            this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         }
         catch (IOException e)
