@@ -20,8 +20,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-public class ItemController extends AnchorPane implements Initializable {
+ class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
@@ -61,6 +60,8 @@ public class ItemController extends AnchorPane implements Initializable {
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
+
+
 
 
     @Override
