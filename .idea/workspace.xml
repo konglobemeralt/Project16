@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CSS/img/ic_favorite_border_black_24dp_1x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/out/production/iMatTest/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/item.fxml" afterPath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/item.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/itemController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/itemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/item.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/item.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/payWizardView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/payWizardView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +31,18 @@
       <file leaf-file-name="PayWizardViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="313" column="50" selection-start-line="313" selection-start-column="50" selection-end-line="313" selection-end-column="50" />
+            <state relative-caret-position="391">
+              <caret line="267" column="85" selection-start-line="267" selection-start-column="85" selection-end-line="267" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -77,14 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ic_clear_black_24dp_1x.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_clear_black_24dp_1x.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ic_favorite_black_24dp_1x.png" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ic_favorite_black_24dp_1x.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_favorite_black_24dp_1x.png">
           <provider selected="true" editor-type-id="images">
             <state />
@@ -160,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/iMat/view/ProductView.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/view/MainView.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ItemController.java" />
-        <option value="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/Main.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ProductViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
@@ -168,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java" />
         <option value="$PROJECT_DIR$/src/CSS/mainStyle.css" />
         <option value="$PROJECT_DIR$/src/iMat/controller/itemController.java" />
+        <option value="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
       </list>
     </option>
   </component>
@@ -980,22 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="35" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1019,15 +1002,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_clear_black_24dp_1x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_favorite_border_black_24dp_2x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="313" column="50" selection-start-line="313" selection-start-column="50" selection-end-line="313" selection-end-column="50" />
+        <state relative-caret-position="374">
+          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_favorite_border_black_24dp_2x.png">
+    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_favorite_black_24dp_1x.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1053,14 +1046,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_clear_black_24dp_1x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="267" column="85" selection-start-line="267" selection-start-column="85" selection-end-line="267" selection-end-column="85" />
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/img/ic_favorite_black_24dp_1x.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

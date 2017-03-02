@@ -291,7 +291,7 @@ public class PayWizardViewController {
         for (int index = 0; index < shoppingItems.size(); index++) {
 
             //Initialize all components
-            Button subtractButton = new Button("-");
+            Button subtractButton = new Button("");
             subtractButton.setPrefWidth(30);
             subtractButton.setMaxWidth(30);
             subtractButton.setMinWidth(30);
@@ -299,9 +299,10 @@ public class PayWizardViewController {
             subtractButton.setMaxHeight(30);
             subtractButton.setMinHeight(30);
             subtractButton.setId(index + "subtractButton");
+            subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
 
-            Button addButton = new Button("+");
+            Button addButton = new Button("");
             addButton.setPrefWidth(30);
             addButton.setMaxWidth(30);
             addButton.setMinWidth(30);
@@ -309,9 +310,10 @@ public class PayWizardViewController {
             addButton.setMaxHeight(30);
             addButton.setMinHeight(30);
             addButton.setId(index + "addButton");
+            addButton.getStyleClass().add("addButton");
             addButton.setOnAction((e) -> addOrSubtractButtonPressed(true));
 
-            Button removeButton = new Button("X");
+            Button removeButton = new Button("");
             removeButton.setPrefHeight(30);
             removeButton.setMinHeight(30);
             removeButton.setMaxHeight(30);
@@ -319,6 +321,7 @@ public class PayWizardViewController {
             removeButton.setMinWidth(30);
             removeButton.setMaxWidth(30);
             removeButton.setId(index + "removeButton");
+            removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
 
