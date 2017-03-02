@@ -62,7 +62,6 @@ public class itemController extends AnchorPane implements Initializable {
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
