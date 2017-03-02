@@ -8,6 +8,45 @@
     -fx-background-radius: 10;
 }
 
+.button{
+ -fx-font-size: 10pt;
+-fx-font-weight: bold;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #575757;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
 .favouriteButton{
  -fx-base: rgba(0,0,0,0.0);
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");

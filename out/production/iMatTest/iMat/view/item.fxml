@@ -22,7 +22,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="186.0" prefWidth="243.0" style="-fx-background-color: #ffffff;">
                <children>
                     <ImageView fx:id="productImage" fitHeight="141.0" fitWidth="187.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button id="increaseProductButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton" />
+                  <Button id="increaseProductButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"  prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="243.0">
