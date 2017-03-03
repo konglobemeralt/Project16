@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/Main.java" afterPath="$PROJECT_DIR$/src/iMat/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/ItemController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/ItemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/ProductViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/ProductViewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/item.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/item.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +44,8 @@
       <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state relative-caret-position="60">
+              <caret line="114" column="22" lean-forward="false" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -983,8 +981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+        <state relative-caret-position="60">
+          <caret line="114" column="22" lean-forward="false" selection-start-line="114" selection-start-column="22" selection-end-line="114" selection-end-column="22" />
           <folding />
         </state>
       </provider>

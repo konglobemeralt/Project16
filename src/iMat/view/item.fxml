@@ -16,10 +16,10 @@
 
 <javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="243.0" style="-fx-border-color: #123456;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-    <AnchorPane layoutX="2.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="166.0" prefWidth="239.0" style="-fx-background-color: #000000; -fx-border-color: #000000;">
+    <AnchorPane layoutX="2.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="217.0" prefWidth="239.0" style="-fx-background-color: #5FB3B3;; -fx-border-color: #000000;">
          <children>
               <ImageView fx:id="productImage" fitHeight="181.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" />
-            <Button id="increaseProductButton" mnemonicParsing="false" onAction="#favouritedItem" onMouseClicked="#favouritedItem" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton" />
+            <Button id="increaseProductButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton" />
          </children>
       </AnchorPane>
       <TextField alignment="CENTER" layoutX="97.0" layoutY="267.0" prefHeight="30.0" prefWidth="50.0" />
@@ -35,9 +35,9 @@
          </font>
       </RadioButton>
       <Separator blendMode="EXCLUSION" layoutX="2.0" layoutY="264.0" prefHeight="0.0" prefWidth="239.0" />
-        <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="179.0" prefHeight="38.0" prefWidth="230.0" text="itemLabel " textAlignment="CENTER">
+        <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="179.0" prefHeight="38.0" prefWidth="230.0" text="itemLabel" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="26.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
       <Label alignment="CENTER" layoutX="-44.0" layoutY="217.0" prefHeight="47.0" prefWidth="218.0" text="Välj enhet:" textAlignment="CENTER">
