@@ -43,7 +43,7 @@
             <state relative-caret-position="3053">
               <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
-                <marker date="1488559871950" expanded="true" signature="2723:2805" ph="..." />
+                <marker date="1488560056783" expanded="true" signature="2731:2813" ph="..." />
               </folding>
             </state>
           </provider>
@@ -780,7 +780,7 @@
       <workItem from="1488211025676" duration="1933000" />
       <workItem from="1488486033000" duration="46000" />
       <workItem from="1488486141074" duration="336000" />
-      <workItem from="1488558408169" duration="1487000" />
+      <workItem from="1488558408169" duration="1655000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed the centralView. Have a problem with images not showing.&#10;">
       <created>1488376365769</created>
@@ -814,7 +814,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13448000" />
+    <option name="totallyTimeSpent" value="13616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -1114,7 +1114,7 @@
         <state relative-caret-position="3053">
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <marker date="1488559871950" expanded="true" signature="2723:2805" ph="..." />
+            <marker date="1488560056783" expanded="true" signature="2731:2813" ph="..." />
           </folding>
         </state>
       </provider>

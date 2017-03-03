@@ -37,22 +37,22 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="fishButton" layoutX="22.0" layoutY="134.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Kött och fisk">
+      <Button fx:id="meatAndFishButton" layoutX="22.0" layoutY="134.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Kött och fisk">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="meatButton" layoutX="22.0" layoutY="174.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Skafferi">
+      <Button fx:id="pentryButton" layoutX="22.0" layoutY="174.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Skafferi">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="pantryButton" layoutX="22.0" layoutY="213.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Bageri">
+      <Button fx:id="breadButton" layoutX="22.0" layoutY="213.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Bageri">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="breadButton" layoutX="23.0" layoutY="253.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Mejeri">
+      <Button fx:id="dairyButton" layoutX="23.0" layoutY="253.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="202.0" text="Mejeri">
          <font>
             <Font size="18.0" />
          </font>
