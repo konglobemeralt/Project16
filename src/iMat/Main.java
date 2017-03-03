@@ -34,7 +34,8 @@ public class Main extends Application {
         this.primaryStage.setResizable(false);
         showMainView();
         showCategoriesView();
-        showProductView();
+        //showProductView();
+
 
         //Test
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(1), 1));
@@ -92,7 +93,7 @@ public class Main extends Application {
 
     public void showPayWizardView()throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/PayWizardView.fxml"));
+        loader.setLocation(Main.class.getResource("view/PayWizard2.0.fxml"));
         TabPane tabPane = loader.load();
         mainLayout.setCenter(tabPane);
 
@@ -105,8 +106,8 @@ public class Main extends Application {
 
     public void showShoppingBagView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/ShoppingBag2.fxml"));
-        TitledPane shoppingBagPanel = loader.load();
+        loader.setLocation(Main.class.getResource("view/ShoppingBag.fxml"));
+        ScrollPane shoppingBagPanel = loader.load();
         mainLayout.setRight(shoppingBagPanel);
 
         //Send a reference of main to the controller

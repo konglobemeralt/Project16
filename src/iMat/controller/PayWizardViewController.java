@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.*;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -32,10 +29,10 @@ public class PayWizardViewController {
     private Tab credentials;
 
     @FXML
-    private Tab delivery;
+    private Tab deliveryPayment;
 
     @FXML
-    private Tab payment;
+    private Tab confirmation;
 
 
     //Reference the main application
@@ -45,7 +42,7 @@ public class PayWizardViewController {
         this.main = main;
     }
 
-    public void showOverviewTab(){
+    public void showOverviewTab() {
         tabPane.getSelectionModel().select(overview);
 
         updateTabEnabledStatus();
@@ -105,8 +102,6 @@ public class PayWizardViewController {
             }
         });
 
-        //TODO gör vettiga värden
-
         LocalDate today = LocalDate.now();
 
         int dayIndex = 0, monthIndex = 0, dayNumber = today.getDayOfMonth();
@@ -114,8 +109,8 @@ public class PayWizardViewController {
         String[] weekdays = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
         String[] translatedWeekdays = {"Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"};
 
-        for (int i = 0; i < weekdays.length; i++){
-            if (today.getDayOfWeek().toString().equals(weekdays[i])){
+        for (int i = 0; i < weekdays.length; i++) {
+            if (today.getDayOfWeek().toString().equals(weekdays[i])) {
                 dayIndex = i;
                 break;
             }
@@ -124,8 +119,8 @@ public class PayWizardViewController {
         String[] months = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
         String[] translatedMonths = {"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"};
 
-        for (int i = 0; i < months.length; i++){
-            if (today.getMonth().toString().equals(months[i])){
+        for (int i = 0; i < months.length; i++) {
+            if (today.getMonth().toString().equals(months[i])) {
                 monthIndex = i;
                 break;
             }
@@ -133,28 +128,33 @@ public class PayWizardViewController {
 
         String[] displayDates = new String[7];
 
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 5; i++) {
             dayIndex = (dayIndex + 1) % 7;
-            if (dayNumber + 1 >= today.lengthOfMonth()){
+            if (dayNumber + 1 >= today.lengthOfMonth()) {
                 dayNumber = 0;
                 monthIndex = (monthIndex + 1) % 12;
             }
             dayNumber++;
-            displayDates[i] = translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex];
-            //System.out.println(translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex]);
+            if (i > 1) {
+                displayDates[i] = translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex];
+            } else if (i == 0) {
+                displayDates[i] = "Imorgon" + " " + dayNumber + " " + translatedMonths[monthIndex];
+            } else if (i == 1) {
+                displayDates[i] = "Övermorgon" + " " + dayNumber + " " + translatedMonths[monthIndex];
+            }
         }
 
-        ObservableList<String> times  = FXCollections.observableArrayList( "08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", "16:00 - 18:00", "18:00 - 20:00");
-        ObservableList<String> dates  = FXCollections.observableArrayList( displayDates[0], displayDates[1], displayDates[2], displayDates[3], displayDates[4], displayDates[5]);
+        ObservableList<String> times = FXCollections.observableArrayList("08:00 - 10:00", "10:00 - 12:00", "12:00 - 14:00", "14:00 - 16:00", "16:00 - 18:00", "18:00 - 20:00");
+        ObservableList<String> dates = FXCollections.observableArrayList(displayDates[0], displayDates[1], displayDates[2], displayDates[3], displayDates[4], displayDates[5]);
 
         dateComboBox.setItems(dates);
         timeComboBox.setItems(times);
 
         cardPanel.setVisible(false);
 
-        TextField[]textFields = {cardOwnerArea, cardNumberArea, cardMonthArea, cardYearArea, cardCVCArea};
+        TextField[] textFields = {cardOwnerArea, cardNumberArea, cardMonthArea, cardYearArea, cardCVCArea};
 
-        for (TextField t: textFields) {
+        for (TextField t : textFields) {
             t.textProperty().addListener(new ChangeListener<String>() {
                 public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
                     updateTabEnabledStatus();
@@ -164,7 +164,7 @@ public class PayWizardViewController {
     }
 
     @FXML
-    private void updateTabEnabledStatus(ActionEvent e){
+    private void updateTabEnabledStatus(ActionEvent e) {
         updateTabEnabledStatus();
     }
 
@@ -180,24 +180,19 @@ public class PayWizardViewController {
 
         if (isCredentialsFinished() && !credentials.isDisabled()) {
             credentialsNextButton.setDisable(false);
-            delivery.setDisable(false);
+            deliveryPayment.setDisable(false);
         } else {
             credentialsNextButton.setDisable(true);
-            delivery.setDisable(true);
+            deliveryPayment.setDisable(true);
         }
 
-        if (isDeliveryFinished() && !delivery.isDisabled()) {
+        if (isDeliveryPaymentFinished() && !deliveryPayment.isDisabled()) {
             deliveryNextButton.setDisable(false);
-            payment.setDisable(false);
+            confirmation.setDisable(false);
+            updateConfirmationLabels();
         } else {
             deliveryNextButton.setDisable(true);
-            payment.setDisable(true);
-        }
-
-        if (isPaymentFinished() && !payment.isDisabled()) {
-            confirmationButton.setDisable(false);
-        } else {
-            confirmationButton.setDisable(true);
+            confirmation.setDisable(true);
         }
     }
 
@@ -210,9 +205,9 @@ public class PayWizardViewController {
         if (currentTab.equals(overview)) {
             currentTab = credentials;
         } else if (currentTab.equals(credentials)) {
-            currentTab = delivery;
-        } else if (currentTab.equals(delivery)) {
-            currentTab = payment;
+            currentTab = deliveryPayment;
+        } else if (currentTab.equals(deliveryPayment)) {
+            currentTab = confirmation;
         }
 
         updateTabEnabledStatus();
@@ -225,9 +220,9 @@ public class PayWizardViewController {
 
         Tab currentTab = tabPane.getSelectionModel().getSelectedItem();
 
-        if (currentTab.equals(payment)) {
-            currentTab = delivery;
-        } else if (currentTab.equals(delivery)) {
+        if (currentTab.equals(confirmation)) {
+            currentTab = deliveryPayment;
+        } else if (currentTab.equals(deliveryPayment)) {
             currentTab = credentials;
         } else if (currentTab.equals(credentials)) {
             currentTab = overview;
@@ -278,10 +273,6 @@ public class PayWizardViewController {
         shoppingBagGrid.addColumn(3);
         shoppingBagGrid.getColumnConstraints().set(3, new ColumnConstraints(30));
         shoppingBagGrid.addColumn(4);
-        /*ColumnConstraints a = new ColumnConstraints(120, 120, 120);
-        a.setMaxWidth(Region.USE_COMPUTED_SIZE);
-        a.setPrefWidth(Region.USE_COMPUTED_SIZE);
-        shoppingBagGrid.getColumnConstraints().set(4, a);*/
         shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(500, 500, 500));
         shoppingBagGrid.addColumn(5);
         shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(30));
@@ -290,7 +281,12 @@ public class PayWizardViewController {
 
         for (int index = 0; index < shoppingItems.size(); index++) {
 
+            ShoppingItem shoppingItem = shoppingItems.get(index);
+            shoppingBagGrid.addRow(index);
+
             //Initialize all components
+            Label productLabel = new Label("  " + shoppingItem.getProduct().getName());
+
             Button subtractButton = new Button("");
             subtractButton.setPrefWidth(30);
             subtractButton.setMaxWidth(30);
@@ -324,25 +320,66 @@ public class PayWizardViewController {
             removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
+            Label priceLabel = new Label("  " + shoppingItem.getTotal() + " kr");
+            priceLabel.paddingProperty().set(new Insets(0, 0, 0, 200));
 
             TextArea amountTextArea = new TextArea("st");
             amountTextArea.setPrefHeight(30);
             amountTextArea.setMinHeight(30);
             amountTextArea.setMaxHeight(30);
             amountTextArea.setId(index + "amountTextArea");
-            amountTextArea.setOnInputMethodTextChanged((e) -> amountTextAreaChanged());
+            amountTextArea.setOnMouseClicked((e) -> amountTextAreaClicked(amountTextArea));
+            amountTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
+                public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                    if (!newPropertyValue) {
+                        amountTextAreaLostFocus(amountTextArea, priceLabel);
+                    }
+                }
+            });
 
-            shoppingBagGrid.addRow(index);
-            ShoppingItem s = shoppingItems.get(index);
-            shoppingBagGrid.add(new Label("  " + s.getProduct().getName()), 0, index);
-            shoppingBagGrid.add(subtractButton, 1, index);
-            amountTextArea.setText(s.getAmount() + " " + s.getProduct().getUnitSuffix());
-            shoppingBagGrid.add(amountTextArea, 2, index);
-            shoppingBagGrid.add(addButton, 3, index);
-            Label priceLabel = new Label("  " + s.getTotal() + " kr");
-            priceLabel.paddingProperty().set(new Insets(0, 0, 0, 200));
-            shoppingBagGrid.add(priceLabel, 4, index);
-            shoppingBagGrid.add(removeButton, 5, index);
+            amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+
+
+            /*if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
+                Pane productPane = new Pane(productLabel);
+                productPane.autosize();
+                productPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(productPane, 0, index);
+
+                Pane subtractPane = new Pane(subtractButton);
+                subtractPane.autosize();
+                subtractPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(subtractPane, 1, index);
+
+                Pane amountTextPane = new Pane(amountTextArea);
+                amountTextPane.autosize();
+                amountTextPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(amountTextPane, 2, index);
+
+                Pane addPane = new Pane(addButton);
+                addPane.autosize();
+                addPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(addPane, 3, index);
+
+                Pane pricePane = new Pane(priceLabel);
+                pricePane.autosize();
+                pricePane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(pricePane, 4, index);
+
+                Pane removePane = new Pane(removeButton);
+                removePane.autosize();
+                removePane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(removePane, 5, index);
+            } else {*/
+                shoppingBagGrid.add(productLabel, 0, index);
+                shoppingBagGrid.add(subtractButton, 1, index);
+                shoppingBagGrid.add(amountTextArea, 2, index);
+                shoppingBagGrid.add(addButton, 3, index);
+                shoppingBagGrid.add(priceLabel, 4, index);
+                shoppingBagGrid.add(removeButton, 5, index);
+            //}
+
+
         }
 
 
@@ -380,16 +417,29 @@ public class PayWizardViewController {
 
     }
 
-    private void amountTextAreaChanged() {
-        //TODO
+    private void amountTextAreaLostFocus(TextArea amount, Label price) {
+        int index = Character.getNumericValue((amount.getId().charAt(0)));
+        ShoppingItem item = main.iMat.getShoppingCart().getItems().get(index);
 
-        /*for (Node n: shoppingBagGrid.getChildren()) {
-            if (n.isFocused()){
-                int index = Character.getNumericValue((n.getId()).charAt(0));
-                //main.iMat.getShoppingCart().removeItem(removeIndex);
-            }
+        try {
+            double newAmount = Double.parseDouble(amount.getText());
+            item.setAmount(newAmount);
+        } catch (NumberFormatException n) {
         }
-        updateShoppingBagGrid();*/
+
+        if (item.getAmount() > 0) {
+            amount.setText(" " + item.getAmount() + " " + item.getProduct().getUnitSuffix());
+            price.setText("  " + item.getTotal() + " kr");
+        } else {
+            main.iMat.getShoppingCart().removeItem(index);
+            updateShoppingBagGrid();
+        }
+
+    }
+
+    private void amountTextAreaClicked(TextArea amount) {
+        amount.setText(amount.getText().split(" ")[0]);
+        amount.selectAll();
     }
 
     //----------------Credentials----------------\\
@@ -434,7 +484,15 @@ public class PayWizardViewController {
 
                 case 4: // Postal Code
                     try {
-                        int number = Integer.parseInt(inputs[i].replace(' ', '0'));
+                        String[] numbers = inputs[i].split(" ");
+                        String number = "";
+                        for (String s : numbers) {
+                            number += s;
+                        }
+                        if (number.length() != 5) {
+                            return false;
+                        }
+                        int testIfNumber = Integer.parseInt(number);
                     } catch (NumberFormatException e) {
                         return false;
                     }
@@ -457,7 +515,7 @@ public class PayWizardViewController {
         updateTabEnabledStatus();
     }
 
-    //----------------Delivery----------------\\
+    //----------------Delivery & Payment----------------\\
 
     @FXML
     private ComboBox<String> dateComboBox;
@@ -468,22 +526,11 @@ public class PayWizardViewController {
     @FXML
     private Button deliveryNextButton;
 
-    private boolean isDeliveryFinished() {
-        int d =  dateComboBox.getSelectionModel().getSelectedIndex();
-        int t = timeComboBox.getSelectionModel().getSelectedIndex();
-        return  d != -1 && d != 5 && t != -1; // The 5 is there because of the error
-    }
-
-    //----------------Payment----------------\\
-
     @FXML
     private ToggleGroup payMethodRadioButtons;
 
     @FXML
     private RadioButton cardRadioButton;
-
-    @FXML
-    private Button confirmationButton;
 
     @FXML
     private AnchorPane cardPanel;
@@ -508,6 +555,10 @@ public class PayWizardViewController {
         cardPanel.setVisible(true);
         cardPanel.setDisable(false);
 
+        if (cardOwnerArea.getText().equals("")) {
+            cardOwnerArea.setText(main.iMat.getCustomer().getFirstName() + " " + main.iMat.getCustomer().getLastName());
+        }
+
         updateTabEnabledStatus();
     }
 
@@ -519,20 +570,25 @@ public class PayWizardViewController {
         updateTabEnabledStatus();
     }
 
+    private boolean isDeliveryPaymentFinished() {
+        int d = dateComboBox.getSelectionModel().getSelectedIndex();
+        int t = timeComboBox.getSelectionModel().getSelectedIndex();
+        if (!(d != -1 && d != 5 && t != -1)) {  // The 5 is there because of the error
+            return false;
+        }
 
-    private boolean isPaymentFinished() {
-        if (cardRadioButton.isSelected()){
+        if (cardRadioButton.isSelected()) {
             String[] inputs = {cardOwnerArea.getText(), cardNumberArea.getText(), cardMonthArea.getText(), cardYearArea.getText(), cardCVCArea.getText()};
 
-            for (int i = 0; i < inputs.length; i++){
-                if (inputs[i].equals("")){
+            for (int i = 0; i < inputs.length; i++) {
+                if (inputs[i].equals("")) {
                     return false;
                 }
 
-                switch (i){
+                switch (i) {
                     case 1: // Card Number
-                        for (char c: inputs[i].toCharArray()) {
-                            if (Character.getNumericValue(c) == -1){
+                        for (char c : inputs[i].toCharArray()) {
+                            if (Character.getNumericValue(c) == -1) {
                                 return false;
                             }
                         }
@@ -541,10 +597,10 @@ public class PayWizardViewController {
                     case 2: // Expiration Month
                         try {
                             int a = Integer.parseInt(inputs[i]);
-                            if (a > 12 || a < 1){
+                            if (a > 12 || a < 1) {
                                 return false;
                             }
-                        } catch (NumberFormatException n){
+                        } catch (NumberFormatException n) {
                             return false;
                         }
                         break;
@@ -552,20 +608,20 @@ public class PayWizardViewController {
                     case 3: // Expiration Year
                         try {
                             int a = Integer.parseInt(inputs[i]);
-                            if (a > 99 || a < 0){
+                            if (a > 99 || a < 0) {
                                 return false;
                             }
-                        } catch (NumberFormatException n){
+                        } catch (NumberFormatException n) {
                             return false;
                         }
                         break;
 
                     case 4: // Card CVC
-                        if (inputs[i].length() != 3){
+                        if (inputs[i].length() != 3) {
                             return false;
                         }
-                        for (char c: inputs[i].toCharArray()) {
-                            if (Character.getNumericValue(c) == -1){
+                        for (char c : inputs[i].toCharArray()) {
+                            if (Character.getNumericValue(c) == -1) {
                                 return false;
                             }
                         }
@@ -575,14 +631,69 @@ public class PayWizardViewController {
 
         }
 
-        for (Toggle t: payMethodRadioButtons.getToggles()) {
+        for (Toggle to : payMethodRadioButtons.getToggles()) {
 
-            if (t.isSelected()){
+            if (to.isSelected()) {
                 return true;
             }
         }
 
         return false;
+    }
+
+    //----------------Confirmation----------------\\
+
+    @FXML
+    private Button confirmationButton;
+
+    @FXML
+    private Label deliveryConfirmationLabel;
+
+    @FXML
+    private Label nameConfirmationLabel;
+
+    @FXML
+    private Label addressConfirmationLabel;
+
+    @FXML
+    private Label postalCodeConfirmationLabel;
+
+    @FXML
+    private Label postAdressConfirmationLabel;
+
+    @FXML
+    private Label paymentConfirmationLabel;
+
+    private void updateConfirmationLabels() {
+        Customer c = main.iMat.getCustomer();
+
+        deliveryConfirmationLabel.setText(timeComboBox.getSelectionModel().getSelectedItem() + " " + dateComboBox.getSelectionModel().getSelectedItem());
+        nameConfirmationLabel.setText(c.getFirstName() + " " + c.getLastName());
+        addressConfirmationLabel.setText(c.getAddress());
+        postalCodeConfirmationLabel.setText(c.getPostCode());
+        postAdressConfirmationLabel.setText(c.getPostAddress());
+
+        String paymentWords = "";
+        for (int i = 0; i < payMethodRadioButtons.getToggles().size(); i++) {
+
+            if (payMethodRadioButtons.getToggles().get(i).isSelected()) {
+                switch (i) {
+                    case 0:
+                        paymentWords = "vid leverans";
+                        break;
+                    case 1:
+                        paymentWords = "med faktura";
+                        break;
+                    case 2:
+                        paymentWords = "via faktura";
+                        break;
+                }
+            }
+        }
+
+        paymentConfirmationLabel.setText(paymentWords);
+
+
     }
 
 }

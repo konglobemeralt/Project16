@@ -38,7 +38,7 @@ public class itemController extends AnchorPane implements Initializable {
 
     private BorderPane mainLayout;
 
-    private ShoppingItem shoppingItem;
+    ShoppingItem shoppingItem;
 
     public itemController(ShoppingItem shoppingItem)  {
         System.out.println("init item");
@@ -49,7 +49,7 @@ public class itemController extends AnchorPane implements Initializable {
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
+            this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         }
         catch (IOException e)

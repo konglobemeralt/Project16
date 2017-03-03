@@ -1,6 +1,8 @@
 package iMat.controller;
 
 import iMat.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -11,14 +13,17 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.List;
-import javafx.geometry.Insets;
-public class ShoppingBagController {
 
+import javafx.geometry.Insets;
+
+public class ShoppingBagController {
 
 
     @FXML
@@ -29,7 +34,6 @@ public class ShoppingBagController {
 
     @FXML
     private Label totalPriceLabel;
-
 
     //Reference the main application
     private Main main;
@@ -43,46 +47,49 @@ public class ShoppingBagController {
         try {
             main.showPayWizardView();
             main.hideShoppingBag();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public void updateShoppingBagGrid() {
+    public synchronized void updateShoppingBagGrid() {
 
-        numberOfItemsLabel.setText(""+main.iMat.getShoppingCart().getItems().size());
-        totalPriceLabel.setText(""+main.iMat.getShoppingCart().getTotal());
+        numberOfItemsLabel.setText("" + main.iMat.getShoppingCart().getItems().size());
+        totalPriceLabel.setText("" + main.iMat.getShoppingCart().getTotal());
 
         //Clear grid
         shoppingBagGrid.getChildren().clear();
         shoppingBagGrid.addColumn(0);
-        shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(84));
+        shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(129));
         shoppingBagGrid.addColumn(1);
         shoppingBagGrid.getColumnConstraints().set(1, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(2);
-        shoppingBagGrid.getColumnConstraints().set(2, new ColumnConstraints(75));
+        shoppingBagGrid.getColumnConstraints().set(2, new ColumnConstraints(100));
         shoppingBagGrid.addColumn(3);
         shoppingBagGrid.getColumnConstraints().set(3, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(4);
-        shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(45));
+        shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(69));
         shoppingBagGrid.addColumn(5);
-        shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(32));
+        shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(38));
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
 
         for (int index = 0; index < shoppingItems.size(); index++) {
 
-            //Initialize all components
-            Button subtractButton = new Button("");
+            shoppingBagGrid.addRow(index);
+            ShoppingItem shoppingItem = shoppingItems.get(index);
 
+            //Initialize all components
+            Label productLabel = new Label(" " + shoppingItem.getProduct().getName());
+
+            Button subtractButton = new Button("");
             subtractButton.setPrefWidth(32);
             subtractButton.setMaxWidth(32);
             subtractButton.setMinWidth(32);
             subtractButton.setPrefHeight(32);
             subtractButton.setMaxHeight(32);
             subtractButton.setMinHeight(32);
-            subtractButton.setId(index+"subtractButton");
+            subtractButton.setId(index + "subtractButton");
             subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
 
@@ -94,7 +101,7 @@ public class ShoppingBagController {
             addButton.setPrefHeight(32);
             addButton.setMaxHeight(32);
             addButton.setMinHeight(32);
-            addButton.setId(index+"addButton");
+            addButton.setId(index + "addButton");
             addButton.getStyleClass().add("addButton");
             addButton.setOnAction((e) -> addOrSubtractButtonPressed(true));
 
@@ -105,36 +112,82 @@ public class ShoppingBagController {
             removeButton.setPrefWidth(32);
             removeButton.setMinWidth(32);
             removeButton.setMaxWidth(32);
-            removeButton.setId(index+"removeButton");
+            removeButton.setId(index + "removeButton");
             removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
+            Label priceLabel = new Label("  " + shoppingItem.getTotal() + " kr");
 
             TextArea amountTextArea = new TextArea("st");
             amountTextArea.setPrefHeight(32);
             amountTextArea.setMinHeight(32);
             amountTextArea.setMaxHeight(32);
-            amountTextArea.setId(index+"amountTextArea");
-            amountTextArea.setOnInputMethodTextChanged((e) -> amountTextAreaChanged());
+            amountTextArea.setId(index + "amountTextArea");
+            amountTextArea.setOnMouseClicked((e) -> amountTextAreaClicked(amountTextArea));
+            amountTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
+                public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                    if (!newPropertyValue) {
+                        amountTextAreaLostFocus(amountTextArea, priceLabel);
+                    }
+                }
+            });
+            amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
 
-            shoppingBagGrid.addRow(index);
-            ShoppingItem s = shoppingItems.get(index);
-            shoppingBagGrid.add(new Label(s.getProduct().getName()), 0, index);
-            shoppingBagGrid.add(subtractButton, 1, index);
-            amountTextArea.setText(s.getAmount() + " " + s.getProduct().getUnitSuffix());
-            shoppingBagGrid.add(amountTextArea, 2, index);
-            shoppingBagGrid.add(addButton, 3, index);
-            shoppingBagGrid.add(new Label("" + s.getTotal() + " kr"), 4, index);
 
-            shoppingBagGrid.add(removeButton, 5, index);
+            /*if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
+                Pane productPane = new Pane(productLabel);
+                productPane.autosize();
+                productPane.setPrefHeight(32);
+                productPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(productPane, 0, index);
+
+                Pane subtractPane = new Pane(subtractButton);
+                subtractPane.autosize();
+                subtractPane.setPrefHeight(32);
+                subtractPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(subtractPane, 1, index);
+
+                Pane amountTextPane = new Pane(amountTextArea);
+                amountTextPane.autosize();
+                amountTextPane.setPrefHeight(32);
+                amountTextPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(amountTextPane, 2, index);
+
+                Pane addPane = new Pane(addButton);
+                addPane.autosize();
+                addPane.setPrefHeight(32);
+                addPane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(addPane, 3, index);
+
+                Pane pricePane = new Pane(priceLabel);
+                pricePane.autosize();
+                pricePane.setPrefHeight(32);
+                pricePane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(pricePane, 4, index);
+
+                Pane removePane = new Pane(removeButton);
+                removePane.autosize();
+                removePane.setPrefHeight(32);
+                removePane.getStyleClass().add("vaddunuvillkalladen");
+                shoppingBagGrid.add(removePane, 5, index);
+            } else {*/
+                shoppingBagGrid.add(productLabel, 0, index);
+                shoppingBagGrid.add(subtractButton, 1, index);
+                amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+                shoppingBagGrid.add(amountTextArea, 2, index);
+                shoppingBagGrid.add(addButton, 3, index);
+
+                shoppingBagGrid.add(priceLabel, 4, index);
+                shoppingBagGrid.add(removeButton, 5, index);
+            //}
         }
 
 
     }
 
-    private void removeButtonPressed(){
-        for (Node n: shoppingBagGrid.getChildren()) {
-            if (n.isFocused()){
+    private void removeButtonPressed() {
+        for (Node n : shoppingBagGrid.getChildren()) {
+            if (n.isFocused()) {
                 int removeIndex = Character.getNumericValue((n.getId()).charAt(0));
                 main.iMat.getShoppingCart().removeItem(removeIndex);
             }
@@ -142,15 +195,14 @@ public class ShoppingBagController {
         updateShoppingBagGrid();
     }
 
-    private void addOrSubtractButtonPressed(boolean add){
-        for (Node n: shoppingBagGrid.getChildren()) {
-            if (n.isFocused()){
+    private void addOrSubtractButtonPressed(boolean add) {
+        for (Node n : shoppingBagGrid.getChildren()) {
+            if (n.isFocused()) {
                 int index = Character.getNumericValue((n.getId()).charAt(0));
-                double newAmount = add ? main.iMat.getShoppingCart().getItems().get(index).getAmount() + 1:  main.iMat.getShoppingCart().getItems().get(index).getAmount() - 1;
-                if (newAmount > 0){
+                double newAmount = add ? main.iMat.getShoppingCart().getItems().get(index).getAmount() + 1 : main.iMat.getShoppingCart().getItems().get(index).getAmount() - 1;
+                if (newAmount > 0) {
                     main.iMat.getShoppingCart().getItems().get(index).setAmount(newAmount);
-                }
-                else {
+                } else {
                     main.iMat.getShoppingCart().removeItem(index);
                 }
             }
@@ -158,20 +210,29 @@ public class ShoppingBagController {
         updateShoppingBagGrid();
     }
 
-    private void amountTextAreaChanged(){
-        //TODO
+    private void amountTextAreaLostFocus(TextArea amount, Label price) {
+        int index = Character.getNumericValue((amount.getId().charAt(0)));
+        ShoppingItem item = main.iMat.getShoppingCart().getItems().get(index);
 
-        /*for (Node n: shoppingBagGrid.getChildren()) {
-            if (n.isFocused()){
-                int index = Character.getNumericValue((n.getId()).charAt(0));
-                //main.iMat.getShoppingCart().removeItem(removeIndex);
-            }
+        try {
+            double newAmount = Double.parseDouble(amount.getText());
+            item.setAmount(newAmount);
+        } catch (NumberFormatException n) {
         }
-        updateShoppingBagGrid();*/
+
+        if (item.getAmount() > 0) {
+            amount.setText(" " + item.getAmount() + " " + item.getProduct().getUnitSuffix());
+            price.setText("  " + item.getTotal() + " kr");
+        } else {
+            main.iMat.getShoppingCart().removeItem(index);
+            updateShoppingBagGrid();
+        }
     }
 
-
-
+    private void amountTextAreaClicked(TextArea amount) {
+        amount.setText(amount.getText().split(" ")[0]);
+        amount.selectAll();
+    }
 
 }
 
