@@ -34,7 +34,7 @@ public class Main extends Application {
         this.primaryStage.setResizable(false);
         showMainView();
         showCategoriesView();
-        //showProductView();
+        showProductView();
 
 
         //Test
