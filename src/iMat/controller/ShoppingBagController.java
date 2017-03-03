@@ -61,6 +61,7 @@ public class ShoppingBagController {
         shoppingBagGrid.getChildren().clear();
         shoppingBagGrid.addColumn(0);
         shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(129));
+
         shoppingBagGrid.addColumn(1);
         shoppingBagGrid.getColumnConstraints().set(1, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(2);
@@ -82,6 +83,7 @@ public class ShoppingBagController {
             //Initialize all components
             Label productLabel = new Label(" " + shoppingItem.getProduct().getName());
 
+
             Button subtractButton = new Button("");
             subtractButton.setPrefWidth(32);
             subtractButton.setMaxWidth(32);
@@ -89,6 +91,7 @@ public class ShoppingBagController {
             subtractButton.setPrefHeight(32);
             subtractButton.setMaxHeight(32);
             subtractButton.setMinHeight(32);
+
             subtractButton.setId(index + "subtractButton");
             subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
@@ -134,43 +137,45 @@ public class ShoppingBagController {
             amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
 
 
-            /*if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
-                Pane productPane = new Pane(productLabel);
+            if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
+                AnchorPane productPane = new AnchorPane(productLabel);
                 productPane.autosize();
                 productPane.setPrefHeight(32);
-                productPane.getStyleClass().add("vaddunuvillkalladen");
+                productPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(productPane, 0, index);
 
-                Pane subtractPane = new Pane(subtractButton);
+                AnchorPane subtractPane = new AnchorPane(subtractButton);
                 subtractPane.autosize();
                 subtractPane.setPrefHeight(32);
-                subtractPane.getStyleClass().add("vaddunuvillkalladen");
+                subtractPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(subtractPane, 1, index);
 
-                Pane amountTextPane = new Pane(amountTextArea);
+                AnchorPane amountTextPane = new AnchorPane(amountTextArea);
                 amountTextPane.autosize();
                 amountTextPane.setPrefHeight(32);
-                amountTextPane.getStyleClass().add("vaddunuvillkalladen");
+                amountTextPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(amountTextPane, 2, index);
 
-                Pane addPane = new Pane(addButton);
+                AnchorPane addPane = new AnchorPane(addButton);
                 addPane.autosize();
                 addPane.setPrefHeight(32);
-                addPane.getStyleClass().add("vaddunuvillkalladen");
+                addPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(addPane, 3, index);
 
-                Pane pricePane = new Pane(priceLabel);
+                AnchorPane pricePane = new AnchorPane(priceLabel);
                 pricePane.autosize();
                 pricePane.setPrefHeight(32);
-                pricePane.getStyleClass().add("vaddunuvillkalladen");
+                pricePane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(pricePane, 4, index);
 
-                Pane removePane = new Pane(removeButton);
+                AnchorPane removePane = new AnchorPane(removeButton);
                 removePane.autosize();
                 removePane.setPrefHeight(32);
-                removePane.getStyleClass().add("vaddunuvillkalladen");
+                removePane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(removePane, 5, index);
-            } else {*/
+            } else {
+
+
                 shoppingBagGrid.add(productLabel, 0, index);
                 shoppingBagGrid.add(subtractButton, 1, index);
                 amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
@@ -179,7 +184,7 @@ public class ShoppingBagController {
 
                 shoppingBagGrid.add(priceLabel, 4, index);
                 shoppingBagGrid.add(removeButton, 5, index);
-            //}
+            }
         }
 
 

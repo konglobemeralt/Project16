@@ -34,7 +34,7 @@ public class Main extends Application {
         this.primaryStage.setResizable(false);
         showMainView();
         showCategoriesView();
-        //showProductView();
+        showProductView();
 
 
         //Test
@@ -71,7 +71,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/CategoriesPanel.fxml"));
         AnchorPane categoriesView = loader.load();
-
+        categoriesView.setStyle("-fx-box-border: transparent;");
         mainLayout.setLeft(categoriesView);
 
         //Send a reference of main to the controller

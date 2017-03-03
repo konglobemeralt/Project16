@@ -42,7 +42,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
 
         //testgrej
-        int i = 148;
+        int i = 14;
         while(--i > 1)
         {
             shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 0)));
