@@ -75,6 +75,7 @@
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
+   -fx-focus-color:#EC5f67;
 }
 
 .favouriteButton:selected{
@@ -82,6 +83,7 @@
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
+   -fx-focus-color:#EC5f67;
 }
 
 .favouriteButton:hover{
@@ -159,6 +161,7 @@
 }
 .favourite:hover{
     -fx-text-fill: white;
+
 }
 
 
