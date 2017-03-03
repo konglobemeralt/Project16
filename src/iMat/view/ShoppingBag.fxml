@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -10,9 +15,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane hbarPolicy="NEVER" prefHeight="701.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ShoppingBagController">
+<ScrollPane hbarPolicy="NEVER" prefHeight="701.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ShoppingBagController">
    <content>
-      <AnchorPane fx:id="kundKorgPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="400.0">
+      <AnchorPane fx:id="kundKorgPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="400.0" styleClass="kundKorg">
          <children>
             <Button layoutX="75.0" layoutY="600.0" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="50.0" prefWidth="300.0" text="Gå till kassan" AnchorPane.bottomAnchor="0.0">
                <font>
@@ -24,7 +29,7 @@
             </Button>
             <Label prefHeight="42.0" prefWidth="300.0" text="Kundkorg" AnchorPane.topAnchor="5.0">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label layoutX="28.0" layoutY="570.0" prefHeight="30.0" prefWidth="190.0" text="Total pris:" AnchorPane.bottomAnchor="50.0">

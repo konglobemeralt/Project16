@@ -6,6 +6,18 @@
     -fx-base: #E1DFD4;
     -fx-background: #FAF8EC;
     -fx-background-radius: 10;
+    -fx-box-border: transparent;
+}
+
+.kundKorg{
+ -fx-background-color: #FFFFFF;
+}
+
+.paneStyle{
+    -fx-text-fill: #575757;
+    -fx-base: #575757;
+      -fx-background: #575757;
+      -fx-background-color: #575757;
 }
 
 .button{

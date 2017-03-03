@@ -61,6 +61,7 @@ public class ShoppingBagController {
         shoppingBagGrid.getChildren().clear();
         shoppingBagGrid.addColumn(0);
         shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(129));
+
         shoppingBagGrid.addColumn(1);
         shoppingBagGrid.getColumnConstraints().set(1, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(2);
@@ -82,6 +83,7 @@ public class ShoppingBagController {
             //Initialize all components
             Label productLabel = new Label(" " + shoppingItem.getProduct().getName());
 
+
             Button subtractButton = new Button("");
             subtractButton.setPrefWidth(32);
             subtractButton.setMaxWidth(32);
@@ -89,6 +91,7 @@ public class ShoppingBagController {
             subtractButton.setPrefHeight(32);
             subtractButton.setMaxHeight(32);
             subtractButton.setMinHeight(32);
+
             subtractButton.setId(index + "subtractButton");
             subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
@@ -171,6 +174,8 @@ public class ShoppingBagController {
                 removePane.getStyleClass().add("vaddunuvillkalladen");
                 shoppingBagGrid.add(removePane, 5, index);
             } else {*/
+
+
                 shoppingBagGrid.add(productLabel, 0, index);
                 shoppingBagGrid.add(subtractButton, 1, index);
                 amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
