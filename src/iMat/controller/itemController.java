@@ -5,6 +5,7 @@ package iMat.controller;
  */
 
 import iMat.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -62,6 +63,11 @@ public class itemController extends AnchorPane implements Initializable {
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
 
+
+    public void favouritedItem(ActionEvent event){
+
+        this.setStyle( "-fx-background-image: url(\"img/ic_favorite_black_24dp_1x.png\");");
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

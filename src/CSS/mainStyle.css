@@ -103,6 +103,8 @@
 
 .item{
     -fx-base: #FAC863;
+    -fx-font-weight: bold;
+     -fx-box-border: transparent;
 
 }
 
