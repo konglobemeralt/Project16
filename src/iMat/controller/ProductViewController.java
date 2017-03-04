@@ -47,7 +47,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         {
             shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 0)));
         }
-        //fillCenterPane(shoppingItems);
+        fillCenterPane(shoppingItems);
         //testgrej
 
 

@@ -30,6 +30,9 @@ public class itemController extends AnchorPane implements Initializable {
     @FXML
     private ImageView productImage;
 
+    @FXML
+    private Button favouriteButton;
+
     //Reference the main application
     private Main main;
 
@@ -65,8 +68,8 @@ public class itemController extends AnchorPane implements Initializable {
 
 
     public void favouritedItem(ActionEvent event){
-
-        this.setStyle( "-fx-background-image: url(\"img/ic_favorite_black_24dp_1x.png\");");
+        favouriteButton.getStyleClass().removeAll("favouriteButton");
+        favouriteButton.getStyleClass().add("favourited");
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
