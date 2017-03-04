@@ -31,6 +31,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("iMat");
+        //this.primaryStage.setHeight(670);
+        //this.primaryStage.setWidth(1280);
         this.primaryStage.setResizable(false);
         showMainView();
         showCategoriesView();
