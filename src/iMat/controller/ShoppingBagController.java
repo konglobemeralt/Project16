@@ -69,13 +69,13 @@ public class ShoppingBagController {
         shoppingBagGrid.addColumn(3);
         shoppingBagGrid.getColumnConstraints().set(3, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(4);
-        shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(69));
+        shoppingBagGrid.getColumnConstraints().set(4, new ColumnConstraints(75));
         shoppingBagGrid.addColumn(5);
-        shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(38));
+        shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(32));
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
 
-        for (int index = 0; index < shoppingItems.size(); index++) {
+        for (int index = 0; index < shoppingItems.size() && index < 15; index++) {
 
             shoppingBagGrid.addRow(index);
             ShoppingItem shoppingItem = shoppingItems.get(index);
@@ -92,7 +92,7 @@ public class ShoppingBagController {
             subtractButton.setMaxHeight(32);
             subtractButton.setMinHeight(32);
 
-            subtractButton.setId(index + "subtractButton");
+            subtractButton.setId(index + "_subtractButton");
             subtractButton.getStyleClass().add("subtractButton");
             subtractButton.setOnAction((e) -> addOrSubtractButtonPressed(false));
 
@@ -115,7 +115,7 @@ public class ShoppingBagController {
             removeButton.setPrefWidth(32);
             removeButton.setMinWidth(32);
             removeButton.setMaxWidth(32);
-            removeButton.setId(index + "removeButton");
+            removeButton.setId(index + "_removeButton");
             removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
@@ -125,7 +125,7 @@ public class ShoppingBagController {
             amountTextArea.setPrefHeight(32);
             amountTextArea.setMinHeight(32);
             amountTextArea.setMaxHeight(32);
-            amountTextArea.setId(index + "amountTextArea");
+            amountTextArea.setId(index + "_amountTextArea");
             amountTextArea.setOnMouseClicked((e) -> amountTextAreaClicked(amountTextArea));
             amountTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
                 public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
@@ -168,11 +168,7 @@ public class ShoppingBagController {
                 pricePane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(pricePane, 4, index);
 
-                AnchorPane removePane = new AnchorPane(removeButton);
-                removePane.autosize();
-                removePane.setPrefHeight(32);
-                removePane.getStyleClass().add("paneStyle");
-                shoppingBagGrid.add(removePane, 5, index);
+                shoppingBagGrid.add(removeButton, 5, index);
             } else {
 
 
@@ -193,7 +189,7 @@ public class ShoppingBagController {
     private void removeButtonPressed() {
         for (Node n : shoppingBagGrid.getChildren()) {
             if (n.isFocused()) {
-                int removeIndex = Character.getNumericValue((n.getId()).charAt(0));
+                int removeIndex = Integer.parseInt((n.getId().split("_")[0]));
                 main.iMat.getShoppingCart().removeItem(removeIndex);
             }
         }
@@ -203,7 +199,7 @@ public class ShoppingBagController {
     private void addOrSubtractButtonPressed(boolean add) {
         for (Node n : shoppingBagGrid.getChildren()) {
             if (n.isFocused()) {
-                int index = Character.getNumericValue((n.getId()).charAt(0));
+                int index = Integer.parseInt((n.getId().split("_")[0]));
                 double newAmount = add ? main.iMat.getShoppingCart().getItems().get(index).getAmount() + 1 : main.iMat.getShoppingCart().getItems().get(index).getAmount() - 1;
                 if (newAmount > 0) {
                     main.iMat.getShoppingCart().getItems().get(index).setAmount(newAmount);
@@ -216,7 +212,7 @@ public class ShoppingBagController {
     }
 
     private void amountTextAreaLostFocus(TextArea amount, Label price) {
-        int index = Character.getNumericValue((amount.getId().charAt(0)));
+        int index = Integer.parseInt((amount.getId().split("_")[0]));
         ShoppingItem item = main.iMat.getShoppingCart().getItems().get(index);
 
         try {

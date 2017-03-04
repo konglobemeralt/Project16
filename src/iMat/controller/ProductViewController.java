@@ -47,7 +47,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         {
             shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 0)));
         }
-        fillCenterPane(shoppingItems);
+        //fillCenterPane(shoppingItems);
         //testgrej
 
 
@@ -58,7 +58,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
     }
 
-    private void fillCenterPane(List<ShoppingItem> shoppingItemlist)
+    public void fillCenterPane(List<ShoppingItem> shoppingItemlist)
     {
         int len = shoppingItemlist.size();
         System.out.println(len);
@@ -67,7 +67,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         int arrayIndex = 0;
         while(arrayIndex < len)
         {
-            centerPaneMain.add(new itemController(shoppingItemlist.get(arrayIndex)),colIndex,rowIndex);
+            centerPaneMain.add(new ItemController(shoppingItemlist.get(arrayIndex)),colIndex,rowIndex);
             arrayIndex++;
             colIndex++;
             if(colIndex > 3)
