@@ -14,10 +14,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main extends Application {
 
@@ -26,6 +29,7 @@ public class Main extends Application {
 
     public static IMatDataHandler iMat = IMatDataHandler.getInstance();
 
+    private ProductViewController productViewController;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -35,8 +39,8 @@ public class Main extends Application {
         //this.primaryStage.setWidth(1280);
         this.primaryStage.setResizable(false);
         showMainView();
-        showCategoriesView();
         showProductView();
+        showCategoriesView();
 
 
         //Test
@@ -90,6 +94,9 @@ public class Main extends Application {
         //Send a reference of main to the controller
         ProductViewController controller = loader.getController();
         controller.setMain(this);
+        productViewController = controller;
+
+        //controller.fillCenterPane(iMat.getProducts(ProductCategory.HERB));
 
     }
 
@@ -120,6 +127,10 @@ public class Main extends Application {
 
     public void hideShoppingBag(){
         mainLayout.setRight(null);
+    }
+
+    public void fillProductView(List<Product> products){
+        productViewController.fillCenterPane(products);
     }
 
 

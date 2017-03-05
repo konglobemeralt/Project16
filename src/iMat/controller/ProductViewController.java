@@ -1,15 +1,20 @@
 package iMat.controller;
 import iMat.Main;
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.CartEvent;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -23,6 +28,9 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
     @FXML
     private GridPane centerPaneMain;
+
+    @FXML
+    private ScrollPane scrollPane;
 
     //Reference the main application
     private Main main;
@@ -42,12 +50,12 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
 
         //testgrej
-        int i = 14;
+        /*int i = 14;
         while(--i > 1)
         {
-            shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 0)));
-        }
-        fillCenterPane(shoppingItems);
+            shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 1)));
+        }*/
+        //fillCenterPane(shoppingItems);
         //testgrej
 
 
@@ -58,16 +66,25 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
     }
 
-    public void fillCenterPane(List<ShoppingItem> shoppingItemlist)
-    {
-        int len = shoppingItemlist.size();
+    public void fillCenterPane(List<Product> products){
+
+        List<ShoppingItem> shoppingItemList = new ArrayList<>();
+
+        for (Product p: products) {
+            shoppingItemList.add(new ShoppingItem(p, 0));
+        }
+
+        centerPaneMain.getChildren().clear();
+
+
+        int len = shoppingItemList.size();
         System.out.println(len);
         int rowIndex = 0;
         int colIndex = 0;
         int arrayIndex = 0;
         while(arrayIndex < len)
         {
-            centerPaneMain.add(new itemController(shoppingItemlist.get(arrayIndex)),colIndex,rowIndex);
+            centerPaneMain.add(new itemController(shoppingItemList.get(arrayIndex)),colIndex,rowIndex);
             arrayIndex++;
             colIndex++;
             if(colIndex > 3)
@@ -76,5 +93,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
                 rowIndex++;
             }
         }
+        scrollPane.setVvalue(0.0);
+        scrollPane.autosize();
     }
 }

@@ -1,5 +1,8 @@
 package iMat.controller;
 import iMat.Main;
+import iMat.model.ProductSearch;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,9 +20,15 @@ public class MainViewController {
     //Reference the main application
     private Main main;
 
-    private ProductViewController  ProductViewController ;
-    public void setProductViewController(ProductViewController ProductViewController) {
-        this.ProductViewController = ProductViewController ;
+    @FXML
+    private void initialize(){
+        searchBarMain.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if (searchBarMain.getText().length() > 2){
+                    search();
+                }
+            }
+        });
     }
 
     public void setMain(Main main) {
@@ -52,7 +61,13 @@ public class MainViewController {
 
     }
     public void searchButtonPressed(ActionEvent event){
+
         System.out.print("search Button pressed. ");
+        search();
+    }
+
+    private void search(){
+        main.fillProductView(ProductSearch.search(searchBarMain.getText()));
     }
 
     public void searchFieldEnterPressed(ActionEvent event){
