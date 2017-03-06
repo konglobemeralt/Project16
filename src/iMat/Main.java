@@ -137,7 +137,10 @@ public class Main extends Application {
     }
 
     public void updateShoppingBag(){
-        shoppingBagController.updateShoppingBagGrid();
+        if (shoppingBagController != null)
+        {
+            shoppingBagController.updateShoppingBagGrid();
+        }
     }
 
     public void hideShoppingBag(){
