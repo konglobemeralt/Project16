@@ -1,7 +1,5 @@
 package iMat.controller;
 import iMat.Main;
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
@@ -84,7 +82,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         int arrayIndex = 0;
         while(arrayIndex < len)
         {
-            centerPaneMain.add(new itemController(shoppingItemList.get(arrayIndex)),colIndex,rowIndex);
+            centerPaneMain.add(new ItemController(shoppingItemList.get(arrayIndex)),colIndex,rowIndex);
             arrayIndex++;
             colIndex++;
             if(colIndex > 3)

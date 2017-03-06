@@ -5,6 +5,7 @@ package iMat.controller;
  */
 
 import iMat.Main;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -20,13 +21,17 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
- class ItemController extends AnchorPane implements Initializable {
+
+public class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
 
     @FXML
     private ImageView productImage;
+
+    @FXML
+    private Button favouriteButton;
 
     //Reference the main application
     private Main main;
@@ -37,7 +42,7 @@ import java.util.ResourceBundle;
 
     private BorderPane mainLayout;
 
-    private ShoppingItem shoppingItem;
+    ShoppingItem shoppingItem;
 
     public ItemController(ShoppingItem shoppingItem)  {
         System.out.println("init item");
@@ -48,7 +53,7 @@ import java.util.ResourceBundle;
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
+            this.productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         }
         catch (IOException e)
@@ -62,8 +67,10 @@ import java.util.ResourceBundle;
     }
 
 
-
-
+    public void favouritedItem(ActionEvent event){
+        favouriteButton.getStyleClass().removeAll("favouriteButton");
+        favouriteButton.getStyleClass().add("favourited");
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
