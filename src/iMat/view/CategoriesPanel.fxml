@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0" style="-fx-border-color: #111111;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.CategoriesPanelController">
+<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="250.0" style="-fx-border-color: #111111;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.CategoriesPanelController">
    <children>
       <Button fx:id="favouritesButtonCategories" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#favouritesButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="favourite" text="Favoriter">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="minaListorButton" layoutX="23.0" layoutY="412.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Mina Listor">
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="gamlaKvittonButton" layoutX="23.0" layoutY="442.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" text="Kvitton">
          <font>
             <Font size="14.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="fruitButton" layoutX="22.0" layoutY="54.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Frukt">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="vegetablesButton" layoutX="22.0" layoutY="94.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Grönt">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="meatAndFishButton" layoutX="22.0" layoutY="134.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Kött och fisk">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="pentryButton" layoutX="22.0" layoutY="174.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Skafferi">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="breadButton" layoutX="22.0" layoutY="213.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Bageri">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="dairyButton" layoutX="23.0" layoutY="253.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Mejeri">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="drinksButton" layoutX="23.0" layoutY="293.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Drycker">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Button fx:id="sweetsButton" layoutX="23.0" layoutY="333.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Sötsaker">
          <font>
             <Font size="18.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>
