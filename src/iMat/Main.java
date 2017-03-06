@@ -31,6 +31,8 @@ public class Main extends Application {
 
     private ProductViewController productViewController;
 
+    private ShoppingBagController shoppingBagController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -52,6 +54,13 @@ public class Main extends Application {
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(6), 2.5));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(7), 9));
         iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(8), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(80), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(40), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(55), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(66), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(77), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(88), 1));
+        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(99), 1));
 
         iMat.getCustomer().setFirstName("Kalle");
         iMat.getCustomer().setLastName("Moraeus");
@@ -116,13 +125,19 @@ public class Main extends Application {
     public void showShoppingBagView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/ShoppingBag.fxml"));
-        ScrollPane shoppingBagPanel = loader.load();
+        AnchorPane shoppingBagPanel = loader.load();
         mainLayout.setRight(shoppingBagPanel);
 
         //Send a reference of main to the controller
         ShoppingBagController controller = loader.getController();
         controller.setMain(this);
         controller.updateShoppingBagGrid();
+
+        shoppingBagController = controller;
+    }
+
+    public void updateShoppingBag(){
+        shoppingBagController.updateShoppingBagGrid();
     }
 
     public void hideShoppingBag(){

@@ -6,10 +6,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -181,6 +178,7 @@ public class ShoppingBagController {
                 shoppingBagGrid.add(priceLabel, 4, index);
                 shoppingBagGrid.add(removeButton, 5, index);
             }
+
         }
 
 
