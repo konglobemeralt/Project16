@@ -5,6 +5,8 @@ package iMat.controller;
  */
 
 import iMat.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -121,7 +123,7 @@ public class ItemController extends AnchorPane implements Initializable {
         textArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
-    private void amountTextAreaLostFocus(Label price) {
+    private void amountTextAreaLostFocus() {
 
         try {
             double newAmount = Double.parseDouble(textArea.getText());
@@ -136,14 +138,21 @@ public class ItemController extends AnchorPane implements Initializable {
         }
     }
 
-    private void amountTextAreaClicked(TextArea amount) {
-        amount.setText(amount.getText().split(" ")[0]);
-        amount.selectAll();
+    private void amountTextAreaClicked() {
+        textArea.setText(textArea.getText().split(" ")[0]);
+        textArea.selectAll();
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        textArea.setOnMouseClicked((e) -> amountTextAreaClicked());
+        textArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                if (!newPropertyValue) {
+                    amountTextAreaLostFocus();
+                }
+            }
+        });
     }
 }
