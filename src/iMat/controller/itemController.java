@@ -26,6 +26,9 @@ import java.util.ResourceBundle;
     private Label itemLabel;
 
     @FXML
+    private Label priceLabel;
+
+    @FXML
     private ImageView productImage;
 
     //Reference the main application
@@ -60,9 +63,6 @@ import java.util.ResourceBundle;
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
-
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
