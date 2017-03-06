@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="456.0" layoutY="14.0" text="Mina uppgifter">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="94.0" layoutY="141.0" prefHeight="369.0" prefWidth="362.0">
+         <children>
+            <Label layoutX="-5.0" layoutY="108.0" text="Efternamn: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="60.0" text="Förnamn: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="310.0" text="Telefon: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="209.0" text="Postnr: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="158.0" text="Adress: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="259.0" text="Postort: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="89.0" layoutY="54.0" prefWidth="224.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="89.0" layoutY="103.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="89.0" layoutY="153.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="89.0" layoutY="203.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="89.0" layoutY="253.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="89.0" layoutY="305.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <Button layoutX="843.0" layoutY="559.0" mnemonicParsing="false" prefWidth="141.0" text="Spara">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Separator layoutX="512.0" layoutY="57.0" orientation="VERTICAL" prefHeight="539.0" prefWidth="8.0" />
+      <AnchorPane layoutX="575.0" layoutY="211.0" prefHeight="231.0" prefWidth="400.0">
+         <children>
+            <Label layoutX="20.0" layoutY="19.0" text="Kortets ägare: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="92.0" layoutY="170.0" text="CVC: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="122.0" text="/">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="70.0" text="Kortnummer: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="122.0" text="Giltigt t.o.m: ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="135.0" layoutY="13.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="135.0" layoutY="64.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="185.0" layoutY="64.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="235.0" layoutY="64.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="285.0" layoutY="64.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="135.0" layoutY="116.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="214.0" layoutY="116.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="135.0" layoutY="170.0" prefWidth="50.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

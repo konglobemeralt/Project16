@@ -75,7 +75,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="dairyButton" layoutX="23.0" layoutY="253.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Mejeri">
+      <Button fx:id="dairyButton" layoutX="22.0" layoutY="253.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Mejeri">
          <font>
             <Font size="18.0" />
          </font>
@@ -83,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="drinksButton" layoutX="23.0" layoutY="293.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Drycker">
+      <Button fx:id="drinksButton" layoutX="22.0" layoutY="293.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Drycker">
          <font>
             <Font size="18.0" />
          </font>
@@ -91,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="sweetsButton" layoutX="23.0" layoutY="333.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Sötsaker">
+      <Button fx:id="sweetsButton" layoutX="22.0" layoutY="333.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Sötsaker">
          <font>
             <Font size="18.0" />
          </font>
