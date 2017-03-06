@@ -18,6 +18,18 @@
         -fx-background: #FAF8EC;
 }
 
+.content:hover{
+        -fx-font-size: 12pt;
+        -fx-base: #575757;
+        -fx-base: #f26419;
+}
+
+.selectedCat{
+-fx-base: #575757;
+        -fx-base: #f26419;
+
+}
+
 
 .kundKorg{
  -fx-background-color: #FFFFFF;

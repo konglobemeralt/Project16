@@ -16,6 +16,8 @@ import java.util.List;
  */
 public class CategoriesPanelController {
 
+    private Button lastPressedCat;
+
     @FXML
     Button favouritesButtonCategories;
 
@@ -59,9 +61,14 @@ public class CategoriesPanelController {
     @FXML
     private void CategoryButtonPressed(ActionEvent event) {
         List<Product> results = ProductSearch.getCategory(((Button) event.getSource()).getText());
-
         main.fillProductView(results);
 
+       if(lastPressedCat != null){
+           lastPressedCat.getStyleClass().removeAll("selectedCat");
+       }
+
+        ((Button)event.getSource()).getStyleClass().add("selectedCat");
+        lastPressedCat = ((Button)event.getSource());
     }
 
     public void favouritesButtonPressed(){
