@@ -160,6 +160,9 @@ public class ItemController extends AnchorPane implements Initializable {
     public void favouritedItem(ActionEvent event){
         favouriteButton.getStyleClass().removeAll("favouriteButton");
         favouriteButton.getStyleClass().add("favourited");
+
+        Main.iMat.addFavorite(shoppingItem.getProduct());
+
     }
 
 
