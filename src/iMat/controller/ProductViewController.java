@@ -82,7 +82,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         int arrayIndex = 0;
         while(arrayIndex < len)
         {
-            itemController controller = new itemController(shoppingItemList.get(arrayIndex));
+            ItemController controller = new ItemController(shoppingItemList.get(arrayIndex));
             controller.setMain(main);
             centerPaneMain.add(controller,colIndex,rowIndex);
             arrayIndex++;
