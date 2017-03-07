@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class ItemController extends AnchorPane implements Initializable {
 
-
+    private boolean favourited = false;
 
     @FXML
     private Button favouriteButton;
@@ -158,10 +158,19 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     public void favouritedItem(ActionEvent event){
-        favouriteButton.getStyleClass().removeAll("favouriteButton");
-        favouriteButton.getStyleClass().add("favourited");
+        if(this.favourited){
+            Main.iMat.removeFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favourited");
+            favouriteButton.getStyleClass().add("favouriteButton");
+            this.favourited = false;
+        }
+        else{
+            Main.iMat.addFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favouriteButton");
+            favouriteButton.getStyleClass().add("favourited");
+            this.favourited = true;
+        }
 
-        Main.iMat.addFavorite(shoppingItem.getProduct());
 
     }
 
