@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
@@ -41,6 +42,8 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Text fx:id="itemCounterLable" depthTest="ENABLE" fill="WHITE" layoutX="1214.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" />
+            <Circle fx:id="shoppingBagCounter" depthTest="ENABLE" fill="#f04d1a" layoutX="1233.0" layoutY="111.0" radius="29.0" stroke="#ffffff00" strokeType="INSIDE" visible="false" />
          </children>
          <padding>
             <Insets bottom="20.0" top="20.0" />

@@ -36,15 +36,15 @@
 }
 
 .content:hover{
-        -fx-font-size: 12pt;
-        -fx-base: #575757;
-        -fx-base: #f26419;
+        -fx-font-size: 9pt;
+        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+        -fx-base: derive(#5FB3B3, 10%);
 }
 
 .selectedCat{
--fx-base: #575757;
-        -fx-base: #f26419;
 
+        -fx-font-size: 9pt;
+        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
 }
 
 
@@ -60,9 +60,9 @@
 }
 
 .button{
- -fx-font-size: 10pt;
--fx-font-weight: bold;
--fx-background-insets: 0 1 0 1,0,0;
+    -fx-font-size: 10pt;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0 1 0 1,0,0;
 }
 
 .tab-pane .tab-header-area .tab-header-background {
@@ -79,7 +79,6 @@
 .tab-pane .tab
 {
     -fx-background-color: #e6e6e6;
-
 }
 
 .tab-pane .tab:selected
@@ -112,22 +111,20 @@
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
-   -fx-focus-color:#EC5f67;
+   -fx-background-color: #FFFFFF;
+   -fx-focus-color: transparent;
 }
 
-.favouriteButton:selected{
- -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
-   -fx-focus-color: #FAC863;
-}
 
 .favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);
  -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
+   -fx-scale-x:1.1;
+   -fx-scale-y:1.1;
+   -fx-scale-z:1.1;
+
 }
 
 
@@ -151,9 +148,22 @@
 }
 
 .item{
-    -fx-base:  #5FB3B3;
-     -fx-box-border: transparent;
+    -fx-background: derive(#5FB3B3,50%);
 
+     -fx-box-border: #5FB3B3;
+
+}
+
+.itemLabel{
+    -fx-font-size: 12pt;
+     -fx-font-family: "Futura", "Arial";
+     -fx-font-weight: bold;
+}
+
+.itemPrice{
+    -fx-font-size: 12pt;
+     -fx-font-family: "Futura", "Arial";
+     -fx-font-weight: bold;
 }
 
 .tile{
