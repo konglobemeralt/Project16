@@ -33,6 +33,8 @@ public class Main extends Application {
 
     private ShoppingBagController shoppingBagController;
 
+    private ProfileViewController profileViewController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -120,6 +122,24 @@ public class Main extends Application {
         controller.setMain(this);
         controller.showOverviewTab();
 
+    }
+
+    public void showProfileView() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/profileView.fxml"));
+        AnchorPane profileViewPanel = loader.load();
+        mainLayout.setCenter(profileViewPanel);
+
+        //Send a reference of main to the controller
+        ProfileViewController controller = loader.getController();
+        controller.setMain(this);
+
+        profileViewController = controller;
+
+    }
+
+    public void hideProfileView() {
+        mainLayout.setCenter(null);
     }
 
     public void showShoppingBagView() throws IOException {

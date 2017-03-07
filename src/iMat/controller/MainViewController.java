@@ -44,6 +44,18 @@ public class MainViewController {
     }
     public void profileButtonPressed(ActionEvent event){
         System.out.println("profile Button pressed");
+        if (main.getMainLayout().getRight() == null) {
+            try {
+                main.showProfileView();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            main.hideProfileView();
+
+        }
+
+
     }
     public void kundkorgButtonPressed(ActionEvent event) {
         System.out.println("kundkorg Button pressed");
