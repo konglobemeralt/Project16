@@ -141,8 +141,8 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    public void initialize() {
         textArea.setOnMouseClicked((e) -> amountTextAreaClicked());
         textArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
@@ -151,5 +151,10 @@ public class ItemController extends AnchorPane implements Initializable {
                 }
             }
         });
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
