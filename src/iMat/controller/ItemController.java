@@ -62,12 +62,12 @@ public class ItemController extends AnchorPane implements Initializable {
         //System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/item.fxml"));
+        loader.setLocation(Main.class.getResource("view/Item.fxml"));
         loader.setController(this);
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
+            this.productImage.setImage(Main.iMat.getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         } catch (IOException e) {
             e.printStackTrace();
