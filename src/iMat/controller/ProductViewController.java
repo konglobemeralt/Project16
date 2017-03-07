@@ -39,7 +39,16 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
     List<ShoppingItem> shoppingItems;
 
+    private boolean isFavourited(ShoppingItem Item){
 
+        for(Product favourite : Main.iMat.favorites()){
+            if(favourite.equals(Item.getProduct()) ){
+                return false;
+            }
+
+        }
+        return true;
+    }
 
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("init itemView");
@@ -82,7 +91,8 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         int arrayIndex = 0;
         while(arrayIndex < len)
         {
-            ItemController controller = new ItemController(shoppingItemList.get(arrayIndex));
+
+            ItemController controller = new ItemController(shoppingItemList.get(arrayIndex), isFavourited(shoppingItemList.get(arrayIndex)));
             controller.setMain(main);
             centerPaneMain.add(controller,colIndex,rowIndex);
             arrayIndex++;
@@ -96,4 +106,6 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         scrollPane.setVvalue(0.0);
         scrollPane.autosize();
     }
+
+
 }

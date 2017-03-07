@@ -65,9 +65,7 @@ public class CategoriesPanelController {
         main.pageHistory().addProductLink(results);
         main.fillProductView(results);
 
-        //if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
-        //}
 
 
        if(lastPressedCat != null){
@@ -80,6 +78,8 @@ public class CategoriesPanelController {
 
     public void favouritesButtonPressed(){
         System.out.println("Favourites button pressed.");
+        List<Product> results = Main.iMat.favorites();
+        main.fillProductView(results);
     }
     public void minaListorButtonPressed(){
         System.out.println("minaListor button pressed.");
