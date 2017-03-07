@@ -63,12 +63,16 @@ public class CategoriesPanelController {
     private void CategoryButtonPressed(ActionEvent event) {
         List<Product> results = ProductSearch.getCategory(((Button) event.getSource()).getText());
         main.pageHistory().addProductLink(results);
+
+        if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
+            try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
+        }
+
         main.fillProductView(results);
 
-            try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
 
 
-       if(lastPressedCat != null){
+        if(lastPressedCat != null){
            lastPressedCat.getStyleClass().removeAll("selectedCat");
        }
 
