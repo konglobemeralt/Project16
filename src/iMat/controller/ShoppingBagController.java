@@ -60,7 +60,7 @@ public class ShoppingBagController {
         //Clear grid
         shoppingBagGrid.getChildren().clear();
         shoppingBagGrid.addColumn(0);
-        shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(129));
+        shoppingBagGrid.getColumnConstraints().set(0, new ColumnConstraints(115));
 
         shoppingBagGrid.addColumn(1);
         shoppingBagGrid.getColumnConstraints().set(1, new ColumnConstraints(32));
@@ -142,8 +142,6 @@ public class ShoppingBagController {
                 amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
             }
 
-
-
             if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
                 AnchorPane productPane = new AnchorPane(productLabel);
                 productPane.autosize();
@@ -165,8 +163,6 @@ public class ShoppingBagController {
 
                 shoppingBagGrid.add(removeButton, 5, index);
             } else {
-
-
                 shoppingBagGrid.add(productLabel, 0, index);
                 shoppingBagGrid.add(subtractButton, 1, index);
                 shoppingBagGrid.add(amountTextArea, 2, index);
