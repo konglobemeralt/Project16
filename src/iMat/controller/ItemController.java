@@ -29,6 +29,11 @@ import java.util.ResourceBundle;
 
 public class ItemController extends AnchorPane implements Initializable {
 
+
+
+    @FXML
+    private Button favouriteButton;
+
     @FXML
     private Label itemLabel;
 
@@ -151,6 +156,12 @@ public class ItemController extends AnchorPane implements Initializable {
         textArea.setText(textArea.getText().split(" ")[0]);
         textArea.selectAll();
     }
+
+    public void favouritedItem(ActionEvent event){
+        favouriteButton.getStyleClass().removeAll("favouriteButton");
+        favouriteButton.getStyleClass().add("favourited");
+    }
+
 
 
     @Override

@@ -19,7 +19,7 @@
         <AnchorPane layoutX="2.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="239.0" style="-fx-background-color: #5FB3B3;" styleClass="item">
             <children>
                 <ImageView fx:id="productImage" fitHeight="181.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" />
-                <Button id="increaseProductButton" mnemonicParsing="false" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton">
+                <Button id="increaseProductButton" fx:id="favouriteButton" mnemonicParsing="false" onAction="#favouritedItem" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
