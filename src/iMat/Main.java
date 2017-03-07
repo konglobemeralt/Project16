@@ -120,8 +120,11 @@ public class Main extends Application {
 
     }
 
-    public void hideProfileView() {
+    public void hideProfileView() throws IOException {
         mainLayout.setCenter(null);
+        showProductView();
+
+
     }
 
     public void showShoppingBagView() throws IOException {

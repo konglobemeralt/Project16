@@ -16,6 +16,8 @@ import java.io.IOException;
  * Created by konglobemeralt on 2017-02-23.
  */
 public class MainViewController {
+
+    private boolean profilePressed = false;
     @FXML
     private TextField searchBarMain;
 
@@ -45,17 +47,18 @@ public class MainViewController {
         System.out.println("Help Button pressed");
     }
 
-    public void profileButtonPressed(ActionEvent event) {
+    public void profileButtonPressed(ActionEvent event) throws IOException {
         System.out.println("profile Button pressed");
-        if (main.getMainLayout().getRight() == null) {
+        if (!profilePressed) {
             try {
                 main.showProfileView();
+                profilePressed = !profilePressed;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             main.hideProfileView();
-
+            profilePressed = !profilePressed;
         }
 
 
