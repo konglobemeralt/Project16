@@ -79,7 +79,6 @@
 .tab-pane .tab
 {
     -fx-background-color: #e6e6e6;
-
 }
 
 .tab-pane .tab:selected
@@ -112,16 +111,12 @@
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
-   -fx-focus-color:#EC5f67;
+   -fx-background-color: #FFFFFF;
+   -fx-focus-color: transparent;
 }
 
-.favouriteButton:selected{
- -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
-   -fx-focus-color: #FAC863;
-}
+
+
 
 .favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);

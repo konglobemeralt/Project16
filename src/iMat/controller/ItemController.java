@@ -29,7 +29,7 @@ import java.util.ResourceBundle;
 
 public class ItemController extends AnchorPane implements Initializable {
 
-
+    private boolean favourited = false;
 
     @FXML
     private Button favouriteButton;
@@ -66,7 +66,7 @@ public class ItemController extends AnchorPane implements Initializable {
         this.main = main;
     }
 
-    public ItemController(ShoppingItem shoppingItem) {
+    public ItemController(ShoppingItem shoppingItem, boolean favourited) {
         //System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
@@ -82,6 +82,8 @@ public class ItemController extends AnchorPane implements Initializable {
             e.printStackTrace();
         }
         this.shoppingItem = shoppingItem;
+        this.favourited = favourited;
+        initFavourite();
         System.out.println("Name of product: " + shoppingItem.getProduct().getName());
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
@@ -152,16 +154,41 @@ public class ItemController extends AnchorPane implements Initializable {
         }
     }
 
+    private void initFavourite(){
+        if(this.favourited){
+            Main.iMat.removeFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favourited");
+            favouriteButton.getStyleClass().add("favouriteButton");
+            this.favourited = false;
+        }
+        else{
+            Main.iMat.addFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favouriteButton");
+            favouriteButton.getStyleClass().add("favourited");
+            this.favourited = true;
+        }
+
+    }
+
     private void amountTextAreaClicked() {
         textArea.setText(textArea.getText().split(" ")[0]);
         textArea.selectAll();
     }
 
     public void favouritedItem(ActionEvent event){
-        favouriteButton.getStyleClass().removeAll("favouriteButton");
-        favouriteButton.getStyleClass().add("favourited");
+        if(this.favourited){
+            Main.iMat.removeFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favourited");
+            favouriteButton.getStyleClass().add("favouriteButton");
+            this.favourited = false;
+        }
+        else{
+            Main.iMat.addFavorite(shoppingItem.getProduct());
+            favouriteButton.getStyleClass().removeAll("favouriteButton");
+            favouriteButton.getStyleClass().add("favourited");
+            this.favourited = true;
+        }
 
-        Main.iMat.addFavorite(shoppingItem.getProduct());
 
     }
 
