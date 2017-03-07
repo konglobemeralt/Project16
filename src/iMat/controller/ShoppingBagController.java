@@ -32,6 +32,9 @@ public class ShoppingBagController {
     @FXML
     private Label totalPriceLabel;
 
+    @FXML
+    private Button continueButton;
+
     //Reference the main application
     private Main main;
 
@@ -52,7 +55,7 @@ public class ShoppingBagController {
     public synchronized void updateShoppingBagGrid() {
 
         numberOfItemsLabel.setText("" + main.iMat.getShoppingCart().getItems().size());
-        totalPriceLabel.setText("" + main.iMat.getShoppingCart().getTotal());
+        totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
 
         //Clear grid
         shoppingBagGrid.getChildren().clear();
@@ -71,6 +74,7 @@ public class ShoppingBagController {
         shoppingBagGrid.getColumnConstraints().set(5, new ColumnConstraints(32));
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
+        continueButton.setDisable(shoppingItems.size() == 0);
 
         for (int index = 0; index < shoppingItems.size(); index++) {
 
@@ -116,7 +120,7 @@ public class ShoppingBagController {
             removeButton.getStyleClass().add("deleteButton");
             removeButton.setOnAction((e) -> removeButtonPressed());
 
-            Label priceLabel = new Label("  " + shoppingItem.getTotal() + " kr");
+            Label priceLabel = new Label("  " + Math.round(shoppingItem.getTotal()*100)/100.0 + " kr");
 
             TextArea amountTextArea = new TextArea("st");
             amountTextArea.setPrefHeight(32);
@@ -131,7 +135,13 @@ public class ShoppingBagController {
                     }
                 }
             });
-            amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+            if (shoppingItem.getAmount() % 1 == 0){
+                amountTextArea.setText((int)(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+            }
+            else {
+                amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+            }
+
 
 
             if (index % 2 == 1) { // Add a pane to every other product so that we may colour it
@@ -141,23 +151,11 @@ public class ShoppingBagController {
                 productPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(productPane, 0, index);
 
-                AnchorPane subtractPane = new AnchorPane(subtractButton);
-                subtractPane.autosize();
-                subtractPane.setPrefHeight(32);
-                subtractPane.getStyleClass().add("paneStyle");
-                shoppingBagGrid.add(subtractPane, 1, index);
+                shoppingBagGrid.add(subtractButton, 1, index);
 
-                AnchorPane amountTextPane = new AnchorPane(amountTextArea);
-                amountTextPane.autosize();
-                amountTextPane.setPrefHeight(32);
-                amountTextPane.getStyleClass().add("paneStyle");
-                shoppingBagGrid.add(amountTextPane, 2, index);
+                shoppingBagGrid.add(amountTextArea, 2, index);
 
-                AnchorPane addPane = new AnchorPane(addButton);
-                addPane.autosize();
-                addPane.setPrefHeight(32);
-                addPane.getStyleClass().add("paneStyle");
-                shoppingBagGrid.add(addPane, 3, index);
+                shoppingBagGrid.add(addButton, 3, index);
 
                 AnchorPane pricePane = new AnchorPane(priceLabel);
                 pricePane.autosize();
@@ -171,7 +169,6 @@ public class ShoppingBagController {
 
                 shoppingBagGrid.add(productLabel, 0, index);
                 shoppingBagGrid.add(subtractButton, 1, index);
-                amountTextArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
                 shoppingBagGrid.add(amountTextArea, 2, index);
                 shoppingBagGrid.add(addButton, 3, index);
 
@@ -207,6 +204,7 @@ public class ShoppingBagController {
             }
         }
         updateShoppingBagGrid();
+        totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
     }
 
     private void amountTextAreaLostFocus(TextArea amount, Label price) {
@@ -215,17 +213,26 @@ public class ShoppingBagController {
 
         try {
             double newAmount = Double.parseDouble(amount.getText());
+            if (!(item.getProduct().getUnitSuffix().equals("kg") || item.getProduct().getUnitSuffix().equals("l") )){
+                newAmount = Math.round(newAmount);
+            }
             item.setAmount(newAmount);
         } catch (NumberFormatException n) {
         }
 
         if (item.getAmount() > 0) {
-            amount.setText(" " + item.getAmount() + " " + item.getProduct().getUnitSuffix());
-            price.setText("  " + item.getTotal() + " kr");
+            if (item.getAmount() % 1 == 0){
+                amount.setText(" " + (int)item.getAmount() + " " + item.getProduct().getUnitSuffix());
+            }
+            else {
+                amount.setText(" " + item.getAmount() + " " + item.getProduct().getUnitSuffix());
+            }
+            price.setText("  " + Math.round(item.getTotal()*100)/100.0 + " kr");
         } else {
             main.iMat.getShoppingCart().removeItem(index);
             updateShoppingBagGrid();
         }
+        totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
     }
 
     private void amountTextAreaClicked(TextArea amount) {
