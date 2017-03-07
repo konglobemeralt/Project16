@@ -4,6 +4,8 @@ import iMat.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
+import java.io.IOException;
+
 /**
  * Created by konglobemeralt on 2017-03-07.
  */
@@ -15,7 +17,7 @@ public class ProfileViewController {
     @FXML
     Button saveButton;
 
-    public void saveButtonPressed(){
+    public void saveButtonPressed() throws IOException{
         System.out.println("SaveButton pressed");
         main.hideProfileView();
     }
