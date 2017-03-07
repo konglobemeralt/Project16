@@ -10,10 +10,15 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.List;
+
+import javafx.geometry.Insets;
 
 public class ShoppingBagController {
 
@@ -67,9 +72,9 @@ public class ShoppingBagController {
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
 
-        for (int index = 0; index < shoppingItems.size() && index < 15; index++) {
+        for (int index = 0; index < shoppingItems.size(); index++) {
 
-            shoppingBagGrid.addRow(index);
+            //shoppingBagGrid.addRow(index);
             ShoppingItem shoppingItem = shoppingItems.get(index);
 
             //Initialize all components
@@ -96,7 +101,7 @@ public class ShoppingBagController {
             addButton.setPrefHeight(32);
             addButton.setMaxHeight(32);
             addButton.setMinHeight(32);
-            addButton.setId(index + "addButton");
+            addButton.setId(index + "_addButton");
             addButton.getStyleClass().add("addButton");
             addButton.setOnAction((e) -> addOrSubtractButtonPressed(true));
 

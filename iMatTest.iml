@@ -10,12 +10,21 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/resources - projekt (fx) kopia/projectbackend-fx.jar!/" />
+          <root url="jar://$MODULE_DIR$/resources - projekt (fx)/projectbackend-fx.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="projectbackend-fx (2)" level="project" />
+    <orderEntry type="library" name="projectbackend-fx" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../../Gränsnitt/Projekt/projectbackend-fx.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

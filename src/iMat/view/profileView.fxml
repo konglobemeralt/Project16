@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
    <children>
       <Label layoutX="456.0" layoutY="14.0" text="Mina uppgifter">
          <font>
@@ -76,7 +76,7 @@
             </TextField>
          </children>
       </AnchorPane>
-      <Button layoutX="843.0" layoutY="559.0" mnemonicParsing="false" prefWidth="141.0" text="Spara">
+      <Button fx:id="saveButton" layoutX="843.0" layoutY="559.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefWidth="141.0" text="Spara">
          <font>
             <Font size="24.0" />
          </font>

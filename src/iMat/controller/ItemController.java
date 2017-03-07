@@ -13,10 +13,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Text;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -24,10 +27,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ItemController extends AnchorPane implements Initializable {
+public class itemController extends AnchorPane implements Initializable {
 
     @FXML
     private Label itemLabel;
+
+    @FXML
+    private Label priceLabel;
 
     @FXML
     private ImageView productImage;
@@ -55,16 +61,17 @@ public class ItemController extends AnchorPane implements Initializable {
         this.main = main;
     }
 
-    public ItemController(ShoppingItem shoppingItem) {
+    public itemController(ShoppingItem shoppingItem) {
         //System.out.println("init item");
         AnchorPane itemView;
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/Item.fxml"));
+        loader.setLocation(Main.class.getResource("view/item.fxml"));
         loader.setController(this);
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
-            this.productImage.setImage(Main.iMat.getFXImage(shoppingItem.getProduct()));
+            priceLabel.setText(shoppingItem.getProduct().getPrice() + " " + shoppingItem.getProduct().getUnit());
+            this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
             this.getChildren().add(itemView);
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +85,7 @@ public class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private void addButtonPressed(ActionEvent event) {
-        shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+        shoppingItem.setAmount(shoppingItem.getAmount()+1);
         addToCartButton.setDisable(false);
         subtractButton.setDisable(false);
         updateTextArea();
@@ -87,36 +94,41 @@ public class ItemController extends AnchorPane implements Initializable {
     @FXML
     private void subtractButtonPressed(ActionEvent event) {
         double newAmount = shoppingItem.getAmount() - 1;
-        if (newAmount <= 0) {
+        if (newAmount <= 0){
             newAmount = 0;
             addToCartButton.setDisable(true);
             subtractButton.setDisable(true);
         }
         shoppingItem.setAmount(newAmount);
+        updateTextArea();
     }
 
     @FXML
-    private void addToCartButtonPressed(ActionEvent event) {
+    private void addToCartButtonPressed(ActionEvent event){
 
         ShoppingCart cart = Main.iMat.getShoppingCart();
         double amount = shoppingItem.getAmount();
-        shoppingItem.setAmount(0);
+        //shoppingItem.setAmount(0);
         subtractButton.setDisable(true);
         addToCartButton.setDisable(true);
-        updateTextArea();
 
-        for (ShoppingItem s : cart.getItems()) {
-            if (s.getProduct().equals(shoppingItem.getProduct())) {
-                s.setAmount(amount);
+        for (ShoppingItem s: cart.getItems()) {
+            if (s.getProduct().equals(shoppingItem.getProduct())){
+                s.setAmount(s.getAmount() + amount);
+                shoppingItem.setAmount(0);
+                main.updateShoppingBag();
+                updateTextArea();
                 return;
             }
         }
 
-        cart.addItem(shoppingItem);
+        cart.addItem(new ShoppingItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
+        shoppingItem.setAmount(0);
         main.updateShoppingBag();
+        updateTextArea();
     }
 
-    private void updateTextArea() {
+    private void updateTextArea(){
         textArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
@@ -129,7 +141,7 @@ public class ItemController extends AnchorPane implements Initializable {
         }
 
         if (shoppingItem.getAmount() > 0) {
-            textArea.setText(" " + shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+            updateTextArea();
         } else {
             shoppingItem.setAmount(0);
         }
@@ -141,8 +153,8 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
 
-    @FXML
-    public void initialize() {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         textArea.setOnMouseClicked((e) -> amountTextAreaClicked());
         textArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
@@ -151,10 +163,5 @@ public class ItemController extends AnchorPane implements Initializable {
                 }
             }
         });
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

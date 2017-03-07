@@ -1,5 +1,4 @@
 package iMat.controller;
-
 import iMat.Main;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -41,6 +40,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
     List<ShoppingItem> shoppingItems;
 
 
+
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("init itemView");
         shoppingItems = main.iMat.getShoppingCart().getItems();
@@ -59,17 +59,16 @@ public class ProductViewController extends AnchorPane implements Initializable, 
 
         main.iMat.getShoppingCart().getTotal();
     }
-
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
 
     }
 
-    public void fillCenterPane(List<Product> products) {
+    public void fillCenterPane(List<Product> products){
 
         List<ShoppingItem> shoppingItemList = new ArrayList<>();
 
-        for (Product p : products) {
+        for (Product p: products) {
             shoppingItemList.add(new ShoppingItem(p, 0));
         }
 
@@ -81,13 +80,15 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         int rowIndex = 0;
         int colIndex = 0;
         int arrayIndex = 0;
-        while (arrayIndex < len) {
-            ItemController controller = new ItemController(shoppingItemList.get(arrayIndex));
+        while(arrayIndex < len)
+        {
+            itemController controller = new itemController(shoppingItemList.get(arrayIndex));
             controller.setMain(main);
-            centerPaneMain.add(controller, colIndex, rowIndex);
+            centerPaneMain.add(controller,colIndex,rowIndex);
             arrayIndex++;
             colIndex++;
-            if (colIndex > 3) {
+            if(colIndex > 3)
+            {
                 colIndex = 0;
                 rowIndex++;
             }
