@@ -8,14 +8,13 @@ import iMat.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
@@ -27,12 +26,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static java.lang.Character.isDigit;
+
 public class ItemController extends AnchorPane implements Initializable {
-
-    private boolean favourited = false;
-
-    @FXML
-    private Button favouriteButton;
 
     @FXML
     private Label itemLabel;
@@ -72,6 +68,7 @@ public class ItemController extends AnchorPane implements Initializable {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/item.fxml"));
         loader.setController(this);
+        //subtractButton.setDisable(true);
         try {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
@@ -82,13 +79,10 @@ public class ItemController extends AnchorPane implements Initializable {
             e.printStackTrace();
         }
         this.shoppingItem = shoppingItem;
-        this.favourited = favourited;
-        initFavourite();
         System.out.println("Name of product: " + shoppingItem.getProduct().getName());
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
         //productImage.setImage(IMatDataHandler.getInstance().getFXImage(shoppingItem.getProduct()));
     }
-
 
     @FXML
     private void addButtonPressed(ActionEvent event) {
@@ -159,7 +153,7 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     private void updateTextArea(){
-        textArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+        textArea.setText(shoppingItem.getAmount() + "");
     }
 
     private void amountTextAreaLostFocus() {
@@ -171,51 +165,17 @@ public class ItemController extends AnchorPane implements Initializable {
         }
 
         if (shoppingItem.getAmount() > 0) {
+
             updateTextArea();
         } else {
             shoppingItem.setAmount(0);
         }
     }
 
-    private void initFavourite(){
-        if(this.favourited){
-            Main.iMat.removeFavorite(shoppingItem.getProduct());
-            favouriteButton.getStyleClass().removeAll("favourited");
-            favouriteButton.getStyleClass().add("favouriteButton");
-            this.favourited = false;
-        }
-        else{
-            Main.iMat.addFavorite(shoppingItem.getProduct());
-            favouriteButton.getStyleClass().removeAll("favouriteButton");
-            favouriteButton.getStyleClass().add("favourited");
-            this.favourited = true;
-        }
-
-    }
-
     private void amountTextAreaClicked() {
         textArea.setText(textArea.getText().split(" ")[0]);
         textArea.selectAll();
     }
-
-    public void favouritedItem(ActionEvent event){
-        if(this.favourited){
-            Main.iMat.removeFavorite(shoppingItem.getProduct());
-            favouriteButton.getStyleClass().removeAll("favourited");
-            favouriteButton.getStyleClass().add("favouriteButton");
-            this.favourited = false;
-        }
-        else{
-            Main.iMat.addFavorite(shoppingItem.getProduct());
-            favouriteButton.getStyleClass().removeAll("favouriteButton");
-            favouriteButton.getStyleClass().add("favourited");
-            this.favourited = true;
-        }
-
-
-    }
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

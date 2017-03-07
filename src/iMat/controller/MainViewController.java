@@ -2,32 +2,20 @@ package iMat.controller;
 
 import iMat.Main;
 import iMat.model.ProductSearch;
-import javafx.animation.ScaleTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
-import javafx.util.Duration;
 
 
 /**
  * Created by konglobemeralt on 2017-02-23.
  */
 public class MainViewController {
-
-
-    @FXML
-    private Circle shoppingBagCounter;
-
-    @FXML
-    private Text itemCounterLable;
 
     private boolean profilePressed = false;
     @FXML
@@ -45,38 +33,6 @@ public class MainViewController {
                 }
             }
         });
-    }
-
-    public void updateShoppingBagCounter(){
-        if(Main.iMat.getShoppingCart().getItems().size() != 0 ) {
-            System.out.println("Added item");
-            shoppingBagCounter.setVisible(true);
-            itemCounterLable.setVisible(true);
-            itemCounterLable.toFront();
-            itemCounterLable.setText((Integer.toString((int)Math.round(Main.iMat.getShoppingCart().getTotal()))) + ":-");
-
-
-            ScaleTransition st = new ScaleTransition(Duration.millis(120), shoppingBagCounter);
-            st.setByX(1.2f);
-            st.setByY(1.2f);
-            st.setCycleCount(2);
-            st.setAutoReverse(true);
-
-            ScaleTransition st2 = new ScaleTransition(Duration.millis(100), itemCounterLable);
-            st2.setByX(1.1f);
-            st2.setByY(1.1f);
-            st2.setCycleCount(2);
-            st2.setAutoReverse(true);
-
-            st.play();
-            st2.play();
-
-        }
-        else {
-            shoppingBagCounter.setVisible(false);
-            itemCounterLable.setVisible(false);
-            itemCounterLable.setText("");
-        }
     }
 
     public void setMain(Main main) {

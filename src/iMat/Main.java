@@ -3,22 +3,23 @@ package iMat;/**
  */
 
 import iMat.controller.*;
-import iMat.controller.BackButtonHandler.Link;
-import iMat.controller.BackButtonHandler.SavedPage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Main extends Application {
@@ -33,8 +34,6 @@ public class Main extends Application {
     private ShoppingBagController shoppingBagController;
 
     private ProfileViewController profileViewController;
-
-    private MainViewController mainViewController;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -65,7 +64,6 @@ public class Main extends Application {
         //Send a reference of main to the controller
         MainViewController controller = loader.getController();
         controller.setMain(this);
-        mainViewController = controller;
     }
 
     private void showCategoriesView() throws IOException {
@@ -147,9 +145,7 @@ public class Main extends Application {
         if (shoppingBagController != null)
         {
             shoppingBagController.updateShoppingBagGrid();
-
         }
-        mainViewController.updateShoppingBagCounter();
     }
 
     public void hideShoppingBag(){
@@ -171,94 +167,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-
-    public HistoryHandler pageHistory() {return historyHandler; }
-
-    private HistoryHandler historyHandler = new HistoryHandler();
-
-    public class HistoryHandler {
-
-        private int currentIndex;
-
-        private List<SavedPage> history;
-
-        public HistoryHandler(){
-            history = new ArrayList<SavedPage>();
-            currentIndex = -1;
-        }
-
-        public void addLink(Link link){
-            if (currentIndex + 1 != history.size()){
-                cutOffBranch();
-            }
-            if (link == Link.PRODUCT){
-                //TODO throw exception
-            }
-            history.add(new SavedPage(link));
-            currentIndex++;
-        }
-
-        public void addProductLink(List<Product> productList){
-            if (currentIndex + 1 != history.size()){
-                cutOffBranch();
-            }
-            history.add(new SavedPage(Link.PRODUCT, productList));
-            currentIndex++;
-        }
-
-        public void goBack(){
-            currentIndex--;
-            show();
-        }
-
-        public void goForwards(){
-            currentIndex++;
-            //TODO lägg till felhantering här
-            show();
-        }
-
-        private void show(){
-            switch (history.get(currentIndex).getLink()){
-                case CONFIRMEDVIEW:
-                    break;
-
-                case FAVOURITES:
-                    try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
-                    fillProductView(history.get(currentIndex).getProductList());
-                    break;
-
-                case HOME:
-                    break;
-
-                case MYLISTS:
-                    break;
-
-                case PRODUCT:
-                    try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
-                    fillProductView(history.get(currentIndex).getProductList());
-                    break;
-
-                case PROFILE:
-                    try { showProfileView(); }  catch (IOException e){ e.printStackTrace(); }
-                    break;
-
-                case RECEIPTS:
-                    break;
-
-                case WIZARD:
-                    try { showPayWizardView(); }  catch (IOException e){ e.printStackTrace(); }
-                    break;
-
-            }
-        }
-
-        private void cutOffBranch(){
-            for (int i = history.size() - 1; i > currentIndex; i--){
-                history.remove(i);
-            }
-        }
-
     }
 }
