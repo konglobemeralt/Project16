@@ -53,16 +53,23 @@ public class MainViewController {
             shoppingBagCounter.setVisible(true);
             itemCounterLable.setVisible(true);
             itemCounterLable.toFront();
-            itemCounterLable.setText((Integer.toString((int)Math.round(Main.iMat.getShoppingCart().getTotal()))));
+            itemCounterLable.setText((Integer.toString((int)Math.round(Main.iMat.getShoppingCart().getTotal()))) + ":-");
 
 
-            ScaleTransition st = new ScaleTransition(Duration.millis(100), shoppingBagCounter);
+            ScaleTransition st = new ScaleTransition(Duration.millis(120), shoppingBagCounter);
             st.setByX(1.2f);
             st.setByY(1.2f);
             st.setCycleCount(2);
             st.setAutoReverse(true);
 
+            ScaleTransition st2 = new ScaleTransition(Duration.millis(100), itemCounterLable);
+            st2.setByX(1.1f);
+            st2.setByY(1.1f);
+            st2.setCycleCount(2);
+            st2.setAutoReverse(true);
+
             st.play();
+            st2.play();
 
         }
         else {
