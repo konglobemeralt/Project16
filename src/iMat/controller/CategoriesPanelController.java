@@ -1,14 +1,12 @@
 package iMat.controller;
+
 import iMat.Main;
 import iMat.model.ProductSearch;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -63,24 +61,25 @@ public class CategoriesPanelController {
         List<Product> results = ProductSearch.getCategory(((Button) event.getSource()).getText());
         main.fillProductView(results);
 
-       if(lastPressedCat != null){
-           lastPressedCat.getStyleClass().removeAll("selectedCat");
-       }
+        if (lastPressedCat != null) {
+            lastPressedCat.getStyleClass().removeAll("selectedCat");
+        }
 
-        ((Button)event.getSource()).getStyleClass().add("selectedCat");
-        lastPressedCat = ((Button)event.getSource());
+        ((Button) event.getSource()).getStyleClass().add("selectedCat");
+        lastPressedCat = ((Button) event.getSource());
     }
 
-    public void favouritesButtonPressed(){
+    public void favouritesButtonPressed() {
         System.out.println("Favourites button pressed.");
     }
-    public void minaListorButtonPressed(){
+
+    public void minaListorButtonPressed() {
         System.out.println("minaListor button pressed.");
     }
-    public void gamlaKvittonButtonPressed(){
+
+    public void gamlaKvittonButtonPressed() {
         System.out.println("Favourites button pressed.");
     }
-
 
 
 }

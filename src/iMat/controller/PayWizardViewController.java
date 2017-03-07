@@ -371,12 +371,12 @@ public class PayWizardViewController {
                 removePane.getStyleClass().add("vaddunuvillkalladen");
                 shoppingBagGrid.add(removePane, 5, index);
             } else {*/
-                shoppingBagGrid.add(productLabel, 0, index);
-                shoppingBagGrid.add(subtractButton, 1, index);
-                shoppingBagGrid.add(amountTextArea, 2, index);
-                shoppingBagGrid.add(addButton, 3, index);
-                shoppingBagGrid.add(priceLabel, 4, index);
-                shoppingBagGrid.add(removeButton, 5, index);
+            shoppingBagGrid.add(productLabel, 0, index);
+            shoppingBagGrid.add(subtractButton, 1, index);
+            shoppingBagGrid.add(amountTextArea, 2, index);
+            shoppingBagGrid.add(addButton, 3, index);
+            shoppingBagGrid.add(priceLabel, 4, index);
+            shoppingBagGrid.add(removeButton, 5, index);
             //}
 
 

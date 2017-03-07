@@ -1,4 +1,5 @@
 package iMat.controller;
+
 import iMat.Main;
 import iMat.model.ProductSearch;
 import javafx.beans.value.ChangeListener;
@@ -21,10 +22,10 @@ public class MainViewController {
     private Main main;
 
     @FXML
-    private void initialize(){
+    private void initialize() {
         searchBarMain.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                if (searchBarMain.getText().length() > 2){
+                if (searchBarMain.getText().length() > 2) {
                     search();
                 }
             }
@@ -35,42 +36,43 @@ public class MainViewController {
         this.main = main;
     }
 
-    public void homeButtonPressed(ActionEvent event){
+    public void homeButtonPressed(ActionEvent event) {
         System.out.println("Home Button pressed");
     }
 
-    public void helpButtonPressed(ActionEvent event){
+    public void helpButtonPressed(ActionEvent event) {
         System.out.println("Help Button pressed");
     }
-    public void profileButtonPressed(ActionEvent event){
+
+    public void profileButtonPressed(ActionEvent event) {
         System.out.println("profile Button pressed");
     }
+
     public void kundkorgButtonPressed(ActionEvent event) {
         System.out.println("kundkorg Button pressed");
-        if(main.getMainLayout().getRight() == null){
-            try{
+        if (main.getMainLayout().getRight() == null) {
+            try {
                 main.showShoppingBagView();
-            }
-            catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else{
+        } else {
             main.hideShoppingBag();
         }
 
     }
-    public void searchButtonPressed(ActionEvent event){
+
+    public void searchButtonPressed(ActionEvent event) {
 
         System.out.print("search Button pressed. ");
         search();
     }
 
-    private void search(){
+    private void search() {
         main.fillProductView(ProductSearch.search(searchBarMain.getText()));
     }
 
-    public void searchFieldEnterPressed(ActionEvent event){
+    public void searchFieldEnterPressed(ActionEvent event) {
         System.out.println("Searched for: " + searchBarMain.getText());
 
     }
