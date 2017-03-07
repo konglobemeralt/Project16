@@ -4,7 +4,6 @@ import iMat.Main;
 import iMat.model.ProductSearch;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,12 +52,7 @@ public class MainViewController {
         System.out.println("kundkorg Button pressed");
         if (main.getMainLayout().getRight() == null) {
             try {
-                if (main.getMainLayout().getCenter().getId().equals("tabPane")){
-                    ((TabPane)main.getMainLayout().getCenter()).getSelectionModel().select(0);
-                }
-                else {
-                    main.showShoppingBagView();
-                }
+                main.showShoppingBagView();
             } catch (IOException e) {
                 e.printStackTrace();
             }

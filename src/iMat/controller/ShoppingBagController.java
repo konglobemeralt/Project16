@@ -62,7 +62,7 @@ public class ShoppingBagController {
         shoppingBagGrid.addColumn(1);
         shoppingBagGrid.getColumnConstraints().set(1, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(2);
-        shoppingBagGrid.getColumnConstraints().set(2, new ColumnConstraints(80));
+        shoppingBagGrid.getColumnConstraints().set(2, new ColumnConstraints(100));
         shoppingBagGrid.addColumn(3);
         shoppingBagGrid.getColumnConstraints().set(3, new ColumnConstraints(32));
         shoppingBagGrid.addColumn(4);
