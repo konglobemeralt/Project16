@@ -74,10 +74,10 @@ public class PayWizardViewController {
         CreditCard card = main.iMat.getCreditCard();
         cardOwnerArea.setText(card.getHoldersName());
         if (card.getCardNumber().length() == 16){
-            cardNumberArea1.setText(card.getCardNumber().substring(0, 3));
-            cardNumberArea2.setText(card.getCardNumber().substring(4, 7));
-            cardNumberArea3.setText(card.getCardNumber().substring(8, 11));
-            cardNumberArea4.setText(card.getCardNumber().substring(12, 15));
+            cardNumberArea1.setText(card.getCardNumber().substring(0, 4));
+            cardNumberArea2.setText(card.getCardNumber().substring(4, 8));
+            cardNumberArea3.setText(card.getCardNumber().substring(8, 12));
+            cardNumberArea4.setText(card.getCardNumber().substring(12, 16));
         }
         cardMonthArea.setText(""+card.getValidMonth());
         cardYearArea.setText(""+card.getValidYear());
@@ -876,7 +876,36 @@ public class PayWizardViewController {
         List<String> items = new ArrayList<>();
 
         for (ShoppingItem s: main.iMat.getShoppingCart().getItems()) {
-            items.add(s.getAmount()+ " " + s.getProduct().getUnitSuffix() + "     " +s.getProduct().getName() + "       " + s.getProduct().getPrice()*s.getAmount() + " kr");
+            /*String newItem = "";
+            if (s.getAmount() % 1 == 0){
+                newItem += (int)s.getAmount();
+            }
+            else {
+                newItem += s.getAmount();
+            }
+            newItem += "  ";
+            newItem += s.getProduct().getUnitSuffix();
+
+            while (newItem.length() < 17){
+                newItem += " ";
+            }
+
+            newItem += s.getProduct().getName();
+
+            while (newItem.length() < 48){
+                newItem += " ";
+            }
+
+           newItem += Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100;
+
+            while (newItem.length()<54){
+                newItem += " ";
+            }
+
+            newItem += "kr";
+
+            items.add(newItem);*/
+            items.add("  " + Math.round(s.getAmount()*100)/100 + " " + s.getProduct().getUnitSuffix() + "   " + s.getProduct().getName() + "  för  " + Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100 + " kr" );
         }
 
         ObservableList<String> itemsObservable = FXCollections.observableArrayList(items);

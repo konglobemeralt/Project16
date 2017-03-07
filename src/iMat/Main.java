@@ -18,7 +18,6 @@ import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
-import sun.util.resources.ar.CurrencyNames_ar_SA;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,7 +53,7 @@ public class Main extends Application {
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton());
 
-        /*Customer c = iMat.getCustomer();
+        Customer c = iMat.getCustomer();
         CreditCard cc = iMat.getCreditCard();
         c.setPhoneNumber("070-734 34 45");
         c.setPostCode("344 54");
@@ -64,10 +63,10 @@ public class Main extends Application {
         c.setAddress("Vintergatan 3");
 
         cc.setVerificationCode(666);
-        cc.setValidMonth(01);
-        cc.setValidMonth(20);
+        cc.setValidMonth(5);
+        cc.setValidYear(78);
         cc.setCardNumber("1337420694201337");
-        cc.setHoldersName("Qualle Moraeus");*/
+        cc.setHoldersName("Qualle Moraeus");
 
     }
 
@@ -239,7 +238,7 @@ public class Main extends Application {
             if (currentIndex + 1 != history.size()){
                 cutOffBranch();
             }
-            if (link == Link.PRODUCT){
+            if (link == Link.PRODUCT || link == Link.FAVOURITES){
                 //TODO throw exception
             }
             history.add(new SavedPage(link));
@@ -273,6 +272,7 @@ public class Main extends Application {
         private void show(){
             switch (history.get(currentIndex).getLink()){
                 case CONFIRMEDVIEW:
+                    showConfirmationView();
                     break;
 
                 case FAVOURITES:

@@ -99,10 +99,10 @@ public class ProfileViewController {
         CreditCard card = main.iMat.getCreditCard();
         cardOwnerArea.setText(card.getHoldersName());
         if (card.getCardNumber().length() == 16){
-            cardNumberArea1.setText(card.getCardNumber().substring(0, 3));
-            cardNumberArea2.setText(card.getCardNumber().substring(4, 7));
-            cardNumberArea3.setText(card.getCardNumber().substring(8, 11));
-            cardNumberArea4.setText(card.getCardNumber().substring(12, 15));
+            cardNumberArea1.setText(card.getCardNumber().substring(0, 4));
+            cardNumberArea2.setText(card.getCardNumber().substring(4, 8));
+            cardNumberArea3.setText(card.getCardNumber().substring(8, 12));
+            cardNumberArea4.setText(card.getCardNumber().substring(12, 16));
         }
         cardMonthArea.setText(""+card.getValidMonth());
         cardYearArea.setText(""+card.getValidYear());

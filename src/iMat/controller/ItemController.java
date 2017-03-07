@@ -22,6 +22,7 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.DoubleSummaryStatistics;
 import java.util.ResourceBundle;
 
 public class ItemController extends AnchorPane implements Initializable {
@@ -133,21 +134,54 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     private void updateTextArea(){
-        textArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+        if (shoppingItem.getAmount() % 1 == 0){
+            textArea.setText(""+(int)shoppingItem.getAmount()); //+ " " + shoppingItem.getProduct().getUnitSuffix());
+        }
+        else {
+            textArea.setText(""+shoppingItem.getAmount());// + " " + shoppingItem.getProduct().getUnitSuffix());
+        }
     }
 
     private void amountTextAreaLostFocus() {
 
         try {
             double newAmount = Double.parseDouble(textArea.getText());
-            shoppingItem.setAmount(newAmount);
+            if (shoppingItem.getProduct().getUnitSuffix().equals("l") || shoppingItem.getProduct().getUnitSuffix().equals("kg")){
+                shoppingItem.setAmount(Math.round(newAmount*100)/100);
+            }
+            else {
+                shoppingItem.setAmount(Math.round(newAmount));
+            }
         } catch (NumberFormatException n) {
         }
 
-        if (shoppingItem.getAmount() > 0) {
-            updateTextArea();
-        } else {
+        if (shoppingItem.getAmount() <= 0) {
             shoppingItem.setAmount(0);
+            subtractButton.setDisable(true);
+            addToCartButton.setDisable(true);
+        }
+        else {
+            addToCartButton.setDisable(false);
+            subtractButton.setDisable(false);
+        }
+
+        updateTextArea();
+
+    }
+    private void updateEnabledProperties(){
+        try {
+            double value = Double.parseDouble(textArea.getText());
+            if (value > 0){
+                subtractButton.setDisable(false);
+                addToCartButton.setDisable(false);
+            }
+            else {
+                throw new NumberFormatException();
+            }
+        }
+        catch (NumberFormatException n){
+            subtractButton.setDisable(true);
+            addToCartButton.setDisable(true);
         }
     }
 
@@ -185,11 +219,7 @@ public class ItemController extends AnchorPane implements Initializable {
             favouriteButton.getStyleClass().add("favourited");
             this.favourited = true;
         }
-
-
     }
-
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -199,6 +229,11 @@ public class ItemController extends AnchorPane implements Initializable {
                 if (!newPropertyValue) {
                     amountTextAreaLostFocus();
                 }
+            }
+        });
+        textArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                updateEnabledProperties();
             }
         });
     }

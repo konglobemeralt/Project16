@@ -183,7 +183,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <TextArea layoutX="617.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="211.0" prefWidth="382.0" AnchorPane.leftAnchor="617.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="127.0" />
+                  <TextArea layoutX="617.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="211.0" prefWidth="382.0" promptText="Eventuellt lägenhetsnummer, portkod, övriga instruktioner och annat." AnchorPane.leftAnchor="617.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="127.0" />
                   <Label layoutX="617.0" layoutY="83.0" prefWidth="152.0" text="Övrig information:" AnchorPane.leftAnchor="617.0" AnchorPane.topAnchor="83.0">
                      <font>
                         <Font size="18.0" />
