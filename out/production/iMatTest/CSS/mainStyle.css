@@ -9,6 +9,14 @@
     -fx-box-border: transparent;
 }
 
+
+.bolded{
+    -fx-font-size: 12pt;
+    -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: #575757;
+}
+
 .scroll-bar:vertical {
   -fx-background-color: transparent;
 
