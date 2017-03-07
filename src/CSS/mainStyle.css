@@ -60,9 +60,9 @@
 }
 
 .button{
- -fx-font-size: 10pt;
--fx-font-weight: bold;
--fx-background-insets: 0 1 0 1,0,0;
+    -fx-font-size: 10pt;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0 1 0 1,0,0;
 }
 
 .tab-pane .tab-header-area .tab-header-background {
@@ -151,9 +151,22 @@
 }
 
 .item{
-    -fx-base:  #5FB3B3;
-     -fx-box-border: transparent;
+    -fx-background: derive(#5FB3B3,50%);
 
+     -fx-box-border: #5FB3B3;
+
+}
+
+.itemLabel{
+    -fx-font-size: 12pt;
+     -fx-font-family: "Futura", "Arial";
+     -fx-font-weight: bold;
+}
+
+.itemPrice{
+    -fx-font-size: 12pt;
+     -fx-font-family: "Futura", "Arial";
+     -fx-font-weight: bold;
 }
 
 .tile{
