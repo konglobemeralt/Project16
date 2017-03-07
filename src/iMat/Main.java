@@ -40,24 +40,6 @@ public class Main extends Application {
         showProductView();
         showCategoriesView();
 
-
-        //Test
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(1), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(2), 4));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(3), 3));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(4), 5));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(5), 3.8));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(6), 2.5));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(7), 9));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(8), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(80), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(40), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(55), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(66), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(77), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(88), 1));
-        iMat.getShoppingCart().addItem(new ShoppingItem(iMat.getProduct(99), 1));
-
         iMat.getCustomer().setFirstName("Kalle");
         iMat.getCustomer().setLastName("Moraeus");
 
