@@ -4,14 +4,155 @@
     -fx-font-weight: bold;
     -fx-text-fill: #575757;
     -fx-base: #E1DFD4;
-    -fx-background: #FAF8EC;
+    -fx-background: #FCFAF3;
     -fx-background-radius: 10;
+    -fx-box-border: transparent;
+}
+
+.scroll-bar:vertical {
+  -fx-background-color: transparent;
+
+}
+
+.scroll-bar:vertical .track {
+  visibility: hidden;
+}
+
+.scroll-bar:vertical .track-background {
+  visibility: hidden;
+}
+
+.hide-thumb .scroll-bar:vertical .thumb {
+  -fx-background-color: transparent;
+}
+
+.content{
+        -fx-font-size: 12pt;
+        -fx-base: #FAC863;
+        -fx-background-insets: 0 1 0 1,0,0;
+        -fx-base: #5FB3B3;
+        -fx-text-fill: white;
+        -fx-background: #FAF8EC;
+}
+
+.content:hover{
+        -fx-font-size: 12pt;
+        -fx-base: #575757;
+        -fx-base: #f26419;
+}
+
+.selectedCat{
+-fx-base: #575757;
+        -fx-base: #f26419;
+
 }
 
 
+.kundKorg{
+ -fx-background-color: #FFFFFF;
+}
+
+.paneStyle{
+    -fx-text-fill: #575757;
+    -fx-base: #575757;
+      -fx-background: #575757;
+      -fx-background-color: #575757;
+}
+
+.button{
+ -fx-font-size: 10pt;
+-fx-font-weight: bold;
+-fx-background-insets: 0 1 0 1,0,0;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #575757;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+}
+
+.favourited{
+ -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+ -fx-background-color: #FAC863;
+
+}
+
+.favouriteButton{
+ -fx-base: rgba(0,0,0,0.0);
+ -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+   -fx-focus-color:#EC5f67;
+}
+
+.favouriteButton:selected{
+ -fx-base: rgba(0,0,0,0.0);
+ -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+   -fx-focus-color: #FAC863;
+}
+
+.favouriteButton:hover{
+ -fx-base: rgba(0,0,0,0.0);
+ -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+}
+
+
+.deleteButton{
+ -fx-base: #EC5f67;
+ -fx-background-image: url("img/ic_clear_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+}
+
+.addButton{
+-fx-background-image: url("img/ic_add_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+}
+
+.subtractButton{
+-fx-background-image: url("img/ic_remove_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+}
+
 .item{
-    -fx-base: #5FB3B3;
-    -fx-background: derive(#5FB3B3,50%);
+    -fx-base:  #5FB3B3;
+     -fx-box-border: transparent;
 
 }
 
@@ -57,85 +198,7 @@
 }
 .favourite:hover{
     -fx-text-fill: white;
-}
 
-.meat{
-    -fx-font-size: 12pt;
-    -fx-base: #EC5f67;
-}
-.meat:hover{
-    -fx-text-fill: white;
-}
-
-.meatSub{
-    -fx-font-size: 11pt;
-    -fx-base: derive(#f26419,50%);
-    -fx-text-fill: #575757;
-}
-
-.fish{
-    -fx-font-size: 12pt;
-    -fx-base: #6699CC;
-    -fx-text-fill: #2d2d2d;
-}
-.fish:hover{
-    -fx-text-fill: white;
-}
-
-.fishSub{
-    -fx-font-size: 12pt;
-    -fx-base: derive(#86BBD8,50%);
-    -fx-text-fill: #2d2d2d;
-}
-
-.greens{
-    -fx-font-size: 12pt;
-    -fx-base: #99C794;
-    -fx-text-fill: #2d2d2d;
-}
-.greens:hover{
-    -fx-text-fill: white;
-}
-
-.greensSub{
-    -fx-font-size: 11pt;
-    -fx-base: derive(#b2e268,50%);
-    -fx-text-fill: #2d2d2d;
-}
-
-.sweets{
-    -fx-font-size: 12pt;
-    -fx-base: #C594C5;
-    -fx-text-fill: #2d2d2d;
-}
-.sweets:hover{
-    -fx-text-fill: white;
-}
-
-.bakery{
-    -fx-font-size: 12pt;
-    -fx-base: #F99157;
-    -fx-text-fill: #2d2d2d;
-}
-.bakery:hover{
-    -fx-text-fill: white;
-}
-
-.pantry{
-    -fx-font-size: 12pt;
-    -fx-base: #AB7967;
-    -fx-text-fill: #2d2d2d;
-}
-.pantry:hover{
-    -fx-text-fill: white;
-}
-.drinks{
-    -fx-font-size: 12pt;
-    -fx-base: #5FB3B3;
-    -fx-text-fill: #2d2d2d;
-}
-.drinks:hover{
-    -fx-text-fill: white;
 }
 
 
@@ -143,6 +206,7 @@
   -fx-background-image: url("img/ic_face_black_24dp_2x.png");
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-base: #FAC863;
 }
 .profileButton:hover{-fx-background-image: url("img/ic_face_black_24dp_2xW.png");}
 
@@ -150,6 +214,7 @@
   -fx-background-image: url("img/ic_shopping_cart_black_24dp_2x.png");
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+    -fx-base: #5FB3B3;
 }
 .kundkorgButton:hover{-fx-background-image: url("img/ic_shopping_cart_black_24dp_2xW.png");}
 
@@ -158,6 +223,7 @@
   -fx-background-image: url("img/ic_help_black_24dp_2x.png");
   -fx-background-repeat: no-repeat;
   -fx-background-position: center;
+  -fx-base: #b2e268;
 }
 .helpButton:hover{-fx-background-image: url("img/ic_help_black_24dp_2xW.png");}
 
