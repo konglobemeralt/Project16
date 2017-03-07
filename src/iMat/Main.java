@@ -7,19 +7,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.SplitPane;
 import javafx.scene.control.TabPane;
-import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 
 public class Main extends Application {
@@ -94,7 +90,7 @@ public class Main extends Application {
         controller.setMain(this);
     }
 
-    private void showProductView()throws IOException{
+    private void showProductView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/ProductView.fxml"));
         ScrollPane productPanel = loader.load();
@@ -109,7 +105,7 @@ public class Main extends Application {
 
     }
 
-    public void showPayWizardView()throws IOException{
+    public void showPayWizardView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/PayWizard2.0.fxml"));
         TabPane tabPane = loader.load();
@@ -136,15 +132,15 @@ public class Main extends Application {
         shoppingBagController = controller;
     }
 
-    public void updateShoppingBag(){
+    public void updateShoppingBag() {
         shoppingBagController.updateShoppingBagGrid();
     }
 
-    public void hideShoppingBag(){
+    public void hideShoppingBag() {
         mainLayout.setRight(null);
     }
 
-    public void fillProductView(List<Product> products){
+    public void fillProductView(List<Product> products) {
         productViewController.fillCenterPane(products);
     }
 

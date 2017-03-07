@@ -13,13 +13,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.text.Text;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -81,7 +78,7 @@ public class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private void addButtonPressed(ActionEvent event) {
-        shoppingItem.setAmount(shoppingItem.getAmount()+1);
+        shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         addToCartButton.setDisable(false);
         subtractButton.setDisable(false);
         updateTextArea();
@@ -90,7 +87,7 @@ public class ItemController extends AnchorPane implements Initializable {
     @FXML
     private void subtractButtonPressed(ActionEvent event) {
         double newAmount = shoppingItem.getAmount() - 1;
-        if (newAmount <= 0){
+        if (newAmount <= 0) {
             newAmount = 0;
             addToCartButton.setDisable(true);
             subtractButton.setDisable(true);
@@ -99,7 +96,7 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     @FXML
-    private void addToCartButtonPressed(ActionEvent event){
+    private void addToCartButtonPressed(ActionEvent event) {
 
         ShoppingCart cart = Main.iMat.getShoppingCart();
         double amount = shoppingItem.getAmount();
@@ -108,8 +105,8 @@ public class ItemController extends AnchorPane implements Initializable {
         addToCartButton.setDisable(true);
         updateTextArea();
 
-        for (ShoppingItem s: cart.getItems()) {
-            if (s.getProduct().equals(shoppingItem.getProduct())){
+        for (ShoppingItem s : cart.getItems()) {
+            if (s.getProduct().equals(shoppingItem.getProduct())) {
                 s.setAmount(amount);
                 return;
             }
@@ -119,7 +116,7 @@ public class ItemController extends AnchorPane implements Initializable {
         main.updateShoppingBag();
     }
 
-    private void updateTextArea(){
+    private void updateTextArea() {
         textArea.setText(shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
