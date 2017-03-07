@@ -1,6 +1,7 @@
 package iMat.controller;
 
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -47,6 +48,7 @@ public class ShoppingBagController {
         try {
             main.showPayWizardView();
             main.hideShoppingBag();
+            main.pageHistory().addLink(Link.WIZARD);
         } catch (IOException e) {
             e.printStackTrace();
         }

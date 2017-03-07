@@ -19,7 +19,7 @@ public class ProfileViewController {
 
     public void saveButtonPressed() throws IOException{
         System.out.println("SaveButton pressed");
-        main.hideProfileView();
+        main.pageHistory().goBack();
     }
 
     public void setMain(Main main) {

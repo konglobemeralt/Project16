@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +62,13 @@ public class CategoriesPanelController {
     @FXML
     private void CategoryButtonPressed(ActionEvent event) {
         List<Product> results = ProductSearch.getCategory(((Button) event.getSource()).getText());
+        main.pageHistory().addProductLink(results);
         main.fillProductView(results);
+
+        //if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
+            try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
+        //}
+
 
        if(lastPressedCat != null){
            lastPressedCat.getStyleClass().removeAll("selectedCat");

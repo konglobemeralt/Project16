@@ -8,6 +8,7 @@ import iMat.controller.BackButtonHandler.SavedPage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
@@ -47,25 +48,32 @@ public class Main extends Application {
         showProductView();
         showCategoriesView();
 
+        historyHandler = new HistoryHandler(mainViewController.getBackButton());
+
         iMat.getCustomer().setFirstName("Kalle");
         iMat.getCustomer().setLastName("Moraeus");
 
     }
 
     private void showMainView() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/MainView.fxml"));
-        mainLayout = loader.load();
 
-        Scene scene = new Scene(mainLayout);
-        scene.getStylesheets().add("CSS/MainStyle.css");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        if (mainViewController == null){
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/MainView.fxml"));
+            mainLayout = loader.load();
 
-        //Send a reference of main to the controller
-        MainViewController controller = loader.getController();
-        controller.setMain(this);
-        mainViewController = controller;
+            Scene scene = new Scene(mainLayout);
+            scene.getStylesheets().add("CSS/MainStyle.css");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            //Send a reference of main to the controller
+            MainViewController controller = loader.getController();
+            controller.setMain(this);
+            mainViewController = controller;
+        }
+
+
     }
 
     private void showCategoriesView() throws IOException {
@@ -80,7 +88,7 @@ public class Main extends Application {
         controller.setMain(this);
     }
 
-    private void showProductView()throws IOException{
+    public void showProductView()throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/ProductView.fxml"));
         ScrollPane productPanel = loader.load();
@@ -119,13 +127,6 @@ public class Main extends Application {
         controller.setMain(this);
 
         profileViewController = controller;
-
-    }
-
-    public void hideProfileView() throws IOException {
-        mainLayout.setCenter(null);
-        showProductView();
-
 
     }
 
@@ -176,7 +177,7 @@ public class Main extends Application {
 
     public HistoryHandler pageHistory() {return historyHandler; }
 
-    private HistoryHandler historyHandler = new HistoryHandler();
+    private HistoryHandler historyHandler;
 
     public class HistoryHandler {
 
@@ -184,12 +185,19 @@ public class Main extends Application {
 
         private List<SavedPage> history;
 
-        public HistoryHandler(){
+        private Button backButton;
+
+        public HistoryHandler(Button backButton){
+            this.backButton = backButton;
             history = new ArrayList<SavedPage>();
             currentIndex = -1;
+            addLink(Link.HOME);
+            backButton.setDisable(true);
         }
 
         public void addLink(Link link){
+            //TODO lägg till så att en inte kan lägga till två likadan i rad
+            backButton.setDisable(false);
             if (currentIndex + 1 != history.size()){
                 cutOffBranch();
             }
@@ -201,6 +209,8 @@ public class Main extends Application {
         }
 
         public void addProductLink(List<Product> productList){
+            backButton.setDisable(false);
+            //TODO lägg till så att en inte kan lägga till två likadan i rad
             if (currentIndex + 1 != history.size()){
                 cutOffBranch();
             }
@@ -210,6 +220,9 @@ public class Main extends Application {
 
         public void goBack(){
             currentIndex--;
+            if (currentIndex == 0){
+                backButton.setDisable(true);
+            }
             show();
         }
 
@@ -230,6 +243,7 @@ public class Main extends Application {
                     break;
 
                 case HOME:
+                    mainLayout.setCenter(null);
                     break;
 
                 case MYLISTS:
@@ -259,6 +273,5 @@ public class Main extends Application {
                 history.remove(i);
             }
         }
-
     }
 }

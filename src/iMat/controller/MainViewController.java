@@ -1,10 +1,12 @@
 package iMat.controller;
 
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import iMat.model.ProductSearch;
 import javafx.animation.ScaleTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
@@ -30,8 +32,12 @@ public class MainViewController {
     private Text itemCounterLable;
 
     private boolean profilePressed = false;
+
     @FXML
     private TextField searchBarMain;
+
+    @FXML
+    private Button backButton;
 
     //Reference the main application
     private Main main;
@@ -96,12 +102,13 @@ public class MainViewController {
         if (!profilePressed) {
             try {
                 main.showProfileView();
+                main.pageHistory().addLink(Link.PROFILE);
                 profilePressed = !profilePressed;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
-            main.hideProfileView();
+            main.pageHistory().goBack();
             profilePressed = !profilePressed;
         }
 
@@ -112,7 +119,7 @@ public class MainViewController {
         System.out.println("kundkorg Button pressed");
         if (main.getMainLayout().getRight() == null) {
             try {
-                if (main.getMainLayout().getCenter().getId().equals("tabPane")){
+                if (main.getMainLayout().getCenter() != null && main.getMainLayout().getCenter().getId().equals("tabPane")){
                     ((TabPane)main.getMainLayout().getCenter()).getSelectionModel().select(0);
                 }
                 else {
@@ -127,19 +134,21 @@ public class MainViewController {
 
     }
 
-    public void searchButtonPressed(ActionEvent event) {
-
-        System.out.print("search Button pressed. ");
-        search();
-    }
-
     private void search() {
         main.fillProductView(ProductSearch.search(searchBarMain.getText()));
     }
 
     public void searchFieldEnterPressed(ActionEvent event) {
-        System.out.println("Searched for: " + searchBarMain.getText());
-
+        main.pageHistory().addProductLink(ProductSearch.search(searchBarMain.getText()));
+        search();
     }
 
+    @FXML
+    void backButtonPressed(ActionEvent event) {
+        main.pageHistory().goBack();
+    }
+
+    public Button getBackButton() {
+        return backButton;
+    }
 }
