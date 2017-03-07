@@ -2,6 +2,7 @@ package iMat.controller;
 
 import iMat.Main;
 import iMat.model.ProductSearch;
+import javafx.animation.ScaleTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Label;
@@ -13,6 +14,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import javafx.util.Duration;
 
 
 /**
@@ -51,7 +53,17 @@ public class MainViewController {
             shoppingBagCounter.setVisible(true);
             itemCounterLable.setVisible(true);
             itemCounterLable.toFront();
-            itemCounterLable.setText(Double.toString(Main.iMat.getShoppingCart().getTotal()));
+            itemCounterLable.setText((Integer.toString((int)Math.round(Main.iMat.getShoppingCart().getTotal()))));
+
+
+            ScaleTransition st = new ScaleTransition(Duration.millis(100), shoppingBagCounter);
+            st.setByX(1.2f);
+            st.setByY(1.2f);
+            st.setCycleCount(2);
+            st.setAutoReverse(true);
+
+            st.play();
+
         }
         else {
             shoppingBagCounter.setVisible(false);
