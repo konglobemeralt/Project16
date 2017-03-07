@@ -1,6 +1,7 @@
 package iMat.controller;
 
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -51,6 +53,11 @@ public class PayWizardViewController {
     }
 
     @FXML
+    void goBack(ActionEvent event) {
+        main.pageHistory().goBack();
+    }
+
+    @FXML
     public void initialize() {
         Customer customer = main.iMat.getCustomer();
 
@@ -60,6 +67,18 @@ public class PayWizardViewController {
         addressArea.setText(customer.getAddress());
         postalCodeArea.setText(customer.getPostCode());
         postAddressArea.setText(customer.getPostAddress());
+
+        CreditCard card = main.iMat.getCreditCard();
+        cardOwnerArea.setText(card.getHoldersName());
+        if (card.getCardNumber().length() == 16){
+            cardNumberArea1.setText(card.getCardNumber().substring(0, 3));
+            cardNumberArea2.setText(card.getCardNumber().substring(4, 7));
+            cardNumberArea3.setText(card.getCardNumber().substring(8, 11));
+            cardNumberArea4.setText(card.getCardNumber().substring(12, 15));
+        }
+        cardMonthArea.setText(""+card.getValidMonth());
+        cardYearArea.setText(""+card.getValidYear());
+        cardCVCArea.setText(""+card.getVerificationCode());
 
         firstNameArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
@@ -230,11 +249,6 @@ public class PayWizardViewController {
         }
 
         tabPane.getSelectionModel().select(currentTab);
-
-    }
-
-    @FXML
-    private void cancelButtonPressed(ActionEvent a) {
 
     }
 
@@ -845,6 +859,15 @@ public class PayWizardViewController {
         paymentConfirmationLabel.setText(paymentWords);
 
 
+    }
+
+    @FXML
+    private void confirmPurchase(ActionEvent event){
+        main.iMat.placeOrder(true);
+        main.showConfirmationView();
+        main.updateConfirmationViewText(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
+
+        main.pageHistory().addLink(Link.CONFIRMEDVIEW);
     }
 
 }

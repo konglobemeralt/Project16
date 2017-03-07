@@ -7,7 +7,6 @@ import javafx.animation.ScaleTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
@@ -30,8 +29,6 @@ public class MainViewController {
 
     @FXML
     private Text itemCounterLable;
-
-    private boolean profilePressed = false;
 
     @FXML
     private TextField searchBarMain;
@@ -98,18 +95,15 @@ public class MainViewController {
     }
 
     public void profileButtonPressed(ActionEvent event) throws IOException {
-        System.out.println("profile Button pressed");
-        if (!profilePressed) {
+        if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("profilePane")) {
             try {
                 main.showProfileView();
                 main.pageHistory().addLink(Link.PROFILE);
-                profilePressed = !profilePressed;
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             main.pageHistory().goBack();
-            profilePressed = !profilePressed;
         }
 
 

@@ -1,0 +1,35 @@
+package iMat.controller;
+
+import iMat.Main;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+/**
+ * Created by Kraft on 2017-03-07.
+ */
+public class ConfirmationViewController {
+
+    //Reference the main application
+    private Main main;
+
+    @FXML
+    private Label timeLabel;
+
+    @FXML
+    private Label dateLabel;
+
+    @FXML
+    void receiptsButtonPressed(ActionEvent event) {
+
+    }
+
+    public void updateText(String date, String time){
+        timeLabel.setText(time);
+        dateLabel.setText(date);
+    }
+
+    public void setMain(Main main) {
+        this.main = main;
+    }
+}

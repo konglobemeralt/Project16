@@ -16,7 +16,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,6 +36,8 @@ public class Main extends Application {
 
     private MainViewController mainViewController;
 
+    private ConfirmationViewController confirmationViewController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -49,9 +50,6 @@ public class Main extends Application {
         showCategoriesView();
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton());
-
-        iMat.getCustomer().setFirstName("Kalle");
-        iMat.getCustomer().setLastName("Moraeus");
 
     }
 
@@ -148,13 +146,34 @@ public class Main extends Application {
         if (shoppingBagController != null)
         {
             shoppingBagController.updateShoppingBagGrid();
-
         }
         mainViewController.updateShoppingBagCounter();
     }
 
     public void hideShoppingBag(){
         mainLayout.setRight(null);
+    }
+
+    public void showConfirmationView(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/confirmationView.fxml"));
+        try {
+            AnchorPane confirmationView = loader.load();
+            mainLayout.setCenter(confirmationView);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        //Send a reference of main to the controller
+        ConfirmationViewController controller = loader.getController();
+        controller.setMain(this);
+        confirmationViewController = controller;
+
+    }
+
+    public void updateConfirmationViewText(String time, String date){
+        confirmationViewController.updateText(date, time);
     }
 
     public void fillProductView(List<Product> products){
@@ -174,6 +193,7 @@ public class Main extends Application {
         launch(args);
     }
 
+    //------------------------History--------------------------------\\
 
     public HistoryHandler pageHistory() {return historyHandler; }
 

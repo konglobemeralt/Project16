@@ -25,7 +25,7 @@
       <content>
         <AnchorPane fx:id="payViewPane" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1280.0">
                <children>
-                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#cancelButtonPressed" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -178,7 +178,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#cancelButtonPressed" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -230,7 +230,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#cancelButtonPressed" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -250,7 +250,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <RadioButton layoutX="103.0" layoutY="123.0" mnemonicParsing="false" onAction="#notCardRadioButtonPressed" text="Via faktura (25 kr avgift)" toggleGroup="$payMethodRadioButtons" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="123.0">
+                        <RadioButton layoutX="103.0" layoutY="123.0" mnemonicParsing="false" onAction="#notCardRadioButtonPressed" text="Via faktura " toggleGroup="$payMethodRadioButtons" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="123.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -348,7 +348,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" prefWidth="200.0" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
+                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefWidth="200.0" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
                      <font>
                         <Font size="28.0" />
                      </font>
