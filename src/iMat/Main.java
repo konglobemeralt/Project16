@@ -35,6 +35,8 @@ public class Main extends Application {
 
     private ProfileViewController profileViewController;
 
+    private MainViewController mainViewController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -64,6 +66,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         MainViewController controller = loader.getController();
         controller.setMain(this);
+        mainViewController = controller;
     }
 
     private void showCategoriesView() throws IOException {
@@ -145,7 +148,9 @@ public class Main extends Application {
         if (shoppingBagController != null)
         {
             shoppingBagController.updateShoppingBagGrid();
+
         }
+        mainViewController.updateShoppingBagCounter();
     }
 
     public void hideShoppingBag(){

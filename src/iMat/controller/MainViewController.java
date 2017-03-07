@@ -4,10 +4,13 @@ import iMat.Main;
 import iMat.model.ProductSearch;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 
@@ -16,6 +19,13 @@ import java.io.IOException;
  * Created by konglobemeralt on 2017-02-23.
  */
 public class MainViewController {
+
+
+    @FXML
+    private Circle shoppingBagCounter;
+
+    @FXML
+    private Text itemCounterLable;
 
     private boolean profilePressed = false;
     @FXML
@@ -33,6 +43,21 @@ public class MainViewController {
                 }
             }
         });
+    }
+
+    public void updateShoppingBagCounter(){
+        if(Main.iMat.getShoppingCart().getItems().size() != 0 ) {
+            System.out.println("Added item");
+            shoppingBagCounter.setVisible(true);
+            itemCounterLable.setVisible(true);
+            itemCounterLable.toFront();
+            itemCounterLable.setText(Double.toString(Main.iMat.getShoppingCart().getTotal()));
+        }
+        else {
+            shoppingBagCounter.setVisible(false);
+            itemCounterLable.setVisible(false);
+            itemCounterLable.setText("");
+        }
     }
 
     public void setMain(Main main) {
