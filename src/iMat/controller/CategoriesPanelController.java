@@ -80,8 +80,6 @@ public class CategoriesPanelController {
 
     public void favouritesButtonPressed(){
         System.out.println("Favourites button pressed.");
-        List<Product> results = Main.iMat.favorites();
-        main.fillProductView(results);
     }
     public void minaListorButtonPressed(){
         System.out.println("minaListor button pressed.");

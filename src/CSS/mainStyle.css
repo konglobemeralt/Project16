@@ -60,9 +60,9 @@
 }
 
 .button{
-    -fx-font-size: 10pt;
-    -fx-font-weight: bold;
-    -fx-background-insets: 0 1 0 1,0,0;
+ -fx-font-size: 10pt;
+-fx-font-weight: bold;
+-fx-background-insets: 0 1 0 1,0,0;
 }
 
 .tab-pane .tab-header-area .tab-header-background {
@@ -79,6 +79,7 @@
 .tab-pane .tab
 {
     -fx-background-color: #e6e6e6;
+
 }
 
 .tab-pane .tab:selected
@@ -111,12 +112,16 @@
  -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
-   -fx-background-color: #FFFFFF;
-   -fx-focus-color: transparent;
+   -fx-focus-color:#EC5f67;
 }
 
-
-
+.favouriteButton:selected{
+ -fx-base: rgba(0,0,0,0.0);
+ -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+   -fx-background-repeat: no-repeat;
+   -fx-background-position: center;
+   -fx-focus-color: #FAC863;
+}
 
 .favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);
@@ -146,22 +151,9 @@
 }
 
 .item{
-    -fx-background: derive(#5FB3B3,50%);
+    -fx-base:  #5FB3B3;
+     -fx-box-border: transparent;
 
-     -fx-box-border: #5FB3B3;
-
-}
-
-.itemLabel{
-    -fx-font-size: 12pt;
-     -fx-font-family: "Futura", "Arial";
-     -fx-font-weight: bold;
-}
-
-.itemPrice{
-    -fx-font-size: 12pt;
-     -fx-font-family: "Futura", "Arial";
-     -fx-font-weight: bold;
 }
 
 .tile{
