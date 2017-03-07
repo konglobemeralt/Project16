@@ -72,9 +72,9 @@ public class ShoppingBagController {
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
 
-        for (int index = 0; index < shoppingItems.size() && index < 15; index++) {
+        for (int index = 0; index < shoppingItems.size(); index++) {
 
-            shoppingBagGrid.addRow(index);
+            //shoppingBagGrid.addRow(index);
             ShoppingItem shoppingItem = shoppingItems.get(index);
 
             //Initialize all components
