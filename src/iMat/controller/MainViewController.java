@@ -54,6 +54,7 @@ public class MainViewController {
             }
         } else {
             main.hideProfileView();
+
         }
 
 

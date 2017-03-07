@@ -76,7 +76,7 @@
             </TextField>
          </children>
       </AnchorPane>
-      <Button layoutX="843.0" layoutY="559.0" mnemonicParsing="false" prefWidth="141.0" text="Spara">
+      <Button fx:id="saveButton" layoutX="843.0" layoutY="559.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefWidth="141.0" text="Spara">
          <font>
             <Font size="24.0" />
          </font>

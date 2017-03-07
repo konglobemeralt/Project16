@@ -29,6 +29,8 @@ public class Main extends Application {
 
     private ShoppingBagController shoppingBagController;
 
+    private ProfileViewController profileViewController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -124,6 +126,11 @@ public class Main extends Application {
         AnchorPane profileViewPanel = loader.load();
         mainLayout.setCenter(profileViewPanel);
 
+        //Send a reference of main to the controller
+        ProfileViewController controller = loader.getController();
+        controller.setMain(this);
+
+        profileViewController = controller;
 
     }
 
