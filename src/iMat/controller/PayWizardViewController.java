@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.ShoppingItem;
@@ -152,7 +153,7 @@ public class PayWizardViewController {
 
         cardPanel.setVisible(false);
 
-        TextField[] textFields = {cardOwnerArea, cardNumberArea, cardMonthArea, cardYearArea, cardCVCArea};
+        TextField[] textFields = {cardOwnerArea, cardNumberArea1,cardNumberArea2,cardNumberArea3,cardNumberArea4, cardMonthArea, cardYearArea, cardCVCArea};
 
         for (TextField t : textFields) {
             t.textProperty().addListener(new ChangeListener<String>() {
@@ -470,42 +471,101 @@ public class PayWizardViewController {
     @FXML
     private TextField postAddressArea;
 
+    @FXML
+    private ImageView firstNameFeedbackImage;
+
+    @FXML
+    private ImageView lastNameFeedbackImage;
+
+    @FXML
+    private ImageView phoneFeedbackImage;
+
+    @FXML
+    private ImageView postalCodeFeedbackImage;
+
+    @FXML
+    private ImageView postAddressFeedbackImage;
+
+    @FXML
+    private ImageView addressFeedbackImage;
+
+    @FXML
+    private Label firstNameFeedbackLabel;
+
+    @FXML
+    private Label lastNameFeedbackLabel;
+
+    @FXML
+    private Label phoneFeedbackLabel;
+
+    @FXML
+    private Label addressFeedbackLabel;
+
+    @FXML
+    private Label postalCodeFeedbackLabel;
+
+    @FXML
+    private Label postAddressFeedbackLabel;
+
     private boolean isCredentialsFinished() {
         String[] inputs = {firstNameArea.getText(), lastNameArea.getText(), phoneArea.getText(), addressArea.getText(), postalCodeArea.getText(), postAddressArea.getText()};
+        ImageView[] feedbackImages = {firstNameFeedbackImage, lastNameFeedbackImage, phoneFeedbackImage, addressFeedbackImage, postalCodeFeedbackImage, postAddressFeedbackImage};
+        Label[] feedbackLabels = {firstNameFeedbackLabel, lastNameFeedbackLabel, phoneFeedbackLabel, addressFeedbackLabel, postalCodeFeedbackLabel, postAddressFeedbackLabel};
+
+        boolean returnBool = true;
 
         for (int i = 0; i < inputs.length; i++) {
             if (inputs[i].equals("")) {
-                return false;
-            }
+                feedbackImages[i].getStyleClass().add(""); //TODO gör till tom
+                feedbackLabels[i].setText("");
+                returnBool = false;
+                //return false;
+            } else {
 
-            switch (i) {
+                switch (i) {
 
-                case 2: // Phone number
-                    try {
-                        long number = Long.parseLong(inputs[i].replace(' ', '0').replace('+', '0').replace('-', '0'));
-                    } catch (NumberFormatException e) {
-                        return false;
-                    }
-                    break;
+                    default:
+                        feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                        feedbackLabels[i].setText("");
+                        break;
 
-                case 4: // Postal Code
-                    try {
-                        String[] numbers = inputs[i].split(" ");
-                        String number = "";
-                        for (String s : numbers) {
-                            number += s;
+                    case 2: // Phone number
+                        try {
+                            long number = Long.parseLong(inputs[i].replace(' ', '0').replace('+', '0').replace('-', '0'));
+                            feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                            feedbackLabels[i].setText("");
+                        } catch (NumberFormatException e) {
+                            feedbackImages[i].getStyleClass().add(""); //TODO gör till inte ok
+                            feedbackLabels[i].setText("Får endast innehålla siffror");
+                            returnBool = false;
+                            //return false;
                         }
-                        if (number.length() != 5) {
-                            return false;
+                        break;
+
+                    case 4: // Postal Code
+                        try {
+                            String[] numbers = inputs[i].split(" ");
+                            String number = "";
+                            for (String s : numbers) {
+                                number += s;
+                            }
+                            if (number.length() != 5) {
+                                throw new NumberFormatException();
+                            }
+                            int testIfNumber = Integer.parseInt(number);
+                            feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                            feedbackLabels[i].setText("");
+                        } catch (NumberFormatException e) {
+                            feedbackImages[i].getStyleClass().add(""); //TODO gör till inte ok
+                            feedbackLabels[i].setText("Måste innehålla 5 siffror");
+                            returnBool = false;
+                            //return false;
                         }
-                        int testIfNumber = Integer.parseInt(number);
-                    } catch (NumberFormatException e) {
-                        return false;
-                    }
-                    break;
+                        break;
+                }
             }
         }
-        return true;
+        return returnBool;
     }
 
     @FXML
@@ -545,7 +605,16 @@ public class PayWizardViewController {
     private TextField cardOwnerArea;
 
     @FXML
-    private TextField cardNumberArea;
+    private TextField cardNumberArea1;
+
+    @FXML
+    private TextField cardNumberArea2;
+
+    @FXML
+    private TextField cardNumberArea3;
+
+    @FXML
+    private TextField cardNumberArea4;
 
     @FXML
     private TextField cardMonthArea;
@@ -555,6 +624,18 @@ public class PayWizardViewController {
 
     @FXML
     private TextField cardCVCArea;
+
+    @FXML
+    private ImageView cardOwnerFeedbackImage;
+
+    @FXML
+    private ImageView cardNumberFeedbackImage;
+
+    @FXML
+    private ImageView cardDateFeedbackImage;
+
+    @FXML
+    private ImageView cardCVCFeedbackImage;
 
     @FXML
     void cardRadioButtonPressed(ActionEvent event) {
@@ -583,56 +664,120 @@ public class PayWizardViewController {
             return false;
         }
 
+
         if (cardRadioButton.isSelected()) {
-            String[] inputs = {cardOwnerArea.getText(), cardNumberArea.getText(), cardMonthArea.getText(), cardYearArea.getText(), cardCVCArea.getText()};
+            String[] inputs = {cardOwnerArea.getText(), cardNumberArea1.getText(), cardNumberArea2.getText(), cardNumberArea3.getText(), cardNumberArea4.getText(), cardMonthArea.getText(), cardYearArea.getText(), cardCVCArea.getText()};
+
+            boolean returnBool = true;
 
             for (int i = 0; i < inputs.length; i++) {
                 if (inputs[i].equals("")) {
-                    return false;
+                    //return false;
+                    returnBool = false;
+                    switch (i) {
+                        case 0:
+                            cardOwnerFeedbackImage.getStyleClass().removeAll();
+                            break;
+                        case 4:
+                            cardNumberFeedbackImage.getStyleClass().removeAll();
+                            break;
+                        case 6:
+                            if (!inputs[i - 1].equals("")) {
+                                cardDateFeedbackImage.getStyleClass().removeAll();
+                            }
+                            break;
+                        case 7:
+                            break;
+                    }
+                } else {
+
+                    switch (i) {
+                        case 4: // Card Number
+                            char[][] cardNumbers = {inputs[1].toCharArray(), inputs[2].toCharArray(), inputs[3].toCharArray(), inputs[4].toCharArray()};
+
+                            boolean allOk = true;
+                            for (char[] cA : cardNumbers) {
+
+                                if (cA.length != 4) {
+                                    allOk = false;
+                                    returnBool = false;
+                                } else {
+
+                                    for (char c : cA) {
+                                        if (Character.getNumericValue(c) == -1) {
+                                            returnBool = false;
+                                            allOk = false;
+                                            break;
+                                            //return false;
+                                        }
+                                    }
+                                }
+
+                            }
+                            if (allOk) {
+                                cardNumberFeedbackImage.getStyleClass().removeAll();
+                                cardNumberFeedbackImage.getStyleClass().add(""); //TODO ok
+                            }
+                            else {
+                                cardNumberFeedbackImage.getStyleClass().removeAll();
+                                cardNumberFeedbackImage.getStyleClass().add(""); //TODO inte ok
+                            }
+
+
+                            break;
+
+                        case 6: // Expiration Year and Month
+                            try {
+                                int a = Integer.parseInt(inputs[i - 1]);
+                                if (a > 12 || a < 1) {
+                                    //return false;
+                                    throw new NumberFormatException();
+                                }
+                                int b = Integer.parseInt(inputs[i]);
+                                if (b > 99 || b < 0) {
+                                    //return false;
+                                    throw new NumberFormatException();
+                                }
+                                cardDateFeedbackImage.getStyleClass().removeAll();
+                                cardDateFeedbackImage.getStyleClass().add(""); //TODO ok
+                            } catch (NumberFormatException n) {
+                                returnBool = false;
+                                cardDateFeedbackImage.getStyleClass().removeAll();
+                                cardDateFeedbackImage.getStyleClass().add(""); //TODO inte ok
+                                //return false;
+                            }
+                            break;
+
+                        case 7: // Card CVC
+                            boolean isOk = true;
+                            if (inputs[i].length() != 3) {
+                                returnBool = false;
+                                isOk = false;
+
+                            } else {
+                                for (char c : inputs[i].toCharArray()) {
+                                    if (Character.getNumericValue(c) == -1) {
+                                        //return false;
+                                        returnBool = false;
+                                        isOk = false;
+                                    }
+                                }
+                            }
+                            if (isOk){
+                                cardCVCFeedbackImage.getStyleClass().removeAll();
+                                cardCVCFeedbackImage.getStyleClass().add(""); // TODO ok
+                            }
+                            else {
+                                cardCVCFeedbackImage.getStyleClass().removeAll();
+                                cardCVCFeedbackImage.getStyleClass().add(""); // TODO inte ok
+                            }
+                            break;
+                    }
                 }
+            }
 
-                switch (i) {
-                    case 1: // Card Number
-                        for (char c : inputs[i].toCharArray()) {
-                            if (Character.getNumericValue(c) == -1) {
-                                return false;
-                            }
-                        }
-                        break;
-
-                    case 2: // Expiration Month
-                        try {
-                            int a = Integer.parseInt(inputs[i]);
-                            if (a > 12 || a < 1) {
-                                return false;
-                            }
-                        } catch (NumberFormatException n) {
-                            return false;
-                        }
-                        break;
-
-                    case 3: // Expiration Year
-                        try {
-                            int a = Integer.parseInt(inputs[i]);
-                            if (a > 99 || a < 0) {
-                                return false;
-                            }
-                        } catch (NumberFormatException n) {
-                            return false;
-                        }
-                        break;
-
-                    case 4: // Card CVC
-                        if (inputs[i].length() != 3) {
-                            return false;
-                        }
-                        for (char c : inputs[i].toCharArray()) {
-                            if (Character.getNumericValue(c) == -1) {
-                                return false;
-                            }
-                        }
-                        break;
-                }
+            if (!returnBool) {
+                return false;
             }
 
         }
