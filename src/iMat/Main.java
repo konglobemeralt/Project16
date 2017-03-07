@@ -14,8 +14,11 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import sun.util.resources.ar.CurrencyNames_ar_SA;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,6 +53,21 @@ public class Main extends Application {
         showCategoriesView();
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton());
+
+        /*Customer c = iMat.getCustomer();
+        CreditCard cc = iMat.getCreditCard();
+        c.setPhoneNumber("070-734 34 45");
+        c.setPostCode("344 54");
+        c.setLastName("Moraeus");
+        c.setFirstName("Qualle");
+        c.setPostAddress("Ankeborg");
+        c.setAddress("Vintergatan 3");
+
+        cc.setVerificationCode(666);
+        cc.setValidMonth(01);
+        cc.setValidMonth(20);
+        cc.setCardNumber("1337420694201337");
+        cc.setHoldersName("Qualle Moraeus");*/
 
     }
 

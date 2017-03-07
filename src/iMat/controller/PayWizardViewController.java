@@ -2,6 +2,8 @@ package iMat.controller;
 
 import iMat.Main;
 import iMat.controller.BackButtonHandler.Link;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +20,7 @@ import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PayWizardViewController {
@@ -181,6 +184,8 @@ public class PayWizardViewController {
                 }
             });
         }
+
+
     }
 
     @FXML
@@ -210,6 +215,7 @@ public class PayWizardViewController {
             deliveryNextButton.setDisable(false);
             confirmation.setDisable(false);
             updateConfirmationLabels();
+            updateConfirmationList();
         } else {
             deliveryNextButton.setDisable(true);
             confirmation.setDisable(true);
@@ -829,6 +835,10 @@ public class PayWizardViewController {
     @FXML
     private Label paymentConfirmationLabel;
 
+    @FXML
+    private ListView<String> confirmationList;
+
+
     private void updateConfirmationLabels() {
         Customer c = main.iMat.getCustomer();
 
@@ -858,6 +868,20 @@ public class PayWizardViewController {
 
         paymentConfirmationLabel.setText(paymentWords);
 
+
+    }
+
+    private void updateConfirmationList(){
+
+        List<String> items = new ArrayList<>();
+
+        for (ShoppingItem s: main.iMat.getShoppingCart().getItems()) {
+            items.add(s.getAmount()+ " " + s.getProduct().getUnitSuffix() + "     " +s.getProduct().getName() + "       " + s.getProduct().getPrice()*s.getAmount() + " kr");
+        }
+
+        ObservableList<String> itemsObservable = FXCollections.observableArrayList(items);
+
+        confirmationList.setItems(itemsObservable);
 
     }
 

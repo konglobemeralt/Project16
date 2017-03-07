@@ -407,7 +407,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ListView layoutX="636.0" layoutY="27.0" prefHeight="374.0" prefWidth="333.0" />
+                  <ListView fx:id="confirmationList" layoutX="636.0" layoutY="27.0" prefHeight="374.0" prefWidth="333.0" />
                   <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
                      <font>
                         <Font size="24.0" />
