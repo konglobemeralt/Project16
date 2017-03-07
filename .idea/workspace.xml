@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iMat/controller/ConfirmationViewController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/iMat/controller/StartViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/Main.java" afterPath="$PROJECT_DIR$/src/iMat/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,11 +31,24 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="443">
+              <caret line="148" column="54" lean-forward="false" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShoppingBag.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="192" lean-forward="false" selection-start-line="17" selection-start-column="192" selection-end-line="17" selection-end-column="192" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -60,7 +73,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartViewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profileView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/profileView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="259" lean-forward="false" selection-start-line="7" selection-start-column="259" selection-end-line="7" selection-end-column="259" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/ProductView.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="8" column="218" lean-forward="false" selection-start-line="8" selection-start-column="165" selection-end-line="8" selection-end-column="218" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/StartViewController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -70,21 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainViewController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainViewController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PayWizardViewController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3240">
-              <caret line="235" column="37" lean-forward="false" selection-start-line="235" selection-start-column="37" selection-end-line="235" selection-end-column="37" />
+            <state relative-caret-position="-42">
+              <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -95,26 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/controller/ItemController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriesPanelController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,10 +183,11 @@
         <option value="$PROJECT_DIR$/src/iMat/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
-        <option value="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ProductViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java" />
+        <option value="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/Main.java" />
+        <option value="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
       </list>
     </option>
   </component>
@@ -720,7 +730,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/item2.fxml" />
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/categoriesController.java" />
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/mainController.java" />
     <entry file="file://$PROJECT_DIR$/src/iMat/view/centerView.fxml" />
@@ -806,26 +815,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/productView2.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/ProductView.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="192" lean-forward="false" selection-start-line="17" selection-start-column="192" selection-end-line="17" selection-end-column="192" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/ShoppingBag2.fxml" />
     <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizardView.fxml" />
     <entry file="file://$PROJECT_DIR$/iMatTest.iml">
@@ -916,14 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProductViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
@@ -934,28 +915,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java">
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/StartViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/ProductView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="8" column="218" lean-forward="false" selection-start-line="8" selection-start-column="165" selection-end-line="8" selection-end-column="218" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ConfirmationViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/profileView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        <state relative-caret-position="105">
+          <caret line="7" column="259" lean-forward="false" selection-start-line="7" selection-start-column="259" selection-end-line="7" selection-end-column="259" />
           <folding />
         </state>
       </provider>
@@ -968,10 +953,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/StartViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ConfirmationViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="148" column="54" lean-forward="false" selection-start-line="148" selection-start-column="8" selection-end-line="148" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="192" lean-forward="false" selection-start-line="17" selection-start-column="192" selection-end-line="17" selection-end-column="192" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="52" column="36" lean-forward="false" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
           <folding />
         </state>
       </provider>

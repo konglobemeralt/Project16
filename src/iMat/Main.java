@@ -118,6 +118,19 @@ public class Main extends Application {
 
     }
 
+    public void showProfileView() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/profileView.fxml"));
+        AnchorPane profileViewPanel = loader.load();
+        mainLayout.setCenter(profileViewPanel);
+
+
+    }
+
+    public void hideProfileView() {
+        mainLayout.setCenter(null);
+    }
+
     public void showShoppingBagView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/ShoppingBag.fxml"));
