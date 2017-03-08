@@ -284,7 +284,7 @@ public class ItemController extends AnchorPane implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 System.out.println("HEJ");
-                boolean validDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d*") && !newValue.matches("\\d*");
+                boolean validDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d{0,2}") && !newValue.matches("\\d*");
                 boolean validIntInput = !newValue.matches("\\d*");
 
                     if (unitIsDouble && validDoubleInput)
