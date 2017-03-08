@@ -283,7 +283,9 @@ public class PayWizardViewController {
     public void updateShoppingBagGrid() {
 
         numberOfItemsLabelOverview.setText("" + main.iMat.getShoppingCart().getItems().size());
+        confirmNumberOfItemsLabel.setText("Antal varor: " + main.iMat.getShoppingCart().getItems().size());
         totalPriceLabelOverview.setText("" + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0);
+        confirmTotalPriceLabel.setText("Totalt: " + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0 + " kr");
 
         //Clear grid
         shoppingBagGrid.getChildren().clear();
@@ -434,7 +436,10 @@ public class PayWizardViewController {
         }
         updateShoppingBagGrid();
         updateTabEnabledStatus();
+
         totalPriceLabelOverview.setText("" + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0);
+        confirmTotalPriceLabel.setText("Totalt: " + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0 + " kr");
+        main.updateShoppingBagCounter();
 
     }
 
@@ -463,6 +468,8 @@ public class PayWizardViewController {
             updateShoppingBagGrid();
         }
         totalPriceLabelOverview.setText("" + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0);
+        confirmTotalPriceLabel.setText("Totalt: " + Math.round(main.iMat.getShoppingCart().getTotal() * 100) / 100.0 + " kr");
+        main.updateShoppingBagCounter();
 
     }
 
@@ -844,6 +851,12 @@ public class PayWizardViewController {
     @FXML
     private ListView<String> confirmationList;
 
+    @FXML
+    private Label confirmNumberOfItemsLabel;
+
+    @FXML
+    private Label confirmTotalPriceLabel;
+
 
     private void updateConfirmationLabels() {
         Customer c = main.iMat.getCustomer();
@@ -882,35 +895,6 @@ public class PayWizardViewController {
         List<String> items = new ArrayList<>();
 
         for (ShoppingItem s: main.iMat.getShoppingCart().getItems()) {
-            /*String newItem = "";
-            if (s.getAmount() % 1 == 0){
-                newItem += (int)s.getAmount();
-            }
-            else {
-                newItem += s.getAmount();
-            }
-            newItem += "  ";
-            newItem += s.getProduct().getUnitSuffix();
-
-            while (newItem.length() < 17){
-                newItem += " ";
-            }
-
-            newItem += s.getProduct().getName();
-
-            while (newItem.length() < 48){
-                newItem += " ";
-            }
-
-           newItem += Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100;
-
-            while (newItem.length()<54){
-                newItem += " ";
-            }
-
-            newItem += "kr";
-
-            items.add(newItem);*/
             items.add("  " + Math.round(s.getAmount()*100)/100 + " " + s.getProduct().getUnitSuffix() + "   " + s.getProduct().getName() + "  för  " + Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100 + " kr" );
         }
 

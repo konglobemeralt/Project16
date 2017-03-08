@@ -232,6 +232,10 @@ public class Main extends Application {
         controller.setOrder(order);
     }
 
+    public void updateShoppingBagCounter(){
+        mainViewController.updateShoppingBagCounter();
+    }
+
     public void fillProductView(List<Product> products) {
         productViewController.fillCenterPaneProduct(products);
     }
