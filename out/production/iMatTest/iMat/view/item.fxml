@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -14,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="243.0" style="-fx-border-color: #5FB3B3; -fx-background-color: #5FB3B3;" styleClass="item" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="243.0" style="-fx-border-color: #5FB3B3; -fx-background-color: #5FB3B3;" styleClass="item" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <AnchorPane layoutX="2.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="239.0" style="-fx-background-color: #5FB3B3;" styleClass="item">
             <children>
@@ -25,7 +20,7 @@
                </cursor></Button>
             </children>
         </AnchorPane>
-        <TextField fx:id="textArea" alignment="CENTER" layoutX="37.0" layoutY="267.0" prefHeight="31.0" prefWidth="83.0" promptText="0" />
+        <TextField fx:id="textArea" alignment="CENTER" layoutX="37.0" layoutY="267.0" onAction="#amountTextAreaAction" prefHeight="31.0" prefWidth="83.0" promptText="0" />
         <Button fx:id="addToCartButton" disable="true" layoutX="162.0" layoutY="267.0" mnemonicParsing="false" onAction="#addToCartButtonPressed" prefHeight="31.0" prefWidth="76.0" text="Lägg till">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -46,7 +41,7 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Button fx:id="subtractButton" layoutX="6.0" layoutY="267.0" mnemonicParsing="false" onAction="#subtractButtonPressed" prefHeight="31.0" prefWidth="30.0" styleClass="subtractButton">
+      <Button fx:id="subtractButton" disable="true" layoutX="6.0" layoutY="267.0" mnemonicParsing="false" onAction="#subtractButtonPressed" prefHeight="31.0" prefWidth="30.0" styleClass="subtractButton">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

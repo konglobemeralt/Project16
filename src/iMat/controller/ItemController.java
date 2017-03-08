@@ -111,6 +111,29 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     @FXML
+    private void amountTextAreaAction(ActionEvent event)
+    {
+
+        try {
+            double newAmount = Double.parseDouble(textArea.getText());
+            shoppingItem.setAmount(newAmount);
+        } catch (NumberFormatException n) {
+        }
+
+        if (shoppingItem.getAmount() > 0) {
+            updateTextArea();
+            addToCartButton.setDisable(false);
+            subtractButton.setDisable(false);
+        } else {
+            shoppingItem.setAmount(0);
+            addToCartButton.setDisable(true);
+            subtractButton.setDisable(true);
+            updateTextArea();
+        }
+
+    }
+
+    @FXML
     private void addToCartButtonPressed(ActionEvent event){
 
         ShoppingCart cart = Main.iMat.getShoppingCart();
