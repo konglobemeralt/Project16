@@ -15,11 +15,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="243.0" style="-fx-border-color: #5FB3B3; -fx-background-color: #5FB3B3;" styleClass="item" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="243.0" style="-fx-border-color: #5FB3B3; -fx-background-color: #5FB3B3;" styleClass="item" stylesheets="@../../CSS/mainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <AnchorPane layoutX="2.0" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="219.0" prefWidth="239.0" style="-fx-background-color: #5FB3B3;" styleClass="item">
             <children>
-                <ImageView fx:id="productImage" fitHeight="181.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="productImage" fitHeight="181.0" fitWidth="239.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="rounded" />
                 <Button id="increaseProductButton" fx:id="favouriteButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#favouritedItem" prefHeight="38.0" prefWidth="37.0" styleClass="favouriteButton">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -33,7 +33,7 @@
          </cursor></Button>
         <AnchorPane layoutY="180.0" minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="243.0" />
         <Separator blendMode="EXCLUSION" layoutX="2.0" layoutY="264.0" prefHeight="0.0" prefWidth="239.0" />
-        <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="179.0" prefHeight="38.0" prefWidth="230.0" styleClass="itemLabel" text="itemLabel" textAlignment="CENTER" textFill="WHITE">
+        <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="188.0" prefHeight="38.0" prefWidth="230.0" styleClass="itemLabel" text="itemLabel" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="26.0" />
             </font>
