@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
@@ -7,10 +12,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelPressed" prefHeight="170.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#panelPressed" prefHeight="170.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <ImageView fitHeight="148.0" fitWidth="158.0" layoutX="14.0" layoutY="10.0" onMouseClicked="#panelPressed" pickOnBounds="true" preserveRatio="true" />
-        <Label fx:id="dateLabel" layoutX="183.0" layoutY="19.0" onMouseClicked="#panelPressed" text="Datum">
+        <Label fx:id="dateLabel" layoutX="183.0" layoutY="19.0" onMouseClicked="#panelPressed" styleClass="bolded" text="Datum">
             <font>
                 <Font size="18.0" />
             </font>
@@ -37,7 +42,7 @@
         </Label>
       <Separator layoutX="110.0" layoutY="169.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <ListView fx:id="itemsList" layoutX="630.0" layoutY="6.0" onMouseClicked="#panelPressed" prefHeight="118.0" prefWidth="314.0" />
-      <Label fx:id="showMoreLabel" layoutX="686.0" layoutY="129.0" onMouseClicked="#panelPressed" text="Tryck för att visa mer">
+      <Label fx:id="showMoreLabel" layoutX="686.0" layoutY="129.0" onMouseClicked="#panelPressed" styleClass="bolded" text="Tryck för att visa mer">
          <font>
             <Font size="18.0" />
          </font>

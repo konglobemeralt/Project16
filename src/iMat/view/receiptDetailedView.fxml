@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptDetailedController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptDetailedController">
    <children>
       <ListView fx:id="itemsList" layoutX="154.0" layoutY="91.0" prefHeight="423.0" prefWidth="722.0" AnchorPane.leftAnchor="154.0" />
-      <Label fx:id="dateLabel" layoutX="243.0" layoutY="29.0" text="Beställdes den " AnchorPane.leftAnchor="243.0">
+      <Label fx:id="dateLabel" layoutX="243.0" layoutY="29.0" styleClass="bolded" text="Beställdes den " AnchorPane.leftAnchor="243.0">
          <font>
             <Font size="29.0" />
          </font>
@@ -24,6 +28,6 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="937.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeButtonPressed" prefHeight="60.0" prefWidth="60.0" text="Kryss" AnchorPane.leftAnchor="937.0" />
+      <Button layoutX="937.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeButtonPressed" prefHeight="35.0" prefWidth="35.0" styleClass="deleteButton" AnchorPane.leftAnchor="937.0" />
    </children>
 </AnchorPane>

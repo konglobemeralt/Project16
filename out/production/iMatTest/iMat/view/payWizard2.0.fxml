@@ -30,17 +30,17 @@
       <content>
         <AnchorPane fx:id="payViewPane" minHeight="0.0" minWidth="0.0" prefHeight="650.0" prefWidth="1280.0">
                <children>
-                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="overviewNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="overviewNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -173,17 +173,17 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button layoutX="45.0" layoutY="399.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+                  <Button layoutX="45.0" layoutY="399.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="credentialsNextButton" layoutX="923.0" layoutY="588.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="credentialsNextButton" layoutX="923.0" layoutY="588.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -225,17 +225,17 @@
                      </font>
                   </Label>
                   <ComboBox fx:id="timeComboBox" layoutX="601.0" layoutY="91.0" onAction="#updateTabEnabledStatus" onMouseClicked="#updateTabEnabledStatus" prefHeight="40.0" prefWidth="250.0" promptText="Välj tidsintervall" AnchorPane.leftAnchor="601.0" AnchorPane.rightAnchor="124.0" AnchorPane.topAnchor="91.0" />
-                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="deliveryNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="deliveryNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -348,12 +348,12 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="524.0" prefWidth="1098.0">
                <children>
-                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
+                  <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
+                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" styleClass="rounded" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
                      <font>
                         <Font size="28.0" />
                      </font>
@@ -413,7 +413,7 @@
                      </font>
                   </Label>
                   <ListView fx:id="confirmationList" layoutX="639.0" layoutY="82.0" prefHeight="346.0" prefWidth="333.0" style="-fx-border-width: 1;" />
-                  <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" text="Avbryt">
+                  <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" styleClass="rounded" text="Avbryt">
                      <font>
                         <Font size="24.0" />
                      </font>
