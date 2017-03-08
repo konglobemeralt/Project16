@@ -3,6 +3,7 @@ package iMat.controller;
 import iMat.Main;
 import iMat.controller.BackButtonHandler.Link;
 import iMat.model.OrderAdapter;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
@@ -537,7 +538,7 @@ public class PayWizardViewController {
 
         for (int i = 0; i < inputs.length; i++) {
             if (inputs[i].equals("")) {
-                feedbackImages[i].getStyleClass().removeAll();
+                feedbackImages[i].getStyleClass().removeAll("correct", "error");
                 feedbackLabels[i].setText("");
                 returnBool = false;
                 //return false;
@@ -556,6 +557,7 @@ public class PayWizardViewController {
                             feedbackImages[i].getStyleClass().add("correct");
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
+                            feedbackImages[i].getStyleClass().removeAll("correct");
                             feedbackImages[i].getStyleClass().add("error");
                             feedbackLabels[i].setText("Får endast innehålla siffror");
                             returnBool = false;
@@ -577,6 +579,8 @@ public class PayWizardViewController {
                             feedbackImages[i].getStyleClass().add("correct");
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
+                            //feedbackImages[i].getStyleClass().removeAll();
+                            feedbackImages[i].getStyleClass().removeAll("correct");
                             feedbackImages[i].getStyleClass().add("error");
                             feedbackLabels[i].setText("Måste innehålla 5 siffror");
                             returnBool = false;
@@ -678,33 +682,65 @@ public class PayWizardViewController {
         updateTabEnabledStatus();
     }
 
+    private boolean checkCardNumberArea(){
+        TextField[] cardNumberAreas = {cardNumberArea1, cardNumberArea2, cardNumberArea3, cardNumberArea4};
+
+        for (TextField t: cardNumberAreas){
+            if (t.getText().equals("")){
+                cardNumberFeedbackImage.getStyleClass().removeAll("correct", "error");
+                return false;
+            }
+        }
+
+        for (TextField t: cardNumberAreas){
+            try {
+                int number = Integer.parseInt(t.getText());
+                if (t.getText().length() != 4){
+                    throw new NumberFormatException();
+                }
+            }
+            catch (NumberFormatException e) {
+                cardNumberFeedbackImage.getStyleClass().removeAll("correct");
+                cardNumberFeedbackImage.getStyleClass().add("error");
+                return false;
+            }
+        }
+
+        cardNumberFeedbackImage.getStyleClass().removeAll("error");
+        cardNumberFeedbackImage.getStyleClass().add("correct");
+
+        return true;
+    }
+
     private boolean isDeliveryPaymentFinished() {
+        boolean returnBool = true;
+
+
         int d = dateComboBox.getSelectionModel().getSelectedIndex();
         int t = timeComboBox.getSelectionModel().getSelectedIndex();
         if (!(d != -1 && d != 5 && t != -1)) {  // The 5 is there because of the error
-            return false;
+            returnBool = false;
         }
 
 
         if (cardRadioButton.isSelected()) {
             String[] inputs = {cardOwnerArea.getText(), cardNumberArea1.getText(), cardNumberArea2.getText(), cardNumberArea3.getText(), cardNumberArea4.getText(), cardMonthArea.getText(), cardYearArea.getText(), cardCVCArea.getText()};
 
-            boolean returnBool = true;
+            if(!checkCardNumberArea()){
+                returnBool = false;
+            }
 
             for (int i = 0; i < inputs.length; i++) {
                 if (inputs[i].equals("")) {
-                    //return false;
                     returnBool = false;
                     switch (i) {
                         case 0:
-                            cardOwnerFeedbackImage.getStyleClass().removeAll();
+                            cardOwnerFeedbackImage.getStyleClass().removeAll("correct", "error");
                             break;
-                        case 4:
-                            cardNumberFeedbackImage.getStyleClass().removeAll();
-                            break;
+
                         case 6:
                             if (!inputs[i - 1].equals("")) {
-                                cardDateFeedbackImage.getStyleClass().removeAll();
+                                cardDateFeedbackImage.getStyleClass().removeAll("correct", "error");
                             }
                             break;
                         case 7:
@@ -713,38 +749,8 @@ public class PayWizardViewController {
                 } else {
 
                     switch (i) {
-                        case 4: // Card Number
-                            char[][] cardNumbers = {inputs[1].toCharArray(), inputs[2].toCharArray(), inputs[3].toCharArray(), inputs[4].toCharArray()};
-
-                            boolean allOk = true;
-                            for (char[] cA : cardNumbers) {
-
-                                if (cA.length != 4) {
-                                    allOk = false;
-                                    returnBool = false;
-                                } else {
-
-                                    for (char c : cA) {
-                                        if (Character.getNumericValue(c) == -1) {
-                                            returnBool = false;
-                                            allOk = false;
-                                            break;
-                                            //return false;
-                                        }
-                                    }
-                                }
-
-                            }
-                            if (allOk) {
-                                cardNumberFeedbackImage.getStyleClass().removeAll();
-                                cardNumberFeedbackImage.getStyleClass().add("correct");
-                            }
-                            else {
-                                cardNumberFeedbackImage.getStyleClass().removeAll();
-                                cardNumberFeedbackImage.getStyleClass().add("error");
-                            }
-
-
+                        case 0:
+                            cardOwnerFeedbackImage.getStyleClass().add("correct");
                             break;
 
                         case 6: // Expiration Year and Month
@@ -759,11 +765,11 @@ public class PayWizardViewController {
                                     //return false;
                                     throw new NumberFormatException();
                                 }
-                                cardDateFeedbackImage.getStyleClass().removeAll();
+                                cardDateFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardDateFeedbackImage.getStyleClass().add("correct");
                             } catch (NumberFormatException n) {
                                 returnBool = false;
-                                cardDateFeedbackImage.getStyleClass().removeAll();
+                                cardDateFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardDateFeedbackImage.getStyleClass().add("error");
                                 //return false;
                             }
@@ -785,22 +791,21 @@ public class PayWizardViewController {
                                 }
                             }
                             if (isOk){
-                                cardCVCFeedbackImage.getStyleClass().removeAll();
+                                cardCVCFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardCVCFeedbackImage.getStyleClass().add("correct");
                             }
                             else {
-                                cardCVCFeedbackImage.getStyleClass().removeAll();
+                                cardCVCFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardCVCFeedbackImage.getStyleClass().add("error");
                             }
                             break;
                     }
                 }
             }
+        }
 
-            if (!returnBool) {
-                return false;
-            }
-
+        if (!returnBool) {
+            return false;
         }
 
         for (Toggle to : payMethodRadioButtons.getToggles()) {

@@ -54,6 +54,8 @@ public class Main extends Application {
         showCategoriesView();
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton());
+        mainViewController.updateShoppingBagCounter();
+        iMat.getShoppingCart().addShoppingCartListener(mainViewController);
 
     }
 
@@ -157,14 +159,15 @@ public class Main extends Application {
 
         shoppingBagController = controller;
 
-        productViewController.refresh();
+        if (productViewController != null){
+            productViewController.refresh();
+        }
     }
 
     public void updateShoppingBag() {
         if (shoppingBagController != null) {
             shoppingBagController.updateShoppingBagGrid();
         }
-        mainViewController.updateShoppingBagCounter();
     }
 
     public void hideShoppingBag() {

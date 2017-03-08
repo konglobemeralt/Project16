@@ -17,12 +17,14 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 import javafx.util.Duration;
+import se.chalmers.ait.dat215.project.CartEvent;
+import se.chalmers.ait.dat215.project.ShoppingCartListener;
 
 
 /**
  * Created by konglobemeralt on 2017-02-23.
  */
-public class MainViewController {
+public class MainViewController implements ShoppingCartListener{
 
 
     @FXML
@@ -61,6 +63,11 @@ public class MainViewController {
                 }
             }
         });
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        updateShoppingBagCounter();
     }
 
     public void updateShoppingBagCounter(){
@@ -107,6 +114,8 @@ public class MainViewController {
 
     public void homeButtonPressed(ActionEvent event) {
         System.out.println("Home Button pressed");
+        main.showHomeView();
+        main.pageHistory().addLink(Link.HOME);
     }
 
     public void helpButtonPressed(ActionEvent event) {
