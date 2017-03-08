@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="Have fixed the functionality of items to be better&#10;&#10;&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/img/ic_check_circle_black_24dp_2x.png" afterPath="$PROJECT_DIR$/src/CSS/img/ic_check_circle_black_24dp_2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/img/ic_error_black_24dp_2x.png" afterPath="$PROJECT_DIR$/src/CSS/img/ic_error_black_24dp_2x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -62,8 +63,8 @@
       <file leaf-file-name="PayWizardViewController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="541" column="63" lean-forward="false" selection-start-line="541" selection-start-column="63" selection-end-line="541" selection-end-column="63" />
+            <state relative-caret-position="-345">
+              <caret line="553" column="0" lean-forward="true" selection-start-line="553" selection-start-column="0" selection-end-line="553" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1059,8 +1060,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="541" column="63" lean-forward="false" selection-start-line="541" selection-start-column="63" selection-end-line="541" selection-end-column="63" />
+        <state relative-caret-position="-345">
+          <caret line="553" column="0" lean-forward="true" selection-start-line="553" selection-start-column="0" selection-end-line="553" selection-end-column="0" />
           <folding />
         </state>
       </provider>

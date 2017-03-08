@@ -539,7 +539,7 @@ public class PayWizardViewController {
 
         for (int i = 0; i < inputs.length; i++) {
             if (inputs[i].equals("")) {
-                feedbackImages[i].getStyleClass().removeAll(); 
+                feedbackImages[i].getStyleClass().removeAll();
                 feedbackLabels[i].setText("");
                 returnBool = false;
                 //return false;
