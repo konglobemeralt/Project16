@@ -4,6 +4,7 @@ import iMat.Main;
 import iMat.controller.BackButtonHandler.Link;
 import iMat.model.ProductSearch;
 import javafx.animation.ScaleTransition;
+import javafx.animation.RotateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
@@ -83,8 +84,14 @@ public class MainViewController {
             st2.setCycleCount(2);
             st2.setAutoReverse(true);
 
+            RotateTransition rt = new RotateTransition(Duration.millis(100), itemCounterLable);
+            rt.setByAngle(30);
+            rt.setCycleCount(2);
+            rt.setAutoReverse(true);
+
             st.play();
             st2.play();
+            rt.play();
 
         }
         else {
