@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -34,16 +35,25 @@
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="overviewNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Label layoutX="831.0" layoutY="383.0" styleClass="bolded" text="Totalpris: " textAlignment="RIGHT" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="121.0">
                      <font>
@@ -177,16 +187,25 @@
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="credentialsNextButton" layoutX="923.0" layoutY="588.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <TextArea layoutX="617.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="211.0" prefWidth="382.0" promptText="Eventuellt lägenhetsnummer, portkod, övriga instruktioner och annat." AnchorPane.leftAnchor="617.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="127.0" />
                   <Label layoutX="617.0" layoutY="83.0" prefHeight="23.0" prefWidth="212.0" styleClass="bolded" text="Övrig information:" AnchorPane.leftAnchor="617.0" AnchorPane.topAnchor="83.0">
@@ -218,27 +237,42 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="dateComboBox" layoutX="112.0" layoutY="91.0" onAction="#updateTabEnabledStatus" onMouseClicked="#updateTabEnabledStatus" prefHeight="40.0" prefWidth="250.0" promptText="Välj datum" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="613.0" AnchorPane.topAnchor="91.0" />
+                  <ComboBox fx:id="dateComboBox" layoutX="112.0" layoutY="91.0" onAction="#updateTabEnabledStatus" onMouseClicked="#updateTabEnabledStatus" prefHeight="40.0" prefWidth="250.0" promptText="Välj datum" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="613.0" AnchorPane.topAnchor="91.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
                   <Label layoutX="601.0" layoutY="46.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="40.0" styleClass="bolded" text="Välj önskad tid för leverans: " AnchorPane.topAnchor="46.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="timeComboBox" layoutX="601.0" layoutY="91.0" onAction="#updateTabEnabledStatus" onMouseClicked="#updateTabEnabledStatus" prefHeight="40.0" prefWidth="250.0" promptText="Välj tidsintervall" AnchorPane.leftAnchor="601.0" AnchorPane.rightAnchor="124.0" AnchorPane.topAnchor="91.0" />
+                  <ComboBox fx:id="timeComboBox" layoutX="601.0" layoutY="91.0" onAction="#updateTabEnabledStatus" onMouseClicked="#updateTabEnabledStatus" prefHeight="40.0" prefWidth="250.0" promptText="Välj tidsintervall" AnchorPane.leftAnchor="601.0" AnchorPane.rightAnchor="124.0" AnchorPane.topAnchor="91.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
                   <Button layoutX="14.0" layoutY="529.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button fx:id="deliveryNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <AnchorPane layoutX="33.0" layoutY="207.0" prefHeight="170.0" prefWidth="464.0">
                      <children>
@@ -352,11 +386,17 @@
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" styleClass="rounded" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
+                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" styleClass="softRounded" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
                      <font>
                         <Font size="28.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <AnchorPane layoutX="85.0" layoutY="95.0" prefHeight="292.0" prefWidth="349.0">
                      <children>
@@ -417,6 +457,9 @@
                      <font>
                         <Font size="24.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Label layoutX="515.0" layoutY="38.0" text="Varor">
                      <font>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -28,6 +29,9 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="937.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeButtonPressed" prefHeight="35.0" prefWidth="35.0" styleClass="deleteButton" AnchorPane.leftAnchor="937.0" />
+      <Button layoutX="937.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeButtonPressed" prefHeight="35.0" prefWidth="35.0" styleClass="deleteButton" AnchorPane.leftAnchor="937.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
    </children>
 </AnchorPane>
