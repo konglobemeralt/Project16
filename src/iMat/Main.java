@@ -17,6 +17,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 
 import java.io.IOException;
@@ -199,6 +200,22 @@ public class Main extends Application {
         controller.updateOrders();
     }
 
+    public void showDetailedRecieptView(Order order){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/receiptDetailedView.fxml"));
+        try {
+            AnchorPane receiptDetailedView = loader.load();
+            mainLayout.setCenter(receiptDetailedView);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //Send a reference of main to the controller
+        ReceiptDetailedController controller = loader.getController();
+        controller.setMain(this);
+        controller.setOrder(order);
+    }
+
     public void fillProductView(List<Product> products) {
         productViewController.fillCenterPaneProduct(products);
     }
@@ -244,12 +261,8 @@ public class Main extends Application {
         }
 
         public void addLink(Link link) {
-            //TODO lägg till så att en inte kan lägga till två likadan i rad
-            backButton.setDisable(false);
-            if (currentIndex + 1 != history.size()) {
-                cutOffBranch();
-            }
-            if (link == Link.PRODUCT) {
+            addedNewLink();
+            if (link == Link.PRODUCT || link == Link.DETAILEDRECEIPT) {
                 //TODO throw exception
             }
             history.add(new SavedPage(link));
@@ -257,13 +270,26 @@ public class Main extends Application {
         }
 
         public void addProductLink(List<Product> productList) {
+            addedNewLink();
+            history.add(new SavedPage(Link.PRODUCT, productList));
+            currentIndex++;
+        }
+
+        public void addOrderLink(Order order){
             backButton.setDisable(false);
-            //TODO lägg till så att en inte kan lägga till två likadan i rad
+            if (currentIndex + 1 != history.size()){
+                cutOffBranch();
+            }
+            history.add(new SavedPage(Link.DETAILEDRECEIPT, order));
+            currentIndex++;
+        }
+
+        private void addedNewLink(){
+            backButton.setDisable(false);
+            //TODO kolla så att det inte är två samma i rad
             if (currentIndex + 1 != history.size()) {
                 cutOffBranch();
             }
-            history.add(new SavedPage(Link.PRODUCT, productList));
-            currentIndex++;
         }
 
         public void goBack() {
@@ -329,6 +355,10 @@ public class Main extends Application {
 
                 case RECEIPTS:
                     showReceiptView();
+                    break;
+
+                case DETAILEDRECEIPT:
+                    showDetailedRecieptView(history.get(currentIndex).getOrder());
                     break;
 
                 case WIZARD:
