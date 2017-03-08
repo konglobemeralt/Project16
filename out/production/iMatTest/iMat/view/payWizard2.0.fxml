@@ -242,7 +242,7 @@
                   </Button>
                   <AnchorPane layoutX="33.0" layoutY="207.0" prefHeight="170.0" prefWidth="464.0">
                      <children>
-                        <RadioButton layoutX="103.0" layoutY="52.0" mnemonicParsing="false" onAction="#notCardRadioButtonPressed" text="Vid leverans (kort eller kontant)" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="52.0">
+                        <RadioButton layoutX="103.0" layoutY="52.0" mnemonicParsing="false" onAction="#notCardRadioButtonPressed" selected="true" text="Vid leverans (kort eller kontant)" AnchorPane.leftAnchor="103.0" AnchorPane.topAnchor="52.0">
                            <toggleGroup>
                               <ToggleGroup fx:id="payMethodRadioButtons" />
                            </toggleGroup>
@@ -412,13 +412,23 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="confirmationList" layoutX="639.0" layoutY="82.0" prefHeight="346.0" prefWidth="333.0" style="-fx-border-width: 1;" />
+                  <ListView fx:id="confirmationList" layoutX="515.0" layoutY="59.0" prefHeight="346.0" prefWidth="333.0" style="-fx-border-width: 1;" />
                   <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" styleClass="rounded" text="Avbryt">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Label layoutX="784.0" layoutY="45.0" text="Varor">
+                  <Label layoutX="515.0" layoutY="38.0" text="Varor">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="515.0" layoutY="406.0" text="Antal">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="691.0" layoutY="406.0" text="Totalpris">
                      <font>
                         <Font size="18.0" />
                      </font>
