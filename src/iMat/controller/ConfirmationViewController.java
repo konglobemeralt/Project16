@@ -1,6 +1,7 @@
 package iMat.controller;
 
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -21,7 +22,8 @@ public class ConfirmationViewController {
 
     @FXML
     void receiptsButtonPressed(ActionEvent event) {
-
+        main.showReceiptView();
+        main.pageHistory().addLink(Link.RECEIPTS);
     }
 
     public void updateText(String date, String time){

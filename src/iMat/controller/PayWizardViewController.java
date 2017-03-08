@@ -2,6 +2,7 @@ package iMat.controller;
 
 import iMat.Main;
 import iMat.controller.BackButtonHandler.Link;
+import iMat.model.OrderAdapter;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
@@ -17,10 +18,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PayWizardViewController {
@@ -916,7 +919,9 @@ public class PayWizardViewController {
 
     @FXML
     private void confirmPurchase(ActionEvent event){
-        main.iMat.placeOrder(true);
+        //Order order =
+                main.iMat.placeOrder(true);
+        //order = new OrderAdapter(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
         main.showConfirmationView();
         main.updateConfirmationViewText(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
 

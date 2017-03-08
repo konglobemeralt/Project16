@@ -209,6 +209,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         ReceiptViewController controller = loader.getController();
         controller.setMain(this);
+        controller.updateOrders();
     }
 
     public void fillProductView(List<Product> products){
@@ -259,7 +260,7 @@ public class Main extends Application {
             if (currentIndex + 1 != history.size()){
                 cutOffBranch();
             }
-            if (link == Link.PRODUCT || link == Link.FAVOURITES){
+            if (link == Link.PRODUCT){
                 //TODO throw exception
             }
             history.add(new SavedPage(link));
@@ -303,7 +304,7 @@ public class Main extends Application {
 
                 case FAVOURITES:
                     try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
-                    fillProductView(history.get(currentIndex).getProductList());
+                    fillProductView(iMat.favorites());
                     break;
 
                 case HOME:
