@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Order;
@@ -96,5 +97,11 @@ public class ReceiptPanelController extends AnchorPane{
         catch (IOException e){
 
         }
+    }
+
+    @FXML
+    void panelPressed(MouseEvent event) {
+        main.showDetailedRecieptView(order);
+        main.pageHistory().addOrderLink(order);
     }
 }
