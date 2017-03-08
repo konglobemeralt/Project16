@@ -558,7 +558,7 @@ public class PayWizardViewController {
                             feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
-                            feedbackImages[i].getStyleClass().add(""); //TODO gör till inte ok
+                            feedbackImages[i].getStyleClass().add("error"); //TODO gör till inte ok
                             feedbackLabels[i].setText("Får endast innehålla siffror");
                             returnBool = false;
                             //return false;
@@ -579,7 +579,7 @@ public class PayWizardViewController {
                             feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
-                            feedbackImages[i].getStyleClass().add(""); //TODO gör till inte ok
+                            feedbackImages[i].getStyleClass().add("error"); //TODO gör till inte ok
                             feedbackLabels[i].setText("Måste innehålla 5 siffror");
                             returnBool = false;
                             //return false;
@@ -743,7 +743,7 @@ public class PayWizardViewController {
                             }
                             else {
                                 cardNumberFeedbackImage.getStyleClass().removeAll();
-                                cardNumberFeedbackImage.getStyleClass().add(""); //TODO inte ok
+                                cardNumberFeedbackImage.getStyleClass().add("error"); //TODO inte ok
                             }
 
 
@@ -766,7 +766,7 @@ public class PayWizardViewController {
                             } catch (NumberFormatException n) {
                                 returnBool = false;
                                 cardDateFeedbackImage.getStyleClass().removeAll();
-                                cardDateFeedbackImage.getStyleClass().add(""); //TODO inte ok
+                                cardDateFeedbackImage.getStyleClass().add("error"); //TODO inte ok
                                 //return false;
                             }
                             break;
@@ -792,7 +792,7 @@ public class PayWizardViewController {
                             }
                             else {
                                 cardCVCFeedbackImage.getStyleClass().removeAll();
-                                cardCVCFeedbackImage.getStyleClass().add(""); // TODO inte ok
+                                cardCVCFeedbackImage.getStyleClass().add("error"); // TODO inte ok
                             }
                             break;
                     }

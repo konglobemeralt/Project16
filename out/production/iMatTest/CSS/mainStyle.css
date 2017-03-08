@@ -47,6 +47,13 @@
     -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
 }
 
+.error{
+
+-fx-image:url("img/ic_error_black_24dp_2x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+}
+
 .forwardButton{
   -fx-base: #5FB3B3;
  -fx-border-radius: 0 10 10 0;
@@ -109,7 +116,7 @@
 }
 
 .pressed{
-  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 0, 5 );
+  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
 }
 
 
@@ -166,7 +173,7 @@
 .favourited{
 -fx-border-radius: 100 100 100 100;
   -fx-background-radius: 100 100 100 100;
- -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+ -fx-background-image: url("img/ic_favorite_black_24dp_2x.png");
  -fx-background-repeat: no-repeat;
  -fx-background-position: center;
  -fx-background-color: #FAC863;
@@ -187,7 +194,7 @@ fx-border-radius: 100 100 100 100;
 -fx-border-radius: 100 100 100 100;
   -fx-background-radius: 100 100 100 100;
  -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+ -fx-background-image: url("img/ic_favorite_border_black_24dp_2x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
    -fx-background-color: #FFFFFF;
@@ -197,7 +204,7 @@ fx-border-radius: 100 100 100 100;
 
 .favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+ -fx-background-image: url("img/ic_favorite_black_24dp_2x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
    -fx-scale-x:1.1;
