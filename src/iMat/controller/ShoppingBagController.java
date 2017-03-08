@@ -83,6 +83,9 @@ public class ShoppingBagController {
             //shoppingBagGrid.addRow(index);
             ShoppingItem shoppingItem = shoppingItems.get(index);
 
+            boolean unitIsDouble = shoppingItem.getProduct().getUnitSuffix().matches("l")
+                    || shoppingItem.getProduct().getUnitSuffix().matches("kg");
+
             //Initialize all components
             Label productLabel = new Label(" " + shoppingItem.getProduct().getName());
 
@@ -125,6 +128,26 @@ public class ShoppingBagController {
             Label priceLabel = new Label("  " + Math.round(shoppingItem.getTotal()*100)/100.0 + " kr");
 
             TextArea amountTextArea = new TextArea("st");
+
+            final ChangeListener<String> inputFilter = new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+                {
+                    System.out.println("inputFilter");
+                    boolean inValidDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d{0,2}") && !newValue.matches("\\d*");
+                    boolean inValidIntInput = !newValue.matches("\\d*");
+
+                    if (unitIsDouble && inValidDoubleInput)
+                    {
+                        amountTextArea.setText(oldValue);
+                    }
+                    else if (!unitIsDouble && inValidIntInput)
+                    {
+                        amountTextArea.setText(oldValue);
+                    }
+                }
+            };
+
             amountTextArea.setPrefHeight(32);
             amountTextArea.setMinHeight(32);
             amountTextArea.setMaxHeight(32);
@@ -132,7 +155,10 @@ public class ShoppingBagController {
             amountTextArea.setOnMouseClicked((e) -> amountTextAreaClicked(amountTextArea));
             amountTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
                 public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                    amountTextArea.textProperty().addListener(inputFilter);
                     if (!newPropertyValue) {
+                        amountTextArea.textProperty().removeListener(inputFilter);
+                        amountTextArea.textProperty().removeListener(inputFilter);  // vet ej varför detta funkar.
                         amountTextAreaLostFocus(amountTextArea, priceLabel);
                     }
                 }
@@ -173,10 +199,7 @@ public class ShoppingBagController {
                 shoppingBagGrid.add(priceLabel, 4, index);
                 shoppingBagGrid.add(removeButton, 5, index);
             }
-
         }
-
-
     }
 
     private void removeButtonPressed() {
@@ -206,6 +229,7 @@ public class ShoppingBagController {
     }
 
     private void amountTextAreaLostFocus(TextArea amount, Label price) {
+        System.out.println("amountTextAreaLostFocus");
         int index = Integer.parseInt((amount.getId().split("_")[0]));
         ShoppingItem item = main.iMat.getShoppingCart().getItems().get(index);
 

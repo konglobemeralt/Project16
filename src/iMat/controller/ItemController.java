@@ -34,6 +34,25 @@ public class ItemController extends AnchorPane implements Initializable {
 
     private boolean unitIsDouble = false;
 
+    private final ChangeListener<String> inputFilter = new ChangeListener<String>() {
+        @Override
+        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+        {
+            System.out.println("HEJ");
+            boolean inValidDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d{0,2}") && !newValue.matches("\\d*");
+            boolean inValidIntInput = !newValue.matches("\\d*");
+
+            if (unitIsDouble && inValidDoubleInput)
+            {
+                textArea.setText(oldValue);
+            }
+            else if (!unitIsDouble && inValidIntInput)
+            {
+                textArea.setText(oldValue);
+            }
+        }
+    };
+
     @FXML
     private Button favouriteButton;
 
@@ -104,7 +123,8 @@ public class ItemController extends AnchorPane implements Initializable {
         }
         this.shoppingItem = shoppingItem;
         this.favourited = favourited;
-        this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().matches("l") || shoppingItem.getProduct().getUnitSuffix().matches("kg");
+        this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().matches("l")
+                || shoppingItem.getProduct().getUnitSuffix().matches("kg");
         if(unitIsDouble) textArea.setText("0.0");
         else textArea.setText("0");
         initFavourite();
@@ -274,29 +294,16 @@ public class ItemController extends AnchorPane implements Initializable {
         textArea.setOnMouseClicked((e) -> amountTextAreaClicked());
         textArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+
+                textArea.textProperty().addListener(inputFilter);
+
                 if (!newPropertyValue) {
+                    textArea.textProperty().removeListener(inputFilter);
                     amountTextAreaLostFocus();
                 }
             }
         });
 
-        textArea.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                System.out.println("HEJ");
-                boolean validDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d{0,2}") && !newValue.matches("\\d*");
-                boolean validIntInput = !newValue.matches("\\d*");
-
-                    if (unitIsDouble && validDoubleInput)
-                    {
-                        textArea.setText(oldValue);
-                    }
-                    else if (!unitIsDouble && validIntInput)
-                    {
-                        textArea.setText(oldValue);
-                    }
-            }
-        });
 
         textArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
