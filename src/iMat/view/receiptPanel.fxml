@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ImageView fitHeight="221.0" fitWidth="200.0" layoutX="36.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-        <Label layoutX="236.0" layoutY="93.0" text="Datum">
+        <ImageView fitHeight="148.0" fitWidth="158.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+        <Label fx:id="dateLabel" layoutX="183.0" layoutY="31.0" text="Datum">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="236.0" layoutY="120.0" text="Tid">
+        <Label fx:id="timeLabel" layoutX="183.0" layoutY="58.0" text="Tid">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="236.0" layoutY="147.0" text="Antal varor: ">
+        <Label layoutX="183.0" layoutY="85.0" text="Antal varor: ">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="236.0" layoutY="173.0" text="Total pris: ">
+        <Label layoutX="183.0" layoutY="111.0" text="Total pris: ">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="333.0" layoutY="147.0" text="666">
+        <Label fx:id="numberOfItemsLabel" layoutX="280.0" layoutY="85.0" text="666">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Label layoutX="319.0" layoutY="173.0" text="777">
+        <Label fx:id="priceLabel" layoutX="266.0" layoutY="111.0" text="777">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
+      <Separator layoutX="110.0" layoutY="169.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
     </children>
 </AnchorPane>

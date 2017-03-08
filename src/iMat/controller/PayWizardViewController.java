@@ -1,6 +1,10 @@
 package iMat.controller;
 
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
+import iMat.model.OrderAdapter;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,10 +16,14 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
+import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PayWizardViewController {
@@ -51,6 +59,11 @@ public class PayWizardViewController {
     }
 
     @FXML
+    void goBack(ActionEvent event) {
+        main.pageHistory().goBack();
+    }
+
+    @FXML
     public void initialize() {
         Customer customer = main.iMat.getCustomer();
 
@@ -60,6 +73,18 @@ public class PayWizardViewController {
         addressArea.setText(customer.getAddress());
         postalCodeArea.setText(customer.getPostCode());
         postAddressArea.setText(customer.getPostAddress());
+
+        CreditCard card = main.iMat.getCreditCard();
+        cardOwnerArea.setText(card.getHoldersName());
+        if (card.getCardNumber().length() == 16){
+            cardNumberArea1.setText(card.getCardNumber().substring(0, 4));
+            cardNumberArea2.setText(card.getCardNumber().substring(4, 8));
+            cardNumberArea3.setText(card.getCardNumber().substring(8, 12));
+            cardNumberArea4.setText(card.getCardNumber().substring(12, 16));
+        }
+        cardMonthArea.setText(""+card.getValidMonth());
+        cardYearArea.setText(""+card.getValidYear());
+        cardCVCArea.setText(""+card.getVerificationCode());
 
         firstNameArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
@@ -162,6 +187,8 @@ public class PayWizardViewController {
                 }
             });
         }
+
+
     }
 
     @FXML
@@ -191,6 +218,7 @@ public class PayWizardViewController {
             deliveryNextButton.setDisable(false);
             confirmation.setDisable(false);
             updateConfirmationLabels();
+            updateConfirmationList();
         } else {
             deliveryNextButton.setDisable(true);
             confirmation.setDisable(true);
@@ -230,11 +258,6 @@ public class PayWizardViewController {
         }
 
         tabPane.getSelectionModel().select(currentTab);
-
-    }
-
-    @FXML
-    private void cancelButtonPressed(ActionEvent a) {
 
     }
 
@@ -815,6 +838,10 @@ public class PayWizardViewController {
     @FXML
     private Label paymentConfirmationLabel;
 
+    @FXML
+    private ListView<String> confirmationList;
+
+
     private void updateConfirmationLabels() {
         Customer c = main.iMat.getCustomer();
 
@@ -845,6 +872,60 @@ public class PayWizardViewController {
         paymentConfirmationLabel.setText(paymentWords);
 
 
+    }
+
+    private void updateConfirmationList(){
+
+        List<String> items = new ArrayList<>();
+
+        for (ShoppingItem s: main.iMat.getShoppingCart().getItems()) {
+            /*String newItem = "";
+            if (s.getAmount() % 1 == 0){
+                newItem += (int)s.getAmount();
+            }
+            else {
+                newItem += s.getAmount();
+            }
+            newItem += "  ";
+            newItem += s.getProduct().getUnitSuffix();
+
+            while (newItem.length() < 17){
+                newItem += " ";
+            }
+
+            newItem += s.getProduct().getName();
+
+            while (newItem.length() < 48){
+                newItem += " ";
+            }
+
+           newItem += Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100;
+
+            while (newItem.length()<54){
+                newItem += " ";
+            }
+
+            newItem += "kr";
+
+            items.add(newItem);*/
+            items.add("  " + Math.round(s.getAmount()*100)/100 + " " + s.getProduct().getUnitSuffix() + "   " + s.getProduct().getName() + "  för  " + Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100 + " kr" );
+        }
+
+        ObservableList<String> itemsObservable = FXCollections.observableArrayList(items);
+
+        confirmationList.setItems(itemsObservable);
+
+    }
+
+    @FXML
+    private void confirmPurchase(ActionEvent event){
+        //Order order =
+                main.iMat.placeOrder(true);
+        //order = new OrderAdapter(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
+        main.showConfirmationView();
+        main.updateConfirmationViewText(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
+
+        main.pageHistory().addLink(Link.CONFIRMEDVIEW);
     }
 
 }

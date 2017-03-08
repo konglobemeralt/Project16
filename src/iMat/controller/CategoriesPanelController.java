@@ -1,5 +1,6 @@
 package iMat.controller;
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import iMat.model.ProductSearch;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -20,7 +21,7 @@ public class CategoriesPanelController {
     private Button lastPressedCat;
 
     @FXML
-    Button favouritesButtonCategories;
+    private Button favouritesButtonCategories;
 
     @FXML
     private Button minaListorButton;
@@ -67,21 +68,31 @@ public class CategoriesPanelController {
         if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
         }
-
-        main.fillProductView(results);
-
-
-
-        if(lastPressedCat != null){
-           lastPressedCat.getStyleClass().removeAll("selectedCat");
-       }
-
-        ((Button)event.getSource()).getStyleClass().add("selectedCat");
+        unselectLastSelected();
+        ((Button)event.getSource()).getStyleClass().add("pressed");
         lastPressedCat = ((Button)event.getSource());
+        main.fillProductView(results);
+    }
+
+    public void unselectLastSelected(){
+        if(lastPressedCat != null){
+            lastPressedCat.getStyleClass().removeAll("pressed");
+        }
+
     }
 
     public void favouritesButtonPressed(){
         System.out.println("Favourites button pressed.");
+        main.pageHistory().addLink(Link.FAVOURITES);
+
+        if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
+            try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
+        }
+
+        unselectLastSelected();
+        favouritesButtonCategories.getStyleClass().add("pressed");
+        lastPressedCat = favouritesButtonCategories;
+
         List<Product> results = Main.iMat.favorites();
         main.fillProductView(results);
     }
@@ -89,7 +100,8 @@ public class CategoriesPanelController {
         System.out.println("minaListor button pressed.");
     }
     public void gamlaKvittonButtonPressed(){
-        System.out.println("Favourites button pressed.");
+        main.pageHistory().addLink(Link.RECEIPTS);
+        main.showReceiptView();
     }
 
 
