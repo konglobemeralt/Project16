@@ -168,6 +168,10 @@ public class ItemController extends AnchorPane implements Initializable {
         updateTextArea();
 
     }
+
+
+
+
     private void updateEnabledProperties(){
         try {
             double value = Double.parseDouble(textArea.getText());
