@@ -37,6 +37,7 @@ public class ProductViewController extends AnchorPane {
         this.main = main;
     }
 
+
     @FXML
     private void initialize(){
         savedProducts = new ArrayList<>();
@@ -60,10 +61,7 @@ public class ProductViewController extends AnchorPane {
     }
 
     public void fillCenterPaneProduct(List<Product> products){
-        if (savedProducts.equals(products)){
-            savedProducts.clear();
-            savedProducts = products;
-        }
+        savedProducts = products;
 
         List<ShoppingItem> shoppingItemList = new ArrayList<>();
 

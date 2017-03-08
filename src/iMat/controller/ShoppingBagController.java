@@ -11,9 +11,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
@@ -225,6 +222,7 @@ public class ShoppingBagController {
             }
         }
         updateShoppingBagGrid();
+        main.updateShoppingBagCounter();
         totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
     }
 
@@ -254,12 +252,19 @@ public class ShoppingBagController {
             main.iMat.getShoppingCart().removeItem(index);
             updateShoppingBagGrid();
         }
+        main.updateShoppingBagCounter();
         totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
     }
 
     private void amountTextAreaClicked(TextArea amount) {
         amount.setText(amount.getText().split(" ")[0]);
         amount.selectAll();
+    }
+
+    @FXML
+    private void clearShoppingBagButtonPressed(ActionEvent event){
+        main.iMat.getShoppingCart().clear();
+        updateShoppingBagGrid();
     }
 
 }
