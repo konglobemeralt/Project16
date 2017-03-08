@@ -9,13 +9,29 @@
     -fx-box-border: transparent;
 }
 
+.minaListor{
+ -fx-border-radius: 10 10 0 0;
+  -fx-background-radius: 10 10 0 0;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
+}
+
+.kvitton{
+ -fx-border-radius: 0 0 10 10;
+  -fx-background-radius: 0 0 10 10;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
+}
+
 
 .backButton{
- -fx-border-radius: 10 0 0 10;
+    -fx-border-radius: 10 0 0 10;
    -fx-background-radius: 10 0 0 10;
--fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+    -fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
+     -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 
 }
 .backButton:hover{
