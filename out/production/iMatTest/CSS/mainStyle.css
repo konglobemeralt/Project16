@@ -181,6 +181,8 @@ fx-border-radius: 100 100 100 100;
 
 
 .deleteButton{
+-fx-border-radius: 10 10 10 10;
+   -fx-background-radius: 10 10 10 10;
  -fx-base: #EC5f67;
  -fx-background-image: url("img/ic_clear_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
@@ -188,12 +190,16 @@ fx-border-radius: 100 100 100 100;
 }
 
 .addButton{
+-fx-border-radius: 0 10 10 0;
+   -fx-background-radius: 0 10 10 0;
 -fx-background-image: url("img/ic_add_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
 }
 
 .subtractButton{
+-fx-border-radius: 10 0 0 10;
+   -fx-background-radius: 10 0 0 10;
 -fx-background-image: url("img/ic_remove_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
