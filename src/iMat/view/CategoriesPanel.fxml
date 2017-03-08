@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="283.0" style="-fx-border-color: #111111;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.CategoriesPanelController">
+<AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="236.0" style="-fx-border-color: #111111;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.CategoriesPanelController">
    <children>
-      <Button fx:id="favouritesButtonCategories" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" onAction="#favouritesButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="favourite" text="Favoriter" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="favouritesButtonCategories" layoutX="39.0" layoutY="1.0" mnemonicParsing="false" onAction="#favouritesButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="favourite" text="Favoriter" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -25,7 +25,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="minaListorButton" layoutX="23.0" layoutY="412.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" styleClass="minaListor" text="Mina Listor" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="minaListorButton" layoutX="39.0" layoutY="399.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" styleClass="minaListor" text="Mina Listor" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -36,7 +36,7 @@
             <DropShadow color="#7c7c7c" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="gamlaKvittonButton" layoutX="23.0" layoutY="442.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" styleClass="kvitton" text="Kvitton" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="gamlaKvittonButton" layoutX="39.0" layoutY="429.0" mnemonicParsing="false" onAction="#gamlaKvittonButtonPressed" prefHeight="30.0" prefWidth="200.0" styleClass="kvitton" text="Kvitton" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -47,7 +47,7 @@
             <DropShadow color="#7c7c7c" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="fruitButton" layoutX="22.0" layoutY="54.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Frukt" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="fruitButton" layoutX="39.0" layoutY="41.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Frukt" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -58,7 +58,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="vegetablesButton" layoutX="22.0" layoutY="94.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Grönt" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="vegetablesButton" layoutX="39.0" layoutY="81.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Grönt" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -69,7 +69,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="meatAndFishButton" layoutX="22.0" layoutY="134.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Kött och fisk" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="meatAndFishButton" layoutX="39.0" layoutY="121.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Kött och fisk" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -80,7 +80,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="pentryButton" layoutX="22.0" layoutY="174.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Skafferi" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="pentryButton" layoutX="39.0" layoutY="161.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Skafferi" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -91,7 +91,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="breadButton" layoutX="22.0" layoutY="213.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Bageri" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="breadButton" layoutX="39.0" layoutY="200.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Bageri" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -102,7 +102,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="dairyButton" layoutX="22.0" layoutY="253.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Mejeri" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="dairyButton" layoutX="39.0" layoutY="240.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Mejeri" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -113,7 +113,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="drinksButton" layoutX="22.0" layoutY="293.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Drycker" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="drinksButton" layoutX="39.0" layoutY="280.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Drycker" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>
@@ -124,7 +124,7 @@
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
       </Button>
-      <Button fx:id="sweetsButton" layoutX="22.0" layoutY="333.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" style="-fx-background-radius: 0 0 10 10;" styleClass="content" text="Sötsaker" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0">
+      <Button fx:id="sweetsButton" layoutX="39.0" layoutY="320.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" style="-fx-background-radius: 0 0 10 10;" styleClass="content" text="Sötsaker" AnchorPane.leftAnchor="39.0" AnchorPane.rightAnchor="39.0">
          <font>
             <Font size="18.0" />
          </font>

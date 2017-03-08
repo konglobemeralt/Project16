@@ -109,7 +109,7 @@
 }
 
 .pressed{
-  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
+  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 0, 5 );
 }
 
 
@@ -242,7 +242,7 @@ fx-border-radius: 100 100 100 100;
 }
 
 .itemLabel{
-    -fx-font-size: 12pt;
+    -fx-font-size: 16pt;
      -fx-font-family: "Futura", "Arial";
      -fx-font-weight: bold;
 }
