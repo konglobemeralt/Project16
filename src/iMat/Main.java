@@ -50,10 +50,18 @@ public class Main extends Application {
         //this.primaryStage.setWidth(1280);
         this.primaryStage.setResizable(false);
         showMainView();
-        //showProductView();
         showCategoriesView();
 
-        historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton());
+        if (iMat.isFirstRun()){
+            showFirstStartView();
+        }
+        else {
+            showHomeView();
+        }
+
+        Link firstPage = iMat.isFirstRun() ? Link.FIRSTPAGE : Link.HOME;
+        historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton(), firstPage);
+
         mainViewController.updateShoppingBagCounter();
         iMat.getShoppingCart().addShoppingCartListener(mainViewController);
 
@@ -82,11 +90,35 @@ public class Main extends Application {
     }
 
     public void showHomeView(){
-        getMainLayout().setCenter(null);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/homePage.fxml"));
+        try {
+            AnchorPane homePanel = loader.load();
+            mainLayout.setCenter(homePanel);
+        }
+        catch (IOException e){
+
+        }
+
+        //Send a reference of main to the controller
+        HomeController controller = loader.getController();
+        controller.setMain(this);
     }
 
     public void showFirstStartView(){
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/startView.fxml"));
+        try {
+            AnchorPane firstStartPanel = loader.load();
+            mainLayout.setCenter(firstStartPanel);
+        }
+        catch (IOException e){
 
+        }
+
+        //Send a reference of main to the controller
+        FirstStartController controller = loader.getController();
+        controller.setMain(this);
     }
 
     private void showCategoriesView() throws IOException {
@@ -271,12 +303,12 @@ public class Main extends Application {
 
         private Button forwardButton;
 
-        public HistoryHandler(Button backButton, Button forwardButton) {
+        public HistoryHandler(Button backButton, Button forwardButton, Link firstLink) {
             this.backButton = backButton;
             this.forwardButton = forwardButton;
             history = new ArrayList<SavedPage>();
             currentIndex = -1;
-            addLink(Link.HOME);
+            addLink(firstLink);
             backButton.setDisable(true);
         }
 
