@@ -56,11 +56,11 @@ public class ProductViewController extends AnchorPane {
     }
 
     public void refresh(){
-        fillCenterPane(savedProducts);
+        fillCenterPaneProduct(savedProducts);
     }
 
-    public void fillCenterPane(List<Product> products){
-        if (savedProducts.equals(products)){
+    public void fillCenterPaneProduct(List<Product> products){
+        if (!savedProducts.equals(products)){
             savedProducts.clear();
             savedProducts = products;
         }
@@ -71,13 +71,18 @@ public class ProductViewController extends AnchorPane {
             shoppingItemList.add(new ShoppingItem(p, 0));
         }
 
+        fillCenterPaneShoppingItem(shoppingItemList);
+    }
+
+    private void fillCenterPaneShoppingItem(List<ShoppingItem> products){
+
 
         centerPaneMain.getChildren().clear();
 
         int maxColIndex = main.getMainLayout().getRight() == null ? 3 : 1;
 
 
-        int len = shoppingItemList.size();
+        int len = products.size();
         System.out.println(len);
         int rowIndex = 0;
         int colIndex = 0;
@@ -85,7 +90,7 @@ public class ProductViewController extends AnchorPane {
         while(arrayIndex < len)
         {
 
-            ItemController controller = new ItemController(shoppingItemList.get(arrayIndex), isFavourited(shoppingItemList.get(arrayIndex)));
+            ItemController controller = new ItemController(products.get(arrayIndex), isFavourited(products.get(arrayIndex)));
             controller.setMain(main);
             centerPaneMain.add(controller,colIndex,rowIndex);
             arrayIndex++;

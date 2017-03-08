@@ -213,7 +213,7 @@ public class Main extends Application {
     }
 
     public void fillProductView(List<Product> products){
-        productViewController.fillCenterPane(products);
+        productViewController.fillCenterPaneProduct(products);
     }
 
 
