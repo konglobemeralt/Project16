@@ -71,7 +71,11 @@ public class ReceiptPanelController extends AnchorPane{
             String[] months = {"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"};
 
             Date date = order.getDate();
-            dateLabel.setText("Beställt den " + date.getDate() + " " + months[date.getMonth()] + " " + (1900 + date.getYear()) + "  " + date.getHours() + ":" + date.getMinutes());
+            String minutes = ""+date.getMinutes();
+            if (date.getMinutes() < 10){
+                minutes = "0"+date.getMinutes();
+            }
+            dateLabel.setText("Beställt den " + date.getDate() + " " + months[date.getMonth()] + " " + (1900 + date.getYear()) + "  " + date.getHours() + ":" + minutes);
 
             List<String> listItems = new ArrayList<>();
 

@@ -161,12 +161,10 @@ public class PayWizardViewController {
                 monthIndex = (monthIndex + 1) % 12;
             }
             dayNumber++;
-            if (i > 1) {
-                displayDates[i] = translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex];
-            } else if (i == 0) {
+            if (i == 0) {
                 displayDates[i] = "Imorgon" + " " + dayNumber + " " + translatedMonths[monthIndex];
-            } else if (i == 1) {
-                displayDates[i] = "Övermorgon" + " " + dayNumber + " " + translatedMonths[monthIndex];
+            } else  {
+                displayDates[i] = translatedWeekdays[dayIndex] + " " + dayNumber + " " + translatedMonths[monthIndex];
             }
         }
 

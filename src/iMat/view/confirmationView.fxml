@@ -36,10 +36,15 @@
                 </Label>
             </children>
         </AnchorPane>
-        <Button layoutX="424.0" layoutY="341.0" mnemonicParsing="false" onAction="#receiptsButtonPressed" text="Se tidigare köp">
+        <Button layoutX="406.0" layoutY="369.0" mnemonicParsing="false" onAction="#receiptsButtonPressed" prefHeight="39.0" prefWidth="181.0" text="Se tidigare köp">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
+      <Button layoutX="406.0" layoutY="308.0" mnemonicParsing="false" onAction="#returnHomePressed" text="Tillbaka till startsida">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

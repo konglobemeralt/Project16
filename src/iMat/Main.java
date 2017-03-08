@@ -79,6 +79,14 @@ public class Main extends Application {
         mainViewController = controller;
     }
 
+    public void showHomeView(){
+        getMainLayout().setCenter(null);
+    }
+
+    public void showFirstStartView(){
+
+    }
+
     private void showCategoriesView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/CategoriesPanel.fxml"));
@@ -332,10 +340,11 @@ public class Main extends Application {
                     break;
 
                 case HOME:
-                    mainLayout.setCenter(null);
+                    showHomeView();
                     break;
 
                 case FIRSTPAGE:
+                    showFirstStartView();
                     break;
 
                 case MYLISTS:
@@ -373,7 +382,6 @@ public class Main extends Application {
                         e.printStackTrace();
                     }
                     break;
-
             }
         }
 
