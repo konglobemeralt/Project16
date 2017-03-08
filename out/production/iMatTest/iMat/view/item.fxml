@@ -68,6 +68,6 @@
          </effect></Button>
     </children>
    <effect>
-      <DropShadow height="5.0" offsetX="2.0" radius="2.0" width="5.0" />
+      <DropShadow color="#ababab" height="5.0" offsetX="2.0" radius="2.0" width="5.0" />
    </effect>
 </javafx.scene.layout.AnchorPane>

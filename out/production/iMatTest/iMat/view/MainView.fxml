@@ -62,8 +62,14 @@
                   <DropShadow color="#838181" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
                </effect>
             </Button>
-            <Text fx:id="itemCounterLable" depthTest="ENABLE" fill="WHITE" layoutX="1214.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" />
-            <Circle fx:id="shoppingBagCounter" depthTest="ENABLE" fill="#f04d1a" layoutX="1233.0" layoutY="111.0" radius="29.0" stroke="#ffffff00" strokeType="INSIDE" visible="false" />
+            <Text fx:id="itemCounterLable" depthTest="ENABLE" fill="WHITE" layoutX="1221.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false">
+               <effect>
+                  <DropShadow color="#9a9a9a" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+               </effect></Text>
+            <Circle fx:id="shoppingBagCounter" depthTest="ENABLE" fill="#f04d1a" layoutX="1240.0" layoutY="43.0" radius="29.0" stroke="#ffffff00" strokeType="INSIDE" visible="false">
+               <effect>
+                  <DropShadow color="#9a9a9a" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+               </effect></Circle>
             <Button fx:id="forwardButton" disable="true" layoutX="184.0" layoutY="41.0" mnemonicParsing="false" onAction="#forwardButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="forwardButton" stylesheets="@../../CSS/mainStyle.css" AnchorPane.leftAnchor="183.0" AnchorPane.topAnchor="5.0">
                <font>
                   <Font size="18.0" />

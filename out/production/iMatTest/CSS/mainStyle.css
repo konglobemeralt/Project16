@@ -9,13 +9,38 @@
     -fx-box-border: transparent;
 }
 
+.minaListor{
+ -fx-border-radius: 10 10 0 0;
+  -fx-background-radius: 10 10 0 0;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
+}
+
+.kvitton{
+ -fx-border-radius: 0 0 10 10;
+  -fx-background-radius: 0 0 10 10;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
+}
+
+.minaListor:hover{
+  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+}
+
+.kvitton:hover{
+  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+}
+
 
 .backButton{
- -fx-border-radius: 10 0 0 10;
+  -fx-base: #5FB3B3;
+    -fx-border-radius: 10 0 0 10;
    -fx-background-radius: 10 0 0 10;
--fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+    -fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
+     -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 
 }
 .backButton:hover{
@@ -23,6 +48,7 @@
 }
 
 .forwardButton{
+  -fx-base: #5FB3B3;
  -fx-border-radius: 0 10 10 0;
    -fx-background-radius: 0 10 10 0;
 -fx-background-image: url("img/ic_navigate_next_black_24dp_2x.png");
@@ -42,6 +68,7 @@
 }
 
 .scroll-bar:vertical {
+-fx-base: #5FB3B3;
   -fx-background-color: transparent;
 
 }
