@@ -132,6 +132,7 @@ public class Main extends Application {
         profileViewController = controller;
 
         controller.update();
+        hideShoppingBag();
 
     }
 
@@ -160,7 +161,9 @@ public class Main extends Application {
 
     public void hideShoppingBag() {
         mainLayout.setRight(null);
-        productViewController.refresh();
+        if (productViewController != null){
+            productViewController.refresh();
+        }
     }
 
     public void showConfirmationView() {
@@ -198,6 +201,8 @@ public class Main extends Application {
         ReceiptViewController controller = loader.getController();
         controller.setMain(this);
         controller.updateOrders();
+
+        hideShoppingBag();
     }
 
     public void showDetailedRecieptView(Order order){
