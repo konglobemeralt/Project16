@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="728.0" prefHeight="595.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="237.0" tabMinWidth="237.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.PayWizardViewController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="728.0" prefHeight="595.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="237.0" tabMinWidth="237.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.PayWizardViewController">
   <tabs>
     <Tab fx:id="overview" text="Mina varor">
       <content>
@@ -111,37 +111,12 @@
                <children>
                   <AnchorPane layoutX="14.0" layoutY="68.0">
                      <children>
-                        <TextField fx:id="postalCodeArea" layoutX="150.0" layoutY="242.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="242.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
                         <Label layoutX="9.0" layoutY="43.0" prefHeight="27.0" styleClass="bolded" text="* Förnamn: " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="57.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="5.0" layoutY="185.0" prefHeight="27.0" styleClass="bolded" text="* Adress: " AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="199.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
                         <TextField fx:id="firstNameArea" layoutX="139.0" layoutY="36.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="40.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="50.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                        <TextField fx:id="addressArea" layoutX="139.0" layoutY="179.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="193.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </TextField>
-                        <Label layoutX="3.0" layoutY="282.0" prefHeight="27.0" styleClass="bolded" text="* Stad:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="296.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="postAddressArea" layoutX="139.0" layoutY="276.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="290.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -156,7 +131,22 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
+                        <Label layoutX="2.0" layoutY="137.0" prefHeight="27.0" styleClass="bolded" text="* Telefon: " AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="151.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                         <TextField fx:id="phoneArea" layoutX="139.0" layoutY="131.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="145.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="5.0" layoutY="185.0" prefHeight="27.0" styleClass="bolded" text="* Adress: " AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="199.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="addressArea" layoutX="139.0" layoutY="179.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="193.0">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -166,16 +156,26 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="2.0" layoutY="137.0" prefHeight="27.0" styleClass="bolded" text="* Telefon: " AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="151.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
                         <Label layoutX="17.0" layoutY="247.0" prefHeight="27.0" styleClass="bolded" text="* Postnr: " AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="247.0">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <TextField fx:id="postalCodeArea" layoutX="150.0" layoutY="242.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefHeight="27.0" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="242.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="3.0" layoutY="282.0" prefHeight="27.0" styleClass="bolded" text="* Stad:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="296.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="postAddressArea" layoutX="139.0" layoutY="276.0" minWidth="-Infinity" onAction="#credentialAreaChanged" prefWidth="240.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="290.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </TextField>
                      </children>
                   </AnchorPane>
                   <Button layoutX="45.0" layoutY="399.0" mnemonicParsing="false" onAction="#backButtonPressed" prefWidth="141.0" styleClass="rounded" text="Tillbaka" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">

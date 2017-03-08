@@ -179,6 +179,8 @@ public class ItemController extends AnchorPane implements Initializable {
         subtractButton.setDisable(true);
         addToCartButton.setDisable(true);
 
+        main.updateShoppingBagCounter();
+
         for (ShoppingItem s: cart.getItems()) {
             if (s.getProduct().equals(shoppingItem.getProduct())){
                 s.setAmount(s.getAmount() + amount);
