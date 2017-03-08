@@ -539,7 +539,7 @@ public class PayWizardViewController {
 
         for (int i = 0; i < inputs.length; i++) {
             if (inputs[i].equals("")) {
-                feedbackImages[i].getStyleClass().add(""); //TODO gör till tom
+                feedbackImages[i].getStyleClass().removeAll(); 
                 feedbackLabels[i].setText("");
                 returnBool = false;
                 //return false;
@@ -548,17 +548,17 @@ public class PayWizardViewController {
                 switch (i) {
 
                     default:
-                        feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                        feedbackImages[i].getStyleClass().add("correct");
                         feedbackLabels[i].setText("");
                         break;
 
                     case 2: // Phone number
                         try {
                             long number = Long.parseLong(inputs[i].replace(' ', '0').replace('+', '0').replace('-', '0'));
-                            feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                            feedbackImages[i].getStyleClass().add("correct");
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
-                            feedbackImages[i].getStyleClass().add("error"); //TODO gör till inte ok
+                            feedbackImages[i].getStyleClass().add("error");
                             feedbackLabels[i].setText("Får endast innehålla siffror");
                             returnBool = false;
                             //return false;
@@ -576,10 +576,10 @@ public class PayWizardViewController {
                                 throw new NumberFormatException();
                             }
                             int testIfNumber = Integer.parseInt(number);
-                            feedbackImages[i].getStyleClass().add(""); //TODO gör till ok
+                            feedbackImages[i].getStyleClass().add("correct");
                             feedbackLabels[i].setText("");
                         } catch (NumberFormatException e) {
-                            feedbackImages[i].getStyleClass().add("error"); //TODO gör till inte ok
+                            feedbackImages[i].getStyleClass().add("error");
                             feedbackLabels[i].setText("Måste innehålla 5 siffror");
                             returnBool = false;
                             //return false;
@@ -739,11 +739,11 @@ public class PayWizardViewController {
                             }
                             if (allOk) {
                                 cardNumberFeedbackImage.getStyleClass().removeAll();
-                                cardNumberFeedbackImage.getStyleClass().add(""); //TODO ok
+                                cardNumberFeedbackImage.getStyleClass().add("correct");
                             }
                             else {
                                 cardNumberFeedbackImage.getStyleClass().removeAll();
-                                cardNumberFeedbackImage.getStyleClass().add("error"); //TODO inte ok
+                                cardNumberFeedbackImage.getStyleClass().add("error");
                             }
 
 
@@ -762,11 +762,11 @@ public class PayWizardViewController {
                                     throw new NumberFormatException();
                                 }
                                 cardDateFeedbackImage.getStyleClass().removeAll();
-                                cardDateFeedbackImage.getStyleClass().add(""); //TODO ok
+                                cardDateFeedbackImage.getStyleClass().add("correct");
                             } catch (NumberFormatException n) {
                                 returnBool = false;
                                 cardDateFeedbackImage.getStyleClass().removeAll();
-                                cardDateFeedbackImage.getStyleClass().add("error"); //TODO inte ok
+                                cardDateFeedbackImage.getStyleClass().add("error");
                                 //return false;
                             }
                             break;
@@ -788,11 +788,11 @@ public class PayWizardViewController {
                             }
                             if (isOk){
                                 cardCVCFeedbackImage.getStyleClass().removeAll();
-                                cardCVCFeedbackImage.getStyleClass().add(""); // TODO ok
+                                cardCVCFeedbackImage.getStyleClass().add("correct");
                             }
                             else {
                                 cardCVCFeedbackImage.getStyleClass().removeAll();
-                                cardCVCFeedbackImage.getStyleClass().add("error"); // TODO inte ok
+                                cardCVCFeedbackImage.getStyleClass().add("error");
                             }
                             break;
                     }

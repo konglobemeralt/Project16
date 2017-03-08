@@ -54,6 +54,14 @@
  -fx-background-position: center;
 }
 
+.correct{
+-fx-image:url("img/ic_check_circle_black_24dp_2x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+}
+
+
+
 .forwardButton{
   -fx-base: #5FB3B3;
  -fx-border-radius: 0 10 10 0;
