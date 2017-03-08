@@ -36,6 +36,9 @@ public class MainViewController {
     @FXML
     private Button backButton;
 
+    @FXML
+    private Button forwardButton;
+
     //Reference the main application
     private Main main;
 
@@ -142,7 +145,14 @@ public class MainViewController {
         main.pageHistory().goBack();
     }
 
+    @FXML
+    void forwardButtonPressed(ActionEvent event) {
+        main.pageHistory().goForwards();
+    }
+
     public Button getBackButton() {
         return backButton;
     }
+
+    public Button getForwardButton() {return forwardButton;}
 }

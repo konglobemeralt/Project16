@@ -1,5 +1,6 @@
 package iMat.controller;
 import iMat.Main;
+import iMat.controller.BackButtonHandler.Link;
 import iMat.model.ProductSearch;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -82,6 +83,12 @@ public class CategoriesPanelController {
 
     public void favouritesButtonPressed(){
         System.out.println("Favourites button pressed.");
+        main.pageHistory().addLink(Link.FAVOURITES);
+
+        if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
+            try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
+        }
+
         List<Product> results = Main.iMat.favorites();
         main.fillProductView(results);
     }
@@ -89,7 +96,8 @@ public class CategoriesPanelController {
         System.out.println("minaListor button pressed.");
     }
     public void gamlaKvittonButtonPressed(){
-        System.out.println("Favourites button pressed.");
+        main.pageHistory().addLink(Link.RECEIPTS);
+        main.showReceiptView();
     }
 
 

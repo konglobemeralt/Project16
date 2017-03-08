@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 /**
  * Created by konglobemeralt on 2017-02-23.
  */
-public class ProductViewController extends AnchorPane implements Initializable, ShoppingCartListener {
+public class ProductViewController extends AnchorPane {
     @FXML
     private TextField searchBarMain;
 
@@ -37,7 +37,12 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         this.main = main;
     }
 
-    List<ShoppingItem> shoppingItems;
+    @FXML
+    private void initialize(){
+        savedProducts = new ArrayList<>();
+    }
+
+    private List<Product> savedProducts;
 
     private boolean isFavourited(ShoppingItem Item){
 
@@ -50,30 +55,15 @@ public class ProductViewController extends AnchorPane implements Initializable, 
         return true;
     }
 
-    public void initialize(URL location, ResourceBundle resources) {
-        System.out.println("init itemView");
-        shoppingItems = main.iMat.getShoppingCart().getItems();
-        main.iMat.getShoppingCart().addShoppingCartListener(this);
-
-
-        //testgrej
-        /*int i = 14;
-        while(--i > 1)
-        {
-            shoppingItems.add((new ShoppingItem(main.iMat.getProduct(i), 1)));
-        }*/
-        //fillCenterPane(shoppingItems);
-        //testgrej
-
-
-        main.iMat.getShoppingCart().getTotal();
-    }
-    @Override
-    public void shoppingCartChanged(CartEvent cartEvent) {
-
+    public void refresh(){
+        fillCenterPane(savedProducts);
     }
 
     public void fillCenterPane(List<Product> products){
+        if (!savedProducts.equals(products)){
+            savedProducts.clear();
+            savedProducts = products;
+        }
 
         List<ShoppingItem> shoppingItemList = new ArrayList<>();
 
@@ -81,7 +71,10 @@ public class ProductViewController extends AnchorPane implements Initializable, 
             shoppingItemList.add(new ShoppingItem(p, 0));
         }
 
+
         centerPaneMain.getChildren().clear();
+
+        int maxColIndex = main.getMainLayout().getRight() == null ? 3 : 1;
 
 
         int len = shoppingItemList.size();
@@ -97,7 +90,7 @@ public class ProductViewController extends AnchorPane implements Initializable, 
             centerPaneMain.add(controller,colIndex,rowIndex);
             arrayIndex++;
             colIndex++;
-            if(colIndex > 3)
+            if(colIndex > maxColIndex)
             {
                 colIndex = 0;
                 rowIndex++;
