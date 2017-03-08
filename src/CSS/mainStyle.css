@@ -36,15 +36,15 @@
 }
 
 .content:hover{
-        -fx-font-size: 12pt;
-        -fx-base: #575757;
-        -fx-base: #f26419;
+        -fx-font-size: 9pt;
+        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+        -fx-base: derive(#5FB3B3, 10%);
 }
 
 .selectedCat{
--fx-base: #575757;
-        -fx-base: #f26419;
 
+        -fx-font-size: 9pt;
+        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
 }
 
 
@@ -116,13 +116,15 @@
 }
 
 
-
-
 .favouriteButton:hover{
  -fx-base: rgba(0,0,0,0.0);
  -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
    -fx-background-repeat: no-repeat;
    -fx-background-position: center;
+   -fx-scale-x:1.1;
+   -fx-scale-y:1.1;
+   -fx-scale-z:1.1;
+
 }
 
 
