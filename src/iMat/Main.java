@@ -209,6 +209,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         ReceiptViewController controller = loader.getController();
         controller.setMain(this);
+        controller.updateOrders();
     }
 
     public void fillProductView(List<Product> products){
