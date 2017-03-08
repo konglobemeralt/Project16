@@ -29,7 +29,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <effect>
-                  <DropShadow color="#227571" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+                  <DropShadow color="#656565" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
                </effect></Button>
             </children>
         </AnchorPane>
@@ -37,7 +37,10 @@
         <Button fx:id="addToCartButton" disable="true" layoutX="162.0" layoutY="267.0" mnemonicParsing="false" onAction="#addToCartButtonPressed" prefHeight="31.0" prefWidth="76.0" styleClass="softRounded" text="Lägg till">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </cursor>
+         <effect>
+            <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+         </effect></Button>
         <AnchorPane layoutY="180.0" minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="243.0" />
         <Separator blendMode="EXCLUSION" layoutX="2.0" layoutY="264.0" prefHeight="0.0" prefWidth="239.0" />
         <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="188.0" prefHeight="38.0" prefWidth="230.0" styleClass="itemLabel" text="itemLabel" textAlignment="CENTER" textFill="WHITE">
@@ -53,11 +56,17 @@
       <Button fx:id="addButton" layoutX="122.0" layoutY="267.0" mnemonicParsing="false" onAction="#addButtonPressed" prefHeight="31.0" prefWidth="30.0" styleClass="addButton">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </cursor>
+         <effect>
+            <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+         </effect></Button>
       <Button fx:id="subtractButton" disable="true" layoutX="6.0" layoutY="267.0" mnemonicParsing="false" onAction="#subtractButtonPressed" prefHeight="31.0" prefWidth="30.0" styleClass="subtractButton">
          <cursor>
             <Cursor fx:constant="HAND" />
-         </cursor></Button>
+         </cursor>
+         <effect>
+            <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
+         </effect></Button>
       <Separator blendMode="EXCLUSION" layoutX="2.0" layoutY="219.0" prefHeight="0.0" prefWidth="239.0" />
     </children>
 </javafx.scene.layout.AnchorPane>
