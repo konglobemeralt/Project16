@@ -38,6 +38,10 @@ public class ReceiptViewController {
             ReceiptPanelController controller = new ReceiptPanelController(orders.get(index), main);
             ordersGrid.add(controller,0, index);
 
+            if (index % 2 == 1){
+                controller.getStyleClass().add("paneStyle");
+            }
+
             scrollPaneReceipt.setVvalue(0.0);
             scrollPaneReceipt.autosize();
         }
