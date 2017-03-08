@@ -104,6 +104,7 @@ public class ItemController extends AnchorPane implements Initializable {
         }
         this.shoppingItem = shoppingItem;
         this.favourited = favourited;
+        this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().matches("l") || shoppingItem.getProduct().getUnitSuffix().matches("kg");
         if(unitIsDouble) textArea.setText("0.0");
         else textArea.setText("0");
         initFavourite();
@@ -282,6 +283,7 @@ public class ItemController extends AnchorPane implements Initializable {
         textArea.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                System.out.println("HEJ");
                 boolean validDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d*") && !newValue.matches("\\d*");
                 boolean validIntInput = !newValue.matches("\\d*");
 
