@@ -29,6 +29,8 @@ public class ItemController extends AnchorPane implements Initializable {
 
     private boolean favourited = false;
 
+    private boolean unitIsDouble = false;
+
     @FXML
     private Button favouriteButton;
 
@@ -80,6 +82,7 @@ public class ItemController extends AnchorPane implements Initializable {
             e.printStackTrace();
         }
         this.shoppingItem = shoppingItem;
+        this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().equals("l") || shoppingItem.getProduct().getUnitSuffix().equals("kg");
         this.favourited = favourited;
         initFavourite();
         System.out.println("Name of product: " + shoppingItem.getProduct().getName());
@@ -131,6 +134,7 @@ public class ItemController extends AnchorPane implements Initializable {
 
     }
 
+
     @FXML
     private void addToCartButtonPressed(ActionEvent event){
 
@@ -156,6 +160,7 @@ public class ItemController extends AnchorPane implements Initializable {
         updateTextArea();
     }
 
+
     private void updateTextArea(){
         if (shoppingItem.getAmount() % 1 == 0){
             textArea.setText(""+(int)shoppingItem.getAmount()); //+ " " + shoppingItem.getProduct().getUnitSuffix());
@@ -165,12 +170,13 @@ public class ItemController extends AnchorPane implements Initializable {
         }
     }
 
+
     private void amountTextAreaLostFocus() {
 
         try {
             double newAmount = Double.parseDouble(textArea.getText());
-            if (shoppingItem.getProduct().getUnitSuffix().equals("l") || shoppingItem.getProduct().getUnitSuffix().equals("kg")){
-                shoppingItem.setAmount(Math.round(newAmount*100)/100);
+            if (unitIsDouble){
+                shoppingItem.setAmount(Math.round(newAmount*100)/100.0);
             }
             else {
                 shoppingItem.setAmount(Math.round(newAmount));
@@ -193,8 +199,6 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
 
-
-
     private void updateEnabledProperties(){
         try {
             double value = Double.parseDouble(textArea.getText());
@@ -212,6 +216,7 @@ public class ItemController extends AnchorPane implements Initializable {
         }
     }
 
+
     private void initFavourite(){
         if(this.favourited){
             Main.iMat.removeFavorite(shoppingItem.getProduct());
@@ -228,10 +233,12 @@ public class ItemController extends AnchorPane implements Initializable {
 
     }
 
+
     private void amountTextAreaClicked() {
         textArea.setText(textArea.getText().split(" ")[0]);
         textArea.selectAll();
     }
+
 
     public void favouritedItem(ActionEvent event){
         if(this.favourited){
@@ -248,6 +255,7 @@ public class ItemController extends AnchorPane implements Initializable {
         }
     }
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         textArea.setOnMouseClicked((e) -> amountTextAreaClicked());
@@ -262,11 +270,17 @@ public class ItemController extends AnchorPane implements Initializable {
         textArea.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                boolean validDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d*") && !newValue.matches("\\d*");
+                boolean validIntInput = !newValue.matches("\\d*");
 
-                if (!newValue.matches("\\d*" + "\\." + "\\d*")&&!newValue.matches("\\d*"))
-                {
-                    textArea.setText(oldValue);
-                }
+                    if (unitIsDouble && validDoubleInput)
+                    {
+                        textArea.setText(oldValue);
+                    }
+                    else if (!unitIsDouble && validIntInput)
+                    {
+                        textArea.setText(oldValue);
+                    }
             }
         });
 
