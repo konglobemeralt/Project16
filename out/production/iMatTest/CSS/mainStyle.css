@@ -9,6 +9,27 @@
     -fx-box-border: transparent;
 }
 
+
+.backButton{
+-fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+
+}
+
+
+.forwardButton{
+-fx-background-image: url("img/ic_navigate_next_black_24dp_2x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+}
+
+.bolded{
+ -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: #575757;
+}
+
 .scroll-bar:vertical {
   -fx-background-color: transparent;
 

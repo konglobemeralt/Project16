@@ -68,13 +68,17 @@ public class CategoriesPanelController {
         if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
         }
-        if(lastPressedCat != null){
-           lastPressedCat.getStyleClass().removeAll("pressed");
-        }
-
+        unselectLastSelected();
         ((Button)event.getSource()).getStyleClass().add("pressed");
         lastPressedCat = ((Button)event.getSource());
         main.fillProductView(results);
+    }
+
+    public void unselectLastSelected(){
+        if(lastPressedCat != null){
+            lastPressedCat.getStyleClass().removeAll("pressed");
+        }
+
     }
 
     public void favouritesButtonPressed(){
@@ -85,10 +89,8 @@ public class CategoriesPanelController {
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
         }
 
-        if(lastPressedCat != null){
-            lastPressedCat.getStyleClass().removeAll("pressed");
-        }
-        favouritesButtonCategories.getStylesheets().add("pressed");
+        unselectLastSelected();
+        favouritesButtonCategories.getStyleClass().add("pressed");
         lastPressedCat = favouritesButtonCategories;
 
         List<Product> results = Main.iMat.favorites();
