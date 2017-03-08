@@ -22,7 +22,6 @@ import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.DoubleSummaryStatistics;
 import java.util.ResourceBundle;
 
 public class ItemController extends AnchorPane implements Initializable {
@@ -84,6 +83,8 @@ public class ItemController extends AnchorPane implements Initializable {
         this.shoppingItem = shoppingItem;
         this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().equals("l") || shoppingItem.getProduct().getUnitSuffix().equals("kg");
         this.favourited = favourited;
+        if(unitIsDouble) textArea.setText("0.0");
+        else textArea.setText("0");
         initFavourite();
         System.out.println("Name of product: " + shoppingItem.getProduct().getName());
         //this.itemLabel.setText(shoppingItem.getProduct().getName());
@@ -93,22 +94,14 @@ public class ItemController extends AnchorPane implements Initializable {
 
     @FXML
     private void addButtonPressed(ActionEvent event) {
-        shoppingItem.setAmount(shoppingItem.getAmount()+1);
-        addToCartButton.setDisable(false);
-        subtractButton.setDisable(false);
-        updateTextArea();
+        shoppingItem.setAmount(shoppingItem.getAmount() + 1 );
+        updateItemView();
     }
 
     @FXML
     private void subtractButtonPressed(ActionEvent event) {
-        double newAmount = shoppingItem.getAmount() - 1;
-        if (newAmount <= 0){
-            newAmount = 0;
-            addToCartButton.setDisable(true);
-            subtractButton.setDisable(true);
-        }
-        shoppingItem.setAmount(newAmount);
-        updateTextArea();
+        shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+        updateItemView();
     }
 
     @FXML
@@ -122,14 +115,14 @@ public class ItemController extends AnchorPane implements Initializable {
         }
 
         if (shoppingItem.getAmount() > 0) {
-            updateTextArea();
+            updateItemView();
             addToCartButton.setDisable(false);
             subtractButton.setDisable(false);
         } else {
             shoppingItem.setAmount(0);
             addToCartButton.setDisable(true);
             subtractButton.setDisable(true);
-            updateTextArea();
+            updateItemView();
         }
 
     }
@@ -149,7 +142,7 @@ public class ItemController extends AnchorPane implements Initializable {
                 s.setAmount(s.getAmount() + amount);
                 shoppingItem.setAmount(0);
                 main.updateShoppingBag();
-                updateTextArea();
+                updateItemView();
                 return;
             }
         }
@@ -157,12 +150,31 @@ public class ItemController extends AnchorPane implements Initializable {
         cart.addItem(new ShoppingItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
         shoppingItem.setAmount(0);
         main.updateShoppingBag();
-        updateTextArea();
+        updateItemView();
     }
 
 
-    private void updateTextArea(){
-        if (shoppingItem.getAmount() % 1 == 0){
+    private void updateItemView(){
+        try {
+            if (unitIsDouble){
+                shoppingItem.setAmount(Math.round(shoppingItem.getAmount()*100)/100.0);
+            }
+            else {
+                shoppingItem.setAmount(Math.round(shoppingItem.getAmount()));
+            }
+        } catch (NumberFormatException n) {
+        }
+
+        if (shoppingItem.getAmount() == 0) {
+            subtractButton.setDisable(true);
+            addToCartButton.setDisable(true);
+        }
+        else {
+            addToCartButton.setDisable(false);
+            subtractButton.setDisable(false);
+        }
+        System.out.println("HEJSAN HOPPSAN " + shoppingItem.getAmount());
+        if (!unitIsDouble){
             textArea.setText(""+(int)shoppingItem.getAmount()); //+ " " + shoppingItem.getProduct().getUnitSuffix());
         }
         else {
@@ -172,30 +184,8 @@ public class ItemController extends AnchorPane implements Initializable {
 
 
     private void amountTextAreaLostFocus() {
-
-        try {
-            double newAmount = Double.parseDouble(textArea.getText());
-            if (unitIsDouble){
-                shoppingItem.setAmount(Math.round(newAmount*100)/100.0);
-            }
-            else {
-                shoppingItem.setAmount(Math.round(newAmount));
-            }
-        } catch (NumberFormatException n) {
-        }
-
-        if (shoppingItem.getAmount() <= 0) {
-            shoppingItem.setAmount(0);
-            subtractButton.setDisable(true);
-            addToCartButton.setDisable(true);
-        }
-        else {
-            addToCartButton.setDisable(false);
-            subtractButton.setDisable(false);
-        }
-
-        updateTextArea();
-
+        shoppingItem.setAmount(Double.parseDouble(textArea.getText()));
+        updateItemView();
     }
 
 
@@ -235,7 +225,8 @@ public class ItemController extends AnchorPane implements Initializable {
 
 
     private void amountTextAreaClicked() {
-        textArea.setText(textArea.getText().split(" ")[0]);
+        //textArea.setText(textArea.getText().split(" ")[0]);
+        updateItemView();
         textArea.selectAll();
     }
 
