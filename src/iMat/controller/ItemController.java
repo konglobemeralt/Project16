@@ -11,12 +11,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
@@ -75,13 +79,30 @@ public class ItemController extends AnchorPane implements Initializable {
             itemView = loader.load();
             itemLabel.setText(shoppingItem.getProduct().getName());
             priceLabel.setText(shoppingItem.getProduct().getPrice() + " " + shoppingItem.getProduct().getUnit());
+
             this.productImage.setImage(main.iMat.getFXImage(shoppingItem.getProduct()));
+
+            Rectangle clip = new Rectangle(
+                    productImage.getFitWidth(), productImage.getFitHeight()
+            );
+            clip.setArcWidth(20);
+            clip.setArcHeight(20);
+            productImage.setClip(clip);
+
+            SnapshotParameters parameters = new SnapshotParameters();
+            parameters.setFill(Color.TRANSPARENT);
+            WritableImage image = productImage.snapshot(parameters, null);
+
+            productImage.setClip(null);
+
+            productImage.setImage(image);
+
+
             this.getChildren().add(itemView);
         } catch (IOException e) {
             e.printStackTrace();
         }
         this.shoppingItem = shoppingItem;
-        this.unitIsDouble = shoppingItem.getProduct().getUnitSuffix().equals("l") || shoppingItem.getProduct().getUnitSuffix().equals("kg");
         this.favourited = favourited;
         if(unitIsDouble) textArea.setText("0.0");
         else textArea.setText("0");

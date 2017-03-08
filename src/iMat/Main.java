@@ -6,6 +6,7 @@ import iMat.controller.*;
 import iMat.controller.BackButtonHandler.Link;
 import iMat.controller.BackButtonHandler.SavedPage;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,8 +15,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import se.chalmers.ait.dat215.project.CreditCard;
-import se.chalmers.ait.dat215.project.Customer;
+import javafx.stage.WindowEvent;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
@@ -54,37 +54,28 @@ public class Main extends Application {
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton());
 
-        Customer c = iMat.getCustomer();
-        CreditCard cc = iMat.getCreditCard();
-        c.setPhoneNumber("070-734 34 45");
-        c.setPostCode("344 54");
-        c.setLastName("Moraeus");
-        c.setFirstName("Qualle");
-        c.setPostAddress("Ankeborg");
-        c.setAddress("Vintergatan 3");
-
-        cc.setVerificationCode(666);
-        cc.setValidMonth(5);
-        cc.setValidYear(78);
-        cc.setCardNumber("1337420694201337");
-        cc.setHoldersName("Qualle Moraeus");
-
     }
 
     private void showMainView() throws IOException {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("view/MainView.fxml"));
-            mainLayout = loader.load();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/MainView.fxml"));
+        mainLayout = loader.load();
 
-            Scene scene = new Scene(mainLayout);
-            scene.getStylesheets().add("CSS/MainStyle.css");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+        Scene scene = new Scene(mainLayout);
+        scene.getStylesheets().add("CSS/MainStyle.css");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                iMat.shutDown();
+            }
+        });
 
-            //Send a reference of main to the controller
-            MainViewController controller = loader.getController();
-            controller.setMain(this);
-            mainViewController = controller;
+        //Send a reference of main to the controller
+        MainViewController controller = loader.getController();
+        controller.setMain(this);
+        mainViewController = controller;
     }
 
     private void showCategoriesView() throws IOException {
@@ -99,8 +90,8 @@ public class Main extends Application {
         controller.setMain(this);
     }
 
-    public void showProductView()throws IOException{
-        if (productPanel == null){
+    public void showProductView() throws IOException {
+        if (productPanel == null) {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("view/ProductView.fxml"));
             productPanel = loader.load();
@@ -109,13 +100,12 @@ public class Main extends Application {
             //Send a reference of main to the controller
             productViewController = loader.getController();
             productViewController.setMain(this);
-        }
-        else {
+        } else {
             mainLayout.setCenter(productPanel);
         }
     }
 
-    public void showPayWizardView()throws IOException{
+    public void showPayWizardView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/PayWizard2.0.fxml"));
         TabPane tabPane = loader.load();
@@ -160,27 +150,25 @@ public class Main extends Application {
         productViewController.refresh();
     }
 
-    public void updateShoppingBag(){
-        if (shoppingBagController != null)
-        {
+    public void updateShoppingBag() {
+        if (shoppingBagController != null) {
             shoppingBagController.updateShoppingBagGrid();
         }
         mainViewController.updateShoppingBagCounter();
     }
 
-    public void hideShoppingBag(){
+    public void hideShoppingBag() {
         mainLayout.setRight(null);
         productViewController.refresh();
     }
 
-    public void showConfirmationView(){
+    public void showConfirmationView() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/confirmationView.fxml"));
         try {
             AnchorPane confirmationView = loader.load();
             mainLayout.setCenter(confirmationView);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -191,18 +179,17 @@ public class Main extends Application {
 
     }
 
-    public void updateConfirmationViewText(String time, String date){
+    public void updateConfirmationViewText(String time, String date) {
         confirmationViewController.updateText(date, time);
     }
 
-    public void showReceiptView(){
+    public void showReceiptView() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/receiptView.fxml"));
         try {
             AnchorPane receiptView = loader.load();
             mainLayout.setCenter(receiptView);
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -212,8 +199,8 @@ public class Main extends Application {
         controller.updateOrders();
     }
 
-    public void fillProductView(List<Product> products){
-        productViewController.fillCenterPane(products);
+    public void fillProductView(List<Product> products) {
+        productViewController.fillCenterPaneProduct(products);
     }
 
 
@@ -231,7 +218,9 @@ public class Main extends Application {
 
     //------------------------History--------------------------------\\
 
-    public HistoryHandler pageHistory() {return historyHandler; }
+    public HistoryHandler pageHistory() {
+        return historyHandler;
+    }
 
     private HistoryHandler historyHandler;
 
@@ -245,7 +234,7 @@ public class Main extends Application {
 
         private Button forwardButton;
 
-        public HistoryHandler(Button backButton, Button forwardButton){
+        public HistoryHandler(Button backButton, Button forwardButton) {
             this.backButton = backButton;
             this.forwardButton = forwardButton;
             history = new ArrayList<SavedPage>();
@@ -254,41 +243,41 @@ public class Main extends Application {
             backButton.setDisable(true);
         }
 
-        public void addLink(Link link){
+        public void addLink(Link link) {
             //TODO lägg till så att en inte kan lägga till två likadan i rad
             backButton.setDisable(false);
-            if (currentIndex + 1 != history.size()){
+            if (currentIndex + 1 != history.size()) {
                 cutOffBranch();
             }
-            if (link == Link.PRODUCT){
+            if (link == Link.PRODUCT) {
                 //TODO throw exception
             }
             history.add(new SavedPage(link));
             currentIndex++;
         }
 
-        public void addProductLink(List<Product> productList){
+        public void addProductLink(List<Product> productList) {
             backButton.setDisable(false);
             //TODO lägg till så att en inte kan lägga till två likadan i rad
-            if (currentIndex + 1 != history.size()){
+            if (currentIndex + 1 != history.size()) {
                 cutOffBranch();
             }
             history.add(new SavedPage(Link.PRODUCT, productList));
             currentIndex++;
         }
 
-        public void goBack(){
+        public void goBack() {
             currentIndex--;
-            if (currentIndex == 0){
+            if (currentIndex == 0) {
                 backButton.setDisable(true);
             }
             show();
             forwardButton.setDisable(false);
         }
 
-        public void goForwards(){
+        public void goForwards() {
             currentIndex++;
-            if (currentIndex + 1 == history.size()){
+            if (currentIndex + 1 == history.size()) {
                 forwardButton.setDisable(true);
             }
             backButton.setDisable(false);
@@ -296,14 +285,18 @@ public class Main extends Application {
             show();
         }
 
-        private void show(){
-            switch (history.get(currentIndex).getLink()){
+        private void show() {
+            switch (history.get(currentIndex).getLink()) {
                 case CONFIRMEDVIEW:
                     showConfirmationView();
                     break;
 
                 case FAVOURITES:
-                    try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
+                    try {
+                        showProductView();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     fillProductView(iMat.favorites());
                     break;
 
@@ -318,12 +311,20 @@ public class Main extends Application {
                     break;
 
                 case PRODUCT:
-                    try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
+                    try {
+                        showProductView();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     fillProductView(history.get(currentIndex).getProductList());
                     break;
 
                 case PROFILE:
-                    try { showProfileView(); }  catch (IOException e){ e.printStackTrace(); }
+                    try {
+                        showProfileView();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
                 case RECEIPTS:
@@ -331,14 +332,18 @@ public class Main extends Application {
                     break;
 
                 case WIZARD:
-                    try { showPayWizardView(); }  catch (IOException e){ e.printStackTrace(); }
+                    try {
+                        showPayWizardView();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
 
             }
         }
 
-        private void cutOffBranch(){
-            for (int i = history.size() - 1; i > currentIndex; i--){
+        private void cutOffBranch() {
+            for (int i = history.size() - 1; i > currentIndex; i--) {
                 history.remove(i);
             }
             forwardButton.setDisable(true);

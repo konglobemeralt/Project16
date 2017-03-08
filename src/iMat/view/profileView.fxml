@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
+<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="450.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
    <children>
       <Label layoutX="456.0" layoutY="14.0" text="Mina uppgifter">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="94.0" layoutY="141.0" prefHeight="369.0" prefWidth="362.0">
+      <AnchorPane layoutX="94.0" layoutY="141.0" prefHeight="369.0" prefWidth="362.0" AnchorPane.leftAnchor="94.0">
          <children>
             <Label layoutX="-5.0" layoutY="108.0" text="Efternamn: ">
                <font>
@@ -78,13 +78,13 @@
             </TextField>
          </children>
       </AnchorPane>
-      <Button layoutX="784.0" layoutY="559.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="51.0" prefWidth="200.0" text="Spara &amp; Återgå">
+      <Button layoutX="784.0" layoutY="559.0" mnemonicParsing="false" onAction="#saveButtonPressed" prefHeight="51.0" prefWidth="200.0" text="Spara &amp; Återgå" AnchorPane.leftAnchor="784.0">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Separator layoutX="512.0" layoutY="57.0" orientation="VERTICAL" prefHeight="539.0" prefWidth="8.0" />
-      <AnchorPane layoutX="575.0" layoutY="211.0" prefHeight="231.0" prefWidth="400.0">
+      <Separator layoutX="512.0" layoutY="57.0" orientation="VERTICAL" prefHeight="539.0" prefWidth="8.0" AnchorPane.leftAnchor="512.0" />
+      <AnchorPane layoutX="575.0" layoutY="211.0" prefHeight="231.0" prefWidth="400.0" AnchorPane.leftAnchor="575.0">
          <children>
             <Label layoutX="20.0" layoutY="19.0" text="Kortets ägare: ">
                <font>

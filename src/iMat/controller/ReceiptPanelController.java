@@ -1,15 +1,21 @@
 package iMat.controller;
 
 import iMat.Main;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,13 +27,16 @@ public class ReceiptPanelController extends AnchorPane{
     private Label dateLabel;
 
     @FXML
-    private Label timeLabel;
-
-    @FXML
     private Label numberOfItemsLabel;
 
     @FXML
     private Label priceLabel;
+
+    @FXML
+    private Label showMoreLabel;
+
+    @FXML
+    private ListView<String> itemsList;
 
     //Reference the main application
     private Main main;
@@ -58,11 +67,29 @@ public class ReceiptPanelController extends AnchorPane{
             priceLabel.setText(price + " kr");
             numberOfItemsLabel.setText(items.size()+" st");
 
-            String[] weekdays = {"Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"};
             String[] months = {"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"};
 
-            //priceLabel
+            Date date = order.getDate();
+            dateLabel.setText("Beställt den " + date.getDate() + " " + months[date.getMonth()] + " " + (1900 + date.getYear()) + "  " + date.getHours() + ":" + date.getMinutes());
 
+            List<String> listItems = new ArrayList<>();
+
+            for (int i = 0; i < items.size() && i < 3; i++) {
+                ShoppingItem s =  items.get(i);
+                listItems.add("  " + Math.round(s.getAmount()*100)/100 + " " + s.getProduct().getUnitSuffix() + "   " + s.getProduct().getName() + "  för  " + Math.round(s.getProduct().getPrice()*s.getAmount()*100)/100 + " kr" );
+            }
+
+            if (items.size() > 3){
+                showMoreLabel.setVisible(true);
+                listItems.add("  ...");
+            }
+            else {
+                showMoreLabel.setVisible(false);
+            }
+
+            ObservableList<String> itemsObservable = FXCollections.observableArrayList(listItems);
+
+            itemsList.setItems(itemsObservable);
 
             this.getChildren().add(receiptPanel);
         }
