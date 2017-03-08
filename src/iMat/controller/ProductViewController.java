@@ -60,7 +60,7 @@ public class ProductViewController extends AnchorPane {
     }
 
     public void fillCenterPane(List<Product> products){
-        if (!savedProducts.equals(products)){
+        if (savedProducts.equals(products)){
             savedProducts.clear();
             savedProducts = products;
         }
