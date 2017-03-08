@@ -21,7 +21,7 @@ public class CategoriesPanelController {
     private Button lastPressedCat;
 
     @FXML
-    Button favouritesButtonCategories;
+    private Button favouritesButtonCategories;
 
     @FXML
     private Button minaListorButton;
@@ -68,17 +68,13 @@ public class CategoriesPanelController {
         if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
         }
-
-        main.fillProductView(results);
-
-
-
         if(lastPressedCat != null){
-           lastPressedCat.getStyleClass().removeAll("selectedCat");
-       }
+           lastPressedCat.getStyleClass().removeAll("pressed");
+        }
 
-        ((Button)event.getSource()).getStyleClass().add("selectedCat");
+        ((Button)event.getSource()).getStyleClass().add("pressed");
         lastPressedCat = ((Button)event.getSource());
+        main.fillProductView(results);
     }
 
     public void favouritesButtonPressed(){
@@ -88,6 +84,12 @@ public class CategoriesPanelController {
         if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollPane")) { //Scrollpane is the root element of productview
             try {main.showProductView();} catch (IOException e){ e.printStackTrace(); }
         }
+
+        if(lastPressedCat != null){
+            lastPressedCat.getStyleClass().removeAll("pressed");
+        }
+        favouritesButtonCategories.getStylesheets().add("pressed");
+        lastPressedCat = favouritesButtonCategories;
 
         List<Product> results = Main.iMat.favorites();
         main.fillProductView(results);

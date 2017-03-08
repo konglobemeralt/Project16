@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,33 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductView.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/view/ProductView.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="636">
               <caret line="245" column="71" lean-forward="false" selection-start-line="245" selection-start-column="71" selection-end-line="245" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainViewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
+            <state relative-caret-position="-171">
               <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -118,11 +104,24 @@
       <file leaf-file-name="CategoriesPanelController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="92" column="17" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="28" />
+            <state relative-caret-position="264">
+              <caret line="90" column="34" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriesPanel.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -201,13 +200,13 @@
         <option value="$PROJECT_DIR$/src/iMat/view/item.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java" />
-        <option value="$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/iMat/Main.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ProductViewController.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/MainViewController.java" />
         <option value="$PROJECT_DIR$/src/CSS/mainStyle.css" />
+        <option value="$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java" />
       </list>
     </option>
   </component>
@@ -887,16 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/startView.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -945,16 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="92" column="17" lean-forward="false" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -981,17 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1014,23 +982,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="245" column="71" lean-forward="false" selection-start-line="245" selection-start-column="71" selection-end-line="245" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/MainViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
+        <state relative-caret-position="-171">
           <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2788#2789#0" expanded="true" />
             <element signature="e#2845#2846#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="90" column="34" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="245" column="71" lean-forward="false" selection-start-line="245" selection-start-column="71" selection-end-line="245" selection-end-column="71" />
+          <folding />
         </state>
       </provider>
     </entry>
