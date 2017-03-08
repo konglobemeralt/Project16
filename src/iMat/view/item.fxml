@@ -69,4 +69,7 @@
          </effect></Button>
       <Separator blendMode="EXCLUSION" layoutX="2.0" layoutY="219.0" prefHeight="0.0" prefWidth="239.0" />
     </children>
+   <effect>
+      <DropShadow height="5.0" offsetX="2.0" radius="2.0" width="5.0" />
+   </effect>
 </javafx.scene.layout.AnchorPane>
