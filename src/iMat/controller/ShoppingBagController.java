@@ -237,5 +237,11 @@ public class ShoppingBagController {
         amount.selectAll();
     }
 
+    @FXML
+    private void clearShoppingBagButtonPressed(ActionEvent event){
+        main.iMat.getShoppingCart().clear();
+        updateShoppingBagGrid();
+    }
+
 }
 
