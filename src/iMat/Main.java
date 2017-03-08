@@ -79,6 +79,14 @@ public class Main extends Application {
         mainViewController = controller;
     }
 
+    public void showHomeView(){
+        getMainLayout().setCenter(null);
+    }
+
+    public void showFirstStartView(){
+
+    }
+
     private void showCategoriesView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/CategoriesPanel.fxml"));
@@ -132,6 +140,7 @@ public class Main extends Application {
         profileViewController = controller;
 
         controller.update();
+        hideShoppingBag();
 
     }
 
@@ -160,7 +169,9 @@ public class Main extends Application {
 
     public void hideShoppingBag() {
         mainLayout.setRight(null);
-        productViewController.refresh();
+        if (productViewController != null){
+            productViewController.refresh();
+        }
     }
 
     public void showConfirmationView() {
@@ -198,6 +209,8 @@ public class Main extends Application {
         ReceiptViewController controller = loader.getController();
         controller.setMain(this);
         controller.updateOrders();
+
+        hideShoppingBag();
     }
 
     public void showDetailedRecieptView(Order order){
@@ -327,10 +340,11 @@ public class Main extends Application {
                     break;
 
                 case HOME:
-                    mainLayout.setCenter(null);
+                    showHomeView();
                     break;
 
                 case FIRSTPAGE:
+                    showFirstStartView();
                     break;
 
                 case MYLISTS:
@@ -368,7 +382,6 @@ public class Main extends Application {
                         e.printStackTrace();
                     }
                     break;
-
             }
         }
 

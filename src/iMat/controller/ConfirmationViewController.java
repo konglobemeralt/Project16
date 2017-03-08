@@ -26,6 +26,12 @@ public class ConfirmationViewController {
         main.pageHistory().addLink(Link.RECEIPTS);
     }
 
+    @FXML
+    void returnHomePressed(ActionEvent event) {
+        main.showHomeView();
+        main.pageHistory().addLink(Link.HOME);
+    }
+
     public void updateText(String date, String time){
         timeLabel.setText(time);
         dateLabel.setText(date);
