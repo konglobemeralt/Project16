@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane fx:id="scrollPaneReceipt" hbarPolicy="NEVER" maxHeight="-Infinity" minWidth="200.0" prefHeight="550.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptViewController">
-   <content>
-      <GridPane fx:id="ordersGrid" prefHeight="549.0" prefWidth="1031.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1030.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
-   </content>
-</ScrollPane>
+
+<AnchorPane fx:id="receiptAnchorPane" minWidth="500.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptViewController">
+   <children>
+      <ScrollPane fx:id="scrollPaneReceipt" hbarPolicy="NEVER" layoutY="80.0" maxHeight="-Infinity" minWidth="200.0" prefHeight="470.0" prefWidth="1030.0" AnchorPane.leftAnchor="0.0">
+         <content>
+            <GridPane fx:id="ordersGrid" prefHeight="549.0" prefWidth="1031.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1030.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="170.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="426.0" layoutY="6.0" prefHeight="46.0" prefWidth="179.0" text="Tidigare Köp" AnchorPane.leftAnchor="426.0">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <Separator layoutX="100.0" layoutY="72.0" prefHeight="10.0" prefWidth="1030.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="15.0" />
+   </children>
+</AnchorPane>

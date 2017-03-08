@@ -199,7 +199,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/receiptView.fxml"));
         try {
-            ScrollPane receiptView = loader.load();
+            AnchorPane receiptView = loader.load();
             mainLayout.setCenter(receiptView);
         }
         catch (IOException e){
