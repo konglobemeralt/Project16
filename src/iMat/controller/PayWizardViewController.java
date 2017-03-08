@@ -87,6 +87,86 @@ public class PayWizardViewController {
         cardYearArea.setText(""+card.getValidYear());
         cardCVCArea.setText(""+card.getVerificationCode());
 
+        cardNumberArea1.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,4}"))
+                {
+                    cardNumberArea1.setText(oldValue);
+                }
+
+                if(newValue.length() == 4)
+                {
+                    cardNumberArea2.requestFocus();
+                }
+            }
+        });
+
+
+        cardNumberArea2.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,4}"))
+                {
+                    cardNumberArea2.setText(oldValue);
+                }
+
+                if(newValue.length() == 4)
+                {
+                    cardNumberArea3.requestFocus();
+                }
+            }
+        });
+
+        cardNumberArea3.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,4}"))
+                {
+                    cardNumberArea3.setText(oldValue);
+                }
+
+                if(newValue.length() == 4)
+                {
+                    cardNumberArea4.requestFocus();
+                }
+            }
+        });
+
+        cardNumberArea4.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,4}"))
+                {
+                    cardNumberArea4.setText(oldValue);
+                }
+            }
+        });
+
+        cardMonthArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,2}"))
+                {
+                    cardMonthArea.setText(oldValue);
+                }
+            }
+        });
+
+        cardYearArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,2}"))
+                {
+                    cardYearArea.setText(oldValue);
+                }
+            }
+        });
+
+        cardCVCArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,3}"))
+                {
+                    cardCVCArea.setText(oldValue);
+                }
+            }
+        });
+
+
         firstNameArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
                 customer.setFirstName(firstNameArea.getText());
@@ -117,6 +197,10 @@ public class PayWizardViewController {
 
         postalCodeArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,5}"))
+                {
+                    postalCodeArea.setText(oldValue);
+                }
                 customer.setPostCode(postalCodeArea.getText());
                 updateTabEnabledStatus();
             }

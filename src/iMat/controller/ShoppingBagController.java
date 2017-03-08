@@ -199,6 +199,7 @@ public class ShoppingBagController {
         }
     }
 
+
     private void removeButtonPressed() {
         for (Node n : shoppingBagGrid.getChildren()) {
             if (n.isFocused()) {

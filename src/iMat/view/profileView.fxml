@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -7,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="450.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
+<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="450.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
    <children>
       <Label layoutX="456.0" layoutY="14.0" text="Mina uppgifter">
          <font>
@@ -111,27 +115,27 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="cardOwnerArea" layoutX="135.0" layoutY="13.0">
+            <TextField fx:id="cardOwnerArea" layoutX="135.0" layoutY="13.0" prefHeight="39.0" prefWidth="233.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" prefWidth="50.0">
+            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" maxWidth="65.0" text="1234">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea2" layoutX="185.0" layoutY="64.0" prefWidth="50.0">
+            <TextField fx:id="cardNumberArea2" layoutX="200.0" layoutY="64.0" maxWidth="65.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea3" layoutX="235.0" layoutY="64.0" prefWidth="50.0">
+            <TextField fx:id="cardNumberArea3" layoutX="264.0" layoutY="64.0" maxWidth="65.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea4" layoutX="285.0" layoutY="64.0" prefWidth="50.0">
+            <TextField fx:id="cardNumberArea4" layoutX="329.0" layoutY="64.0" maxWidth="65.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -146,7 +150,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardCVCArea" layoutX="135.0" layoutY="170.0" prefWidth="50.0">
+            <TextField fx:id="cardCVCArea" layoutX="135.0" layoutY="170.0" prefWidth="65.0">
                <font>
                   <Font size="18.0" />
                </font>
