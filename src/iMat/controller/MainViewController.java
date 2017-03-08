@@ -39,6 +39,15 @@ public class MainViewController {
     @FXML
     private Button forwardButton;
 
+    @FXML
+    private Button profileButton;
+
+    @FXML
+    private Button helpButton;
+
+    @FXML
+    private Button kundkorgButton;
+
     //Reference the main application
     private Main main;
 
@@ -102,6 +111,8 @@ public class MainViewController {
             try {
                 main.showProfileView();
                 main.pageHistory().addLink(Link.PROFILE);
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }

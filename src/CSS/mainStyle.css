@@ -47,6 +47,10 @@
         -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
 }
 
+.pressed{
+  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
+}
+
 
 .kundKorg{
  -fx-background-color: #FFFFFF;
@@ -208,7 +212,7 @@
 }
 .favourite:hover{
     -fx-text-fill: white;
-
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
 }
 
 
@@ -218,7 +222,9 @@
   -fx-background-position: center;
   -fx-base: #FAC863;
 }
-.profileButton:hover{-fx-background-image: url("img/ic_face_black_24dp_2xW.png");}
+.profileButton:hover{-fx-background-image: url("img/ic_face_black_24dp_2xW.png");
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+}
 
 .kundkorgButton {
   -fx-background-image: url("img/ic_shopping_cart_black_24dp_2x.png");
@@ -226,7 +232,8 @@
   -fx-background-position: center;
     -fx-base: #5FB3B3;
 }
-.kundkorgButton:hover{-fx-background-image: url("img/ic_shopping_cart_black_24dp_2xW.png");}
+.kundkorgButton:hover{-fx-background-image: url("img/ic_shopping_cart_black_24dp_2xW.png");
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );}
 
 
 .helpButton {
@@ -235,7 +242,8 @@
   -fx-background-position: center;
   -fx-base: #b2e268;
 }
-.helpButton:hover{-fx-background-image: url("img/ic_help_black_24dp_2xW.png");}
+.helpButton:hover{-fx-background-image: url("img/ic_help_black_24dp_2xW.png");
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );}
 
 
 .searchButton {
