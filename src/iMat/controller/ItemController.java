@@ -258,6 +258,18 @@ public class ItemController extends AnchorPane implements Initializable {
                 }
             }
         });
+
+        textArea.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                if (!newValue.matches("\\d*" + "\\." + "\\d*")&&!newValue.matches("\\d*"))
+                {
+                    textArea.setText(oldValue);
+                }
+            }
+        });
+
         textArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
                 updateEnabledProperties();
