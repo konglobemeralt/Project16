@@ -109,6 +109,29 @@ public class ItemController extends AnchorPane implements Initializable {
     }
 
     @FXML
+    private void amountTextAreaAction(ActionEvent event)
+    {
+
+        try {
+            double newAmount = Double.parseDouble(textArea.getText());
+            shoppingItem.setAmount(newAmount);
+        } catch (NumberFormatException n) {
+        }
+
+        if (shoppingItem.getAmount() > 0) {
+            updateTextArea();
+            addToCartButton.setDisable(false);
+            subtractButton.setDisable(false);
+        } else {
+            shoppingItem.setAmount(0);
+            addToCartButton.setDisable(true);
+            subtractButton.setDisable(true);
+            updateTextArea();
+        }
+
+    }
+
+    @FXML
     private void addToCartButtonPressed(ActionEvent event){
 
         ShoppingCart cart = Main.iMat.getShoppingCart();
@@ -235,6 +258,18 @@ public class ItemController extends AnchorPane implements Initializable {
                 }
             }
         });
+
+        textArea.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                if (!newValue.matches("\\d*" + "\\." + "\\d*")&&!newValue.matches("\\d*"))
+                {
+                    textArea.setText(oldValue);
+                }
+            }
+        });
+
         textArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
                 updateEnabledProperties();
