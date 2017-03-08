@@ -259,7 +259,7 @@ public class Main extends Application {
             if (currentIndex + 1 != history.size()){
                 cutOffBranch();
             }
-            if (link == Link.PRODUCT || link == Link.FAVOURITES){
+            if (link == Link.PRODUCT){
                 //TODO throw exception
             }
             history.add(new SavedPage(link));
@@ -303,7 +303,7 @@ public class Main extends Application {
 
                 case FAVOURITES:
                     try { showProductView(); }  catch (IOException e){ e.printStackTrace(); }
-                    fillProductView(history.get(currentIndex).getProductList());
+                    fillProductView(iMat.favorites());
                     break;
 
                 case HOME:
