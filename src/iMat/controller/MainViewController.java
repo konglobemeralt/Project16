@@ -169,6 +169,15 @@ public class MainViewController implements ShoppingCartListener{
 
     public void searchFieldEnterPressed(ActionEvent event) {
         main.pageHistory().addProductLink(ProductSearch.search(searchBarMain.getText()));
+
+        if (main.getMainLayout().getCenter() == null || !main.getMainLayout().getCenter().getId().equals("scrollpane")) {
+            try {
+                main.showProductView();
+            }
+            catch (IOException e){
+
+            }
+        }
         search();
     }
 

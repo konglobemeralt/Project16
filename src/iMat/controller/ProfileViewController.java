@@ -179,7 +179,6 @@ public class ProfileViewController {
         Customer customer = main.iMat.getCustomer();
 
         firstNameArea.setText(customer.getFirstName());
-        System.out.println(customer.getLastName()+"NU BORDE LASTNAME SKRIVITS UT!!!");
         lastNameArea.setText(customer.getLastName());
         phoneArea.setText(customer.getPhoneNumber());
         addressArea.setText(customer.getAddress());
