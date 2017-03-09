@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -91,6 +92,8 @@ public class Main extends Application {
     }
 
     public void showHomeView(){
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/homePage.fxml"));
         try {
@@ -108,6 +111,8 @@ public class Main extends Application {
     }
 
     public void showFirstStartView(){
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/startView.fxml"));
         try {
@@ -151,6 +156,8 @@ public class Main extends Application {
     }
 
     public void showPayWizardView() throws IOException {
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/PayWizard2.0.fxml"));
         TabPane tabPane = loader.load();
@@ -164,6 +171,8 @@ public class Main extends Application {
     }
 
     public void showProfileView() throws IOException {
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/profileView.fxml"));
         AnchorPane profileViewPanel = loader.load();
@@ -176,10 +185,20 @@ public class Main extends Application {
         profileViewController = controller;
         System.out.println("COTROLLER UPDATE");
         //controller.update();
-        hideShoppingBag();
-
     }
 
+    public void showHelpView() {
+        mainLayout.setRight(null);
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(Main.class.getResource("view/HelpView.fxml"));
+        try {
+            TabPane helpView = loader.load();
+            mainLayout.setCenter(helpView);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void showShoppingBagView() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/ShoppingBag.fxml"));
@@ -212,6 +231,8 @@ public class Main extends Application {
     }
 
     public void showConfirmationView() {
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/confirmationView.fxml"));
         try {
@@ -228,11 +249,14 @@ public class Main extends Application {
 
     }
 
+
     public void updateConfirmationViewText(String time, String date) {
         confirmationViewController.updateText(date, time);
     }
 
     public void showReceiptView() {
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/receiptView.fxml"));
         try {
@@ -247,10 +271,11 @@ public class Main extends Application {
         controller.setMain(this);
         controller.updateOrders();
 
-        hideShoppingBag();
     }
 
     public void showDetailedRecieptView(Order order){
+        mainLayout.setRight(null);
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/receiptDetailedView.fxml"));
         try {
@@ -426,6 +451,10 @@ public class Main extends Application {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                    break;
+
+                case HELP:
+                    showHelpView();
                     break;
             }
         }

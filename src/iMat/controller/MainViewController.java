@@ -142,7 +142,7 @@ public class MainViewController implements ShoppingCartListener{
     public void helpButtonPressed(ActionEvent event) {
         System.out.println("Help Button pressed");
 
-        Stage s = new Stage();
+        /*Stage s = new Stage();
         s.setHeight(50);
         s.setWidth(190);
         VBox v = new VBox();
@@ -154,7 +154,14 @@ public class MainViewController implements ShoppingCartListener{
         sc.getStylesheets().add("CSS/MainStyle.css");
         s.setTitle(">:(");
         s.setScene(sc);
-        s.show();
+        s.show();*/
+        if (main.getMainLayout().getCenter() != null && main.getMainLayout().getCenter().getId().equals("helpPane")){
+            main.pageHistory().goBack();
+        }
+        else {
+            main.showHelpView();
+            main.pageHistory().addLink(Link.HELP);
+        }
     }
 
     public void profileButtonPressed(ActionEvent event) throws IOException {
