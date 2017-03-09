@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
-    </list>
+    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -99,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="149" column="29" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="29" />
+              <caret line="149" column="29" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -1213,7 +1209,7 @@
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="149" column="29" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="29" />
+          <caret line="149" column="29" lean-forward="false" selection-start-line="149" selection-start-column="23" selection-end-line="149" selection-end-column="29" />
           <folding />
         </state>
       </provider>
