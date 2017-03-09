@@ -10,19 +10,19 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptDetailedController">
    <children>
       <ListView fx:id="itemsList" layoutX="154.0" layoutY="91.0" prefHeight="423.0" prefWidth="722.0" AnchorPane.leftAnchor="154.0" />
-      <Label fx:id="dateLabel" layoutX="243.0" layoutY="29.0" styleClass="bolded" text="Beställdes den " AnchorPane.leftAnchor="243.0">
+      <Label fx:id="dateLabel" layoutX="243.0" layoutY="29.0" style="-fx-font-size: 34;" styleClass="bolded" text="Beställdes den " AnchorPane.leftAnchor="243.0">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
       <Label fx:id="priceLabel" layoutX="671.0" layoutY="521.0" text="Totalpris" AnchorPane.leftAnchor="671.0">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Label fx:id="numberOfItems" layoutX="193.0" layoutY="521.0" text="Antal Varor" AnchorPane.leftAnchor="193.0">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Button layoutX="937.0" layoutY="19.0" mnemonicParsing="false" onAction="#closeButtonPressed" prefHeight="35.0" prefWidth="35.0" styleClass="deleteButton" AnchorPane.leftAnchor="937.0">

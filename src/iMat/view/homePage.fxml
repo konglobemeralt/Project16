@@ -25,9 +25,9 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="1.0" layoutY="72.0" prefHeight="154.0" prefWidth="1030.0" style="-fx-background-color: #5FB3B3;" AnchorPane.leftAnchor="1.0">
+      <AnchorPane layoutX="1.0" layoutY="72.0" prefHeight="154.0" prefWidth="1030.0" AnchorPane.leftAnchor="1.0">
          <children>
-            <Button layoutX="417.0" layoutY="50.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="196.0" text="Börja handla" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="50.0">
+            <Button layoutX="417.0" layoutY="50.0" mnemonicParsing="false" onAction="#startShoppingButton" prefHeight="56.0" prefWidth="196.0" style="-fx-background-color: #b2e268;" text="Börja handla" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="50.0">
                <font>
                   <Font size="25.0" />
                </font></Button>
