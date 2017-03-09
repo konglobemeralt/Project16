@@ -195,9 +195,15 @@ public class ProfileViewController {
             cardNumberArea3.setText(card.getCardNumber().substring(8, 12));
             cardNumberArea4.setText(card.getCardNumber().substring(12, 16));
         }
-        cardMonthArea.setText(""+card.getValidMonth());
-        cardYearArea.setText(""+card.getValidYear());
-        cardCVCArea.setText(""+card.getVerificationCode());
+        if (card.getValidMonth() != -1){
+            cardMonthArea.setText(""+card.getValidMonth());
+        }
+        if (card.getValidYear() != -1) {
+            cardYearArea.setText(""+card.getValidYear());
+        }
+        if (card.getVerificationCode() != -1){
+            cardCVCArea.setText(""+card.getVerificationCode());
+        }
     }
 
     private void save(){
@@ -233,7 +239,10 @@ public class ProfileViewController {
             t.setText("");
         }
 
-        save();
+        CreditCard card = main.iMat.getCreditCard();
+        card.setValidMonth(-1);
+        card.setVerificationCode(-1);
+        card.setValidYear(-1);
     }
 
     @FXML

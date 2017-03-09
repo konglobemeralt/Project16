@@ -77,15 +77,20 @@ public class PayWizardViewController {
             cardNumberArea3.setText(card.getCardNumber().substring(8, 12));
             cardNumberArea4.setText(card.getCardNumber().substring(12, 16));
         }
-        cardMonthArea.setText(""+card.getValidMonth());
-        cardYearArea.setText(""+card.getValidYear());
-        if (card.getVerificationCode() < 10 ){
+        if (card.getValidMonth() != -1){
+            cardMonthArea.setText(""+card.getValidMonth());
+        }
+        if (card.getValidYear() != -1){
+            cardYearArea.setText(""+card.getValidYear());
+        }
+
+        if (card.getVerificationCode() < 10 && card.getVerificationCode() != -1 ){
             cardCVCArea.setText("00"+card.getVerificationCode());
         }
-        else if (card.getVerificationCode() < 100){
+        else if (card.getVerificationCode() < 100 && card.getVerificationCode() != -1){
             cardCVCArea.setText("0"+card.getVerificationCode());
         }
-        else {
+        else if (card.getVerificationCode() != -1){
             cardCVCArea.setText(""+card.getVerificationCode());
         }
 
@@ -171,28 +176,36 @@ public class PayWizardViewController {
 
         firstNameArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                customer.setFirstName(firstNameArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setFirstName(firstNameArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
 
         lastNameArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                customer.setLastName(lastNameArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setLastName(lastNameArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
 
         phoneArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                customer.setPhoneNumber(phoneArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setPhoneNumber(phoneArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
 
         addressArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                customer.setAddress(addressArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setAddress(addressArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
@@ -203,14 +216,18 @@ public class PayWizardViewController {
                 {
                     postalCodeArea.setText(oldValue);
                 }
-                customer.setPostCode(postalCodeArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setPostCode(postalCodeArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
 
         postAddressArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                customer.setPostAddress(postAddressArea.getText());
+                if (saveCredentialsCheckBox.isSelected()){
+                    customer.setPostAddress(postAddressArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
@@ -276,7 +293,9 @@ public class PayWizardViewController {
 
         cardOwnerArea.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
-                card.setHoldersName(cardOwnerArea.getText());
+                if (saveCardCheckBox.isSelected()){
+                    card.setHoldersName(cardOwnerArea.getText());
+                }
                 updateTabEnabledStatus();
             }
         });
@@ -288,7 +307,9 @@ public class PayWizardViewController {
                     cardMonthArea.setText(oldValue);
                 }
                 try{
-                    card.setValidMonth(Integer.parseInt(cardMonthArea.getText()));
+                    if (saveCardCheckBox.isSelected()){
+                        card.setValidMonth(Integer.parseInt(cardMonthArea.getText()));
+                    }
                 }
                 catch (NumberFormatException e) {}
                 updateTabEnabledStatus();
@@ -302,7 +323,9 @@ public class PayWizardViewController {
                     cardYearArea.setText(oldValue);
                 }
                 try{
-                    card.setValidYear(Integer.parseInt(cardMonthArea.getText()));
+                    if (saveCardCheckBox.isSelected()){
+                        card.setValidYear(Integer.parseInt(cardMonthArea.getText()));
+                    }
                 }
                 catch (NumberFormatException e) {}
                 updateTabEnabledStatus();
@@ -316,7 +339,9 @@ public class PayWizardViewController {
                     cardCVCArea.setText(oldValue);
                 }
                 try{
-                    card.setVerificationCode(Integer.parseInt(cardMonthArea.getText()));
+                    if (saveCardCheckBox.isSelected()){
+                        card.setVerificationCode(Integer.parseInt(cardMonthArea.getText()));
+                    }
                 }
                 catch (NumberFormatException e) {}
                 updateTabEnabledStatus();
@@ -642,6 +667,7 @@ public class PayWizardViewController {
     }
 
     //----------------Credentials----------------\\
+
     @FXML
     private Button credentialsNextButton;
 
@@ -698,6 +724,9 @@ public class PayWizardViewController {
 
     @FXML
     private Label postAddressFeedbackLabel;
+
+    @FXML
+    private CheckBox saveCredentialsCheckBox;
 
     private boolean isCredentialsFinished() {
         String[] inputs = {firstNameArea.getText(), lastNameArea.getText(), phoneArea.getText(), addressArea.getText(), postalCodeArea.getText(), postAddressArea.getText()};
@@ -764,17 +793,37 @@ public class PayWizardViewController {
     }
 
     @FXML
-    private void credentialAreaChanged(ActionEvent a) {
-        Customer customer = main.iMat.getCustomer();
-        customer.setFirstName(firstNameArea.getText());
-        customer.setLastName(lastNameArea.getText());
-        customer.setPhoneNumber(phoneArea.getText());
-        customer.setAddress(addressArea.getText());
-        customer.setPostCode(postalCodeArea.getText());
-        customer.setPostAddress(postAddressArea.getText());
+    private void clearCredentialsPressed(ActionEvent event) {
+        TextField[] credentialFields = {firstNameArea, lastNameArea, phoneArea, addressArea, postAddressArea, postalCodeArea};
 
-        updateTabEnabledStatus();
+        for (TextField t : credentialFields){
+            t.setText("");
+        }
+
+        credentialsNextButton.setDisable(true);
     }
+
+    @FXML
+    private void saveCredentialsCheckBoxPressed(ActionEvent event){
+        Customer customer = main.iMat.getCustomer();
+        if (!saveCredentialsCheckBox.isSelected()){
+            customer.setAddress("");
+            customer.setPostAddress("");
+            customer.setFirstName("");
+            customer.setLastName("");
+            customer.setPhoneNumber("");
+            customer.setPostCode("");
+        }
+        else {
+            customer.setFirstName(firstNameArea.getText());
+            customer.setLastName(lastNameArea.getText());
+            customer.setPhoneNumber(phoneArea.getText());
+            customer.setAddress(addressArea.getText());
+            customer.setPostCode(postalCodeArea.getText());
+            customer.setPostAddress(postAddressArea.getText());
+        }
+    }
+
 
     //----------------Delivery & Payment----------------\\
 
@@ -833,6 +882,9 @@ public class PayWizardViewController {
     private ImageView cardCVCFeedbackImage;
 
     @FXML
+    private CheckBox saveCardCheckBox;
+
+    @FXML
     void cardRadioButtonPressed(ActionEvent event) {
         cardPanel.setVisible(true);
         cardPanel.setDisable(false);
@@ -877,7 +929,10 @@ public class PayWizardViewController {
         }
 
         String number = cardNumberArea1.getText() + cardNumberArea2.getText() + cardNumberArea3.getText() + cardNumberArea4.getText();
-        main.iMat.getCreditCard().setCardNumber(number);
+
+        if (saveCardCheckBox.isSelected()){
+            main.iMat.getCreditCard().setCardNumber(number);
+        }
 
         cardNumberFeedbackImage.getStyleClass().removeAll("error");
         cardNumberFeedbackImage.getStyleClass().add("correct");
@@ -923,6 +978,9 @@ public class PayWizardViewController {
 
                     switch (i) {
                         case 0:
+                            if (saveCardCheckBox.isSelected()){
+                                main.iMat.getCreditCard().setHoldersName(cardOwnerArea.getText());
+                            }
                             cardOwnerFeedbackImage.getStyleClass().add("correct");
                             break;
 
@@ -940,6 +998,11 @@ public class PayWizardViewController {
                                 }
                                 cardDateFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardDateFeedbackImage.getStyleClass().add("correct");
+                                if (saveCardCheckBox.isSelected()){
+                                    main.iMat.getCreditCard().setValidMonth(Integer.parseInt(cardMonthArea.getText()));
+                                    main.iMat.getCreditCard().setValidYear(Integer.parseInt(cardYearArea.getText()));
+                                }
+
                             } catch (NumberFormatException n) {
                                 returnBool = false;
                                 cardDateFeedbackImage.getStyleClass().removeAll("correct", "error");
@@ -966,6 +1029,9 @@ public class PayWizardViewController {
                             if (isOk){
                                 cardCVCFeedbackImage.getStyleClass().removeAll("correct", "error");
                                 cardCVCFeedbackImage.getStyleClass().add("correct");
+                                if (saveCardCheckBox.isSelected()){
+                                    main.iMat.getCreditCard().setVerificationCode(Integer.parseInt(cardCVCArea.getText()));
+                                }
                             }
                             else {
                                 cardCVCFeedbackImage.getStyleClass().removeAll("correct", "error");
@@ -990,6 +1056,32 @@ public class PayWizardViewController {
 
         return false;
     }
+
+    @FXML
+    private void clearCardPressed(ActionEvent event) {
+        TextField[] cardFields = {cardCVCArea, cardMonthArea, cardYearArea, cardNumberArea1, cardNumberArea2, cardNumberArea3, cardNumberArea4, cardOwnerArea};
+        for (TextField t: cardFields) {
+            t.setText("");
+        }
+
+        deliveryNextButton.setDisable(true);
+    }
+
+    @FXML
+    private void saveCardCheckBoxPressed(){
+        if (!saveCardCheckBox.isSelected()) {
+            CreditCard card = main.iMat.getCreditCard();
+            card.setHoldersName("");
+            card.setValidMonth(-1);
+            card.setVerificationCode(-1);
+            card.setValidYear(-1);
+            card.setCardNumber("");
+        }
+        else {
+            isDeliveryPaymentFinished();
+        }
+    }
+
 
     //----------------Confirmation----------------\\
 

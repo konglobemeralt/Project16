@@ -117,7 +117,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" maxWidth="65.0" text="1234">
+            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" maxWidth="65.0">
                <font>
                   <Font size="18.0" />
                </font>
