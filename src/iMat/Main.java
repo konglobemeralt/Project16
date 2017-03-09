@@ -173,7 +173,7 @@ public class Main extends Application {
 
         profileViewController = controller;
         System.out.println("COTROLLER UPDATE");
-        controller.update();
+        //controller.update();
         hideShoppingBag();
 
     }
