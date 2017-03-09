@@ -104,6 +104,7 @@ public class Main extends Application {
         //Send a reference of main to the controller
         HomeController controller = loader.getController();
         controller.setMain(this);
+        controller.update();
     }
 
     public void showFirstStartView(){

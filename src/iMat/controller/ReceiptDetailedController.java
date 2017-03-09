@@ -51,8 +51,8 @@ public class ReceiptDetailedController {
         }
         price = Math.round(price*100)/100.0;
 
-        priceLabel.setText(price + " kr");
-        numberOfItems.setText(items.size()+" st");
+        priceLabel.setText("Totalpris: "+price + " kr");
+        numberOfItems.setText("Antal varor: "+items.size()+" st");
 
         String[] months = {"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"};
 
@@ -62,7 +62,6 @@ public class ReceiptDetailedController {
             minutes = "0"+date.getMinutes();
         }
         dateLabel.setText("Beställt den " + date.getDate() + " " + months[date.getMonth()] + " " + (1900 + date.getYear()) + "  " + date.getHours() + ":" + minutes);
-
         List<String> listItems = new ArrayList<>();
 
         for (int i = 0; i < items.size(); i++) {

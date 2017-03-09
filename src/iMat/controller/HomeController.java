@@ -6,6 +6,7 @@ import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
+import java.security.PublicKey;
 import java.util.Random;
 
 /**
@@ -19,12 +20,11 @@ public class HomeController {
     //Reference the main application
     private Main main;
 
-    public void setMain(Main main) {
+    public void setMain(Main main){
         this.main = main;
     }
 
-    @FXML
-    private void initialize(){
+    public void update(){
         Random random = new Random();
         for (int columnIndex = 0; columnIndex < 4; columnIndex++){
             ShoppingItem shoppingItem = new ShoppingItem(main.iMat.getProduct(random.nextInt(main.iMat.getProducts().size())), 0);
