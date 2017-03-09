@@ -52,19 +52,14 @@ public class Main extends Application {
         showMainView();
         showCategoriesView();
 
-        /*if (iMat.isFirstRun()){
+        if (iMat.isFirstRun()){
             showFirstStartView();
         }
         else {
             showHomeView();
         }
 
-        Link firstPage = iMat.isFirstRun() ? Link.FIRSTPAGE : Link.HOME;*/
-
-        //TODO ta bort detta
-        Link firstPage = Link.FAVOURITES;
-        showFavourites();
-
+        Link firstPage = iMat.isFirstRun() ? Link.FIRSTPAGE : Link.HOME;
 
         historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton(), firstPage);
 
@@ -96,8 +91,7 @@ public class Main extends Application {
     }
 
     public void showHomeView(){
-        showFavourites(); //TODO
-        /*FXMLLoader loader = new FXMLLoader();
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/homePage.fxml"));
         try {
             AnchorPane homePanel = loader.load();
@@ -109,7 +103,7 @@ public class Main extends Application {
 
         //Send a reference of main to the controller
         HomeController controller = loader.getController();
-        controller.setMain(this);*/
+        controller.setMain(this);
     }
 
     public void showFirstStartView(){

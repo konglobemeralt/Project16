@@ -4,6 +4,7 @@ import iMat.Main;
 import javafx.fxml.FXML;
 import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.util.Random;
 
@@ -26,11 +27,23 @@ public class HomeController {
     private void initialize(){
         Random random = new Random();
         for (int columnIndex = 0; columnIndex < 4; columnIndex++){
-            Product product = main.iMat.getProduct(random.nextInt(main.iMat.getProducts().size()));
+            ShoppingItem shoppingItem = new ShoppingItem(main.iMat.getProduct(random.nextInt(main.iMat.getProducts().size())), 0);
 
-            FeaturedItemController controller = new FeaturedItemController(main, product);
+            ItemController controller = new ItemController(shoppingItem, isFavourited(shoppingItem));
+            controller.setMain(main);
 
             featuredItemsGrid.add(controller, columnIndex, 0);
         }
+    }
+
+    private boolean isFavourited(ShoppingItem Item){
+
+        for(Product favourite : Main.iMat.favorites()){
+            if(favourite.equals(Item.getProduct()) ){
+                return false;
+            }
+
+        }
+        return true;
     }
 }
