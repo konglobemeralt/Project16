@@ -41,13 +41,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="overviewNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="overviewNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="continue" />
+                     </styleClass>
                   </Button>
                   <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
@@ -197,13 +201,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="credentialsNextButton" layoutX="923.0" layoutY="588.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="credentialsNextButton" layoutX="923.0" layoutY="588.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="continue" />
+                     </styleClass>
                   </Button>
                   <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
@@ -268,13 +276,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="deliveryNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" styleClass="rounded" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                  <Button fx:id="deliveryNextButton" layoutX="923.0" layoutY="529.0" mnemonicParsing="false" onAction="#nextButtonPressed" prefWidth="141.0" text="Nästa" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="continue" />
+                     </styleClass>
                   </Button>
                   <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>

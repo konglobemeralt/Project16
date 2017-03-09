@@ -146,6 +146,14 @@
     -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
 
+.continue{
+-fx-background-color: #b2e268;
+}
+.continue:hover{
+ -fx-text-fill: white;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }

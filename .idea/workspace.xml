@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +48,11 @@
             <state relative-caret-position="1215">
               <caret line="99" column="18" lean-forward="false" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
               <folding>
-                <marker date="1489081438000" expanded="true" signature="4742:4834" ph="..." />
-                <marker date="1489081438000" expanded="true" signature="4761:4825" ph="..." />
-                <marker date="1489081438000" expanded="true" signature="5080:5172" ph="..." />
-                <marker date="1489081438000" expanded="true" signature="5099:5163" ph="..." />
-                <marker date="1489081438000" expanded="true" signature="5200:5243" ph="..." />
+                <marker date="1489081998000" expanded="true" signature="4822:4914" ph="..." />
+                <marker date="1489081998000" expanded="true" signature="4841:4905" ph="..." />
+                <marker date="1489081998000" expanded="true" signature="5160:5252" ph="..." />
+                <marker date="1489081998000" expanded="true" signature="5179:5243" ph="..." />
+                <marker date="1489081998000" expanded="true" signature="5280:5323" ph="..." />
               </folding>
             </state>
           </provider>
@@ -79,11 +81,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="payWizard2.0.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+            <state relative-caret-position="120">
+              <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -112,16 +127,6 @@
           </provider>
           <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriesPanelController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -170,6 +175,7 @@
       <find>confirmTotalPriceLabel</find>
       <find>content</find>
       <find>favourite</find>
+      <find>dele</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -209,10 +215,10 @@
         <option value="$PROJECT_DIR$/src/iMat/view/ProductView.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/controller/FeaturedItemController.java" />
         <option value="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
-        <option value="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java" />
         <option value="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" />
         <option value="$PROJECT_DIR$/src/CSS/mainStyle.css" />
+        <option value="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
       </list>
     </option>
   </component>
@@ -1087,17 +1093,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
@@ -1171,11 +1166,11 @@
         <state relative-caret-position="1215">
           <caret line="99" column="18" lean-forward="false" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
           <folding>
-            <marker date="1489081438000" expanded="true" signature="4742:4834" ph="..." />
-            <marker date="1489081438000" expanded="true" signature="4761:4825" ph="..." />
-            <marker date="1489081438000" expanded="true" signature="5080:5172" ph="..." />
-            <marker date="1489081438000" expanded="true" signature="5099:5163" ph="..." />
-            <marker date="1489081438000" expanded="true" signature="5200:5243" ph="..." />
+            <marker date="1489081998000" expanded="true" signature="4822:4914" ph="..." />
+            <marker date="1489081998000" expanded="true" signature="4841:4905" ph="..." />
+            <marker date="1489081998000" expanded="true" signature="5160:5252" ph="..." />
+            <marker date="1489081998000" expanded="true" signature="5179:5243" ph="..." />
+            <marker date="1489081998000" expanded="true" signature="5280:5323" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1191,10 +1186,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="143" column="13" lean-forward="true" selection-start-line="143" selection-start-column="13" selection-end-line="143" selection-end-column="13" />
+        <state relative-caret-position="120">
+          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
           <folding />
         </state>
       </provider>

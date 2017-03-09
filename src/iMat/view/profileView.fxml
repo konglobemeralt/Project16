@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
@@ -7,41 +11,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="450.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
+<AnchorPane fx:id="profilePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="450.0" prefHeight="650.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ProfileViewController">
    <children>
-      <Label layoutX="456.0" layoutY="14.0" text="Mina uppgifter">
+      <Label layoutX="456.0" layoutY="14.0" styleClass="bolded" text="Mina uppgifter">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <AnchorPane layoutX="94.0" layoutY="141.0" prefHeight="369.0" prefWidth="362.0" AnchorPane.leftAnchor="94.0">
          <children>
-            <Label layoutX="-5.0" layoutY="108.0" text="Efternamn: ">
+            <Label layoutX="-5.0" layoutY="108.0" styleClass="bolded" text="Efternamn: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="6.0" layoutY="60.0" text="Förnamn: ">
+            <Label layoutX="6.0" layoutY="60.0" styleClass="bolded" text="Förnamn: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="310.0" text="Telefon: ">
+            <Label layoutX="21.0" layoutY="310.0" styleClass="bolded" text="Telefon: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="26.0" layoutY="209.0" text="Postnr: ">
+            <Label layoutX="26.0" layoutY="209.0" styleClass="bolded" text="Postnr: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="158.0" text="Adress: ">
+            <Label layoutX="24.0" layoutY="158.0" styleClass="bolded" text="Adress: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="259.0" text="Postort: ">
+            <Label layoutX="22.0" layoutY="259.0" styleClass="bolded" text="Postort: ">
                <font>
                   <Font size="18.0" />
                </font>
@@ -82,16 +86,20 @@
          <font>
             <Font size="24.0" />
          </font>
+         <styleClass>
+            <String fx:value="softRounded" />
+            <String fx:value="continue" />
+         </styleClass>
       </Button>
       <Separator layoutX="512.0" layoutY="57.0" orientation="VERTICAL" prefHeight="539.0" prefWidth="8.0" AnchorPane.leftAnchor="512.0" />
       <AnchorPane layoutX="575.0" layoutY="211.0" prefHeight="231.0" prefWidth="400.0" AnchorPane.leftAnchor="575.0">
          <children>
-            <Label layoutX="20.0" layoutY="19.0" text="Kortets ägare: ">
+            <Label layoutX="20.0" layoutY="19.0" styleClass="bolded" text="Kortets ägare: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="92.0" layoutY="170.0" text="CVC: ">
+            <Label layoutX="92.0" layoutY="170.0" styleClass="bolded" text="CVC: ">
                <font>
                   <Font size="18.0" />
                </font>
@@ -101,12 +109,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="70.0" text="Kortnummer: ">
+            <Label layoutX="27.0" layoutY="70.0" styleClass="bolded" text="Kortnummer: ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="122.0" text="Giltigt t.o.m: ">
+            <Label layoutX="27.0" layoutY="122.0" styleClass="bolded" text="Giltigt t.o.m: ">
                <font>
                   <Font size="18.0" />
                </font>
