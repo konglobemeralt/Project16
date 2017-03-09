@@ -139,6 +139,7 @@
 }
 
 .tab-pane .tab-header-area .tab-header-background {
+-fx-font-size: 12pt;
     -fx-opacity: 0;
 }
 .tab-pane {} .tab {
