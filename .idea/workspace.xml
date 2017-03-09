@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CSS/mainStyle.css" afterPath="$PROJECT_DIR$/src/CSS/mainStyle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,8 +94,8 @@
       <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+            <state relative-caret-position="225">
+              <caret line="167" column="34" lean-forward="false" selection-start-line="167" selection-start-column="34" selection-end-line="167" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -217,8 +214,8 @@
         <option value="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ShoppingBagController.java" />
         <option value="$PROJECT_DIR$/src/iMat/view/ShoppingBag.fxml" />
-        <option value="$PROJECT_DIR$/src/CSS/mainStyle.css" />
         <option value="$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml" />
+        <option value="$PROJECT_DIR$/src/CSS/mainStyle.css" />
       </list>
     </option>
   </component>
@@ -1199,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
+        <state relative-caret-position="225">
+          <caret line="167" column="34" lean-forward="false" selection-start-line="167" selection-start-column="34" selection-end-line="167" selection-end-column="34" />
           <folding />
         </state>
       </provider>
