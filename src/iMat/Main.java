@@ -96,7 +96,8 @@ public class Main extends Application {
     }
 
     public void showHomeView(){
-        FXMLLoader loader = new FXMLLoader();
+        showFavourites(); //TODO
+        /*FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("view/homePage.fxml"));
         try {
             AnchorPane homePanel = loader.load();
@@ -108,7 +109,7 @@ public class Main extends Application {
 
         //Send a reference of main to the controller
         HomeController controller = loader.getController();
-        controller.setMain(this);
+        controller.setMain(this);*/
     }
 
     public void showFirstStartView(){

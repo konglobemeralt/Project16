@@ -225,4 +225,26 @@ public class ProfileViewController {
 
     }
 
+    @FXML
+    void clearCardPressed(ActionEvent event) {
+        TextField[] cardFields = {cardCVCArea, cardNumberArea1, cardNumberArea2, cardNumberArea3, cardNumberArea4, cardMonthArea, cardYearArea, cardOwnerArea};
+
+        for (TextField t: cardFields) {
+            t.setText("");
+        }
+
+        save();
+    }
+
+    @FXML
+    void clearCredentialsPressed(ActionEvent event) {
+        TextField[] credentialFields = {firstNameArea, lastNameArea, phoneArea, addressArea, postalCodeArea, postAddressArea};
+
+        for (TextField t : credentialFields){
+            t.setText("");
+        }
+
+        save();
+    }
+
 }
