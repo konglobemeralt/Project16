@@ -145,6 +145,7 @@
     -fx-background-insets: 0 1 0 1, 0, 0;
 }
 .tab-pane .tab {
+-fx-font-size: 14pt;
     -fx-background-color: #e6e6e6;
 }
 .tab-pane .tab:selected {
