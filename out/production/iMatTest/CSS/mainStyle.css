@@ -1,8 +1,8 @@
 .root{
-    -fx-font-size: 10pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
-    -fx-text-fill: #575757;
+    -fx-text-fill: #222222;
     -fx-base: #E1DFD4;
     -fx-background: #FCFAF3;
     -fx-background-radius: 10;
@@ -61,9 +61,6 @@
 }
 
 .homeButton{
- -fx-font-size: 17pt;
-    -fx-text-fill: white;
-  -fx-font: bold italic 90pt "Futura", "Arial";;
     -fx-base: #5FB3B3;
     -fx-background-image: url("img/ic_home_black_24dp_2x.png");
  -fx-background-repeat: no-repeat;
@@ -87,7 +84,7 @@
 .bolded{
  -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
-    -fx-text-fill: #575757;
+    -fx-text-fill: #222222;
 }
 
 .scroll-bar:vertical {
@@ -110,7 +107,7 @@
 
 .content{
 
-        -fx-font-size: 12pt;
+        -fx-font-size: 15pt;
         -fx-base: #FAC863;
         -fx-background-insets: 0 1 0 1,0,0;
         -fx-base: #5FB3B3;
@@ -120,14 +117,14 @@
 }
 
 .content:hover{
-        -fx-font-size: 9pt;
+        -fx-font-size: 14pt;
         -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
         -fx-base: derive(#5FB3B3, 10%);
 }
 
 .selectedCat{
 
-        -fx-font-size: 9pt;
+        -fx-font-size: 14pt;
         -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
 }
 
@@ -141,10 +138,11 @@
 }
 
 .paneStyle{
-    -fx-text-fill: #575757;
-    -fx-base: #575757;
+    -fx-text-fill: #2d2d2d;
+    -fx-base: #b2e268;
       -fx-background: #575757;
-      -fx-background-color: #575757;
+      -fx-background-color: derive(#FAC863, 20%);
+      -fx-text-fill: #b2e268;
 }
 
 .button{
