@@ -122,7 +122,7 @@
     -fx-text-fill: #2d2d2d;
     -fx-base: #b2e268;
     -fx-background: #575757;
-    -fx-background-color: derive(#FAC863, 20%);
+    -fx-background-color: derive(#5FB3B3, 20%);
     -fx-text-fill: #b2e268;
 }
 .button {
