@@ -7,15 +7,22 @@ import javafx.animation.ScaleTransition;
 import javafx.animation.RotateTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import se.chalmers.ait.dat215.project.CartEvent;
 import se.chalmers.ait.dat215.project.ShoppingCartListener;
@@ -125,6 +132,20 @@ public class MainViewController implements ShoppingCartListener{
 
     public void helpButtonPressed(ActionEvent event) {
         System.out.println("Help Button pressed");
+
+        Stage s = new Stage();
+        s.setHeight(50);
+        s.setWidth(190);
+        VBox v = new VBox();
+        Label text = new Label("   Inte implementerat :(");
+        text.setAlignment(Pos.CENTER);
+        text.setTextAlignment(TextAlignment.CENTER);
+        v.getChildren().add(text);
+        Scene sc = new Scene(v);
+        sc.getStylesheets().add("CSS/MainStyle.css");
+        s.setTitle(">:(");
+        s.setScene(sc);
+        s.show();
     }
 
     public void profileButtonPressed(ActionEvent event) throws IOException {
