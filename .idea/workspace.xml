@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
+    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="Have fixed alignment of CategoriesPanel and of the searchbar&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/CategoriesPanel.fxml" afterPath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/CategoriesPanel.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/MainView.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/MainView.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriesPanel.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CategoriesPanel.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2418">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="3014">
+              <caret line="137" column="14" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -101,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="287">
@@ -798,7 +797,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489049861123</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Have fixed alignment of CategoriesPanel and of the searchbar&#10;">
+      <created>1489051681554</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1489051681554</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -895,7 +901,8 @@
     <MESSAGE value="Have fixed a bug with shoppingBagCounter&#10;&#10;&#10;" />
     <MESSAGE value="Have fixed some bugs with the shoppingItemCounter&#10;&#10;" />
     <MESSAGE value="Have fixed alignment of CategoriesPanel&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Have fixed alignment of CategoriesPanel&#10;" />
+    <MESSAGE value="Have fixed alignment of CategoriesPanel and of the searchbar&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Have fixed alignment of CategoriesPanel and of the searchbar&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1235,17 +1242,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2418">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/receiptDetailedView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1272,6 +1268,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="48" column="291" selection-start-line="48" selection-start-column="291" selection-end-line="48" selection-end-column="291" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3014">
+          <caret line="137" column="14" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
           <folding />
         </state>
       </provider>
