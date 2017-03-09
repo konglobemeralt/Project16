@@ -18,7 +18,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="488.0" prefHeight="30.0" prefWidth="190.0" styleClass="bolded" text="Total pris:" AnchorPane.bottomAnchor="132.0">
+      <Label layoutX="27.0" layoutY="488.0" prefHeight="30.0" prefWidth="190.0" text="Total pris:" AnchorPane.bottomAnchor="132.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -26,7 +26,7 @@
             <Insets left="50.0" />
          </padding>
       </Label>
-      <Label layoutX="27.0" layoutY="458.0" prefHeight="30.0" prefWidth="190.0" styleClass="bolded" text="Antal varor:" AnchorPane.bottomAnchor="162.0">
+      <Label layoutX="27.0" layoutY="458.0" prefHeight="30.0" prefWidth="190.0" text="Antal varor:" AnchorPane.bottomAnchor="162.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -34,7 +34,7 @@
             <Insets left="50.0" />
          </padding>
       </Label>
-      <Label fx:id="numberOfItemsLabel" layoutX="269.0" layoutY="458.0" prefHeight="30.0" prefWidth="100.0" styleClass="bolded" text="Label" AnchorPane.bottomAnchor="162.0">
+      <Label fx:id="numberOfItemsLabel" layoutX="269.0" layoutY="458.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="162.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -42,7 +42,7 @@
             <Insets left="50.0" />
          </padding>
       </Label>
-      <Label fx:id="totalPriceLabel" layoutX="269.0" layoutY="488.0" prefHeight="30.0" prefWidth="100.0" styleClass="bolded" text="Label" AnchorPane.bottomAnchor="132.0">
+      <Label fx:id="totalPriceLabel" layoutX="269.0" layoutY="488.0" prefHeight="30.0" prefWidth="100.0" text="Label" AnchorPane.bottomAnchor="132.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -74,15 +74,11 @@
          <tooltip>
             <Tooltip text="Gå till betalning" />
          </tooltip></Button>
-<<<<<<< HEAD
-      <Button layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" style="-fx-background-color: Ec5f67;" styleClass="softRounded" text="Töm">
-=======
       <Button fx:id="clearShoppingBagButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #ff0000;" styleClass="softRounded" text="Töm" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
          </tooltip></Button>
       <Button fx:id="undoButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #00ff00;" styleClass="softRounded" text="Ångra" visible="false">
->>>>>>> 59a64108f52c1ea9f8c09176f074fb926020bdf8
          <tooltip>
             <Tooltip text="Töm kundkorg" />
          </tooltip></Button>

@@ -23,7 +23,6 @@
     -fx-background-position: center;
 }
 .bolded {
-    -fx-font-size: 12pt;
     -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
     -fx-text-fill: #222222;
@@ -117,13 +116,14 @@
     -fx-background-color: transparent;
 }
 .kundKorg {
-    -fx-background-color: derive(#5FB3B3, 20%);
+    -fx-background-color: #FFFFFF;
 }
 .paneStyle {
+    -fx-text-fill: #2d2d2d;
     -fx-base: #b2e268;
     -fx-background: #575757;
-    -fx-background-color: derive(#5FB3B3, 20%);
-    -fx-text-fill: #575757;
+    -fx-background-color: derive(#FAC863, 20%);
+    -fx-text-fill: #b2e268;
 }
 .button {
     -fx-font-weight: bold;
