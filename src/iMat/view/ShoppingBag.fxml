@@ -74,11 +74,11 @@
          <tooltip>
             <Tooltip text="Gå till betalning" />
          </tooltip></Button>
-      <Button fx:id="clearShoppingBagButton" visible="false" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" styleClass="softRounded" text="Töm">
+      <Button fx:id="clearShoppingBagButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #ff0000;" styleClass="softRounded" text="Töm" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
          </tooltip></Button>
-      <Button fx:id="undoButton" visible="false" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="31.0" prefWidth="61.0" styleClass="softRounded" text="Ångra">
+      <Button fx:id="undoButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #00ff00;" styleClass="softRounded" text="Ångra" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
          </tooltip></Button>
