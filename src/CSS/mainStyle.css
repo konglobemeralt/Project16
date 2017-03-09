@@ -139,7 +139,7 @@
 }
 
 .abort{
-
+    -fx-background: #575757;
 }
 .abort:hover{
  -fx-text-fill: white;

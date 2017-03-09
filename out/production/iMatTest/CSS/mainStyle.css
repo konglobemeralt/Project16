@@ -120,7 +120,7 @@
 }
 .paneStyle {
     -fx-text-fill: #2d2d2d;
-    
+
     -fx-background: #575757;
     -fx-background-color: derive(#5FB3B3, 20%);
     -fx-text-fill: #b2e268;
@@ -139,9 +139,17 @@
 }
 
 .abort{
-
+    -fx-background: #575757;
 }
 .abort:hover{
+ -fx-text-fill: white;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+
+.continue{
+-fx-background-color: #b2e268;
+}
+.continue:hover{
  -fx-text-fill: white;
     -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
