@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/Main.java" afterPath="$PROJECT_DIR$/src/iMat/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java" afterPath="$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/ShoppingBag.fxml" afterPath="$PROJECT_DIR$/out/production/iMatTest/iMat/view/ShoppingBag.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/homePage.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/homePage.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +28,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="homePage.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProfileViewController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="178" column="25" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
+              <folding>
+                <element signature="e#5464#5465#0" expanded="true" />
+                <element signature="e#5496#5497#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homePage.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/iMat/view/homePage.fxml">
           <provider editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -41,13 +54,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileViewController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="185" column="55" selection-start-line="185" selection-start-column="55" selection-end-line="185" selection-end-column="55" />
+      <file leaf-file-name="startView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/startView.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -77,6 +93,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="PayWizardViewController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="891" column="28" selection-start-line="891" selection-start-column="16" selection-end-line="891" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Customer.class" pinned="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/resources - projekt (fx)/projectbackend-fx.jar!/se/chalmers/ait/dat215/project/Customer.class">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,13 +124,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextInputControl.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="347" column="24" selection-start-line="347" selection-start-column="24" selection-end-line="347" selection-end-column="24" />
+      <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -121,38 +150,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriesPanel.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
+      <file leaf-file-name="payWizard2.0.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="155">
+              <caret line="234" column="214" selection-start-line="234" selection-start-column="204" selection-end-line="234" selection-end-column="214" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainStyle.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainView.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
         </entry>
@@ -218,6 +224,7 @@
         <option value="$PROJECT_DIR$/src/iMat/view/profileView.fxml" />
         <option value="$PROJECT_DIR$/src/iMat/Main.java" />
         <option value="$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java" />
+        <option value="$PROJECT_DIR$/src/iMat/view/homePage.fxml" />
       </list>
     </option>
   </component>
@@ -781,7 +788,14 @@
       <option name="project" value="LOCAL" />
       <updated>1489052536637</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Have fixed the saving mechanism of profileViewController">
+      <created>1489055441265</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1489055441265</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -878,7 +892,8 @@
     <MESSAGE value="Have fixed a bug with shoppingBagCounter&#10;&#10;&#10;" />
     <MESSAGE value="Have fixed some bugs with the shoppingItemCounter&#10;&#10;" />
     <MESSAGE value="Have changel alignment and textsize in searchBar&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Have changel alignment and textsize in searchBar&#10;" />
+    <MESSAGE value="Have fixed the saving mechanism of profileViewController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Have fixed the saving mechanism of profileViewController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -891,20 +906,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProductViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/model/OrderAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/CategoriesPanelController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -1094,29 +1095,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/controller/ItemController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3454">
           <caret line="181" column="32" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8624">
-          <caret line="457" column="14" selection-start-line="457" selection-start-column="14" selection-end-line="457" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1126,7 +1108,7 @@
         <state relative-caret-position="3410">
           <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1155,7 +1137,7 @@
     <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1165,32 +1147,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CSS/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="722">
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/view/homePage.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/control/TextInputControl.java">
@@ -1253,12 +1213,75 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="185" column="55" selection-start-line="185" selection-start-column="55" selection-end-line="185" selection-end-column="55" />
+        <state relative-caret-position="179">
+          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/payWizard2.0.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="234" column="214" selection-start-line="234" selection-start-column="204" selection-end-line="234" selection-end-column="214" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/PayWizardViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="891" column="28" selection-start-line="891" selection-start-column="16" selection-end-line="891" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/controller/ProfileViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="178" column="25" selection-start-line="178" selection-start-column="25" selection-end-line="178" selection-end-column="25" />
+          <folding>
+            <element signature="e#5464#5465#0" expanded="true" />
+            <element signature="e#5496#5497#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/startView.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/MainView.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/iMat/view/homePage.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>
