@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -75,10 +76,17 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Button fx:id="continueButton" layoutX="25.0" layoutY="524.0" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="65.0" prefWidth="350.0" style="-fx-background-color: #FAC863;" styleClass="softRounded" text="Gå till Kassan">
+      <Button fx:id="continueButton" layoutX="25.0" layoutY="524.0" mnemonicParsing="false" onAction="#payButtonPressed" prefHeight="65.0" prefWidth="350.0" style="-fx-background-color: #FAC863;" text="Gå till Kassan">
          <tooltip>
             <Tooltip text="Gå till betalning" />
-         </tooltip></Button>
+         </tooltip>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="softRounded" />
+            <String fx:value="goToPay" />
+         </styleClass></Button>
       <Button fx:id="clearShoppingBagButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #EC5f67;" styleClass="softRounded" text="Töm" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
