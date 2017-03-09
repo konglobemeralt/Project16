@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="" />
+    <list default="true" id="30b5b5d5-b92d-45e1-a27e-5db141c9a8ac" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" afterPath="$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -84,8 +86,8 @@
       <file leaf-file-name="CategoriesPanel.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="495">
+              <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -107,8 +109,8 @@
       <file leaf-file-name="item.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/iMat/view/item.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="34" />
+            <state relative-caret-position="570">
+              <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -1109,8 +1111,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/item.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="34" />
+        <state relative-caret-position="570">
+          <caret line="38" column="34" lean-forward="false" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1131,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/iMat/view/CategoriesPanel.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        <state relative-caret-position="495">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
           <folding />
         </state>
       </provider>

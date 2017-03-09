@@ -30,7 +30,10 @@
                </cursor>
                <effect>
                   <DropShadow color="#656565" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
-               </effect></Button>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Lägg till/ta bort favorit" />
+               </tooltip></Button>
             </children>
         </AnchorPane>
         <TextField fx:id="textArea" alignment="CENTER" layoutX="37.0" layoutY="267.0" prefHeight="31.0" prefWidth="83.0" promptText="0" />
@@ -40,7 +43,10 @@
          </cursor>
          <effect>
             <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
-         </effect></Button>
+         </effect>
+         <tooltip>
+            <Tooltip text="Lägg i kundkorg" />
+         </tooltip></Button>
         <AnchorPane layoutY="180.0" minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="243.0" />
         <Label fx:id="itemLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="188.0" prefHeight="38.0" prefWidth="230.0" styleClass="itemLabel" text="itemLabel" textAlignment="CENTER" textFill="WHITE">
             <font>
@@ -58,14 +64,20 @@
          </cursor>
          <effect>
             <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
-         </effect></Button>
+         </effect>
+         <tooltip>
+            <Tooltip text="Öka antal" />
+         </tooltip></Button>
       <Button fx:id="subtractButton" disable="true" layoutX="6.0" layoutY="267.0" mnemonicParsing="false" onAction="#subtractButtonPressed" prefHeight="31.0" prefWidth="30.0" styleClass="subtractButton">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <effect>
             <DropShadow color="#468d8b" height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0" />
-         </effect></Button>
+         </effect>
+         <tooltip>
+            <Tooltip text="Minska antal" />
+         </tooltip></Button>
     </children>
    <effect>
       <DropShadow color="#ababab" height="5.0" offsetX="2.0" radius="2.0" width="5.0" />
