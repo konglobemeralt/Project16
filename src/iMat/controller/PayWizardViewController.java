@@ -2,10 +2,6 @@ package iMat.controller;
 
 import iMat.Main;
 import iMat.controller.BackButtonHandler.Link;
-import iMat.model.OrderAdapter;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ListProperty;
-import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -19,12 +15,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.ait.dat215.project.CreditCard;
 import se.chalmers.ait.dat215.project.Customer;
-import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class PayWizardViewController {
@@ -85,7 +79,15 @@ public class PayWizardViewController {
         }
         cardMonthArea.setText(""+card.getValidMonth());
         cardYearArea.setText(""+card.getValidYear());
-        cardCVCArea.setText(""+card.getVerificationCode());
+        if (card.getVerificationCode() < 10 ){
+            cardCVCArea.setText("00"+card.getVerificationCode());
+        }
+        else if (card.getVerificationCode() < 100){
+            cardCVCArea.setText("0"+card.getVerificationCode());
+        }
+        else {
+            cardCVCArea.setText(""+card.getVerificationCode());
+        }
 
         cardNumberArea1.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
@@ -237,6 +239,7 @@ public class PayWizardViewController {
             }
         }
 
+
         String[] displayDates = new String[7];
 
         for (int i = 0; i < 5; i++) {
@@ -261,7 +264,7 @@ public class PayWizardViewController {
 
         cardPanel.setVisible(false);
 
-        TextField[] textFields = {cardOwnerArea, cardNumberArea1,cardNumberArea2,cardNumberArea3,cardNumberArea4, cardMonthArea, cardYearArea, cardCVCArea};
+        TextField[] textFields = {cardNumberArea1,cardNumberArea2,cardNumberArea3,cardNumberArea4};
 
         for (TextField t : textFields) {
             t.textProperty().addListener(new ChangeListener<String>() {
@@ -270,6 +273,56 @@ public class PayWizardViewController {
                 }
             });
         }
+
+        cardOwnerArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                card.setHoldersName(cardOwnerArea.getText());
+                updateTabEnabledStatus();
+            }
+        });
+
+        cardMonthArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,5}"))
+                {
+                    cardMonthArea.setText(oldValue);
+                }
+                try{
+                    card.setValidMonth(Integer.parseInt(cardMonthArea.getText()));
+                }
+                catch (NumberFormatException e) {}
+                updateTabEnabledStatus();
+            }
+        });
+
+        cardYearArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,5}"))
+                {
+                    cardYearArea.setText(oldValue);
+                }
+                try{
+                    card.setValidYear(Integer.parseInt(cardMonthArea.getText()));
+                }
+                catch (NumberFormatException e) {}
+                updateTabEnabledStatus();
+            }
+        });
+
+        cardCVCArea.textProperty().addListener(new ChangeListener<String>() {
+            public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
+                if(!newValue.matches("\\d{0,5}"))
+                {
+                    cardCVCArea.setText(oldValue);
+                }
+                try{
+                    card.setVerificationCode(Integer.parseInt(cardMonthArea.getText()));
+                }
+                catch (NumberFormatException e) {}
+                updateTabEnabledStatus();
+            }
+        });
+
 
 
     }
@@ -823,6 +876,9 @@ public class PayWizardViewController {
             }
         }
 
+        String number = cardNumberArea1.getText() + cardNumberArea2.getText() + cardNumberArea3.getText() + cardNumberArea4.getText();
+        main.iMat.getCreditCard().setCardNumber(number);
+
         cardNumberFeedbackImage.getStyleClass().removeAll("error");
         cardNumberFeedbackImage.getStyleClass().add("correct");
 
@@ -986,10 +1042,10 @@ public class PayWizardViewController {
                         paymentWords = "vid leverans";
                         break;
                     case 1:
-                        paymentWords = "med faktura";
+                        paymentWords = "med kort";
                         break;
                     case 2:
-                        paymentWords = "via faktura";
+                        paymentWords = "med faktura";
                         break;
                 }
             }

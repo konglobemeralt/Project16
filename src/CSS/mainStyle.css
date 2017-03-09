@@ -1,364 +1,296 @@
-.root{
+.root {
     -fx-font-size: 10pt;
     -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
-    -fx-text-fill: #575757;
+    -fx-text-fill: #222222;
     -fx-base: #E1DFD4;
     -fx-background: #FCFAF3;
     -fx-background-radius: 10;
     -fx-box-border: transparent;
 }
 
-.minaListor{
- -fx-border-radius: 10 10 0 0;
-  -fx-background-radius: 10 10 0 0;
-    -fx-font-size: 12pt;
-    -fx-base: #FAC863;
-    -fx-text-fill: #2d2d2d;
+.pressed {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5), 10, 0, 5, 5);
 }
-
-.kvitton{
- -fx-border-radius: 0 0 10 10;
-  -fx-background-radius: 0 0 10 10;
-    -fx-font-size: 12pt;
-    -fx-base: #FAC863;
-    -fx-text-fill: #2d2d2d;
-}
-
-.minaListor:hover{
-  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
-}
-
-.kvitton:hover{
-  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
-}
-
-
-.backButton{
-  -fx-base: #5FB3B3;
-    -fx-border-radius: 10 0 0 10;
-   -fx-background-radius: 10 0 0 10;
-    -fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
-     -fx-background-repeat: no-repeat;
+.error {
+    -fx-image: url("img/ic_error_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-
 }
-.backButton:hover{
-    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+.correct {
+    -fx-image: url("img/ic_check_circle_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.bolded {
+    -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
+.softRounded {
+    fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
+}
+.rounded {
+    fx-border-radius: 100 100 100 100;
+    -fx-background-radius: 100 100 100 100;
+}
+.content {
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-background-insets: 0 1 0 1, 0, 0;
+    -fx-base: #5FB3B3;
+    -fx-text-fill: white;
+    -fx-background: #FAF8EC;
+    -fx-font-size: 12pt;
+}
+.content:hover {
+    -fx-font-size: 14pt;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+    -fx-base: derive(#5FB3B3, 10%);
+}
+.selectedCat {
+    -fx-font-size: 14pt;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5), 10, 0, 5, 5);
+}
+.minaListor {
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
+}
+.minaListor:hover {
+     -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+.kvitton {
+    -fx-border-radius: 0 0 10 10;
+    -fx-background-radius: 0 0 10 10;
+    -fx-font-size: 12pt;
+    -fx-base: #FAC863;
+    -fx-text-fill: #2d2d2d;
 }
 
-.error{
-
--fx-image:url("img/ic_error_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+.kvitton:hover {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
-
-.correct{
--fx-image:url("img/ic_check_circle_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+.backButton {
+    -fx-base: #5FB3B3;
+    -fx-border-radius: 10 0 0 10;
+    -fx-background-radius: 10 0 0 10;
+    -fx-background-image: url("img/ic_navigate_before_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-.homeButton{
+.backButton:hover {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+.homeButton {
     -fx-base: #5FB3B3;
     -fx-background-image: url("img/ic_home_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-.forwardButton{
-  -fx-base: #5FB3B3;
- -fx-border-radius: 0 10 10 0;
-   -fx-background-radius: 0 10 10 0;
--fx-background-image: url("img/ic_navigate_next_black_24dp_2x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
+.forwardButton {
+    -fx-base: #5FB3B3;
+    -fx-border-radius: 0 10 10 0;
+    -fx-background-radius: 0 10 10 0;
+    -fx-background-image: url("img/ic_navigate_next_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-.forwardButton:hover{
-    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+.forwardButton:hover {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
-
-
-.bolded{
- -fx-font-family: "Futura", "Arial";
-    -fx-font-weight: bold;
-    -fx-text-fill: #575757;
-}
-
 .scroll-bar:vertical {
--fx-base: #5FB3B3;
-  -fx-background-color: transparent;
-
+    -fx-base: #5FB3B3;
+    -fx-background-color: transparent;
 }
-
 .scroll-bar:vertical .track {
-  visibility: hidden;
+    visibility: hidden;
 }
-
 .scroll-bar:vertical .track-background {
-  visibility: hidden;
+    visibility: hidden;
 }
-
 .hide-thumb .scroll-bar:vertical .thumb {
-  -fx-background-color: transparent;
+    -fx-background-color: transparent;
 }
-
-.content{
-
-        -fx-font-size: 12pt;
-        -fx-base: #FAC863;
-        -fx-background-insets: 0 1 0 1,0,0;
-        -fx-base: #5FB3B3;
-        -fx-text-fill: white;
-        -fx-background: #FAF8EC;
-
+.kundKorg {
+    -fx-background-color: #FFFFFF;
 }
-
-.content:hover{
-        -fx-font-size: 9pt;
-        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
-        -fx-base: derive(#5FB3B3, 10%);
+.paneStyle {
+    -fx-text-fill: #2d2d2d;
+    -fx-base: #b2e268;
+    -fx-background: #575757;
+    -fx-background-color: derive(#FAC863, 20%);
+    -fx-text-fill: #b2e268;
 }
-
-.selectedCat{
-
-        -fx-font-size: 9pt;
-        -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
-}
-
-.pressed{
-  -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
-}
-
-
-.kundKorg{
- -fx-background-color: #FFFFFF;
-}
-
-.paneStyle{
-    -fx-text-fill: #575757;
-    -fx-base: #575757;
-      -fx-background: #575757;
-      -fx-background-color: #575757;
-}
-
-.button{
-    -fx-font-size: 10pt;
+.button {
     -fx-font-weight: bold;
-    -fx-background-insets: 0 1 0 1,0,0;
+    -fx-background-insets: 0 1 0 1, 0, 0;
 }
-
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }
-
-.tab-pane
-{
+.tab-pane {} .tab {
+    -fx-background-insets: 0 1 0 1, 0, 0;
 }
-
-.tab{
-    -fx-background-insets: 0 1 0 1,0,0;
-}
-.tab-pane .tab
-{
+.tab-pane .tab {
     -fx-background-color: #e6e6e6;
 }
-
-.tab-pane .tab:selected
-{
+.tab-pane .tab:selected {
     -fx-background-color: #3c3c3c;
 }
-
 .tab .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: #575757;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
-
 .tab:selected .tab-label {
     -fx-alignment: CENTER;
     -fx-text-fill: white;
 }
-
-.favourited{
--fx-border-radius: 100 100 100 100;
-  -fx-background-radius: 100 100 100 100;
- -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
- -fx-background-repeat: no-repeat;
- -fx-background-position: center;
- -fx-background-color: #FAC863;
-
+.favourited {
+    -fx-border-radius: 100 100 100 100;
+    -fx-background-radius: 100 100 100 100;
+    -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #FAC863;
 }
-
-.softRounded{
-fx-border-radius: 30 30 30 30;
-  -fx-background-radius: 30 30 30 30;
+.favouriteButton {
+    -fx-border-radius: 100 100 100 100;
+    -fx-background-radius: 100 100 100 100;
+    -fx-base: rgba(0, 0, 0, 0.0);
+    -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: #FFFFFF;
+    -fx-focus-color: transparent;
 }
-
-.rounded{
-fx-border-radius: 100 100 100 100;
-  -fx-background-radius: 100 100 100 100;
+.favouriteButton:hover {
+    -fx-base: rgba(0, 0, 0, 0.0);
+    -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-scale-z: 1.1;
 }
-
-.favouriteButton{
--fx-border-radius: 100 100 100 100;
-  -fx-background-radius: 100 100 100 100;
- -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_border_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
-   -fx-background-color: #FFFFFF;
-   -fx-focus-color: transparent;
+.deleteButton {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-base: #EC5f67;
+    -fx-background-image: url("img/ic_clear_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-
-.favouriteButton:hover{
- -fx-base: rgba(0,0,0,0.0);
- -fx-background-image: url("img/ic_favorite_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
-   -fx-scale-x:1.1;
-   -fx-scale-y:1.1;
-   -fx-scale-z:1.1;
-
+.addButton {
+    -fx-border-radius: 0 10 10 0;
+    -fx-background-radius: 0 10 10 0;
+    -fx-background-image: url("img/ic_add_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-
-.deleteButton{
--fx-border-radius: 10 10 10 10;
-   -fx-background-radius: 10 10 10 10;
- -fx-base: #EC5f67;
- -fx-background-image: url("img/ic_clear_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
+.subtractButton {
+    -fx-border-radius: 10 0 0 10;
+    -fx-background-radius: 10 0 0 10;
+    -fx-background-image: url("img/ic_remove_black_24dp_1x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-
-.addButton{
--fx-border-radius: 0 10 10 0;
-   -fx-background-radius: 0 10 10 0;
--fx-background-image: url("img/ic_add_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
+.item {
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+    -fx-background: derive(#5FB3B3, 50%);
+    -fx-box-border: #5FB3B3;
 }
-
-.subtractButton{
--fx-border-radius: 10 0 0 10;
-   -fx-background-radius: 10 0 0 10;
--fx-background-image: url("img/ic_remove_black_24dp_1x.png");
-   -fx-background-repeat: no-repeat;
-   -fx-background-position: center;
-}
-
-.item{
--fx-border-radius: 10 10 10 10;
-  -fx-background-radius: 10 10 10 10;
-    -fx-background: derive(#5FB3B3,50%);
-
-     -fx-box-border: #5FB3B3;
-
-}
-
-.itemLabel{
+.itemLabel {
     -fx-font-size: 16pt;
-     -fx-font-family: "Futura", "Arial";
-     -fx-font-weight: bold;
+    -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
 }
-
-.itemPrice{
+.itemPrice {
     -fx-font-size: 12pt;
-     -fx-font-family: "Futura", "Arial";
-     -fx-font-weight: bold;
+    -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
 }
-
-.tile{
+.tile {
     -fx-base: #e2edff;
-
 }
-
-.toolbar{
+.toolbar {
     -fx-base: #f9f6e5;
-
 }
-
-.menu{
+.menu {
     -fx-base: #d0d3d8;
 }
-
-
-.test{
+.test {
     -fx-font-size: 12pt;
     -fx-base: #F6AE2D;
 }
-
-.testSub{
+.testSub {
     -fx-font-size: 11pt;
-    -fx-base: derive(#F6AE2D,50%);
+    -fx-base: derive(#F6AE2D, 50%);
 }
-
-.checkout{
+.checkout {
     -fx-font-size: 12pt;
     -fx-base: #94f28a;
     -fx-text-fill: #2d2d2d;
 }
-.checkout:hover{
+.checkout:hover {
     -fx-text-fill: white;
 }
-
-
-.favourite{
-  -fx-border-radius: 10 10 0 0;
-  -fx-background-radius: 10 10 0 0;
+.favourite {
+    -fx-border-radius: 10 10 0 0;
+    -fx-background-radius: 10 10 0 0;
     -fx-font-size: 12pt;
     -fx-base: #FAC863;
     -fx-text-fill: #2d2d2d;
 }
-.favourite:hover{
+.favourite:hover {
     -fx-text-fill: white;
-    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
-
-
 .profileButton {
-
-  -fx-background-image: url("img/ic_face_black_24dp_2x.png");
-  -fx-background-repeat: no-repeat;
-  -fx-background-position: center;
-  -fx-base: #FAC863;
+    -fx-background-image: url("img/ic_face_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-base: #FAC863;
 }
-.profileButton:hover{-fx-background-image: url("img/ic_face_black_24dp_2xW.png");
--fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );
+.profileButton:hover {
+    -fx-background-image: url("img/ic_face_black_24dp_2xW.png");
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
-
 .kundkorgButton {
-   -fx-border-radius: 0 10 10 0;
-   -fx-background-radius: 0 10 10 0;
-  -fx-background-image: url("img/ic_shopping_cart_black_24dp_2x.png");
-  -fx-background-repeat: no-repeat;
-  -fx-background-position: center;
+    -fx-border-radius: 0 10 10 0;
+    -fx-background-radius: 0 10 10 0;
+    -fx-background-image: url("img/ic_shopping_cart_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
     -fx-base: #5FB3B3;
 }
-.kundkorgButton:hover{-fx-background-image: url("img/ic_shopping_cart_black_24dp_2xW.png");
--fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );}
-
-
+.kundkorgButton:hover {
+    -fx-background-image: url("img/ic_shopping_cart_black_24dp_2xW.png");
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
 .helpButton {
- -fx-border-radius: 10 0 0 10;
-   -fx-background-radius: 10 0 0 10;
-  -fx-background-image: url("img/ic_help_black_24dp_2x.png");
-  -fx-background-repeat: no-repeat;
-  -fx-background-position: center;
-  -fx-base: #b2e268;
+    -fx-border-radius: 10 0 0 10;
+    -fx-background-radius: 10 0 0 10;
+    -fx-background-image: url("img/ic_help_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-base: #b2e268;
 }
-.helpButton:hover{-fx-background-image: url("img/ic_help_black_24dp_2xW.png");
--fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3 ), 10, 0, 4, 4 );}
-
-
+.helpButton:hover {
+    -fx-background-image: url("img/ic_help_black_24dp_2xW.png");
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
 .searchButton {
-  -fx-background-image: url("img/ic_search_black_24dp_2x.png");
-  -fx-background-repeat: no-repeat;
-  -fx-background-position: center;
+    -fx-background-image: url("img/ic_search_black_24dp_2x.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
 }
-.searchButton:hover{-fx-background-image: url("img/ic_search_black_24dp_2xW.png");}
+.searchButton:hover {
+    -fx-background-image: url("img/ic_search_black_24dp_2xW.png");
+}
