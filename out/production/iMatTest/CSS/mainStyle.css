@@ -1,5 +1,5 @@
 .root{
-    -fx-font-size: 11pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
     -fx-text-fill: #222222;
@@ -106,14 +106,13 @@
 }
 
 .content{
-
-        -fx-font-size: 15pt;
+        -fx-font-size: 12pt;
         -fx-base: #FAC863;
         -fx-background-insets: 0 1 0 1,0,0;
         -fx-base: #5FB3B3;
         -fx-text-fill: white;
         -fx-background: #FAF8EC;
-
+ -fx-font-size: 12pt;
 }
 
 .content:hover{
@@ -146,7 +145,6 @@
 }
 
 .button{
-    -fx-font-size: 10pt;
     -fx-font-weight: bold;
     -fx-background-insets: 0 1 0 1,0,0;
 }
