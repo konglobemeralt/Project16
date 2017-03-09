@@ -64,6 +64,7 @@ public class ProfileViewController {
 
     @FXML
     private void initialize(){
+        update();
 
         TextField[] textFields = {firstNameArea, lastNameArea, addressArea, postAddressArea, postalCodeArea, phoneArea, cardNumberArea1, cardNumberArea2, cardNumberArea3, cardNumberArea4, cardOwnerArea, cardYearArea, cardMonthArea, cardCVCArea};
 
@@ -184,6 +185,7 @@ public class ProfileViewController {
         addressArea.setText(customer.getAddress());
         postalCodeArea.setText(customer.getPostCode());
         postAddressArea.setText(customer.getPostAddress());
+
 
         CreditCard card = main.iMat.getCreditCard();
         cardOwnerArea.setText(card.getHoldersName());
