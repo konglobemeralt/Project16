@@ -78,7 +78,7 @@
          <tooltip>
             <Tooltip text="Gå till betalning" />
          </tooltip></Button>
-      <Button layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" text="Töm">
+      <Button layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" styleClass="softRounded" text="Töm">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
          </tooltip></Button>
