@@ -60,7 +60,15 @@
  -fx-background-position: center;
 }
 
-
+.homeButton{
+ -fx-font-size: 17pt;
+    -fx-text-fill: white;
+  -fx-font: bold italic 90pt "Futura", "Arial";;
+    -fx-base: #5FB3B3;
+    -fx-background-image: url("img/ic_home_black_24dp_2x.png");
+ -fx-background-repeat: no-repeat;
+ -fx-background-position: center;
+}
 
 .forwardButton{
   -fx-base: #5FB3B3;
