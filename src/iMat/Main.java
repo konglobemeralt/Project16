@@ -52,14 +52,20 @@ public class Main extends Application {
         showMainView();
         showCategoriesView();
 
-        if (iMat.isFirstRun()){
+        /*if (iMat.isFirstRun()){
             showFirstStartView();
         }
         else {
             showHomeView();
         }
 
-        Link firstPage = iMat.isFirstRun() ? Link.FIRSTPAGE : Link.HOME;
+        Link firstPage = iMat.isFirstRun() ? Link.FIRSTPAGE : Link.HOME;*/
+
+        //TODO ta bort detta
+        Link firstPage = Link.FAVOURITES;
+        showFavourites();
+
+
         historyHandler = new HistoryHandler(mainViewController.getBackButton(), mainViewController.getForwardButton(), firstPage);
 
         mainViewController.updateShoppingBagCounter();
@@ -264,6 +270,15 @@ public class Main extends Application {
         controller.setOrder(order);
     }
 
+    public void showFavourites(){
+        try {
+            showProductView();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        fillProductView(iMat.favorites());
+    }
+
     public void updateShoppingBagCounter(){
         mainViewController.updateShoppingBagCounter();
     }
@@ -370,12 +385,7 @@ public class Main extends Application {
                     break;
 
                 case FAVOURITES:
-                    try {
-                        showProductView();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    fillProductView(iMat.favorites());
+                    showFavourites();
                     break;
 
                 case HOME:
