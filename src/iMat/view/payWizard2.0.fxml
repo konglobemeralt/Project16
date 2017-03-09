@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -43,13 +50,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="abort" />
+                     </styleClass>
                   </Button>
                   <Label layoutX="831.0" layoutY="383.0" styleClass="bolded" text="Totalpris: " textAlignment="RIGHT" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="121.0">
                      <font>
@@ -195,13 +206,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="777.0" layoutY="583.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="abort" />
+                     </styleClass>
                   </Button>
                   <TextArea layoutX="617.0" layoutY="127.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="211.0" prefWidth="382.0" promptText="Eventuellt lägenhetsnummer, portkod, övriga instruktioner och annat." AnchorPane.leftAnchor="617.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="127.0" />
                   <Label layoutX="617.0" layoutY="83.0" prefHeight="23.0" prefWidth="212.0" styleClass="bolded" text="Övrig information:" AnchorPane.leftAnchor="617.0" AnchorPane.topAnchor="83.0">
@@ -264,13 +279,17 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" styleClass="rounded" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
+                  <Button layoutX="771.0" layoutY="529.0" mnemonicParsing="false" onAction="#goBack" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="166.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="abort" />
+                     </styleClass>
                   </Button>
                   <AnchorPane layoutX="33.0" layoutY="207.0" prefHeight="170.0" prefWidth="464.0">
                      <children>
@@ -316,7 +335,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="180.0" layoutY="116.0" prefHeight="40.0" text="/" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="116.0">
+                        <Label layoutX="191.0" layoutY="116.0" prefHeight="40.0" prefWidth="9.0" text="/" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="116.0">
                            <font>
                               <Font size="18.0" />
                            </font></Label>
@@ -330,44 +349,44 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardNumberArea1" layoutX="130.0" layoutY="65.0" maxWidth="65.0">
+                        <TextField fx:id="cardNumberArea1" layoutX="130.0" layoutY="65.0" maxWidth="65.0" promptText="XXXX">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardNumberArea2" layoutX="195.0" layoutY="65.0" prefWidth="65.0">
+                        <TextField fx:id="cardNumberArea2" layoutX="195.0" layoutY="65.0" prefWidth="65.0" promptText="XXXX">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardNumberArea3" layoutX="260.0" layoutY="65.0" prefWidth="65.0">
+                        <TextField fx:id="cardNumberArea3" layoutX="260.0" layoutY="65.0" prefWidth="65.0" promptText="XXXX">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardNumberArea4" layoutX="325.0" layoutY="65.0" prefWidth="65.0">
+                        <TextField fx:id="cardNumberArea4" layoutX="325.0" layoutY="65.0" prefWidth="65.0" promptText="XXXX">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardMonthArea" layoutX="130.0" layoutY="116.0" prefWidth="50.0">
+                        <TextField fx:id="cardMonthArea" alignment="CENTER" layoutX="131.0" layoutY="116.0" prefHeight="39.0" prefWidth="54.0" promptText="MM">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardYearArea" layoutX="188.0" layoutY="116.0" prefWidth="50.0">
+                        <TextField fx:id="cardYearArea" alignment="CENTER" layoutX="203.0" layoutY="116.0" prefWidth="50.0" promptText="YY">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="cardCVCArea" layoutX="130.0" layoutY="163.0" prefWidth="65.0">
+                        <TextField fx:id="cardCVCArea" alignment="CENTER" layoutX="130.0" layoutY="163.0" prefWidth="65.0" promptText="XXX">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </TextField>
                         <ImageView fx:id="cardOwnerFeedbackImage" fitHeight="41.0" fitWidth="45.0" layoutX="390.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                         <ImageView fx:id="cardNumberFeedbackImage" fitHeight="39.0" fitWidth="47.0" layoutX="389.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fx:id="cardDateFeedbackImage" fitHeight="40.0" fitWidth="44.0" layoutX="238.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="cardDateFeedbackImage" fitHeight="40.0" fitWidth="44.0" layoutX="253.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true" />
                         <ImageView fx:id="cardCVCFeedbackImage" fitHeight="40.0" fitWidth="48.0" layoutX="195.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true" />
                         <Button layoutX="150.0" layoutY="219.0" mnemonicParsing="false" onAction="#clearCardPressed" prefHeight="35.0" prefWidth="100.0" text="Rensa" />
                         <CheckBox fx:id="saveCardCheckBox" layoutX="318.0" layoutY="228.0" mnemonicParsing="false" onAction="#saveCardCheckBoxPressed" selected="true" text="Spara kort" />
@@ -390,17 +409,24 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" styleClass="softRounded" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
+                  <Button fx:id="confirmationButton" layoutX="415.0" layoutY="362.0" mnemonicParsing="false" onAction="#confirmPurchase" prefHeight="80.0" prefWidth="240.0" style="-fx-background-color: #FAC863;" text="Slutför köp" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="415.0">
                      <font>
                         <Font size="28.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="softRounded" />
+                        <String fx:value="goToPay" />
+                     </styleClass>
+                     <effect>
+                        <DropShadow color="#909090" height="5.0" offsetX="2.0" radius="2.0" width="5.0" />
+                     </effect>
                   </Button>
                   <AnchorPane layoutX="85.0" layoutY="95.0" prefHeight="292.0" prefWidth="349.0">
                      <children>
-                        <Label layoutX="9.0" layoutY="75.0" text="Din adress:">
+                        <Label layoutX="9.0" layoutY="75.0" styleClass="bolded" text="Din adress:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -410,7 +436,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="9.0" layoutY="4.0" text="Ditt leveransdatum:">
+                        <Label layoutX="9.0" layoutY="4.0" styleClass="bolded" text="Ditt leveransdatum:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -420,7 +446,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="8.0" layoutY="219.0" text="Din betalningsmetod:">
+                        <Label layoutX="8.0" layoutY="219.0" styleClass="bolded" text="Din betalningsmetod:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -447,19 +473,23 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="14.0" layoutY="32.0" text="Var vänlig och kontrollera dina uppgifter.">
+                  <Label layoutX="14.0" layoutY="32.0" styleClass="bolded" text="Var vänlig och kontrollera dina uppgifter.">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <ListView fx:id="confirmationList" layoutX="515.0" layoutY="66.0" prefHeight="339.0" prefWidth="333.0" style="-fx-border-width: 1;" />
-                  <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" styleClass="rounded" text="Avbryt">
+                  <Button disable="true" layoutX="875.0" layoutY="511.0" mnemonicParsing="false" prefWidth="141.0" style="-fx-background-color: EC5f67;" text="Avbryt">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <styleClass>
+                        <String fx:value="rounded" />
+                        <String fx:value="abort" />
+                     </styleClass>
                   </Button>
                   <Label layoutX="514.0" layoutY="32.0" text="Varor">
                      <font>

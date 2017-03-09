@@ -14,6 +14,7 @@ import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.geometry.Insets;
@@ -25,7 +26,12 @@ public class ShoppingBagController {
     private GridPane shoppingBagGrid;
 
     @FXML
+    private Button clearShoppingBagButton;
+    @FXML
     private Label numberOfItemsLabel;
+
+    @FXML
+    private Button undoButton;
 
     @FXML
     private Label totalPriceLabel;
@@ -35,6 +41,8 @@ public class ShoppingBagController {
 
     //Reference the main application
     private Main main;
+
+    private List<ShoppingItem> deletedContent = new ArrayList<>();
 
     public void setMain(Main main) {
         this.main = main;
@@ -74,6 +82,16 @@ public class ShoppingBagController {
 
         List<ShoppingItem> shoppingItems = main.iMat.getShoppingCart().getItems();
         continueButton.setDisable(shoppingItems.size() == 0);
+
+        if(shoppingItems.size() != 0)
+        {
+            clearShoppingBagButton.setVisible(true);
+            undoButton.setVisible(false);
+            if(deletedContent.size() != 0) {
+                deletedContent.clear();
+            }
+        }
+        else clearShoppingBagButton.setVisible(false);
 
         for (int index = 0; index < shoppingItems.size(); index++) {
 
@@ -274,7 +292,31 @@ public class ShoppingBagController {
 
     @FXML
     private void clearShoppingBagButtonPressed(ActionEvent event){
+        undoButton.setVisible(true);
+        //deletedContent = main.iMat.getShoppingCart().getItems();
+        int len = main.iMat.getShoppingCart().getItems().size();
+        int index = 0;
+        while(len-- > 0)
+        {
+            System.out.println("loop");
+            deletedContent.add(main.iMat.getShoppingCart().getItems().get(index));
+        }
         main.iMat.getShoppingCart().clear();
+        updateShoppingBagGrid();
+    }
+
+    @FXML
+    private void undoButtonPressed(ActionEvent event)
+    {
+        System.out.println("ÅNGRA!");
+        int len = deletedContent.size();
+        int index = 0;
+        while(len-- > 0)
+        {
+            System.out.println("loop");
+            main.iMat.getShoppingCart().addItem(deletedContent.get(index++));
+        }
+        undoButton.setVisible(false);
         updateShoppingBagGrid();
     }
 

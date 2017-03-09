@@ -61,7 +61,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postalCodeArea" layoutX="89.0" layoutY="203.0">
+            <TextField fx:id="postalCodeArea" layoutX="89.0" layoutY="203.0" promptText="XXXXX">
                <font>
                   <Font size="18.0" />
                </font>
@@ -117,37 +117,37 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" maxWidth="65.0">
+            <TextField fx:id="cardNumberArea1" layoutX="135.0" layoutY="64.0" maxWidth="65.0" promptText="XXXX">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea2" layoutX="200.0" layoutY="64.0" maxWidth="65.0">
+            <TextField fx:id="cardNumberArea2" layoutX="200.0" layoutY="64.0" maxWidth="65.0" promptText="XXXX">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea3" layoutX="264.0" layoutY="64.0" maxWidth="65.0">
+            <TextField fx:id="cardNumberArea3" layoutX="264.0" layoutY="64.0" maxWidth="65.0" promptText="XXXX">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNumberArea4" layoutX="329.0" layoutY="64.0" maxWidth="65.0">
+            <TextField fx:id="cardNumberArea4" layoutX="329.0" layoutY="64.0" maxWidth="65.0" promptText="XXXX">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardMonthArea" layoutX="135.0" layoutY="116.0" prefWidth="50.0">
+            <TextField fx:id="cardMonthArea" layoutX="135.0" layoutY="116.0" prefHeight="39.0" prefWidth="60.0" promptText="MM">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardYearArea" layoutX="214.0" layoutY="116.0" prefWidth="50.0">
+            <TextField fx:id="cardYearArea" layoutX="204.0" layoutY="116.0" prefHeight="39.0" prefWidth="51.0" promptText="YY">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardCVCArea" layoutX="135.0" layoutY="170.0" prefWidth="65.0">
+            <TextField fx:id="cardCVCArea" layoutX="135.0" layoutY="170.0" prefWidth="65.0" promptText="XXX">
                <font>
                   <Font size="18.0" />
                </font>

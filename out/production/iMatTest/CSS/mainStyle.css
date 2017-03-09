@@ -116,19 +116,36 @@
     -fx-background-color: transparent;
 }
 .kundKorg {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #5FB3B3;
 }
 .paneStyle {
     -fx-text-fill: #2d2d2d;
     -fx-base: #b2e268;
     -fx-background: #575757;
-    -fx-background-color: derive(#FAC863, 20%);
+    -fx-background-color: derive(#5FB3B3, 20%);
     -fx-text-fill: #b2e268;
 }
 .button {
     -fx-font-weight: bold;
     -fx-background-insets: 0 1 0 1, 0, 0;
 }
+
+.goToPay{
+
+}
+.goToPay:hover{
+ -fx-text-fill: white;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+
+.abort{
+
+}
+.abort:hover{
+ -fx-text-fill: white;
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
+
 .tab-pane .tab-header-area .tab-header-background {
     -fx-opacity: 0;
 }
@@ -136,6 +153,7 @@
     -fx-background-insets: 0 1 0 1, 0, 0;
 }
 .tab-pane .tab {
+-fx-font-size: 14pt;
     -fx-background-color: #e6e6e6;
 }
 .tab-pane .tab:selected {
