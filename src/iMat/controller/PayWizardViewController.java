@@ -1042,10 +1042,10 @@ public class PayWizardViewController {
                         paymentWords = "vid leverans";
                         break;
                     case 1:
-                        paymentWords = "med faktura";
+                        paymentWords = "med kort";
                         break;
                     case 2:
-                        paymentWords = "via faktura";
+                        paymentWords = "med faktura";
                         break;
                 }
             }
