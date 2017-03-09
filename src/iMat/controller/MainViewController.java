@@ -66,7 +66,16 @@ public class MainViewController implements ShoppingCartListener{
         searchBarMain.textProperty().addListener(new ChangeListener<String>() {
             public void changed(final ObservableValue<? extends String> observable, final String oldValue, final String newValue) {
                 if (searchBarMain.getText().length() > 2) {
-                    search();
+                    if (main.getMainLayout().getCenter() != null && !main.getMainLayout().getCenter().equals("scrollPane")){
+                        try {
+                            main.showProductView();
+                        }
+                        catch (IOException e){
+
+                        }
+                        search();
+
+                    }
                 }
             }
         });

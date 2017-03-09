@@ -91,14 +91,22 @@
          <effect>
             <DropShadow color="#909090" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect></Button>
-      <Button fx:id="clearShoppingBagButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #EC5f67;" styleClass="softRounded" text="Töm" visible="false">
+      <Button fx:id="clearShoppingBagButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#clearShoppingBagButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #EC5f67;" text="Töm" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
-         </tooltip></Button>
-      <Button fx:id="undoButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: #00ff00;" styleClass="softRounded" text="Ångra" visible="false">
+         </tooltip>
+         <styleClass>
+            <String fx:value="softRounded" />
+            <String fx:value="abort" />
+         </styleClass></Button>
+      <Button fx:id="undoButton" layoutX="335.0" layoutY="9.0" mnemonicParsing="false" onAction="#undoButtonPressed" prefHeight="31.0" prefWidth="61.0" style="-fx-background-color: b2e268;" text="Ångra" visible="false">
          <tooltip>
             <Tooltip text="Töm kundkorg" />
-         </tooltip></Button>
+         </tooltip>
+         <styleClass>
+            <String fx:value="softRounded" />
+            <String fx:value="continue" />
+         </styleClass></Button>
    </children>
    <padding>
       <Insets left="50.0" />

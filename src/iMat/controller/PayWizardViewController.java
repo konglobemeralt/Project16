@@ -1117,13 +1117,11 @@ public class PayWizardViewController {
 
 
     private void updateConfirmationLabels() {
-        Customer c = main.iMat.getCustomer();
-
         deliveryConfirmationLabel.setText(timeComboBox.getSelectionModel().getSelectedItem() + " " + dateComboBox.getSelectionModel().getSelectedItem());
-        nameConfirmationLabel.setText(c.getFirstName() + " " + c.getLastName());
-        addressConfirmationLabel.setText(c.getAddress());
-        postalCodeConfirmationLabel.setText(c.getPostCode());
-        postAdressConfirmationLabel.setText(c.getPostAddress());
+        nameConfirmationLabel.setText(firstNameArea.getText() + " " + lastNameArea.getText());
+        addressConfirmationLabel.setText(addressArea.getText());
+        postalCodeConfirmationLabel.setText(postalCodeArea.getText());
+        postAdressConfirmationLabel.setText(postAddressArea.getText());
 
         String paymentWords = "";
         for (int i = 0; i < payMethodRadioButtons.getToggles().size(); i++) {
@@ -1164,9 +1162,7 @@ public class PayWizardViewController {
 
     @FXML
     private void confirmPurchase(ActionEvent event){
-        //Order order =
-                main.iMat.placeOrder(true);
-        //order = new OrderAdapter(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
+        main.iMat.placeOrder(true);
         main.showConfirmationView();
         main.updateConfirmationViewText(timeComboBox.getSelectionModel().getSelectedItem(), dateComboBox.getSelectionModel().getSelectedItem());
 
