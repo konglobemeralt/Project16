@@ -80,18 +80,23 @@ public class MainViewController implements ShoppingCartListener{
 
 
             ScaleTransition st = new ScaleTransition(Duration.millis(120), shoppingBagCounter);
+            st.setFromX(1);
+            st.setFromY(1);
             st.setByX(1.2f);
             st.setByY(1.2f);
             st.setCycleCount(2);
             st.setAutoReverse(true);
 
             ScaleTransition st2 = new ScaleTransition(Duration.millis(100), itemCounterLable);
+            st2.setFromX(1);
+            st2.setFromY(1);
             st2.setByX(1.1f);
             st2.setByY(1.1f);
             st2.setCycleCount(2);
             st2.setAutoReverse(true);
 
             RotateTransition rt = new RotateTransition(Duration.millis(100), itemCounterLable);
+            rt.setFromAngle(0);
             rt.setByAngle(30);
             rt.setCycleCount(2);
             rt.setAutoReverse(true);

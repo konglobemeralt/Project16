@@ -199,6 +199,11 @@ public class ShoppingBagController {
         }
     }
 
+    private void updateShoppingBag(Node n)
+    {
+
+    }
+
 
     private void removeButtonPressed() {
         for (Node n : shoppingBagGrid.getChildren()) {
@@ -231,12 +236,14 @@ public class ShoppingBagController {
         System.out.println("amountTextAreaLostFocus");
         int index = Integer.parseInt((amount.getId().split("_")[0]));
         ShoppingItem item = main.iMat.getShoppingCart().getItems().get(index);
+        boolean amountValueChanged = false;
 
         try {
             double newAmount = Double.parseDouble(amount.getText());
             if (!(item.getProduct().getUnitSuffix().equals("kg") || item.getProduct().getUnitSuffix().equals("l") )){
                 newAmount = Math.round(newAmount);
             }
+            amountValueChanged = item.getAmount() != newAmount;
             item.setAmount(newAmount);
         } catch (NumberFormatException n) {
         }
@@ -253,7 +260,10 @@ public class ShoppingBagController {
             main.iMat.getShoppingCart().removeItem(index);
             updateShoppingBagGrid();
         }
-        main.updateShoppingBagCounter();
+        if(amountValueChanged)
+        {
+            main.updateShoppingBagCounter();
+        }
         totalPriceLabel.setText("" + Math.round(main.iMat.getShoppingCart().getTotal()*100)/100.0);
     }
 

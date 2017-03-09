@@ -394,6 +394,9 @@ public class PayWizardViewController {
             ShoppingItem shoppingItem = shoppingItems.get(index);
             shoppingBagGrid.addRow(index);
 
+            boolean unitIsDouble = shoppingItem.getProduct().getUnitSuffix().matches("l")
+                    || shoppingItem.getProduct().getUnitSuffix().matches("kg");
+
             //Initialize all components
             Label productLabel = new Label("  " + shoppingItem.getProduct().getName());
 
@@ -434,6 +437,26 @@ public class PayWizardViewController {
             priceLabel.paddingProperty().set(new Insets(0, 0, 0, 200));
 
             TextArea amountTextArea = new TextArea("st");
+
+            final ChangeListener<String> inputFilter = new ChangeListener<String>() {
+                @Override
+                public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+                {
+                    System.out.println("inputFilter");
+                    boolean inValidDoubleInput = !newValue.matches("\\d*" + "\\." + "\\d{0,2}") && !newValue.matches("\\d*");
+                    boolean inValidIntInput = !newValue.matches("\\d*");
+
+                    if (unitIsDouble && inValidDoubleInput)
+                    {
+                        amountTextArea.setText(oldValue);
+                    }
+                    else if (!unitIsDouble && inValidIntInput)
+                    {
+                        amountTextArea.setText(oldValue);
+                    }
+                }
+            };
+
             amountTextArea.setPrefHeight(30);
             amountTextArea.setMinHeight(30);
             amountTextArea.setMaxHeight(30);
@@ -441,7 +464,10 @@ public class PayWizardViewController {
             amountTextArea.setOnMouseClicked((e) -> amountTextAreaClicked(amountTextArea));
             amountTextArea.focusedProperty().addListener(new ChangeListener<Boolean>() {
                 public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                    amountTextArea.textProperty().addListener(inputFilter);
                     if (!newPropertyValue) {
+                        amountTextArea.textProperty().removeListener(inputFilter);
+                        amountTextArea.textProperty().removeListener(inputFilter);  // vet ej varför detta funkar.
                         amountTextAreaLostFocus(amountTextArea, priceLabel);
                     }
                 }
