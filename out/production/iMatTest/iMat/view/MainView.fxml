@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
@@ -12,6 +12,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Circle?>
@@ -31,29 +32,47 @@
                </font>
                <effect>
                   <DropShadow color="#838181" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
-               </effect></Button>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Hem" />
+               </tooltip></Button>
             <Button id="kundkorgButton" fx:id="kundkorgButton" layoutX="1160.0" layoutY="41.0" mnemonicParsing="false" onAction="#kundkorgButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="kundkorgButton" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <effect>
                   <DropShadow color="#949494" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
-               </effect></Button>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Kundkorg" />
+               </tooltip></Button>
             <Button id="helpButton" fx:id="helpButton" layoutX="1000.0" layoutY="41.0" mnemonicParsing="false" onAction="#helpButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="helpButton" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <effect>
                   <DropShadow color="#949494" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
-               </effect></Button>
+               </effect>
+               <tooltip>
+                  <Tooltip text="Hjälp" />
+               </tooltip></Button>
             <Button id="profileButton" fx:id="profileButton" layoutX="1080.0" layoutY="41.0" mnemonicParsing="false" onAction="#profileButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="profileButton" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <effect>
                   <DropShadow color="#949494" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
-               </effect></Button>
-            <TextField fx:id="searchBarMain" layoutX="299.0" layoutY="68.0" onAction="#searchFieldEnterPressed" prefHeight="64.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="13.0" />
+               </effect>
+               <tooltip>
+                  <Tooltip text="Din Profil" />
+               </tooltip></Button>
+            <TextField fx:id="searchBarMain" layoutX="299.0" layoutY="68.0" onAction="#searchFieldEnterPressed" prefHeight="80.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="7.0">
+               <font>
+                  <Font size="37.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Skriv för att söka" />
+               </tooltip></TextField>
             <Button fx:id="backButton" disable="true" layoutX="23.0" layoutY="41.0" mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="backButton" stylesheets="@../../CSS/mainStyle.css" AnchorPane.topAnchor="5.0">
                <font>
                   <Font size="18.0" />
@@ -61,6 +80,9 @@
                <effect>
                   <DropShadow color="#838181" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
                </effect>
+               <tooltip>
+                  <Tooltip text="Bakåt" />
+               </tooltip>
             </Button>
             <Text fx:id="itemCounterLable" depthTest="ENABLE" fill="WHITE" layoutX="1221.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false">
                <effect>
@@ -77,6 +99,9 @@
                <effect>
                   <DropShadow color="#838181" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
                </effect>
+               <tooltip>
+                  <Tooltip text="Frammåt" />
+               </tooltip>
             </Button>
          </children>
          <padding>

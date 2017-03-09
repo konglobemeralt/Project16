@@ -24,6 +24,9 @@
          <effect>
             <DropShadow color="#9a9a9a" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
+         <tooltip>
+            <Tooltip text="Visa Favoriter" />
+         </tooltip>
       </Button>
       <Button fx:id="minaListorButton" layoutX="39.0" layoutY="399.0" mnemonicParsing="false" onAction="#minaListorButtonPressed" prefHeight="30.0" prefWidth="200.0" styleClass="minaListor" text="Mina Listor" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="52.0">
          <font>
@@ -46,6 +49,9 @@
          <effect>
             <DropShadow color="#7c7c7c" height="5.0" offsetY="2.0" radius="2.0" width="5.0" />
          </effect>
+         <tooltip>
+            <Tooltip text="Visa gamla köp" />
+         </tooltip>
       </Button>
       <Button fx:id="fruitButton" layoutX="39.0" layoutY="41.0" mnemonicParsing="false" onAction="#CategoryButtonPressed" prefHeight="40.0" prefWidth="202.0" styleClass="content" text="Frukt" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="52.0">
          <font>
