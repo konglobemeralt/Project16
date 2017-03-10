@@ -33,7 +33,9 @@ public class ReceiptViewController {
 
         List<Order> orders = main.iMat.getOrders();
 
-        for (int index = orders.size() - 1; index >= 0; index--){
+        orders = sortOrders(orders);
+
+        for (int index = 0; index < orders.size(); index++){
 
             ReceiptPanelController controller = new ReceiptPanelController(orders.get(index), main);
             ordersGrid.add(controller,0, index);
@@ -45,5 +47,26 @@ public class ReceiptViewController {
             scrollPaneReceipt.setVvalue(0.0);
             scrollPaneReceipt.autosize();
         }
+    }
+
+    private List<Order> sortOrders(List<Order> input){
+        boolean didSwap = true;
+        while (didSwap){
+            didSwap = false;
+            for (int i = 1; i < input.size(); i++){
+                if (input.get(i).getDate().compareTo(input.get(i-1).getDate()) > 0){
+                    swap(input, i, i-1);
+                    didSwap = true;
+                }
+            }
+        }
+        return input;
+    }
+
+    private List<Order> swap(List<Order> input, int i, int j){
+        Order k =  input.get(i);
+        input.set(i, input.get(j));
+        input.set(j, k);
+        return input;
     }
 }
