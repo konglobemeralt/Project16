@@ -66,7 +66,7 @@
                <tooltip>
                   <Tooltip text="Din Profil" />
                </tooltip></Button>
-            <TextField fx:id="searchBarMain" layoutX="299.0" layoutY="68.0" onAction="#searchFieldEnterPressed" prefHeight="80.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="7.0">
+            <TextField fx:id="searchBarMain" layoutX="299.0" layoutY="68.0" onAction="#searchFieldEnterPressed" prefHeight="80.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" styleClass="softRounded" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="7.0">
                <font>
                   <Font size="37.0" />
                </font>
