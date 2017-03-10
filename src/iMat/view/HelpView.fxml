@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="helpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="600.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="50.0" tabMaxWidth="120.0" tabMinHeight="50.0" tabMinWidth="120.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane fx:id="helpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="626.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="50.0" tabMaxWidth="120.0" tabMinHeight="50.0" tabMinWidth="120.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Hjälp">
       <content>
@@ -45,17 +45,12 @@
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="89.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="När du ser en vara du vill lägga till så väljer du antal med +, - eller att skriva in i textrutan. Sen trycker du på &quot;Lägg till&quot; för att lägga varan i kundkorgen." wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="När du ser en vara du vill lägga till så väljer du antal med +, - eller att skriva in i textrutan. Sen trycker du på &quot;Lägg till&quot; för att lägga varan i kundkorgen." wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="89.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trycker du på hjärtat så läggs varan till i dina favoriter." wrappingWidth="733.5801086425781">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="89.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att gå fram eller bak till en sida du redan varit på så trycker du på pilarna högst upp till vänster. " wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trycker du på hjärtat så läggs varan till i dina favoriter." wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -106,7 +101,7 @@
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <Text layoutX="89.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att ändra uppgifter eller ta bort uppgifter så kan du även trycka på den gula knappen högt upp till höger. " wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att ändra uppgifter eller ta bort uppgifter så kan du även gå in på min profil genom att trycka på den gula knappen högt upp till höger. " wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
