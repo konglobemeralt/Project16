@@ -7,18 +7,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane fx:id="helpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="600.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="50.0" tabMaxWidth="120.0" tabMinHeight="50.0" tabMinWidth="120.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<TabPane fx:id="helpPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="600.0" prefWidth="1030.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="50.0" tabMaxWidth="120.0" tabMinHeight="50.0" tabMinWidth="120.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Hjälp">
       <content>
         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="85.0" layoutY="51.0" text="Hjälp" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="85.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Här finns det tips och hjälp om du har några frågor!" wrappingWidth="653.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="85.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj bland kategorierna ovan för att få hjälp med det du söker. Om du har fler frågor är du välkommen att ringa oss på  073 95 72 702" wrappingWidth="653.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -26,16 +31,59 @@
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Varukorg">
+      <Tab text="Lägga till Varor">
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="85.0" layoutY="51.0" text="Lägga till Varor" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att hitta varor så kan du välja &quot;Börja Handla&quot; från startsidan, eller välja bland kategorierna till vänster, eller söka i sökrutan högst upp. När du skriver in i sökrutan så söker du automatiskt." wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="När du ser en vara du vill lägga till så väljer du antal med +, - eller att skriva in i textrutan. Sen trycker du på &quot;Lägg till&quot; för att lägga varan i kundkorgen." wrappingWidth="733.5801086425781">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trycker du på hjärtat så läggs varan till i dina favoriter." wrappingWidth="733.5801086425781">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="446.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att gå fram eller bak till en sida du redan varit på så trycker du på pilarna högst upp till vänster. " wrappingWidth="733.5801086425781">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+    <Tab text="Kundkorg">
+         <content>
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
+               <children>
+                  <Label layoutX="85.0" layoutY="51.0" text="Kundkorg" textFill="#b2e268" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font name="System Bold" size="39.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="85.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kundkorgen innehåller de varor som du vill köpa. När du trycker på &quot;Lägg till&quot; på en vara så syns den i kundkorgen. Kundkorgen öppnas och stängs genom att trycka på ikonen högst upp till höger" wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="85.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I kundkorgen kan du ändra mängden av en vara genom att trycka på +, - eller i textrutan och skriva in mängd. Du kan även ta bort varor med krysset. " wrappingWidth="733.5801086425781">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="85.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="När du är redo för att gå till betalning så trycker du på &quot;Till Kassan&quot;" wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -44,34 +92,21 @@
             </AnchorPane>
          </content>
     </Tab>
-      <Tab text="Söka">
-         <content>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
-               <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
-                     <font>
-                        <Font name="System Bold" size="39.0" />
-                     </font>
-                  </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-         </content>
-      </Tab>
       <Tab text="Ändra Uppgifter">
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="85.0" layoutY="51.0" text="Ändra Uppgifter" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dina person och kreditkortsuppgifter sparas om checkrutan är ifylld i det andra och tredje betalningssteget.  " wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="För att ändra uppgifter eller ta bort uppgifter så kan du även trycka på den gula knappen högt upp till höger. " wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -80,16 +115,16 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Se tidigare köp">
+      <Tab text="Leverans &amp; Betalning">
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="85.0" layoutY="51.0" text="Leverans &amp; Betalning" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="När du har tryckt på &quot;Gå till kassan&quot; så förs du till en sida med fyra delar. På varje del får du antingen fylla i uppgifter eller kontrollera om det du har valt är rätt." wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -98,16 +133,21 @@
             </AnchorPane>
          </content>
       </Tab>
-      <Tab text="Favoriter">
+      <Tab text="Se Tidigare Köp">
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="85.0" layoutY="51.0" text="Se Tidigare Köp" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Om du trycker på &quot;Tidigare Köp&quot; längst nere till vänster så får du se alla tidigare beställningar du gjort, både de som levererats och de som är påväg. " wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tryck på en beställning för att se mer info om vad den innehåller." wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -120,12 +160,17 @@
          <content>
             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="1030.0">
                <children>
-                  <Label layoutX="85.0" layoutY="51.0" text="Rubrik" textFill="#b2e268">
+                  <Label layoutX="89.0" layoutY="14.0" text="Policy" textFill="#b2e268" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font name="System Bold" size="39.0" />
                      </font>
                   </Label>
-                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Förklarande text                                                    som automatiskt radbryter så fortsätt skriv bara" wrappingWidth="733.5801086425781">
+                  <Text layoutX="89.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genom att använda vår applikation så godkänner du våra villkor." wrappingWidth="733.5801086425781" AnchorPane.topAnchor="90.0">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="89.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vi står för snabbhet, enkelhet och brahet. Katter ingår inte i våra beställningar (nödvändigtvis)" wrappingWidth="733.5801086425781">
                      <font>
                         <Font size="26.0" />
                      </font>
