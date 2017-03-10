@@ -132,10 +132,19 @@
      -fx-box-border:  #5FB3B3;
 }
 .paneStyle {
-    -fx-text-fill: #2d2d2d;
     -fx-background: #575757;
-    -fx-background-color: derive(#AFD9D9, 20%);
+    -fx-background-color: #AFD9D9;
 }
+
+.paneStyleDark {
+    -fx-background: #575757;
+    -fx-background-color: #5FB3B3;
+}
+
+.textFix{
+    -fx-text-fill: #2d2d2d;
+}
+
 .button {
     -fx-font-weight: bold;
     -fx-background-insets: 0 1 0 1, 0, 0;

@@ -561,6 +561,7 @@ public class PayWizardViewController {
                 AnchorPane productPane = new AnchorPane(productLabel);
                 productPane.autosize();
                 productPane.setPrefHeight(32);
+                productLabel.getStyleClass().add("textFix");
                 productPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(productPane, 0, index);
 
@@ -573,6 +574,7 @@ public class PayWizardViewController {
                 AnchorPane pricePane = new AnchorPane(priceLabel);
                 pricePane.autosize();
                 pricePane.setPrefHeight(32);
+                priceLabel.getStyleClass().add("textFix");
                 pricePane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(pricePane, 4, index);
 

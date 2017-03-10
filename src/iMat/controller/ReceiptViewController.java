@@ -39,7 +39,7 @@ public class ReceiptViewController {
             ordersGrid.add(controller,0, index);
 
             if (index % 2 == 1){
-                controller.getStyleClass().add("paneStyle");
+                controller.getStyleClass().add("paneStyleDark");
             }
 
             scrollPaneReceipt.setVvalue(0.0);
