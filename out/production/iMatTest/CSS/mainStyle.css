@@ -29,7 +29,7 @@
 }
 
 .extraBolded {
--fx-font-size: 11pt;
+-fx-font-size: 15pt;
     -fx-font-family: "Futura", "Arial";
     -fx-font-weight: bold;
     -fx-text-fill: #222222;
@@ -98,6 +98,10 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+
+.homeButton :hover {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
 .forwardButton {
     -fx-base: #5FB3B3;
     -fx-border-radius: 0 10 10 0;
@@ -136,7 +140,8 @@
     -fx-font-weight: bold;
     -fx-background-insets: 0 1 0 1, 0, 0;
 }
-
+.button:hover{
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);}
 .goToPay{
 
 }
@@ -226,6 +231,9 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+.addButton:hover{
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
+}
 .subtractButton {
     -fx-border-radius: 10 0 0 10;
     -fx-background-radius: 10 0 0 10;
@@ -233,6 +241,8 @@
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
 }
+.subtractButton:hover{
+-fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);}
 .item {
     -fx-border-radius: 10 10 10 10;
     -fx-background-radius: 10 10 10 10;
