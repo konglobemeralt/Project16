@@ -27,6 +27,13 @@
     -fx-font-weight: bold;
     -fx-text-fill: #222222;
 }
+
+.extraBolded {
+-fx-font-size: 11pt;
+    -fx-font-family: "Futura", "Arial";
+    -fx-font-weight: bold;
+    -fx-text-fill: #222222;
+}
 .softRounded {
     fx-border-radius: 30 30 30 30;
     -fx-background-radius: 30 30 30 30;
