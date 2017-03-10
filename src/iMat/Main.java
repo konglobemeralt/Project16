@@ -43,6 +43,8 @@ public class Main extends Application {
 
     private ConfirmationViewController confirmationViewController;
 
+    private TabPane helpView;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         this.primaryStage = primaryStage;
@@ -190,13 +192,19 @@ public class Main extends Application {
     public void showHelpView() {
         mainLayout.setRight(null);
 
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(Main.class.getResource("view/HelpView.fxml"));
-        try {
-            TabPane helpView = loader.load();
+        if (helpView == null) {
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Main.class.getResource("view/HelpView.fxml"));
+            try {
+                helpView = loader.load();
+                mainLayout.setCenter(helpView);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else {
             mainLayout.setCenter(helpView);
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
     public void showShoppingBagView() throws IOException {
