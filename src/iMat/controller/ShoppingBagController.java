@@ -300,7 +300,7 @@ public class ShoppingBagController {
         while(len-- > 0)
         {
             System.out.println("loop");
-            deletedContent.add(main.iMat.getShoppingCart().getItems().get(index));
+            deletedContent.add(main.iMat.getShoppingCart().getItems().get(index++));
         }
         main.iMat.getShoppingCart().clear();
         updateShoppingBagGrid();

@@ -71,8 +71,8 @@
      -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.3), 10, 0, 4, 4);
 }
 .kvitton {
-    -fx-border-radius: 0 0 10 10;
-    -fx-background-radius: 0 0 10 10;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
     -fx-font-size: 12pt;
     -fx-base: #FAC863;
     -fx-text-fill: #2d2d2d;
