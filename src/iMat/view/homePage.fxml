@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="homePagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="721.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.HomeController">
+<AnchorPane fx:id="homePagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="500.0" prefHeight="721.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.HomeController">
    <children>
       <AnchorPane layoutX="16.0" layoutY="285.0" prefHeight="304.0" prefWidth="1032.0" AnchorPane.leftAnchor="16.0">
          <children>
@@ -27,13 +31,13 @@
       </AnchorPane>
       <AnchorPane layoutX="1.0" layoutY="72.0" prefHeight="154.0" prefWidth="1030.0" AnchorPane.leftAnchor="1.0">
          <children>
-            <Button layoutX="417.0" layoutY="50.0" mnemonicParsing="false" onAction="#startShoppingButton" prefHeight="56.0" prefWidth="196.0" style="-fx-background-color: #b2e268;" text="Börja handla" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="50.0">
+            <Button layoutX="417.0" layoutY="50.0" mnemonicParsing="false" onAction="#startShoppingButton" prefHeight="56.0" prefWidth="196.0" style="-fx-background-color: #b2e268;" styleClass="softRounded" text="Börja handla" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="417.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="50.0">
                <font>
                   <Font size="25.0" />
                </font></Button>
          </children>
       </AnchorPane>
-      <Label layoutX="28.0" layoutY="230.0" text="Utvalda Produkter">
+      <Label layoutX="28.0" layoutY="230.0" styleClass="bolded" text="Utvalda Produkter">
          <font>
             <Font size="37.0" />
          </font>
