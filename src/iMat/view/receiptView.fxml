@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -9,8 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="receiptAnchorPane" minWidth="500.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptViewController">
+<AnchorPane fx:id="receiptAnchorPane" minWidth="500.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.ReceiptViewController">
    <children>
       <ScrollPane fx:id="scrollPaneReceipt" hbarPolicy="NEVER" layoutY="80.0" maxHeight="-Infinity" minWidth="200.0" prefHeight="470.0" prefWidth="1030.0" AnchorPane.leftAnchor="0.0">
          <content>
@@ -27,7 +30,7 @@
             </GridPane>
          </content>
       </ScrollPane>
-      <Label layoutX="426.0" layoutY="6.0" prefHeight="46.0" prefWidth="179.0" text="Tidigare Köp" AnchorPane.leftAnchor="426.0">
+      <Label layoutX="426.0" layoutY="6.0" prefHeight="46.0" prefWidth="238.0" styleClass="extraBolded" text="Tidigare Köp" AnchorPane.leftAnchor="426.0">
          <font>
             <Font size="31.0" />
          </font>

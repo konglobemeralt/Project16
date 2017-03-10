@@ -189,6 +189,7 @@ public class ShoppingBagController {
                 AnchorPane productPane = new AnchorPane(productLabel);
                 productPane.autosize();
                 productPane.setPrefHeight(32);
+                productLabel.getStyleClass().add("textFix");
                 productPane.getStyleClass().add("paneStyle");
                 shoppingBagGrid.add(productPane, 0, index);
 
@@ -197,7 +198,7 @@ public class ShoppingBagController {
                 shoppingBagGrid.add(amountTextArea, 2, index);
 
                 shoppingBagGrid.add(addButton, 3, index);
-
+                priceLabel.getStyleClass().add("textFix");
                 AnchorPane pricePane = new AnchorPane(priceLabel);
                 pricePane.autosize();
                 pricePane.setPrefHeight(32);

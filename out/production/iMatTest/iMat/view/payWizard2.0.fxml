@@ -433,7 +433,7 @@
                   </Button>
                   <AnchorPane layoutX="85.0" layoutY="95.0" prefHeight="292.0" prefWidth="349.0">
                      <children>
-                        <Label layoutX="9.0" layoutY="75.0" styleClass="bolded" text="Din adress:">
+                        <Label layoutX="9.0" layoutY="75.0" styleClass="extraBolded" text="Din adress:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -443,7 +443,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="9.0" layoutY="4.0" styleClass="bolded" text="Ditt leveransdatum:">
+                        <Label layoutX="9.0" layoutY="4.0" styleClass="extraBolded" text="Ditt leveransdatum:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -453,7 +453,7 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="8.0" layoutY="219.0" styleClass="bolded" text="Din betalningsmetod:">
+                        <Label layoutX="8.0" layoutY="219.0" styleClass="extraBolded" text="Din betalningsmetod:">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -480,7 +480,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="14.0" layoutY="32.0" styleClass="bolded" text="Var vänlig och kontrollera dina uppgifter.">
+                  <Label layoutX="14.0" layoutY="32.0" styleClass="extraBolded" text="Var vänlig och kontrollera dina uppgifter.">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -498,12 +498,12 @@
                         <String fx:value="abort" />
                      </styleClass>
                   </Button>
-                  <Label layoutX="514.0" layoutY="32.0" text="Varor">
+                  <Label layoutX="514.0" layoutY="32.0" styleClass="extraBolded" text="Varor">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="confirmNumberOfItemsLabel" layoutX="523.0" layoutY="406.0" text="Antal">
+                  <Label fx:id="confirmNumberOfItemsLabel" layoutX="523.0" layoutY="406.0" styleClass="extraBolded" text="Antal">
                      <font>
                         <Font size="18.0" />
                      </font>

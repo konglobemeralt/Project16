@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -12,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="400.0" minWidth="640.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.MainViewController">
+<BorderPane minHeight="400.0" minWidth="640.0" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.controller.MainViewController">
    <top>
       <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="137.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +37,7 @@
                <tooltip>
                   <Tooltip text="Hem" />
                </tooltip></Button>
-            <Button id="kundkorgButton" fx:id="kundkorgButton" layoutX="1160.0" layoutY="41.0" mnemonicParsing="false" onAction="#kundkorgButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="kundkorgButton" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="5.0">
+            <Button id="kundkorgButton" fx:id="kundkorgButton" layoutX="1160.0" layoutY="41.0" mnemonicParsing="false" onAction="#kundkorgButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="kundkorgButton" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -39,7 +47,7 @@
                <tooltip>
                   <Tooltip text="Kundkorg" />
                </tooltip></Button>
-            <Button id="helpButton" fx:id="helpButton" layoutX="1000.0" layoutY="41.0" mnemonicParsing="false" onAction="#helpButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="helpButton" AnchorPane.rightAnchor="185.0" AnchorPane.topAnchor="5.0">
+            <Button id="helpButton" fx:id="helpButton" layoutX="1000.0" layoutY="41.0" mnemonicParsing="false" onAction="#helpButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="helpButton" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -49,7 +57,7 @@
                <tooltip>
                   <Tooltip text="Hjälp" />
                </tooltip></Button>
-            <Button id="profileButton" fx:id="profileButton" layoutX="1080.0" layoutY="41.0" mnemonicParsing="false" onAction="#profileButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="profileButton" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="5.0">
+            <Button id="profileButton" fx:id="profileButton" layoutX="1080.0" layoutY="41.0" mnemonicParsing="false" onAction="#profileButtonPressed" prefHeight="80.0" prefWidth="80.0" styleClass="profileButton" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -59,7 +67,7 @@
                <tooltip>
                   <Tooltip text="Din Profil" />
                </tooltip></Button>
-            <TextField fx:id="searchBarMain" layoutX="327.0" layoutY="28.0" onAction="#searchFieldEnterPressed" prefHeight="80.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" AnchorPane.leftAnchor="327.0" AnchorPane.rightAnchor="326.0" AnchorPane.topAnchor="7.0">
+            <TextField fx:id="searchBarMain" layoutX="327.0" layoutY="68.0" onAction="#searchFieldEnterPressed" prefHeight="80.0" prefWidth="640.0" promptText="Skriv i rutan för att söka" styleClass="softRounded" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="341.0" AnchorPane.topAnchor="7.0">
                <font>
                   <Font size="37.0" />
                </font>
